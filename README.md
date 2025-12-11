@@ -32,3 +32,17 @@ Beispiel (Gerät synchronisieren):
 ```
 ## Hinweis
 Bitte testen Sie Skripte ('besonders solche mit Löschfunktionen wie Wipe oder Delete') immer zuerst in einer Testumgebung oder mit einem einzelnen Testgerät.
+## FAQ
+**Q: Ich bekomme einen Fehler "Execution of scripts is disabled on this system".**
+A: Die PowerShell Execution Policy muss angepasst werden. Führen Sie folgendes aus:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+**Q: Welche Module werden benötigt?**
+A: Die Skripte basieren auf dem `Microsoft.Graph` Modul. Stellen Sie sicher, dass es installiert ist: `Install-Module Microsoft.Graph`.
+**Q: Wie melde ich mich an?**
+A: Nutzen Sie `Connect-MgGraph`. Beim ersten Mal müssen Sie im Browser-Fenster zustimmen (Consent).
+## Autor
+**Mattia Cirillo**
+*   [Webseite / kaffeeundcode](https://kaffeeundcode.com)
+*   Entwickelt mit ❤️ für Intune-Admins.
