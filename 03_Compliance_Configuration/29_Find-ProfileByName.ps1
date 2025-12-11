@@ -8,7 +8,7 @@
 
 .NOTES
     File Name: 29_Find-ProfileByName.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

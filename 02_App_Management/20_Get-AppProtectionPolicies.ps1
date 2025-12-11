@@ -8,7 +8,7 @@
 
 .NOTES
     File Name: 20_Get-AppProtectionPolicies.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

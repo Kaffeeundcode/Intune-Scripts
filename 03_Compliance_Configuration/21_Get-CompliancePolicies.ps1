@@ -8,7 +8,7 @@
 
 .NOTES
     File Name: 21_Get-CompliancePolicies.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

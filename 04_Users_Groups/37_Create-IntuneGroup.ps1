@@ -7,7 +7,7 @@
 
 .NOTES
     File Name: 37_Create-IntuneGroup.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

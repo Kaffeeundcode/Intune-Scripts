@@ -9,7 +9,7 @@
 
 .NOTES
     File Name: 04_Wipe-IntuneDevice.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

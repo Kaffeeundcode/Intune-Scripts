@@ -9,7 +9,7 @@
 
 .NOTES
     File Name: 05_Get-IntuneDeviceDetails.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 

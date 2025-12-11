@@ -8,7 +8,7 @@
 
 .NOTES
     File Name: 10_Export-AllDevices.ps1
-    Author: Kaffee & Code Assistant
+    Author: Mattia Cirillo
     Version: 1.0
 #>
 
