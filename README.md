@@ -22,8 +22,8 @@ Das Repository ist in thematische Ordner unterteilt:
 *   **13_EntraID_AppRegistration**: Management von App Registrations & Service Principals.
 *   **14_EntraID_Security_CA**: Conditional Access und Security Einstellungen.
 *   **15_Intune_Advanced_Enrollment**: Weiterführende Enrollment-Szenarien.
-*   **16_New_Scripts_Collection**: Sammlung von 50 neuen, gemischten Skripten (2025/2026).
-*   **Scripts_To_Upload (Neu)**: Eine Sammlung von 50 neuen Skripten, die diverse Themen abdecken (Azure, EntraID, Intune, Teams). Details siehe unten.
+*   **16_Mixed_New_Scripts**: Sammlung von 50 gemischten Skripten zu Intune, Entra ID, Azure, Exchange, M365 und ersten Teams-Themen.
+*   **16_Teams_Telephony**: Dedizierte Sammlung von 200 Teams-Telefonie-Skripten inklusive Helper-Datei und Beschreibungsübersicht.
 ## Voraussetzungen
 Um diese Skripte auszuführen, müssen folgende Voraussetzungen erfüllt sein:
 1.  **Microsoft Graph PowerShell SDK**:
