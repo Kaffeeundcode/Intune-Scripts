@@ -23,7 +23,7 @@ Das Repository ist in thematische Ordner unterteilt:
 *   **14_EntraID_Security_CA**: Conditional Access und Security Einstellungen.
 *   **15_Intune_Advanced_Enrollment**: Weiterführende Enrollment-Szenarien.
 *   **16_Mixed_New_Scripts**: Sammlung von 50 gemischten Skripten zu Intune, Entra ID, Azure, Exchange, M365 und ersten Teams-Themen.
-*   **16_Teams_Telephony**: Dedizierte Sammlung von 200 Teams-Telefonie-Skripten inklusive Helper-Datei und Beschreibungsübersicht.\n*   **17_AI_Automation**: KI-gestützte Graph-API-Interaktionen und automatisierte Dokumentation.\n*   **18_Security_Hardening**: Audits für Conditional Access, MAM-Konsistenz und Shadow-IT Scanner.
+*   **16_Teams_Telephony**: Dedizierte Sammlung von 200 Teams-Telefonie-Skripten inklusive Helper-Datei und Beschreibungsübersicht.\n*   **17_AI_Automation**: KI-gestützte Graph-API-Interaktionen und automatisierte Dokumentation.\n*   **18_Security_Hardening**: Audits für Conditional Access, MAM-Konsistenz und Shadow-IT Scanner.\n*   **19_Lifecycle_Cleanup**: Automatisierte Bereinigung von Zombie-Devices, stale Gruppen und Lizenz-Optimierung.
 ## Voraussetzungen
 Um diese Skripte auszuführen, müssen folgende Voraussetzungen erfüllt sein:
 1.  **Microsoft Graph PowerShell SDK**:
