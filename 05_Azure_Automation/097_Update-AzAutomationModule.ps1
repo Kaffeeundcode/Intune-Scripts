@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktualisiert ein PowerShell-Modul im Automation Account.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Module veralten und müssen gepflegt werden.
     Lädt die neueste Version aus der Gallery (indirekt Trigger via ContentLink).
-    Hinweis: Azure Automation Module Updates sind oft einfacher via Portal, 
+    Hinweis: Azure Automation Module Updates sind oft einfacher via Portal,
     dieses Skript zeigt den Programmatic Way via New-AzAutomationModule (Overwrite).
 
     Parameter:
@@ -35,7 +41,7 @@ try {
                            -Name $ModuleName `
                            -ContentLinkUri $ContentLinkUri `
                            -ErrorAction Stop | Out-Null
-                           
+
     Write-Host "Modulupdate angestoßen (Status 'Creating'...). Bitte warten." -ForegroundColor Green
 
 } catch {

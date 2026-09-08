@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Windows Autopilot Geräte auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft registrierte Autopilot-Devices ab (Serial Number, Model, Profile Status).
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

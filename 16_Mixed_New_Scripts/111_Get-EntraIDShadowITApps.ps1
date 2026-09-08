@@ -1,15 +1,21 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies "Shadow IT" applications where users have consented to high-privilege scopes.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Scans all Service Principals (Enterprise Apps) in Entra ID.
     Looks for OAuth2PermissionGrants containing sensitive scopes like:
     - Directory.ReadWrite.All
     - User.ReadWrite.All
     - Mail.ReadWrite
     - Files.ReadWrite
-    
+
     This helps identify risky 3rd party apps users may have connected.
 
 .NOTES
@@ -54,7 +60,7 @@ foreach ($Grant in $Grants) {
         # Get App Name (this is slower, so we only do it for risky ones)
         # ClientId is the App ID
         $App = Get-MgServicePrincipal -Filter "appId eq '$($Grant.ClientId)'" -ErrorAction SilentlyContinue
-        
+
         # Get User (PrincipalId) - could be a user or 'AllPrincipals'
         $UserDisplay = "All Users"
         if ($Grant.PrincipalId -ne $null -and $Grant.ConsentType -eq "Principal") {

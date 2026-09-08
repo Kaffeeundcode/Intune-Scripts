@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht ein Autopilot-Gerät (Hash).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Entfernt den Hardware-Hash aus dem Autopilot-Service. Notwendig vor Board-Swap oder Verkauf.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.ReadWrite.All'.
 

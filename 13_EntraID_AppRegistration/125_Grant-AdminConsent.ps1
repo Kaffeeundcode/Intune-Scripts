@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erteilt Admin Consent für Permissions.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Genehmigt angeforderte Berechtigungen für eine App/Service Principal.
     Erfordert die Berechtigung 'AppRoleAssignment.ReadWrite.All' oder Global Admin.
 

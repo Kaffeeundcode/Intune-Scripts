@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein VNet-Peering zwischen zwei virtuellen Netzwerken in Azure.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Dieses Skript verbindet zwei VNets (Source und Destination) über ein Peering.
-    Es prüft, ob die VNets existieren und führt das Peering in BEIDE Richtungen aus (Bidirektional), 
+    Es prüft, ob die VNets existieren und führt das Peering in BEIDE Richtungen aus (Bidirektional),
     da ein Peering immer zweiseitig konfiguriert werden muss, um zu funktionieren.
 
     Parameter:
@@ -28,7 +34,7 @@ param (
 
 try {
     Write-Host "Prüfe VNets..." -ForegroundColor Cyan
-    
+
     $vnet1 = Get-AzVirtualNetwork -Name $SourceVNetName -ResourceGroupName $SourceResourceGroup -ErrorAction Stop
     $vnet2 = Get-AzVirtualNetwork -Name $DestVNetName -ResourceGroupName $DestResourceGroup -ErrorAction Stop
 

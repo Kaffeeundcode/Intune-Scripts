@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Retrieves statistics from Attack Simulation Training (Phishing usage).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Reports on the latest simulation runs: Setup status, payload used, and compromise rate.
     Requires 'Attack Simulation Administrator' roles or equivalent.
 

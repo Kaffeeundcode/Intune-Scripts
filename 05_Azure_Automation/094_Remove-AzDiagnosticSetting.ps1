@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Entfernt eine Diagnostic Setting Konfiguration von einer Ressource.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Bereinigt alte Log-Forwarding Regeln.
-    
+
     Parameter:
     - ResourceId: ID der Azure Ressource
     - Name: Name des Diagnostic Settings
@@ -24,7 +30,7 @@ try {
     Write-Host "Entferne Diagnostic Setting '$Name'..." -ForegroundColor Cyan
 
     Remove-AzDiagnosticSetting -ResourceId $ResourceId -Name $Name -ErrorAction Stop
-    
+
     Write-Host "Setting entfernt." -ForegroundColor Green
 
 } catch {

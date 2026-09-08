@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Reports on Mobile Application Management (MAM) Policy deployments (App Protection).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     App Protection Policies (MAM) are applied to users, unlike MDM which is device centric.
     This script lists all App Protection Policies and shows the count of targeted users
     and compliance status (if available via summary).
@@ -31,12 +37,12 @@ $Report = @()
 foreach ($Pol in $ProtectionPolicies) {
     # Get deployment summary
     # The summary endpoint is often nested like managedAppPolicies/{id}/targetApps
-    
+
     $Apps = $null
     try {
         # Retrieve the specific casted object to get targeted apps
         # Depending on SDK version, might need specific Get-MgDeviceAppMgtManagedAppProtection...
-        
+
         # Generic approach using ID
         if ($Pol.Id) {
             # Attempt to get assigned apps

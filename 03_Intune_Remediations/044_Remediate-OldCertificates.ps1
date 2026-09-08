@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht abgelaufene Zertifikate aus dem 'Personal' Store.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Entfernt Zertifikate, die abgelaufen sind, um Warnmeldungen zu vermeiden.
     VORSICHT: Nur für abgelaufene Zertifikate!
 
@@ -15,14 +21,14 @@
 
 try {
     $Expired = Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object { $_.NotAfter -lt (Get-Date) }
-    
+
     if ($Expired) {
         foreach ($cert in $Expired) {
             Write-Host "Lösche $($cert.Subject) (Exp: $($cert.NotAfter))"
             Remove-Item -Path $cert.PSPath -Force
         }
     }
-    
+
     Write-Host "Bereinigung beendet."
 
 } catch {

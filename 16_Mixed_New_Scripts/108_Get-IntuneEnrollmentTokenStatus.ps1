@@ -1,14 +1,20 @@
-<#
+﻿<#
 .SYNOPSIS
     Checks the status and expiration of Enrollment Tokens (DEM, Apple VPP, DEP, Android).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Consolidated report for all "expiring" infrastructure tokens in Intune.
     - Device Enrollment Managers (Limit 1000)
     - Apple Push Certificate (APNS)
     - Apple VPP Tokens
     - Android Managed Google Play
-    
+
     Returns "DaysRemaining" to allow for alerting.
 
 .NOTES

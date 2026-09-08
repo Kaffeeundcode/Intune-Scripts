@@ -1,13 +1,19 @@
-<#
+﻿<#
 .SYNOPSIS
     Creates a local Windows Scheduled Task to run weekly maintenance (Cleanup).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Useful for deploying via Intune as a "Script" to ensure clients self-maintain.
     Task Actions:
     - Clear Temp
     - Windows Update Cleanup (Dism)
-    
+
     Runs as SYSTEM.
 
 .NOTES

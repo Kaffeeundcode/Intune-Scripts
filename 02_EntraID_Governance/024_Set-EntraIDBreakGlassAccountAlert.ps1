@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine Log Analytics Alert Rule für Login-Versuche des Break-Glass Accounts.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Der "Notfall-Admin" (Break Glass) sollte niemals genutzt werden. Wenn doch, muss sofort Alarm geschlagen werden.
     Dieses Skript erstellt eine Alert Rule in Azure Monitor.
 
@@ -27,7 +33,7 @@ SigninLogs
 | where UserPrincipalName == '$BreakGlassUPN'
 | where ResultType == 0
 "@
-    
+
     Write-Host "Diesen Query bitte in Azure Monitor als Alert anlegen:" -ForegroundColor Cyan
     Write-Host $Query -ForegroundColor Yellow
     Write-Host "`n(Automatisches Erstellen von Alert Rules erfordert komplexes JSON-Template, daher hier Query-Output)"

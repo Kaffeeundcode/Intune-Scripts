@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft Ablaufdaten von Secrets und Zertifikaten bei App Registrations.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle Apps auf, deren Credentials in den nächsten X Tagen ablaufen.
 
     Parameter:
@@ -20,7 +26,7 @@ param (
 
 try {
     Write-Host "Suche Apps mit bald ablaufenden Secrets (< $DaysWarning Tage)..." -ForegroundColor Cyan
-    
+
     $Apps = Get-MgApplication -All
     $Cutoff = (Get-Date).AddDays($DaysWarning)
 
@@ -31,7 +37,7 @@ try {
                 Write-Warning "App '$($app.DisplayName)' - Secret KeyId $($cred.KeyId) läuft ab am: $($cred.EndDateTime)"
             }
         }
-        
+
         # Prüfe KeyCredentials (Certs)
         foreach ($cert in $app.KeyCredentials) {
             if ($cert.EndDateTime -lt $Cutoff) {

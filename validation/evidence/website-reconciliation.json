@@ -1,0 +1,230 @@
+{
+  "checked_at": "2026-09-08T08:28:44.370Z",
+  "source": "https://www.kaffeeundcode.com/wp-json/wp/v2/scripts",
+  "live_count": 535,
+  "matched_existing": 500,
+  "additional_live_entries": [
+    {
+      "slug": "000_teamstelephonyhelper",
+      "url": "https://www.kaffeeundcode.com/scripts/000_teamstelephonyhelper/",
+      "title": "TeamsTelephonyHelper",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "99_export-fulltenantconfig",
+      "url": "https://www.kaffeeundcode.com/scripts/99_export-fulltenantconfig/",
+      "title": "Export FullTenantConfig",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "97_install-intunemodule",
+      "url": "https://www.kaffeeundcode.com/scripts/97_install-intunemodule/",
+      "title": "Install IntuneModule",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "96_watch-enrollmentloop",
+      "url": "https://www.kaffeeundcode.com/scripts/96_watch-enrollmentloop/",
+      "title": "Watch EnrollmentLoop",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "95_remove-alluserdevices",
+      "url": "https://www.kaffeeundcode.com/scripts/95_remove-alluserdevices/",
+      "title": "Remove AllUserDevices",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "94_copy-intunepolicy",
+      "url": "https://www.kaffeeundcode.com/scripts/94_copy-intunepolicy/",
+      "title": "Copy IntunePolicy",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "93_invoke-companyportalsync",
+      "url": "https://www.kaffeeundcode.com/scripts/93_invoke-companyportalsync/",
+      "title": "Invoke CompanyPortalSync",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "92_clear-intunedevicecache",
+      "url": "https://www.kaffeeundcode.com/scripts/92_clear-intunedevicecache/",
+      "title": "Clear IntuneDeviceCache",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "91_get-intunestats",
+      "url": "https://www.kaffeeundcode.com/scripts/91_get-intunestats/",
+      "title": "Get IntuneStats",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "100_readme-welcome",
+      "url": "https://www.kaffeeundcode.com/scripts/100_readme-welcome/",
+      "title": "ReadMe Welcome",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "90_get-graphchangelog",
+      "url": "https://www.kaffeeundcode.com/scripts/90_get-graphchangelog/",
+      "title": "Get GraphChangelog",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "89_restore-deleteditem",
+      "url": "https://www.kaffeeundcode.com/scripts/89_restore-deleteditem/",
+      "title": "Restore DeletedItem",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "88_get-deleteditems",
+      "url": "https://www.kaffeeundcode.com/scripts/88_get-deleteditems/",
+      "title": "Get DeletedItems",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "87_global-graphsearch",
+      "url": "https://www.kaffeeundcode.com/scripts/87_global-graphsearch/",
+      "title": "Global GraphSearch",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "86_import-intunejson",
+      "url": "https://www.kaffeeundcode.com/scripts/86_import-intunejson/",
+      "title": "Import IntuneJSON",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "85_export-intunejson",
+      "url": "https://www.kaffeeundcode.com/scripts/85_export-intunejson/",
+      "title": "Export IntuneJSON",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "84_batch-importdevices",
+      "url": "https://www.kaffeeundcode.com/scripts/84_batch-importdevices/",
+      "title": "Batch ImportDevices",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "83_get-graphtoken",
+      "url": "https://www.kaffeeundcode.com/scripts/83_get-graphtoken/",
+      "title": "Get GraphToken",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "82_invoke-graphrequest",
+      "url": "https://www.kaffeeundcode.com/scripts/82_invoke-graphrequest/",
+      "title": "Invoke GraphRequest",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "81_connect-intunegraph",
+      "url": "https://www.kaffeeundcode.com/scripts/81_connect-intunegraph/",
+      "title": "Connect IntuneGraph",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "80_get-aaddevicestatus",
+      "url": "https://www.kaffeeundcode.com/scripts/80_get-aaddevicestatus/",
+      "title": "Get AADDeviceStatus",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "79_un-joinhybridazuread",
+      "url": "https://www.kaffeeundcode.com/scripts/79_un-joinhybridazuread/",
+      "title": "Un JoinHybridAzureAD",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "78_reset-companyportal",
+      "url": "https://www.kaffeeundcode.com/scripts/78_reset-companyportal/",
+      "title": "Reset CompanyPortal",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "77_check-autopilotprerequisites",
+      "url": "https://www.kaffeeundcode.com/scripts/77_check-autopilotprerequisites/",
+      "title": "Check AutopilotPrerequisites",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "76_get-intunemanagementextensionlog",
+      "url": "https://www.kaffeeundcode.com/scripts/76_get-intunemanagementextensionlog/",
+      "title": "Get IntuneManagementExtensionLog",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "74_force-intunesync_clientside",
+      "url": "https://www.kaffeeundcode.com/scripts/74_force-intunesync_clientside/",
+      "title": "Force IntuneSync ClientSide",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "73_restart-intunemanagementextension",
+      "url": "https://www.kaffeeundcode.com/scripts/73_restart-intunemanagementextension/",
+      "title": "Restart IntuneManagementExtension",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "69_get-roleassignments",
+      "url": "https://www.kaffeeundcode.com/scripts/69_get-roleassignments/",
+      "title": "Get RoleAssignments",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "68_list-adminroles",
+      "url": "https://www.kaffeeundcode.com/scripts/68_list-adminroles/",
+      "title": "List AdminRoles",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "62_rotate-bitlockerkey",
+      "url": "https://www.kaffeeundcode.com/scripts/62_rotate-bitlockerkey/",
+      "title": "Rotate BitLockerKey",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "60_get-osversiondistribution",
+      "url": "https://www.kaffeeundcode.com/scripts/60_get-osversiondistribution/",
+      "title": "Get OSVersionDistribution",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "58_get-appinstallreport",
+      "url": "https://www.kaffeeundcode.com/scripts/58_get-appinstallreport/",
+      "title": "Get AppInstallReport",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "57_get-intuneservicehealth",
+      "url": "https://www.kaffeeundcode.com/scripts/57_get-intuneservicehealth/",
+      "title": "Get IntuneServiceHealth",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "55_export-auditlogs",
+      "url": "https://www.kaffeeundcode.com/scripts/55_export-auditlogs/",
+      "title": "Export AuditLogs",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    },
+    {
+      "slug": "51_get-recentauditlogs",
+      "url": "https://www.kaffeeundcode.com/scripts/51_get-recentauditlogs/",
+      "title": "Get RecentAuditLogs",
+      "action": "Preserve existing page; not part of the current 510-script manifest."
+    }
+  ],
+  "new_scripts": [
+    "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
+    "17_Intune_Workflows/352_Resolve-IntuneAssignmentForDevice.ps1",
+    "17_Intune_Workflows/353_Export-IntuneConfigurationSnapshot.ps1",
+    "17_Intune_Workflows/354_Compare-IntuneConfigurationSnapshot.ps1",
+    "17_Intune_Workflows/355_Test-IntuneWin32AppDetection.ps1",
+    "17_Intune_Workflows/356_Test-IntuneWin32PackageFolder.ps1",
+    "17_Intune_Workflows/357_Get-IntuneWin32AppRelationshipGraph.ps1",
+    "17_Intune_Workflows/358_Get-IntuneUpdateRolloutReport.ps1",
+    "17_Intune_Workflows/359_Test-IntuneAutopilotReadiness.ps1",
+    "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1"
+  ]
+}

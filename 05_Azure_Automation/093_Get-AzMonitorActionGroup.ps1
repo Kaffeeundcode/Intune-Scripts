@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Action Groups (Alarm-Empfänger) auf.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, wer benachrichtigt wird (Email, SMS, Webhook), wenn ein Alert feuert.
-    
+
     Parameter:
     - ResourceGroupName: (Optional)
 
@@ -23,7 +29,7 @@ try {
 
     foreach ($g in $Groups) {
         Write-Host "Action Group: $($g.GroupShortName) ($($g.Enabled))" -ForegroundColor Yellow
-        
+
         foreach ($r in $g.EmailReceivers) { Write-Host " - Email: $($r.EmailAddress)" }
         foreach ($s in $g.SmsReceivers)   { Write-Host " - SMS:   $($s.PhoneNumber)" }
         foreach ($w in $g.WebhookReceivers){ Write-Host " - Hook:  $($w.ServiceUri)" }

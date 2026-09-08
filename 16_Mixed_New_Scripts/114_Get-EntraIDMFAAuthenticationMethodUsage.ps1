@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Reports on the distribution of MFA methods registered by users.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Analyzes which authentication methods users have registered (Microsoft Authenticator, SMS, Phone, FIDO2).
     Helpful for driving migration from SMS to Authenticator App.
 

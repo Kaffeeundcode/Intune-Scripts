@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all Azure Policy Exemptions in the subscription.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Exemptions act as "Get out of jail free" cards for compliance.
     This script audits all exemptions to ensure they are still valid/necessary.
 

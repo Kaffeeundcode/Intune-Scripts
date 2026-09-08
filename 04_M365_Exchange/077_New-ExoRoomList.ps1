@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine Room List und fügt Räume hinzu.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Room Lists helfen im Outlook "Room Finder", Räume nach Standort/Gebäude zu gruppieren.
-    
+
     Parameter:
     - ListName: Name der Liste (z.B. "Gebäude A")
     - ListEmail: E-Mail der Liste
@@ -26,14 +32,14 @@ try {
     Write-Host "Erstelle Room List '$ListName'..." -ForegroundColor Cyan
 
     New-DistributionGroup -Name $ListName -DisplayName $ListName -PrimarySmtpAddress $ListEmail -RoomList -ErrorAction Stop
-    
+
     if ($Rooms) {
         Write-Host "Füge Räume hinzu..."
         foreach ($r in $Rooms) {
             Add-DistributionGroupMember -Identity $ListEmail -Member $r -ErrorAction SilentlyContinue
         }
     }
-    
+
     Write-Host "Room List erstellt." -ForegroundColor Green
 
 } catch {

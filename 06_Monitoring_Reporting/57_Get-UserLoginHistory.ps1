@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft Anmeldehistorie (Sign-Ins) ab (Azure AD).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt letzte Anmeldungen an. Achtung: Benötigt hohe Rechte!
     Erfordert die Berechtigung 'AuditLog.Read.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt einen Azure Bastion Host für sicheren VM-Zugriff.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Azure Bastion ermöglicht RDP/SSH-Zugriff über SSL ohne Public IPs an den VMs.
     Dieses Skript erstellt den Bastion Host inkl. Public IP.
     Benötigt ein Subnetz namens 'AzureBastionSubnet' (min. /26).

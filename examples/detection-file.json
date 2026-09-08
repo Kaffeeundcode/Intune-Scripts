@@ -1,0 +1,7 @@
+[
+  {
+    "type": "fileVersion",
+    "path": "%ProgramFiles%\\7-Zip\\7zFM.exe",
+    "minimumVersion": "26.1.0.0"
+  }
+]

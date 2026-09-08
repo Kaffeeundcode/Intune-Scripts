@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Status (Enabled/Disabled/ReportOnly) von CA Policies.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Schnelle Übersicht über aktive vs. inaktive Regeln.
     Erfordert die Berechtigung 'Policy.Read.All'.
 

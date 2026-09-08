@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Versucht, Intune Management Extension (IME) Probleme zu beheben.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Restartet Dienst (lokales Skript, kein Graph).
     Dies muss auf dem Client ausgeführt werden.
 

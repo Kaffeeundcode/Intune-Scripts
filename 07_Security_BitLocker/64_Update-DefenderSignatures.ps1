@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktualisiert Defender-Signaturen (Remote Action).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sendet den Befehl zum Signatur-Update an das Gerät.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

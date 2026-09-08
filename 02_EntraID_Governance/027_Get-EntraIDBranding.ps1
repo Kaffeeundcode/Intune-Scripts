@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lädt die aktuellen Branding-Einstellungen des Tenants herunter.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Exportiert Informationen wie Hintergrundbild-URL, Logo, Sign-In Text etc.
     Dient zur Dokumentation des Corporate Identitiy Status.
 

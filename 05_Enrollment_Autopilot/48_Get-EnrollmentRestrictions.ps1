@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Einschränkungen für die Geräteregistrierung auf (Enrollment Restrictions).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, welche Plattformen und Versionen blockiert oder erlaubt sind.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

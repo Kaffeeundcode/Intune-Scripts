@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Führt einen rohen Graph-Request aus.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Wrapper um Invoke-MgGraphRequest für benutzerdefinierte Abfragen.
     Flexibel für alle Endpunkte.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Audits 3rd party apps installed in Teams and their permissions.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lists all Apps installed in Teams (Tenant-wide automation).
     It checks if they are blocked or allowed by tenant settings.
 
@@ -26,13 +32,13 @@ $Report = @()
 
 foreach ($Team in $Teams) {
     try {
-        $Apps = Get-MgTeamCandidateTeamsApp -TeamId $Team.Id -ErrorAction SilentlyContinue 
+        $Apps = Get-MgTeamCandidateTeamsApp -TeamId $Team.Id -ErrorAction SilentlyContinue
         # Or Get-MgTeamInstalledApp
         $Installed = Get-MgTeamInstalledApp -TeamId $Team.Id -ExpandProperty "teamsAppDefinition"
-        
+
         foreach ($App in $Installed) {
             $Def = $App.TeamsAppDefinition
-            
+
             # Filter non-Microsoft
             if ($Def.PublishingState -ne "published") { # Custom apps often
                 $Type = "Custom/Sideloaded"
@@ -41,7 +47,7 @@ foreach ($Team in $Teams) {
             } else {
                 $Type = "Third Party"
             }
-            
+
             $Report += [PSCustomObject]@{
                 Team = $Team.DisplayName
                 AppName = $Def.DisplayName

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Reports on the SharePoint storage usage for M365 Groups (Teams/Groups).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Queries the associated SharePoint site for each Unified Group and reports Used Storage vs Quota.
     Top 20 consumers are displayed.
 
@@ -20,7 +26,7 @@ try {
 }
 
 Write-Host "Getting M365 Group Sites..." -ForegroundColor Cyan
-$Sites = Get-MgSite -Filter "siteCollection/root ne null" -All 
+$Sites = Get-MgSite -Filter "siteCollection/root ne null" -All
 # Note: Filtering for group-connected sites is strictly not just root!=null, but we'll sort.
 
 $Report = @()
@@ -30,13 +36,13 @@ foreach ($Site in $Sites) {
     # We will get Usage info
     $Usage = Get-MgSiteUsageDetail -SiteId $Site.Id -ErrorAction SilentlyContinue
     # Graph API varies on Usage endpoint availability per permission level (Reports.Read.All preferred for usage)
-    
+
     # Fallback: Just basic site object properties if usage endpoint fails or is separate report
     # We use the webUrl to infer group connection context or try to match with groups
-    
+
     # Simpler approach: Get-MgGroup -> Get-MgGroupDrive (Default Drive) -> Quota
-    
-} 
+
+}
 
 # Alternative Iteration: Group Centric
 $Groups = Get-MgGroup -Filter "groupTypes/any(g:g eq 'Unified')" -All
@@ -47,7 +53,7 @@ foreach ($Grp in $Groups) {
              $UsedGB = [math]::Round($Drive.Quota.Used / 1GB, 2)
              $TotalGB = [math]::Round($Drive.Quota.Total / 1GB, 2)
              $Percent = if ($TotalGB -gt 0) { [math]::Round(($UsedGB / $TotalGB) * 100, 1) } else { 0 }
-             
+
              $Report += [PSCustomObject]@{
                  GroupName = $Grp.DisplayName
                  SiteUrl   = $Drive.WebUrl

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet Gruppen ohne Besitzer (Orphaned Groups).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Durchsucht alle Gruppen und prüft, ob die Owner-Liste leer ist.
     Erfordert die Berechtigung 'Group.Read.All'.
 

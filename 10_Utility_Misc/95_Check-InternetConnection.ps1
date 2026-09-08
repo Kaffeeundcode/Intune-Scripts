@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft Internetverbindung zu MS Graph.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ping / Test-Connection zu graph.microsoft.com.
-    
+
 .NOTES
     File Name: 95_Check-InternetConnection.ps1
     Author: Mattia Cirillo

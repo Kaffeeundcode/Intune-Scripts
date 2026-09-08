@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Fügt einen Owner zu einer Gruppe hinzu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Macht einen User zum Besitzer einer Gruppe.
     Erfordert die Berechtigung 'Group.ReadWrite.All'.
 

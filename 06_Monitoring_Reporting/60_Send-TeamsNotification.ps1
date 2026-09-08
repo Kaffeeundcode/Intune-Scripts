@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Sendet eine Teams-Benachrichtigung (via Webhook).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sendet JSON Payload an einen Incoming Webhook. Nützlich für Alerts aus Skripten.
-    
+
 .NOTES
     File Name: 60_Send-TeamsNotification.ps1
     Author: Mattia Cirillo

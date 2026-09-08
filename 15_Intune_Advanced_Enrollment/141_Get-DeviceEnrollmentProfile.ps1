@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Device Enrollment Profile auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Profile für DEP (Apple) oder Corporate Owned Devices.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

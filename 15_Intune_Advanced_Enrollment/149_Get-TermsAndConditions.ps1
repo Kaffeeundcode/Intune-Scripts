@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Nutzungsbedingungen (Terms and Conditions) auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt alle T&C Policies im Tenant an.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet VPP Tokens (Apple Volume Purchase Program) auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Status und Ablaufdatum von VPP Token.
     Erfordert die Berechtigung 'DeviceManagementApps.Read.All'.
 

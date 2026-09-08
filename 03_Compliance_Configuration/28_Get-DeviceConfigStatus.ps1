@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt den Status von Konfigurationsprofilen auf einem Gerät.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Analysiert, welche Config-Profile erfolgreich angewendet wurden oder Fehler melden.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

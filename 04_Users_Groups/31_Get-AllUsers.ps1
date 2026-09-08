@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Benutzer im Tenant auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft alle Azure AD Benutzer ab.
     Erfordert die Berechtigung 'User.Read.All'.
 

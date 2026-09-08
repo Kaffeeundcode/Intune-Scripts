@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktualisiert das Microsoft.Graph Modul.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Führt Update-Module aus.
-    
+
 .NOTES
     File Name: 97_Update-IntuneModule.ps1
     Author: Mattia Cirillo

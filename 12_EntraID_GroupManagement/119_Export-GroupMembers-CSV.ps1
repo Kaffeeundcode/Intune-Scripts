@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert Gruppenmitglieder in CSV.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Liest alle Member und speichert sie.
     Erfordert die Berechtigung 'GroupMember.Read.All'.
 

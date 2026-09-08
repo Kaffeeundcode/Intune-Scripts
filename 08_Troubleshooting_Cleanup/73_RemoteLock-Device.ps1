@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Sperrt ein Gerät remote.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sendet 'Remote Lock' Befehl.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

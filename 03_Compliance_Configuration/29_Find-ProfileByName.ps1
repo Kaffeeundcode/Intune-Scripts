@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Sucht ein Konfigurationsprofil nach Name.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft, die ID eines Profils zu finden, wenn man nur den Namen kennt.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

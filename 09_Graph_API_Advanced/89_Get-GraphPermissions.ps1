@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Sucht nötige Permissions für eine Aktion.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Find-MgGraphCommand hilft, die nötigen Scopes zu finden.
-    
+
 .NOTES
     File Name: 89_Get-GraphPermissions.ps1
     Author: Mattia Cirillo

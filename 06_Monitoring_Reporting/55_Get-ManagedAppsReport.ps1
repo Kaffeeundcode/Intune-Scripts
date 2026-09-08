@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Bericht über verwaltete Apps.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle Apps und deren Installationszahlen (grob) auf, sofern verfügbar.
     Erfordert die Berechtigung 'DeviceManagementApps.Read.All'.
 

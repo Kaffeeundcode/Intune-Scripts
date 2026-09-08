@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Backup aller CA Policies (JSON).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Exportiert jede Policy als JSON.
     Erfordert die Berechtigung 'Policy.Read.All'.
 

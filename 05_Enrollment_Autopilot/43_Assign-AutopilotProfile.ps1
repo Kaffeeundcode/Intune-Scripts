@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Weist einem Autopilot-Gerät ein Deployment-Profil zu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Bekannte Fehler
+    Setzt Statusfelder statt einer gruppenbasierten Profilzuweisung; nicht ausfuehren.
+
+    <!-- library-status:end -->
+
     Verknüpft ein Autopilot-Gerät (via ID) mit einem spezifischen Profil.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.ReadWrite.All'.
 
@@ -26,7 +32,7 @@ try {
     # Assign operations are usually done via AssignUserToDevice or by letting the dynamic group handling it.
     # Direct assignment via Graph: windowsAutopilotDeviceIdentity/{id}/assignUserToDevice
     # But profile assignment is usually group based. Direct profile assignment to device identity is: update identity object.
-    
+
     Update-MgDeviceManagementWindowsAutopilotDeviceIdentity -WindowsAutopilotDeviceIdentityId $AutopilotDeviceId -DeploymentProfileAssignedDateTime (Get-Date) -DeploymentProfileAssignmentStatus "assigned"
     # Actually, you set the GroupTag usually to match a dynamic group, OR direct assign.
     Write-Warning "Profilzuweisung erfolgt in der Regel über dynamische Gruppen (Group Tag)."

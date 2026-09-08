@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Simulates or enforces cleanup of M365 Groups based on custom criteria (pseudo-Lifecycle Policy).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Finds Unified Groups (Teams/SharePoint) that have not been renewed or active.
     This is for tenants WITHOUT P1/P2 licenses for automatic Lifecycle Policies.
-    
+
     Checks: RenewedDateTime (if available) or CreatedDateTime.
     Action: Soft Delete (Move to Deleted Items) if -Confirm is passed.
 
@@ -35,13 +41,13 @@ $Today = Get-Date
 foreach ($Grp in $Groups) {
     # Prefer RenewedDate, fallback to CreatedDate
     $RefDate = if ($Grp.RenewedDateTime) { $Grp.RenewedDateTime } else { $Grp.CreatedDateTime }
-    
+
     if ($RefDate) {
         $Age = ($Today - $RefDate).Days
-        
+
         if ($Age -gt $DaysLimit) {
             Write-Host "Expired: $($Grp.DisplayName) (Age: $Age days)" -ForegroundColor Red
-            
+
             if ($WhatIf) {
                 Write-Host " [WhatIf] Would delete group $($Grp.Id)" -ForegroundColor Gray
             } else {
@@ -49,7 +55,7 @@ foreach ($Grp in $Groups) {
                 # Commented out for safety in default run
                 Write-Warning "Deletion requires uncommenting line in script. Showing as detected only."
             }
-            
+
             $Report += [PSCustomObject]@{
                 Group = $Grp.DisplayName
                 Id = $Grp.Id

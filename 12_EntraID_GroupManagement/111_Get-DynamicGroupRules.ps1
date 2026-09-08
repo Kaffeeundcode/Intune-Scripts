@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt die Regeln einer dynamischen Gruppe an.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Liest die "membershipRule" Property von dynamischen AAD-Gruppen aus.
     Erfordert die Berechtigung 'Group.Read.All'.
 

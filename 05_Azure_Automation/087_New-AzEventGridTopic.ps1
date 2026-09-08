@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein neues Custom Event Grid Topic.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Event Grid ermöglicht ereignisbasierte Architekturen.
-    
+
     Parameter:
     - ResourceGroupName: RG Name
     - TopicName: Name des Topics

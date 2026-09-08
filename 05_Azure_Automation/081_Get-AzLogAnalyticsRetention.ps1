@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft die Aufbewahrungsdauer (Retention) von Log Analytics Workspaces.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Eine zu lange Retention kann hohe Kosten verursachen.
     Dieses Skript listet alle Workspaces und deren Retention in Tagen auf.
 
@@ -16,12 +22,12 @@ try {
     Write-Host "Prüfe Log Analytics Workspaces..." -ForegroundColor Cyan
 
     $Workspaces = Get-AzOperationalInsightsWorkspace
-    
+
     foreach ($ws in $Workspaces) {
         Write-Host "Workspace: $($ws.Name) (RG: $($ws.ResourceGroupName))" -ForegroundColor Yellow
         Write-Host " - Retention: $($ws.RetentionInDays) Tage"
         Write-Host " - Sku:       $($ws.Sku)"
-        
+
         if ($ws.RetentionInDays -gt 365) {
             Write-Warning "   ACHTUNG: Retention > 1 Jahr! Kosten prüfen."
         }

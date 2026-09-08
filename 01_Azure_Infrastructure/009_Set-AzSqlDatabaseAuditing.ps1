@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktiviert das Blob-Auditing für einen Azure SQL Server.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktiviert Auditing für einen gesamten logischen SQL Server und speichert die Audit-Logs in einem Storage Account.
     Dies ist wichtig für Compliance und Security-Überwachung.
 
@@ -31,13 +37,13 @@ try {
     $StorageEndpoint = $Storage.PrimaryEndpoints.Blob
 
     Write-Host "Aktiviere Auditing..." -ForegroundColor Cyan
-    
+
     Set-AzSqlServerAudit -ResourceGroupName $ResourceGroupName `
                          -ServerName $ServerName `
                          -BlobStorageTargetState Enabled `
                          -StorageAccountResourceId $Storage.Id `
                          -ErrorAction Stop | Out-Null
-                         
+
     Write-Host "Auditing für '$ServerName' erfolgreich auf '$StorageAccountName' aktiviert." -ForegroundColor Green
 
 } catch {

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt neue Nutzungsbedingungen.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Legt eine Terms & Conditions Policy an, die Nutzer akzeptieren müssen.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.ReadWrite.All'.
 

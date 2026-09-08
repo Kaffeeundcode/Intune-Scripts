@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Verschickt eine E-Mail (via Graph).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sendet eine Mail aus dem Postfach des angemeldeten Users.
     Erfordert die Berechtigung 'Mail.Send'.
 

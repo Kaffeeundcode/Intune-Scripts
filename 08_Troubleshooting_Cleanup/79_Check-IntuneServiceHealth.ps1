@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Service Health Status.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Prüft, ob Intune Störungen hat (via Graph ServiceAnnouncement).
     Erfordert die Berechtigung 'ServiceHealth.Read.All'.
 

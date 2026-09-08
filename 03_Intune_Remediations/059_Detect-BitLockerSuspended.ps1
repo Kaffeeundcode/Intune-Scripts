@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob der BitLocker-Schutz angehalten (suspended) ist.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     NonCompliant, wenn ProtectionStatus 'Off' ist auf Laufwerk C:.
 
 .NOTES
@@ -14,7 +20,7 @@
 
 try {
     $Status = Get-BitLockerVolume -MountPoint "C:" -ErrorAction Stop
-    
+
     if ($Status.ProtectionStatus -eq "Off") {
         Write-Host "NonCompliant (BitLocker Suspended/Off)"
         exit 1

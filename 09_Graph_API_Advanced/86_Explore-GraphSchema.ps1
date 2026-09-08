@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erforscht das Graph-Schema (Metadata).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lädt das $metadata Dokument (CSDL) herunter, um verfügbare Properties zu sehen.
-    
+
 .NOTES
     File Name: 86_Explore-GraphSchema.ps1
     Author: Mattia Cirillo

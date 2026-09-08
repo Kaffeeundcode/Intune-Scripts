@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob eine Applikation in einer veralteten Version installiert ist.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Verleicht DisplayVersion aus der Registry mit einer Mindestversion.
 
     Parameter:
@@ -24,7 +30,7 @@ param (
 try {
     # Suche in Uninstall Keys (32 und 64 bit)
     $Paths = @("HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*", "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*")
-    
+
     $Installed = Get-ItemProperty -Path $Paths -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like "*$AppName*" }
 
     if (-not $Installed) {
@@ -33,7 +39,7 @@ try {
     }
 
     $CurrentVersion = [version]$Installed.DisplayVersion
-    
+
     if ($CurrentVersion -lt $MinVersion) {
         Write-Host "NonCompliant (Ist: $CurrentVersion, Soll: $MinVersion)"
         exit 1

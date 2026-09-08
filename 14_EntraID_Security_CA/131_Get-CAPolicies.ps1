@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Conditional Access Policies auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft alle bedingten Zugriffsregeln ab.
     Erfordert die Berechtigung 'Policy.Read.All'.
 

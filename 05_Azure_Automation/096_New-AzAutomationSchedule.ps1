@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt einen Zeitplan (Schedule) in Azure Automation.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Schedules triggern Runbooks zu bestimmten Zeiten.
-    
+
     Parameter:
     - Name: Schedule Name
     - StartTime: Wann geht es los?
@@ -33,7 +39,7 @@ try {
                              -StartTime $StartTime `
                              -DayInterval $DaysInterval `
                              -ErrorAction Stop | Out-Null
-                             
+
     Write-Host "Schedule erstellt." -ForegroundColor Green
 
 } catch {

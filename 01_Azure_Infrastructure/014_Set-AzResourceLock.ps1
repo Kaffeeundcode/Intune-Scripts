@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt einen 'CanNotDelete'-Lock auf kritische Ressourcen, um versehentliches Löschen zu verhindern.
 
 .DESCRIPTION
-    Resource Locks sind ein wichtiger Schutzmechanismus. 
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Resource Locks sind ein wichtiger Schutzmechanismus.
     Dieses Skript setzt einen Lock auf eine Ressourcengruppe oder eine spezifische Ressource.
 
     Parameter:
@@ -41,7 +47,7 @@ try {
                            -ResourceGroupName $ResourceGroupName `
                            -Force -ErrorAction Stop | Out-Null
     }
-    
+
     Write-Host "Lock '$LockName' erfolgreich gesetzt." -ForegroundColor Green
 
 } catch {

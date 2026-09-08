@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Konfiguriert die Junk-Email Konfiguration für einen Benutzer.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktiviert/Deaktiviert Junk-Filter und fügt Safe Senders hinzu.
 
     Parameter:
@@ -24,14 +30,14 @@ param (
 
 try {
     Write-Host "Konfiguriere Junk Email für '$Identity'..." -ForegroundColor Cyan
-    
+
     Set-MailboxJunkEmailConfiguration -Identity $Identity -Enabled $EnableJunkConfig -ErrorAction Stop
-    
+
     if ($TrustedSenders) {
         Write-Host "Füge Trusted Senders hinzu..."
         Set-MailboxJunkEmailConfiguration -Identity $Identity -TrustedSendersAndDomains @{Add=$TrustedSenders} -ErrorAction Stop
     }
-    
+
     Write-Host "Konfiguration abgeschlossen." -ForegroundColor Green
 
 } catch {

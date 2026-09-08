@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Suggests Usage Location updates for users based on their recent successful sign-in IP.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Users in Entra ID need a UsageLocation to be assigned licenses.
     This script looks at the last successful interactive sign-in, determines the country from
     the IP address (via Graph Sign-in logs), and suggests setting the UsageLocation.
-    
+
     Use -Confirm to apply.
 
 .NOTES
@@ -36,16 +42,16 @@ $Updates = @()
 foreach ($User in $Users) {
     # Get last successful sign-in
     $Logs = Get-MgAuditLogSignIn -Filter "userPrincipalName eq '$($User.UserPrincipalName)' and status/errorCode eq 0" -Top 1
-    
+
     if ($Logs) {
         $Country = $Logs.Location.CountryOrRegion
         if ($Country -and $Country.Length -eq 2) {
              # Graph usually returns 2-letter ISO code in location.countryOrRegion e.g. "US", "DE"
              # Sometimes it's full name. We need 2-letter for UsageLocation.
-             
+
              # Caution: Graph 'Location' object format varies. Verify.
              # Often it is strictly 2 chars.
-             
+
              $Updates += [PSCustomObject]@{
                  User = $User.UserPrincipalName
                  DetectedCountry = $Country

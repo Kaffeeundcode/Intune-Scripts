@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Triggered ein Azure Automation Runbook per Webhook.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ideal, um Runbooks von extern (z.B. Monitoring Tool, lokales Skript) zu starten.
     Startet den Webhook POST Request.
 
@@ -30,7 +36,7 @@ try {
     }
 
     $Response = Invoke-RestMethod -Method Post -Uri $WebhookUrl -Body $Body -ErrorAction Stop
-    
+
     Write-Host "Webhook getriggert. Job ID: $($Response.JobIds[0])" -ForegroundColor Green
 
 } catch {

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Enrollment-Status eines bestimmten Geräts.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Validiert, ob ein Gerät sauber enrolled wurde oder im Fehlerstatus steht.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

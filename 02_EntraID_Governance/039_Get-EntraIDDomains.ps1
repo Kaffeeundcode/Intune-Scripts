@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle verifizierten Domains im Tenant auf.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Einfacher Report über alle Domains, ihren Status (Verified/Unverified) und Typ (Managed/Federated).
-    
+
     Parameter:
     - OnlyVerified: Zeigt nur verifizierte Domains.
 

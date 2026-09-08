@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Dupliziert eine vorhandene Compliance-Policy.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Erstellt eine Kopie einer Policy mit dem Suffix '_Copy'.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.ReadWrite.All'.
 

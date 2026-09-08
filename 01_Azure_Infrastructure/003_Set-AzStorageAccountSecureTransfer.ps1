@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktiviert 'Secure Transfer Required' für einen Azure Storage Account.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aus Sicherheitsgründen sollte für Storage Accounts immer "Secure Transfer Required" (HTTPS only) aktiviert sein.
     Dieses Skript setzt diese Einstellung für einen spezifischen Account.
 
@@ -25,7 +31,7 @@ try {
     Write-Host "Konfiguriere Storage Account '$StorageAccountName'..." -ForegroundColor Cyan
 
     $Account = Get-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageAccountName -ErrorAction Stop
-    
+
     if ($Account.EnableHttpsTrafficOnly -eq $true) {
         Write-Host " 'Secure Transfer' ist bereits AKTIVIERT." -ForegroundColor Yellow
     } else {

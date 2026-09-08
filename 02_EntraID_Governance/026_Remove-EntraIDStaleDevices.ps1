@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht verwaiste Geräte aus Entra ID (fka Azure AD) basierend auf dem 'ApproximateLastLogonTimeStamp'.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Entra ID Geräte müssen separat von Intune bereinigt werden.
     Dieses Skript identifiziert Geräte, die sich seit X Tagen nicht angemeldet haben.
-    
+
     ACHTUNG: Löscht Geräte unwiderruflich!
 
     Parameter:

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Security Baselines auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt verfügbare MDM Security Baselines im Tenant.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

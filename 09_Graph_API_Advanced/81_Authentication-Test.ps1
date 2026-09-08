@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Testet die Verbindung zu Microsoft Graph.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Prüft, ob ein gültiges Token ("Me"-Context) abgerufen werden kann.
     Erfordert die Berechtigung 'User.Read'.
 

@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Importiert ein lokales PowerShell-Skript als Runbook in Azure Automation.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Automatisierter Deployment-Prozess für Runbooks.
-    
+
     Parameter:
     - ResourceGroupName: RG Name
     - AutomationAccountName: Automation Account Name
@@ -37,7 +43,7 @@ try {
                                -AutomationAccountName $AutomationAccountName `
                                -ResourceGroupName $ResourceGroupName `
                                -Force -ErrorAction Stop | Out-Null
-    
+
     Write-Host "Veröffentliche Runbook..."
     Publish-AzAutomationRunbook -Name $RunbookName `
                                 -AutomationAccountName $AutomationAccountName `

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt meine Berechtigungen im detail.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Detaillierte Auflistung der Token-Scopes.
     Erfordert: User.Read.
 

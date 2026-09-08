@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob eine bestimmte Datei existiert.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Nützlich, um sicherzustellen, dass Config-Files oder Tools verteilt wurden.
 
     Parameter:

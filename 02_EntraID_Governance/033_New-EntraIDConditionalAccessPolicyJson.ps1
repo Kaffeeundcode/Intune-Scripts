@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert alle Conditional Access Policies als JSON-Dateien (Backup).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sichert die CA-Regelwerke lokal, um sie zu dokumentieren oder wiederherzustellen.
-    
+
     Parameter:
     - OutputFolder: Zielordner (Default: Desktop/CA-Backup)
 
@@ -20,18 +26,18 @@ param (
 
 try {
     if (-not (Test-Path $OutputFolder)) { New-Item $OutputFolder -ItemType Directory | Out-Null }
-    
+
     Write-Host "Exportiere CA Policies nach '$OutputFolder'..." -ForegroundColor Cyan
 
     $Policies = Get-MgIdentityConditionalAccessPolicy -All
-    
+
     foreach ($pol in $Policies) {
         $FileName = "$($pol.DisplayName)" -replace '[\\/*?:"<>|]', "_" # Sanitize Filename
-        $Json = $pol | ConvertTo-Json -Depth 10 
+        $Json = $pol | ConvertTo-Json -Depth 10
         $Json | Out-File "$OutputFolder\$FileName.json" -Encoding UTF8
         Write-Host " - $FileName.json"
     }
-    
+
     Write-Host "Export abgeschlossen ($($Policies.Count) Policies)." -ForegroundColor Green
 
 } catch {

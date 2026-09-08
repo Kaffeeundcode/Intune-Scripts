@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Sammelt Diagnoseprotokolle (Collect Diagnostics).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Remote Action: Fordert das Gerät auf, Logs hochzuladen.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

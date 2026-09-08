@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Mitglieder einer Gruppe auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt alle Benutzer (und Geräte), die Mitglied einer spezifischen Gruppe sind.
     Erfordert die Berechtigung 'GroupMember.Read.All'.
 

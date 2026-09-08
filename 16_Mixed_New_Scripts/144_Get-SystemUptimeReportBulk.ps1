@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Queries a list of remote computers (WMI/CIM) for their uptime.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Simple audit tool for Admin PCs.
     Input: List of computer names.
     Output: Boot time and Uptime days.
@@ -25,7 +31,7 @@ foreach ($Comp in $ComputerName) {
             $OS = Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName $Comp -ErrorAction Stop
             $Boot = $OS.LastBootUpTime
             $Uptime = (Get-Date) - $Boot
-            
+
             $Report += [PSCustomObject]@{
                 Computer = $Comp
                 BootTime = $Boot

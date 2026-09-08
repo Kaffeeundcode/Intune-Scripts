@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt an, welche Benutzer für Admin-Rollen "Berechtigt" (Eligible) sind (PIM).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Wichtig für PIM-Validierung. Zeigt nicht die aktiven, sondern die möglichen Rollen.
     Benötigt PIM-Rechte.
 
@@ -34,7 +40,7 @@ try {
     foreach ($assign in $Assignments) {
         # Role Definition auflösen
         $RoleDef = Get-MgBetaRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $assign.RoleDefinitionId
-        
+
         # Principal auflösen wenn nicht gefiltert
         $PrincipalName = $UserEmail
         if (-not $PrincipalName) {
@@ -47,7 +53,7 @@ try {
             Status = $assign.Status
             AssignmentType = $assign.DirectoryScopeId # "/" means Global
         }
-    } | Format-Table -AutoSize
+    }
 
 } catch {
     Write-Error "Fehler (Benötigt MG-Beta & PIM Rechte): $_"

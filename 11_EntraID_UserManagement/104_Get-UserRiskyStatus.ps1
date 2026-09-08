@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob Benutzer als "Risky Users" markiert sind (Identity Protection).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Benutzer mit hohem oder mittlerem Risiko-Level.
     Erfordert die Berechtigung 'IdentityRiskEvent.Read.All'.
 

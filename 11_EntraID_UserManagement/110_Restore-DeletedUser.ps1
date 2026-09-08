@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Stellt einen gelöschten Benutzer wieder her.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Holt einen Benutzer aus dem Papierkorb (Deleted Users) zurück.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 

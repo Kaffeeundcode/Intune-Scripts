@@ -1,0 +1,12 @@
+{
+  "TestedAt": "2026-09-08T08:33:22.1168870Z",
+  "PowerShell": "7.6.5",
+  "Platform": "Unix 27.0.0",
+  "SyntaxFiles": 510,
+  "SyntaxErrors": [],
+  "Passed": 25,
+  "Failed": 0,
+  "Skipped": 0,
+  "Result": "Passed",
+  "Scope": "Offline unit tests with mocked Graph/Teams. No tenant or app-installation proof."
+}

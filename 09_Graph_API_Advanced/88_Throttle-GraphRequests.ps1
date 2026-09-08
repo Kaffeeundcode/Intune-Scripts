@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Simuliert Throttling-Handling.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Beispielcode, wie man mit HTTP 429 (Too Many Requests) umgeht (Retry-After).
-    
+
 .NOTES
     File Name: 88_Throttle-GraphRequests.ps1
     Author: Mattia Cirillo

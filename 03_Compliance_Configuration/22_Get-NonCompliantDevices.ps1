@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet alle nicht-konformen (Non-Compliant) Geräte.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Filtert die Geräteliste nach dem Status 'nonCompliant'.
     Hilfreich für Reports und Alerts.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.

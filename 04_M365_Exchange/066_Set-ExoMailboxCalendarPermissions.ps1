@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt Kalenderberechtigungen für eine Mailbox.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Häufiger Anwendungsfall: Assistent/in benötigt Zugriff auf Kalender von Chef/in.
-    
+
     Parameter:
     - Identity: Mailbox (UPN)
     - User: Wer bekommt Zugriff?
@@ -25,10 +31,10 @@ param (
 try {
     # Kalender-Folder identifizieren (je nach Sprache "Calendar", "Kalender"...)
     # Get-ExoMailboxFolderStatistics wäre genau, aber für Add-MailboxFolderPermission reicht oft ":\Calendar" Alias
-    
+
     # Sicherer Weg: Folder abrufen
     $Calendar = Get-MailboxFolderStatistics -Identity $Identity -FolderScope Calendar | Where-Object { $_.FolderType -eq "Calendar" }
-    
+
     if (-not $Calendar) {
         throw "Kalenderordner nicht gefunden."
     }

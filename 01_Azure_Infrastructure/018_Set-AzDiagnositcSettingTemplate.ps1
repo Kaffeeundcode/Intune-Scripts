@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt Diagnostic Settings für eine Ressource (Logs an Log Analytics senden).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktiviert das Senden von Logs und Metriken an einen Log Analytics Workspace.
-    
+
     Parameter:
     - ResourceId: ID der Zielressource (z.B. KeyVault, NIC, LB)
     - WorkspaceId: ID des Log Analytics Workspace
@@ -24,13 +30,13 @@ param (
 
 try {
     Write-Host "Konfiguriere Diagnostic Settings für Ressource..." -ForegroundColor Cyan
-    
+
     Set-AzDiagnosticSetting -ResourceId $ResourceId `
                             -WorkspaceId $WorkspaceId `
                             -Name $SettingName `
                             -Enabled $true `
                             -ErrorAction Stop | Out-Null
-                            
+
     Write-Host "Diagnostic Setting '$SettingName' wurde erfolgreich aktiviert." -ForegroundColor Green
     Write-Host "Ziel: Workspace '$WorkspaceId'"
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Public IP Adressen auf und zeigt, wo sie verwendet werden.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft, verwaiste öffentliche IPs zu finden oder einen Überblick über die externen Zugriffspunkte zu bekommen.
     Zeigt IP-Adresse, DNS-Name und zugeordnete Ressource (NIC, Load Balancer, VPN Gateway).
 
@@ -29,7 +35,7 @@ try {
     }
 
     $Results = foreach ($pip in $PIPs) {
-        
+
         $Associated = "Nicht verbunden (Verwaist)"
         if ($pip.IpConfiguration) {
             # Z.B. Network Interface
@@ -38,7 +44,7 @@ try {
              $Associated = "IP Prefix"
         }
         # Erweiterte Prüfung für andere Ressourcen könnte hier erfolgen
-        
+
         [PSCustomObject]@{
             Name              = $pip.Name
             ResourceGroup     = $pip.ResourceGroupName

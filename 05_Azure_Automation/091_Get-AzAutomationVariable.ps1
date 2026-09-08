@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Liest eine Variable aus Azure Automation aus (verschlüsselt oder unverschlüsselt).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Dient dazu, Konfigurationswerte in Runbooks zu verwenden.
-    
+
     Parameter:
     - AutomationAccountName: Account
     - ResourceGroupName: RG

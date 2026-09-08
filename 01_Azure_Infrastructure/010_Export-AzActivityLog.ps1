@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert das Azure Activity Log der letzten X Tage in eine CSV-Datei.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Das Activity Log enthält alle "Control Plane" Ereignisse (wer hat was wann erstellt/gelöscht/geändert).
     Dieses Skript exportiert diese Daten für Audit-Zwecke.
 
@@ -30,10 +36,10 @@ try {
 
     if ($Logs.Count -gt 0) {
         Write-Host "$($Logs.Count) Einträge gefunden. Exportiere nach '$OutputPath'..." -ForegroundColor Cyan
-        
-        $Logs | Select-Object EventTimestamp, Caller, OperationName, Status, ResourceGroupName, ResourceId | 
+
+        $Logs | Select-Object EventTimestamp, Caller, OperationName, Status, ResourceGroupName, ResourceId |
                 Export-Csv -Path $OutputPath -NoTypeInformation -Delimiter ";" -Encoding UTF8
-        
+
         Write-Host "Export erfolgreich." -ForegroundColor Green
     } else {
         Write-Warning "Keine Log-Einträge im gewählten Zeitraum gefunden."

@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft einen spezifischen Registry-Wert auf Compliance.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Vergleicht Ist-Wert mit Soll-Wert.
 
     Parameter:
@@ -25,7 +31,7 @@ param (
 
 try {
     $Current = Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue
-    
+
     if (-not $Current) {
         Write-Host "NonCompliant (Value fehlt)"
         exit 1

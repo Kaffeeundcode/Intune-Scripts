@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob einer Gruppe Lizenzen zugewiesen sind (Group Based Licensing).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt zugewiesene Lizenzen auf Gruppenebene an.
     Erfordert die Berechtigung 'Group.Read.All'.
 

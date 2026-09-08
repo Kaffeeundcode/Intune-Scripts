@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob Metrik-Alerts gefeuert (Fired) haben.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle "Fired" Alerts in einer Subscription.
-    
+
     Parameter:
     - TimeRange: Stunden zurück (Default: 24)
 
@@ -23,7 +29,7 @@ try {
 
     # Alerts liegen nicht direkt als Objekt vor, sondern müssen über Filter abgefragt werden
     $StartTime = (Get-Date).AddHours(-$TimeRange)
-    
+
     $Alerts = Get-AzAlert -TimeRange $TimeRange -ErrorAction SilentlyContinue | Where-Object MonitorCondition -eq "Fired"
 
     if ($Alerts) {

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht eingeladene Gast-Benutzer, die die Einladung nie angenommen haben.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Bereinigt das Directory von "Karteileichen" (offene Einladungen).
     Löscht Gäste, die im Status "PendingAcceptance" sind und älter als X Tage.
 

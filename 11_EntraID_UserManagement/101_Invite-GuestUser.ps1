@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lädt einen Gastbenutzer (B2B) in Entra ID ein.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Versendet eine Einladung an eine externe E-Mail-Adresse und fügt den User dem Directory hinzu.
     Erfordert die Berechtigung 'User.Invite.All'.
 
@@ -15,7 +21,7 @@
 param (
     [Parameter(Mandatory=$true)]
     [string]$EmailAddress,
-    
+
     [string]$DisplayName = "Guest User",
     [string]$RedirectUrl = "https://myapps.microsoft.com"
 )

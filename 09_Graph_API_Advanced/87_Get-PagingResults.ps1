@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Beispiel für Paging (Blättern) durch Ergebnisse.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, wie man mehr als 1000 Ergebnisse durchläuft (NextLink).
     Die Cmdlets machen das oft automatisch (-All), hier manuell.
 

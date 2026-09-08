@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies disabled users who still hold a license and offers to reclaim them.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Cost saving: Finds 'AccountEnabled = False' users with assigned licenses.
     If -Reclaim switch is used, it removes the licenses.
 
@@ -36,12 +42,12 @@ foreach ($User in $Users) {
             Id = $User.Id
             LicenseCount = $User.AssignedLicenses.Count
         }
-        
+
         if ($Reclaim) {
             # Logic to remove licenses
             # Check user Lics
             # Remove-MgUserAssignedLicense ...
-            
+
             Write-Host " Removing licenses..." -NoNewline
             try {
                 Set-MgUserLicense -UserId $User.Id -RemoveLicenses @($User.AssignedLicenses.SkuId) -AddLicenses @{}

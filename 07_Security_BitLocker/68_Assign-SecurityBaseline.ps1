@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Weist eine Security Baseline zu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Weist eine Baseline-Instanz einer Gruppe zu.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.ReadWrite.All'.
 

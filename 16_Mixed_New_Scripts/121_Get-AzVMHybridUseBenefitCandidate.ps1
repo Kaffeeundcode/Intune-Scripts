@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies Windows VMs that are NOT using the Azure Hybrid Benefit (AHB).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Running Windows Server in Azure is cheaper if you bring your own license (AHB).
     This script finds VMs with 'Windows' OS where LicenseType is null or not 'Windows_Server',
     indicating potential cost savings.
@@ -28,14 +34,14 @@ $Report = @()
 foreach ($VM in $VMs) {
     # Check if OS is Windows
     if ($VM.StorageProfile.OsDisk.OsType -eq "Windows") {
-        
+
         $LicenseType = $VM.LicenseType
         $Status = "Using AHB"
-        
+
         if ([string]::IsNullOrWhiteSpace($LicenseType)) {
             $Status = "NOT Using AHB (Cost saving opportunity)"
         }
-        
+
         $obj = [PSCustomObject]@{
             VMName = $VM.Name
             ResourceGroup = $VM.ResourceGroupName

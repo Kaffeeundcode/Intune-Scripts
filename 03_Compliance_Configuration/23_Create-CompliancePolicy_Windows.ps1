@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine Basis-Compliance-Richtlinie für Windows 10/11.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Legt eine neue Policy an, die z.B. BitLocker und Secure Boot erfordert.
     Dies ist ein Beispiel-Template.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.ReadWrite.All'.

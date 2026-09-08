@@ -1,0 +1,2066 @@
+{
+  "recorded_at": "2026-09-08T08:39:53.692Z",
+  "scope": "All 510 scripts parsed; Pester covers shared Graph/Teams behavior and selected workflows. No blanket functional or tenant approval. Managed review comments are excluded from executable source fingerprints.",
+  "artifacts": [
+    {
+      "path": "validation/evidence/local-unit-tests.json",
+      "sha256": "b2aba0564eaac9ad6043a5e76f7a8da5bce83dfdb1e4d9bafbd83f4d19de2a2d",
+      "tested_at": "2026-09-08T08:33:22.1168870Z",
+      "powershell": "7.6.5"
+    },
+    {
+      "path": "validation/evidence/windows-unit-tests.json",
+      "sha256": "94616bdcf6f6df264e435959c652888fccdfc450c3053d2fa6e611fdc074b694",
+      "tested_at": "2026-09-08T08:36:52.8644065Z",
+      "powershell": "5.1.26100.9168"
+    },
+    {
+      "path": "validation/evidence/psscriptanalyzer.json",
+      "sha256": "700994afce8fe29b43ada025863c95e99b0860830c26ade80b369fdc4b991816",
+      "tested_at": "2026-09-08T08:33:30.5374890Z",
+      "powershell": "7.6.5"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "01_Azure_Infrastructure/001_Get-AzResourceGroupCosts.ps1",
+      "source_sha256": "43bcfcd9c2f43e9be078a96eaa3aa6912ad75f0bdc32aaa63b79e0ae238d0865"
+    },
+    {
+      "path": "01_Azure_Infrastructure/002_New-AzVNetPeeringConfig.ps1",
+      "source_sha256": "bb34299815f709559bcd217dcfb9709aa3d3e6d1d7b1637f1c284588f954908a"
+    },
+    {
+      "path": "01_Azure_Infrastructure/003_Set-AzStorageAccountSecureTransfer.ps1",
+      "source_sha256": "1456a8bf0def3581db7634ee611f5589da8ecf65c0b9925c18a5436291729640"
+    },
+    {
+      "path": "01_Azure_Infrastructure/004_Get-AzVMAutoShutdownStatus.ps1",
+      "source_sha256": "e38e992841565699cee084f9437ba350e433e8b693a88fb378824fe5835a9a08"
+    },
+    {
+      "path": "01_Azure_Infrastructure/005_Remove-AzUnattachedDisks.ps1",
+      "source_sha256": "6df09bd87aab568565d05d71ba5049199a6a6c9818dd7862f120a0890e09ab75"
+    },
+    {
+      "path": "01_Azure_Infrastructure/006_Get-AzNetworkSecurityGroupFlowLogs.ps1",
+      "source_sha256": "465fe66dcb280a94f67ccb8c74f931d2fcca9758547d02b2540276a08e8d5a9f"
+    },
+    {
+      "path": "01_Azure_Infrastructure/007_New-AzKeyVaultAccessPolicy.ps1",
+      "source_sha256": "f3b22104f6a743a2ad06ba885d3e27eef215296b879dedab51e1894c7ec9d2d3"
+    },
+    {
+      "path": "01_Azure_Infrastructure/008_Get-AzPublicIpAddressUsage.ps1",
+      "source_sha256": "cc59c71a5bf10199b24befd9468779e4843659e5ff9422385ff77b5ef14c7210"
+    },
+    {
+      "path": "01_Azure_Infrastructure/009_Set-AzSqlDatabaseAuditing.ps1",
+      "source_sha256": "b2166b17b781ce9d6bee972d77f8aa224441f8bb5addbe5944c78d1d387230b4"
+    },
+    {
+      "path": "01_Azure_Infrastructure/010_Export-AzActivityLog.ps1",
+      "source_sha256": "65ae6394f3efce94216a29e1a4dcd69f1f83365d55ffa13281fc6e9b44a58248"
+    },
+    {
+      "path": "01_Azure_Infrastructure/011_Get-AzSubscriptionQuotas.ps1",
+      "source_sha256": "501abb9cfb40bf12e61977f41c1b44aa420310a5a2568d95cc66b4bff5c2d6ed"
+    },
+    {
+      "path": "01_Azure_Infrastructure/012_New-AzStorageContainerSAS.ps1",
+      "source_sha256": "e42ca4a247b583e6a6b9a0f6de7a9d41210475da3768733f1d8e230a91933a55"
+    },
+    {
+      "path": "01_Azure_Infrastructure/013_Get-AzVNetSubnetUsage.ps1",
+      "source_sha256": "12d3a6bcfd7500fee3661d44fb24e7c2308ec5082b73c1c216899701a7796e54"
+    },
+    {
+      "path": "01_Azure_Infrastructure/014_Set-AzResourceLock.ps1",
+      "source_sha256": "47dc6b80303858ad4f63244f4d24b11313a5a05b620396034c16b23a24d53663"
+    },
+    {
+      "path": "01_Azure_Infrastructure/015_Get-AzRecoveryServicesBackupStatus.ps1",
+      "source_sha256": "bdfde737859246ec9b466d8cd139147f25e2e7988ba3184f0be03a774fe3d3c0"
+    },
+    {
+      "path": "01_Azure_Infrastructure/016_New-AzBastionHost.ps1",
+      "source_sha256": "d344a12377f33d2b594c60bfb2204d007d7833b935a8b7e33d7d28abf3ba3645"
+    },
+    {
+      "path": "01_Azure_Infrastructure/017_Get-AzLoadBalancerHealth.ps1",
+      "source_sha256": "9af1dd57a2fb4007087d2078269c9a4503624794e6ddc08050360f0a6fa99d0a"
+    },
+    {
+      "path": "01_Azure_Infrastructure/018_Set-AzDiagnositcSettingTemplate.ps1",
+      "source_sha256": "611cf3d5f92a9c6d0a17643fe06541c33e4df4afb78dcdbe97610950fe33f6dd"
+    },
+    {
+      "path": "01_Azure_Infrastructure/019_Get-AzPolicyComplianceState.ps1",
+      "source_sha256": "fb9fd70b48f8cce88dc38c518bf1eab91bc5045d68a01eb8be9ea353763d684c"
+    },
+    {
+      "path": "01_Azure_Infrastructure/020_Remove-AzEmptyResourceGroups.ps1",
+      "source_sha256": "3b92162e52ee2677c95a64f7fde0fca3fd670226914dad2a37391f2b46135d9a"
+    },
+    {
+      "path": "01_Device_Management/01_Sync-IntuneDevice.ps1",
+      "source_sha256": "1136a1eac4c643371ba3d37fe8d246604b627227bb5e2244b356aa2d56e347a8"
+    },
+    {
+      "path": "01_Device_Management/02_Restart-IntuneDevice.ps1",
+      "source_sha256": "009924459f0a5bca1441115da2affc71bafe8dc99189986379fe897779d5f959"
+    },
+    {
+      "path": "01_Device_Management/03_Rename-IntuneDevice.ps1",
+      "source_sha256": "0f45b8d71fc53de03dd0ea01c3fe693e5f975773c840af8e74914df5df996cf5"
+    },
+    {
+      "path": "01_Device_Management/04_Wipe-IntuneDevice.ps1",
+      "source_sha256": "114634cc769aa3fcc2bf81c62d2b362b92038660352313b71d1f5c53da435694"
+    },
+    {
+      "path": "01_Device_Management/05_Get-IntuneDeviceDetails.ps1",
+      "source_sha256": "c8216cef0e8e4a8677e4eaecbef5c7b9671615af1bd5fe111ac0694e5390ecc3"
+    },
+    {
+      "path": "01_Device_Management/06_Retire-IntuneDevice.ps1",
+      "source_sha256": "e4873a57725d20c77eb1ff3691b783b548419275a7f44a521be5d94735b2ca3f"
+    },
+    {
+      "path": "01_Device_Management/07_Get-DevicePrimaryUser.ps1",
+      "source_sha256": "3175185b0e1ee96abef31d21eb08881bfe24cd9ee72a0a2a9662eb2db0ec6866"
+    },
+    {
+      "path": "01_Device_Management/08_Set-DevicePrimaryUser.ps1",
+      "source_sha256": "a1a2e596de811eddc19f64ab5b930dae37a53a4196b3bc12e08696da854c1554"
+    },
+    {
+      "path": "01_Device_Management/09_Delete-IntuneDevice.ps1",
+      "source_sha256": "2e2f45789b3a8462e86bd551a810d19140502125e367a2eee820beb411ebd835"
+    },
+    {
+      "path": "01_Device_Management/10_Export-AllDevices.ps1",
+      "source_sha256": "f59913dd8314457437b3c8426992a94d9cad6bc24e242624446741e2d4652d89"
+    },
+    {
+      "path": "02_App_Management/11_Get-AllApps.ps1",
+      "source_sha256": "18bc66ec7563734922584c8c9179f06a383d876a158d0540fd9fb291b135a3fb"
+    },
+    {
+      "path": "02_App_Management/12_Find-AppByName.ps1",
+      "source_sha256": "17393aaa930f72fa7380dc2db55729904a6ff525c45379d6ee63d755d9e762fb"
+    },
+    {
+      "path": "02_App_Management/13_Get-AppAssignments.ps1",
+      "source_sha256": "8df80ffb5087fc41a322fb3f28d481a70bac82f44682ca447ffebe81adaeb12d"
+    },
+    {
+      "path": "02_App_Management/14_Assign-AppToGroup_Required.ps1",
+      "source_sha256": "e766d0d1231bc68ffaeee002eaa02a60c3d95df25a449b798454eba6a189393a"
+    },
+    {
+      "path": "02_App_Management/15_Assign-AppToGroup_Available.ps1",
+      "source_sha256": "1913b1e92310acd9d2114623b845a334217431bab339a093d2f5c523e143860c"
+    },
+    {
+      "path": "02_App_Management/16_Assign-AppToGroup_Uninstall.ps1",
+      "source_sha256": "dfcec810118b6e9f56f56f798b5b2bd719f6d0db034fc72415c3c4b6834e478d"
+    },
+    {
+      "path": "02_App_Management/17_Delete-App.ps1",
+      "source_sha256": "629434fee50c98474d2dfed6f4c8c51bea1aee5c42669755b04b8954209c8e97"
+    },
+    {
+      "path": "02_App_Management/18_Get-DeviceAppInstallStatus.ps1",
+      "source_sha256": "ad03622cbfbd1dd27185238504055402e18e84cad8ea689c0f41ed443b438fb2"
+    },
+    {
+      "path": "02_App_Management/19_Get-UserAppInstallStatus.ps1",
+      "source_sha256": "67d4f9c158c13995d6e7e23296e66f1b353c10f64625fc0e9df32bee46861317"
+    },
+    {
+      "path": "02_App_Management/20_Get-AppProtectionPolicies.ps1",
+      "source_sha256": "dc4510b7dc718f37e28158765a85c02ab426358ebd27c99d00b5fa8d96e0f453"
+    },
+    {
+      "path": "02_EntraID_Governance/021_Get-EntraIDPIMAlerts.ps1",
+      "source_sha256": "283cc58db1684b885977a350be9e637020333f4846469c8d9110753822fc672c"
+    },
+    {
+      "path": "02_EntraID_Governance/022_New-EntraIDAccessReview.ps1",
+      "source_sha256": "af23a4353c0a102376f125b8edcae0f737d00097f4f2825f60e69fc33996dbbe"
+    },
+    {
+      "path": "02_EntraID_Governance/023_Get-EntraIDGuestUserLastSignIn.ps1",
+      "source_sha256": "a0859fcc076f4902169358adf84e0de98abe39226951ae83a395bf985463e750"
+    },
+    {
+      "path": "02_EntraID_Governance/024_Set-EntraIDBreakGlassAccountAlert.ps1",
+      "source_sha256": "ead6e9d7f801be53e17d121f362ab8d091e0b11eecdfe76bd05deec217cec8dc"
+    },
+    {
+      "path": "02_EntraID_Governance/025_Get-EntraIDAppRoleAssignments.ps1",
+      "source_sha256": "a485d29beab1bfa9e27319f0cce80bbee0387deaaba0683eaf1ec8bf9b06aa45"
+    },
+    {
+      "path": "02_EntraID_Governance/026_Remove-EntraIDStaleDevices.ps1",
+      "source_sha256": "b0f39ea8f35de945d8c5fa671c366aeac380d0f2b24e020dc1ee03376bcd3376"
+    },
+    {
+      "path": "02_EntraID_Governance/027_Get-EntraIDBranding.ps1",
+      "source_sha256": "33958e24f501fb90cfe3bf68c899fdb6da6aaa0ed3f09825b8dca81c1a383ce1"
+    },
+    {
+      "path": "02_EntraID_Governance/028_Get-EntraIDAuthStrengthPolicy.ps1",
+      "source_sha256": "97dbe11416437c7703706b04db6fd7fcd90d3c2a227f58a457aa19a7f11b7ef9"
+    },
+    {
+      "path": "02_EntraID_Governance/029_Get-EntraIDRoleEligibleAssignments.ps1",
+      "source_sha256": "a29d45195521bb09fd3dfc084a279d432accd58790aabb2e71947574ce81035a"
+    },
+    {
+      "path": "02_EntraID_Governance/030_Get-EntraIDRiskyUsers.ps1",
+      "source_sha256": "8d3225113f78e04e3ed139fd04b1c861128e88c286693867f215c3ef162ba317"
+    },
+    {
+      "path": "02_EntraID_Governance/031_Revoke-EntraIDUserAllRefreshTokens.ps1",
+      "source_sha256": "588c287519072461697ae32317085d88d569a77361ec039d7e629b15b6a25b3b"
+    },
+    {
+      "path": "02_EntraID_Governance/032_Get-EntraIDApplicationExpiry.ps1",
+      "source_sha256": "bbba2b4f7ddffba130f09a6f698bd6b8ca455995d73e7d397db83845f4af8aae"
+    },
+    {
+      "path": "02_EntraID_Governance/033_New-EntraIDConditionalAccessPolicyJson.ps1",
+      "source_sha256": "0fb9649e702cedb2964201f7a4be0b590c744957ae0e6f9ace76fefdb8d6efc1"
+    },
+    {
+      "path": "02_EntraID_Governance/034_Get-EntraIDGroupMemberCount.ps1",
+      "source_sha256": "c1b2f4801416b789a574052f733a7010a6259e16f378d89f29a1b3b7b3465071"
+    },
+    {
+      "path": "02_EntraID_Governance/035_Get-EntraIDUserMfaStatus.ps1",
+      "source_sha256": "1250250852ec7c198078f59d8deff71d7f8985c01b0c8e5c89a2db66bde6904e"
+    },
+    {
+      "path": "02_EntraID_Governance/036_Remove-EntraIDInvitedUsersNeverSignedIn.ps1",
+      "source_sha256": "96a062f231c963234e305b8b307e238a471f610e002903b8c120f14e5ba0e8a9"
+    },
+    {
+      "path": "02_EntraID_Governance/037_Get-EntraIDAuditLogRecentFailures.ps1",
+      "source_sha256": "5d751e7e591fedfa40ba8c30a95bde4f125aae1d2447c554d295a4695dedf95d"
+    },
+    {
+      "path": "02_EntraID_Governance/038_Get-EntraIDPasswordExpiryPolicy.ps1",
+      "source_sha256": "c06ac8373ddadc4b012227c196e6f0fe7ba8b146f223465e13028a3e258502f6"
+    },
+    {
+      "path": "02_EntraID_Governance/039_Get-EntraIDDomains.ps1",
+      "source_sha256": "d1da2ff50119075eade2e44334c9c8ad75654db442a03934e24e5948dbde72db"
+    },
+    {
+      "path": "02_EntraID_Governance/040_Get-EntraIDTenantDetails.ps1",
+      "source_sha256": "bf9c0a2860dbe5010c7496e27ef9a99858474e8b8911d38a0175963dee3cc764"
+    },
+    {
+      "path": "03_Compliance_Configuration/21_Get-CompliancePolicies.ps1",
+      "source_sha256": "d3fd0d65b96ce959af93ea24535813eb8eb582be6083a484780f055b500b0e48"
+    },
+    {
+      "path": "03_Compliance_Configuration/22_Get-NonCompliantDevices.ps1",
+      "source_sha256": "55f356dcf8565ba5967a6e58ee8713beb719d28c519ee522db823ce8bb10f77f"
+    },
+    {
+      "path": "03_Compliance_Configuration/23_Create-CompliancePolicy_Windows.ps1",
+      "source_sha256": "95f4f514e454cfd4d522571bae8fe1a1b7bdc39d2647115500ea470bbe90d68f"
+    },
+    {
+      "path": "03_Compliance_Configuration/24_Get-ConfigurationProfiles.ps1",
+      "source_sha256": "bd45670e89971776bab4da23fd45b6a8f8bdffe1cc8fd508518ebc6f4b19fac7"
+    },
+    {
+      "path": "03_Compliance_Configuration/25_Backup-ConfigurationProfiles.ps1",
+      "source_sha256": "b6646ab2a3017e827d86fda52a7a3233b68bc3d4349b9447f13d6a1f6c473e62"
+    },
+    {
+      "path": "03_Compliance_Configuration/26_Assign-ConfigProfile.ps1",
+      "source_sha256": "818bbce29f32e74b374a045e04d5ae2ab58cbf1ab15e3bbff2003cb84ac06e28"
+    },
+    {
+      "path": "03_Compliance_Configuration/27_Get-DeviceComplianceDetails.ps1",
+      "source_sha256": "c5758777204e8ed9a9ca8311b572b9c0d1798ab1985aa0cbfd75e70f6b37520e"
+    },
+    {
+      "path": "03_Compliance_Configuration/28_Get-DeviceConfigStatus.ps1",
+      "source_sha256": "ee119828cb4ccee2014af0c41e7392025c3e48d119669d9216e37d26532162a0"
+    },
+    {
+      "path": "03_Compliance_Configuration/29_Find-ProfileByName.ps1",
+      "source_sha256": "1c471a3cee33daa8dfd3a43c232dfea33cceb7bccdc80db4cfc6b913b63792df"
+    },
+    {
+      "path": "03_Compliance_Configuration/30_Duplicate-CompliancePolicy.ps1",
+      "source_sha256": "d171a9d3b4ab40061bd782cc1f6455ed7d0ecf99ff1a157ccd01382cbd92c50a"
+    },
+    {
+      "path": "03_Intune_Remediations/041_Detect-DiskSpace.ps1",
+      "source_sha256": "9b966770cf05707b6edd34c543fd92595da940c322ece1c9857b9a0e3b93b42c"
+    },
+    {
+      "path": "03_Intune_Remediations/042_Remediate-DiskSpace.ps1",
+      "source_sha256": "fc0f4e87f0333fc868eac873aa53720c5976ebbf8a71542ee8ef6d8c84dce4c0"
+    },
+    {
+      "path": "03_Intune_Remediations/043_Detect-OldCertificates.ps1",
+      "source_sha256": "a897c8a191e6804eb5efad9fdb9afe19dc55194e1484936b6f2285ce4f41f199"
+    },
+    {
+      "path": "03_Intune_Remediations/044_Remediate-OldCertificates.ps1",
+      "source_sha256": "b1bcd24ea25a05f047a51c4a2e95a051e721483b8269cea7cb40cae53bc8168e"
+    },
+    {
+      "path": "03_Intune_Remediations/045_Detect-LocalAdmin.ps1",
+      "source_sha256": "874c6bc3d14107097b08702455338d5cb8922d542e21cc86c64b0e58c0cc3f02"
+    },
+    {
+      "path": "03_Intune_Remediations/046_Remediate-RemoveLocalAdmin.ps1",
+      "source_sha256": "f9815893b7dcf0cac70ca019e7caf2fcf1572664a4d516670e7f98ee386a2753"
+    },
+    {
+      "path": "03_Intune_Remediations/047_Detect-ServiceStatus.ps1",
+      "source_sha256": "06429ecf3922591e119c55bf5968ce866009f913a874434c236ee5347cd03b62"
+    },
+    {
+      "path": "03_Intune_Remediations/048_Remediate-ServiceStart.ps1",
+      "source_sha256": "b08357f31f7cb7db0110104dfa46d10e3bd1556eb7ef9d23315d143005f30374"
+    },
+    {
+      "path": "03_Intune_Remediations/049_Detect-PendingReboot.ps1",
+      "source_sha256": "8bfc45caefc4cca2dacc0b6c7eba66e56561d4f62f15397c7d98109f94f914e0"
+    },
+    {
+      "path": "03_Intune_Remediations/050_Remediate-PendingReboot.ps1",
+      "source_sha256": "0b2b951483b38d2832c1067eaab8e7ae19194e3f49b6667ec64731339003fb43"
+    },
+    {
+      "path": "03_Intune_Remediations/051_Detect-OldAppVersion.ps1",
+      "source_sha256": "f36daa29c3c0884071593e3730a16b0e7e8ffee354e910806505ee54fa4768cc"
+    },
+    {
+      "path": "03_Intune_Remediations/052_Remediate-UpdateApp.ps1",
+      "source_sha256": "32f60a8a42d7c09d0682c234c6f10df727eae2fd19c6fed585a7c7ab650f312f"
+    },
+    {
+      "path": "03_Intune_Remediations/053_Detect-FirewallProfile.ps1",
+      "source_sha256": "c0f4960a50e34021325af4d4f23734b81a382508e3398b1b562da642b58c464d"
+    },
+    {
+      "path": "03_Intune_Remediations/054_Remediate-EnableFirewall.ps1",
+      "source_sha256": "0be78ee521daac4bed17f9d85f422f31d892f6a3cc028b3b033c16181f2c0fab"
+    },
+    {
+      "path": "03_Intune_Remediations/055_Detect-MissingFile.ps1",
+      "source_sha256": "20e429698b56acf5694eceb31643c5ed46c070ef0e56f36f65afc6f84ed2cf00"
+    },
+    {
+      "path": "03_Intune_Remediations/056_Remediate-CopyFile.ps1",
+      "source_sha256": "81e3029918fcf5a12e0f0fb437c2559691a169ff764db80fcba4a1499c44f258"
+    },
+    {
+      "path": "03_Intune_Remediations/057_Detect-RegistryValue.ps1",
+      "source_sha256": "25a4c47983eec8272ab8194b8a6596d784d7a8f055db7509827e44ccb73b80c3"
+    },
+    {
+      "path": "03_Intune_Remediations/058_Remediate-SetRegistryValue.ps1",
+      "source_sha256": "b294d30a21300787db98b0102c20f4654c5664965d9772fe4714e8d518e56a15"
+    },
+    {
+      "path": "03_Intune_Remediations/059_Detect-BitLockerSuspended.ps1",
+      "source_sha256": "a8e97a90ba0bbc048013c4e3cb3b0b94e76e4b19bd56718fe76d05cfa56d91fe"
+    },
+    {
+      "path": "03_Intune_Remediations/060_Remediate-BitLockerResume.ps1",
+      "source_sha256": "1f4baeef989e2f964ab8aa14b1712a40649f655745b991d7380ed2621a35199a"
+    },
+    {
+      "path": "04_M365_Exchange/061_Get-ExoMailboxForwardingRules.ps1",
+      "source_sha256": "2f95c3e79e5403dc482760d1b524e877d9f668bcad2a98f5030c34f211d3daa9"
+    },
+    {
+      "path": "04_M365_Exchange/062_Set-TeamsMeetingPolicyBulk.ps1",
+      "source_sha256": "0fa03e7dc54a81e1abefd469c36a9afa10acdf64f2e33687e3348c22bce550db"
+    },
+    {
+      "path": "04_M365_Exchange/063_Get-SPOSiteStorageHighUsage.ps1",
+      "source_sha256": "59d628cf2c6e1bbff8678e86835eb78a7f285bb45ac1d00ebd5002dd55a77553"
+    },
+    {
+      "path": "04_M365_Exchange/064_New-ExoSharedMailboxAutomation.ps1",
+      "source_sha256": "31668093971d40c54fc6d25f94ffbcb680b38e1bf46fb9446eaf1589102768a9"
+    },
+    {
+      "path": "04_M365_Exchange/065_Get-TeamsGuestAccessSettings.ps1",
+      "source_sha256": "42ad21c2b1c9716535c10e6bb00710020d619591f276942d502b6bbecbcc18f3"
+    },
+    {
+      "path": "04_M365_Exchange/066_Set-ExoMailboxCalendarPermissions.ps1",
+      "source_sha256": "3b4c36976ca9eb402da4e1f73bdb8e9a3e470f89630cd96979758dceac3276cc"
+    },
+    {
+      "path": "04_M365_Exchange/067_Get-M365LicensingGranularDetails.ps1",
+      "source_sha256": "99a3ee0c02da5855113ecd9119a107c09bdac38e04f382f18db255632e977f25"
+    },
+    {
+      "path": "04_M365_Exchange/068_Remove-ExoDisconnectedMailboxes.ps1",
+      "source_sha256": "6123976f6ed8e5113958d37e0094be6a4669341302227215c859db7d4d4435af"
+    },
+    {
+      "path": "04_M365_Exchange/069_Set-ExoClutterJunkSettings.ps1",
+      "source_sha256": "702c8497c8e9100883bd862e952682d552729df87ebb7f97c85a0927f5329c31"
+    },
+    {
+      "path": "04_M365_Exchange/070_Get-ExoMobileDeviceStatistics.ps1",
+      "source_sha256": "b920b5c1db1d54f24717df0743db5b7740e5e303345d214807082950ddd07f72"
+    },
+    {
+      "path": "04_M365_Exchange/071_Get-ExoMailTrafficReport.ps1",
+      "source_sha256": "7429965741f89987b2743fb78b6056a15aecd84b7b5f58351942cb09ccdc6d37"
+    },
+    {
+      "path": "04_M365_Exchange/072_Add-TeamsChannelUser.ps1",
+      "source_sha256": "9eda67cbd3efb5f10691187959f4b1a15f1b954127908ee558532953d17c333f"
+    },
+    {
+      "path": "04_M365_Exchange/073_Get-ExoDistributionGroupMembers.ps1",
+      "source_sha256": "af51675cffecf61f711fb0cba21aa7ae38e8f589da898ff967cac23dfba183e4"
+    },
+    {
+      "path": "04_M365_Exchange/074_Set-ExoOofMessageGraph.ps1",
+      "source_sha256": "d0ccdc1b74cda8db8a01853c9bc0b668b57b4b2f030db9822243b02d64a11a69"
+    },
+    {
+      "path": "04_M365_Exchange/075_Get-TeamsDeviceUsage.ps1",
+      "source_sha256": "c2cd9560535a7ebb724d02e1de62257d3514690fbce4926016953c6adcc9d36b"
+    },
+    {
+      "path": "04_M365_Exchange/076_Get-OneDriveUsageReport.ps1",
+      "source_sha256": "90964bee2d8c9db7f90130d17eb58895eac96e18f4968e4170acbd59b981878c"
+    },
+    {
+      "path": "04_M365_Exchange/077_New-ExoRoomList.ps1",
+      "source_sha256": "bc74b85f582a8a4b1e4151b7e9fd40c10a9be593977c75abf16b859f5397a59f"
+    },
+    {
+      "path": "04_M365_Exchange/078_Set-ExoCalendarProcessing.ps1",
+      "source_sha256": "5ce4f6a46dcfca27ae120a13a4c1aa9a2e5267e0ad734419210515af5d287cd8"
+    },
+    {
+      "path": "04_M365_Exchange/079_Clear-TeamsCache.ps1",
+      "source_sha256": "76a0b697d81a85f92a3573d5dae2e9135a280de3536f7896ceae324585f27cb9"
+    },
+    {
+      "path": "04_M365_Exchange/080_Get-ExoInactiveTeams.ps1",
+      "source_sha256": "ec724e90c662faaf7498563909b6076124232c68ed6f4da34e6bd7f798696066"
+    },
+    {
+      "path": "04_Users_Groups/31_Get-AllUsers.ps1",
+      "source_sha256": "011957ed6e6afa1c80d8a223b4153c01f1002b247b781fe61ae6f3a04d23cf4a"
+    },
+    {
+      "path": "04_Users_Groups/32_Find-User.ps1",
+      "source_sha256": "1d7fa83ee4be17993f4bbfda3722076db49d2234570f616b65f236c310f72d9b"
+    },
+    {
+      "path": "04_Users_Groups/33_Get-UserGroups.ps1",
+      "source_sha256": "4f6cbe82bc1a99ff35be2382088d242b40f4ea2f1f5b41559a8ebe8138a1f83a"
+    },
+    {
+      "path": "04_Users_Groups/34_Add-UserToGroup.ps1",
+      "source_sha256": "9855387f30096251628153d1fd92e6b180978c2a745b76e7bdb8fde49eaa7abf"
+    },
+    {
+      "path": "04_Users_Groups/35_Remove-UserFromGroup.ps1",
+      "source_sha256": "5b6023e6a6e32f358006d0360bb1530abbbcded008d2530fa9ba476ce9d39568"
+    },
+    {
+      "path": "04_Users_Groups/36_Get-GroupMembers.ps1",
+      "source_sha256": "e81c08ab39aed68fde2912444cdab3218d8c02c3bb8e3a976cd14e530a61c657"
+    },
+    {
+      "path": "04_Users_Groups/37_Create-IntuneGroup.ps1",
+      "source_sha256": "a8a121e1c3882ae8d2c34fd1133c3f5b28449823238a2a0843500932d96d790d"
+    },
+    {
+      "path": "04_Users_Groups/38_Assign-LicenseToUser.ps1",
+      "source_sha256": "c96d86d9cfb2ca0b1c5c82f2a6d8ad9f88baeb1dad3b99d95ea9fce18f953a35"
+    },
+    {
+      "path": "04_Users_Groups/39_Get-UserDevices.ps1",
+      "source_sha256": "712b901df011a9ecbaca96443326e0c3194650fabc1323511e52412cf7bd8418"
+    },
+    {
+      "path": "04_Users_Groups/40_Get-GroupDetails.ps1",
+      "source_sha256": "20a5f91f1fe6ad4a0cd2e572a70ec47f85f3dda4efb8e5a3667cba08f47b81d8"
+    },
+    {
+      "path": "05_Azure_Automation/081_Get-AzLogAnalyticsRetention.ps1",
+      "source_sha256": "12ea61fb2aec3b684e03810bbb32d71149259bece781d58d25f6acdd0b25adfc"
+    },
+    {
+      "path": "05_Azure_Automation/082_New-AzAutomationRunbookImport.ps1",
+      "source_sha256": "87f10d836967e512b7ad5e751bdb6cf333a8cce188d0d3d8fa5ddb51e223e984"
+    },
+    {
+      "path": "05_Azure_Automation/083_Get-AzMonitorAlertRules.ps1",
+      "source_sha256": "2b37752edaabb8ec5be20657baa54948159aae6669c92b5d7e149211d6d94529"
+    },
+    {
+      "path": "05_Azure_Automation/084_Set-AzLogicAppRecurrence.ps1",
+      "source_sha256": "7e1dbe756c2b3ef3839f45705e1c3e2d5e7f447a0eb849885fe2425157c36ad1"
+    },
+    {
+      "path": "05_Azure_Automation/085_Get-AzMetricAlertStatus.ps1",
+      "source_sha256": "3339e642b4c938689ddd397e6a71a2d66b5662e1a74f4912643f93738ff5b8e4"
+    },
+    {
+      "path": "05_Azure_Automation/086_Export-AzAutomationJobOutput.ps1",
+      "source_sha256": "d650ea259cae48cd603cc620d2943d3fa8f64e5f7b60af9f605373deb2e63e9a"
+    },
+    {
+      "path": "05_Azure_Automation/087_New-AzEventGridTopic.ps1",
+      "source_sha256": "b120874caf8c1401115bf146ec797eb0a41efe7b209bcdfd6e454312b6c402fb"
+    },
+    {
+      "path": "05_Azure_Automation/088_Get-AzServiceHealth.ps1",
+      "source_sha256": "4526c74179ec16f3b073c9735fa71294f26f6269be0b75ec287307bb178168c8"
+    },
+    {
+      "path": "05_Azure_Automation/089_Set-AzKeyVaultKeyRotation.ps1",
+      "source_sha256": "fab845f0fe389c813db73fb569686b400cf38ec002cceb8995826782bd23bf29"
+    },
+    {
+      "path": "05_Azure_Automation/090_Invoke-AzRunbookWebhook.ps1",
+      "source_sha256": "d88f793e855a5294c4699b9e8a77caf64500408f1a8c885a7cdc033ddb2886e8"
+    },
+    {
+      "path": "05_Azure_Automation/091_Get-AzAutomationVariable.ps1",
+      "source_sha256": "b71f8ccda58b559426a40be5bcbe1e8672eeb5195c6cf51ed10946a3ab5a756b"
+    },
+    {
+      "path": "05_Azure_Automation/092_Get-AzLogicAppRuns.ps1",
+      "source_sha256": "4ce110d3e4e878d8f329f68afd02de3e30658984ba289c0776a21f86c8578f21"
+    },
+    {
+      "path": "05_Azure_Automation/093_Get-AzMonitorActionGroup.ps1",
+      "source_sha256": "bbd94eda6eff8288deb2459abd4494d5e28f7169a9404d22486b258c61e9959f"
+    },
+    {
+      "path": "05_Azure_Automation/094_Remove-AzDiagnosticSetting.ps1",
+      "source_sha256": "0575d19d8a709da1dfb3a7f3750292cb32369b02d644754736755f0e4787fda7"
+    },
+    {
+      "path": "05_Azure_Automation/095_Export-AzLogAnalyticsQuery.ps1",
+      "source_sha256": "4a6e7262d9eb14aafcbf02db8196793ed026b54e8b304c55d97930396ea6c218"
+    },
+    {
+      "path": "05_Azure_Automation/096_New-AzAutomationSchedule.ps1",
+      "source_sha256": "f5ce64e057308cba897959642d118ee2305f20692637e6e0e7773851f033c4f2"
+    },
+    {
+      "path": "05_Azure_Automation/097_Update-AzAutomationModule.ps1",
+      "source_sha256": "8e957e0c04fed768ee34016e4ce59bb359bd66cccafee60ce163b1673fdb29f0"
+    },
+    {
+      "path": "05_Azure_Automation/098_Get-AzAutomationConnection.ps1",
+      "source_sha256": "7e52f1735a4d20f37c9eace1b6c45f3da3b9ad5431c9639f890b5381670918fe"
+    },
+    {
+      "path": "05_Azure_Automation/099_Enable-AzMonitorAlert.ps1",
+      "source_sha256": "3a0a1376c0fdb3ec62fedbb874adb10d3c868aec1a9f7bb5f371f0b1e45e862c"
+    },
+    {
+      "path": "05_Azure_Automation/100_Get-AzResourceGraphQuery.ps1",
+      "source_sha256": "43989b7a5aa5e322c6671e23384c08496bca53330b3d2daf323b8090ae6243ff"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/41_Get-AutopilotDevices.ps1",
+      "source_sha256": "57fd90caadddedcf03644e45265fd377f234de61e67a2766304860867438631b"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/42_Import-AutopilotCSV.ps1",
+      "source_sha256": "5cce32ed6cb0b662d456782f2fa85c6e54f643fc5573eaee5b51336fe1aaca32"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/43_Assign-AutopilotProfile.ps1",
+      "source_sha256": "c9a98865d1cc7d936a3a442c3be53a0d607eae316613712608aace266c408673"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/44_Get-EnrollmentStatusPage.ps1",
+      "source_sha256": "2ad3f05f3ebfbb0fea81a5586d556841401df80c97061da07a44202019ce95c1"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/45_Get-AutopilotProfileDetails.ps1",
+      "source_sha256": "60cb7cc220a7dd3e03c118cada25137ac1a452e02e058fd302908c27120e4723"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/46_Delete-AutopilotDevice.ps1",
+      "source_sha256": "27c855700e09f7b64815e88f410979a32af1338269e3c4fcbec2482d1b292569"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/47_Sync-AutopilotDevices.ps1",
+      "source_sha256": "ceea7fa135e05e202ddb31e632292a2133026a5c584aa2c1d2958d1bd167af5c"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/48_Get-EnrollmentRestrictions.ps1",
+      "source_sha256": "010c66953a9a58a87b6f9f88449d32c42fd954d92bdd1aca3d4621413625cd7e"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1",
+      "source_sha256": "8c9eb8ac625cf9365cf43f1c722f61cac9a195d7b3bebde2553ceece80d0ce6d"
+    },
+    {
+      "path": "05_Enrollment_Autopilot/50_Check-EnrollmentStatus.ps1",
+      "source_sha256": "dcaaa06ae263583dfbb48bdd1f9ab7205ef1cdf16b858a2d606d53addcb957df"
+    },
+    {
+      "path": "06_Monitoring_Reporting/51_Get-IntuneAuditLogs.ps1",
+      "source_sha256": "c3d5d7550a3bb161516afc0a6dd74abc04aa020a15a4c0aa154a293fdf102881"
+    },
+    {
+      "path": "06_Monitoring_Reporting/52_Get-DeviceComplianceReport.ps1",
+      "source_sha256": "73c0566fa89565a00110e0bf96619a7d41d985f05dcb3a77048defa927c150a6"
+    },
+    {
+      "path": "06_Monitoring_Reporting/53_Check-ConnectorStatus.ps1",
+      "source_sha256": "0ad39f0680d5c03f4f54ea8c5f502765a980f9f2871e6c07f8d56f1d8682cec9"
+    },
+    {
+      "path": "06_Monitoring_Reporting/54_Get-StaleDevices.ps1",
+      "source_sha256": "6c242223e15e0b48deab2e1f13e909648bb325a74c25d61090faf1d195be8c2a"
+    },
+    {
+      "path": "06_Monitoring_Reporting/55_Get-ManagedAppsReport.ps1",
+      "source_sha256": "b8981898edea0078b2095ae9a58f98568fc745d2c28b8d3d89c6a209cd7fd89e"
+    },
+    {
+      "path": "06_Monitoring_Reporting/56_Get-DeviceEncryptionStatus.ps1",
+      "source_sha256": "fb132021de783a2e92d0591085de4d5416539e2f5d710e3f0e1e6bb80669ee8b"
+    },
+    {
+      "path": "06_Monitoring_Reporting/57_Get-UserLoginHistory.ps1",
+      "source_sha256": "ed689b16807cb924e98d6b5babcb74aa2f5db6a889d9428ca404438cd5e78370"
+    },
+    {
+      "path": "06_Monitoring_Reporting/58_Export-ReportToHtml.ps1",
+      "source_sha256": "9811132a302a29e10a6e0fa7587829ab53bfef6514e557b4fe5d4e8acfd7ff93"
+    },
+    {
+      "path": "06_Monitoring_Reporting/59_Get-DeviceModelSummary.ps1",
+      "source_sha256": "fbf8149f690d32443a6fcc24d34be0f65cf29edad3e9f96ba16920cf714a6e69"
+    },
+    {
+      "path": "06_Monitoring_Reporting/60_Send-TeamsNotification.ps1",
+      "source_sha256": "89c322b6e4fcb292f50144ba49ec80939a3a2a61dd8f7e018f9d3606a4992459"
+    },
+    {
+      "path": "07_Security_BitLocker/61_Get-BitLockerKeys.ps1",
+      "source_sha256": "f993dc99324d9b63fa6dbc8981d1392d3be4fefd3a63e02782d67a330467feae"
+    },
+    {
+      "path": "07_Security_BitLocker/62_Rotate-BitLockerKeys.ps1",
+      "source_sha256": "86f1c144ba7dd8689e8d2ef502a5762d1975d72cb5e290af175f06e443f8af63"
+    },
+    {
+      "path": "07_Security_BitLocker/63_Get-DefenderStatus.ps1",
+      "source_sha256": "135fc76fa81f8010d346e4e03e960a1ae126cd8011d3324b17abf2db240d902a"
+    },
+    {
+      "path": "07_Security_BitLocker/64_Update-DefenderSignatures.ps1",
+      "source_sha256": "68fbeaffeb4abeba906d41da31bb4f698194826af8b3cf160a2b02d1d9480a6d"
+    },
+    {
+      "path": "07_Security_BitLocker/65_QuickScan-Defender.ps1",
+      "source_sha256": "158bda401da8ad730458fdf9121d52f4f7fdc2fc3ac0aea0f84542525d9c9cbc"
+    },
+    {
+      "path": "07_Security_BitLocker/66_FullScan-Defender.ps1",
+      "source_sha256": "c1048d4521a1f72f4f74be9c5391d2f1677807923f37bb92619ed1d901aa9eb5"
+    },
+    {
+      "path": "07_Security_BitLocker/67_Get-SecurityBaselines.ps1",
+      "source_sha256": "cfb5b6093bd38fa26c89450ea3e06f2164541e85a5d06695ca0b3b1eaecaaab0"
+    },
+    {
+      "path": "07_Security_BitLocker/68_Assign-SecurityBaseline.ps1",
+      "source_sha256": "b1b8e03da0f5e530f0536a953acf59c296cd2996655034fae98aab96f6ad1b98"
+    },
+    {
+      "path": "07_Security_BitLocker/69_Get-TpmStatus.ps1",
+      "source_sha256": "bc9f261d162df1b1c6f12f314b9cb4abbb13fd8419c9e0d107a19b231c601a76"
+    },
+    {
+      "path": "07_Security_BitLocker/70_Check-DeviceSecurityScore.ps1",
+      "source_sha256": "2cbd35362d38e5a28b04bda32a1dbd3425bf822839d577ea3b74abfe5938d160"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/71_Collect-Diagnostics.ps1",
+      "source_sha256": "dda56fc13946899bc8c34fab90a6ab6849b99d93638b304a0210eb8b6dbce73e"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/72_Get-DeviceDiagnosticsDownloadUrl.ps1",
+      "source_sha256": "f55b2bdc17c1dadd3bf6f50f570b7db5b7fca5fcf88590b585dc6ce52a7a32d5"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/73_RemoteLock-Device.ps1",
+      "source_sha256": "6b3846e526671da2b2c0e9f9dcc2544c2f3743ea9e2bcf9d9fce7505ea1e6b1e"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/74_Reset-DevicePasscode.ps1",
+      "source_sha256": "facc0d7bcdcb16e6e855f03587b6a2cfde602dce62db97b60f5fc5e15ed273e3"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/75_Clean-StaleDevices.ps1",
+      "source_sha256": "020fd886dc63368eb227c51877cb25573336137254faf9a83c6af60e93ae1361"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/76_Sync-AllDevices.ps1",
+      "source_sha256": "d7e70625f6052c929598a3b64c701edff93bcfc5de322eaab940cfc6f4c5727c"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/77_Restart-AllDevices.ps1",
+      "source_sha256": "54d51dd5cf5164db67ab8d41281ea5802f74594e82299e4664733d470faac58d"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/78_Get-TroubleshootingEvents.ps1",
+      "source_sha256": "d082bb26e2ab4dddfd2e35ba6baf54181fa41a7961a0dc96f26ec2c691d135de"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/79_Check-IntuneServiceHealth.ps1",
+      "source_sha256": "43fa3e8ceb3b5b0874948f1712bcadaebc47d9f5bf294d0d5720a949da442bad"
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/80_Repair-IntuneExtension.ps1",
+      "source_sha256": "13b91b5eb2e5b58e9eed612eb00af664f84675687290184fdaa70ed277ba4492"
+    },
+    {
+      "path": "09_Graph_API_Advanced/81_Authentication-Test.ps1",
+      "source_sha256": "2cf38ab1070d03c01f114c4dd1e14b970b1a71878082cb9aa15264560369165c"
+    },
+    {
+      "path": "09_Graph_API_Advanced/82_Get-GraphTokenDetails.ps1",
+      "source_sha256": "ad63d37ed6f857c09c5e417584a4f61c87e66dacfd4446e51470730af41361b2"
+    },
+    {
+      "path": "09_Graph_API_Advanced/83_Invoke-GraphRequest.ps1",
+      "source_sha256": "c64752ae30a69cedb3078213f72596cd2805a8a7c817237157eccedc99449041"
+    },
+    {
+      "path": "09_Graph_API_Advanced/84_Get-IntunePowerShellVersion.ps1",
+      "source_sha256": "aa64bc251aa33c63941368ea814ccfbf042f0c9f6e9c8c4cd0db824df6e5e203"
+    },
+    {
+      "path": "09_Graph_API_Advanced/85_Batch-GraphRequests.ps1",
+      "source_sha256": "bd5cf29242c8b0c0064d35c911920d3ad8c9a126178a820e5c845c944a1e114e"
+    },
+    {
+      "path": "09_Graph_API_Advanced/86_Explore-GraphSchema.ps1",
+      "source_sha256": "131695dc876a76f9e6b002977024cda57d525d815b1c80907e39686fd8deaf00"
+    },
+    {
+      "path": "09_Graph_API_Advanced/87_Get-PagingResults.ps1",
+      "source_sha256": "d34af1ff313f7db73d887db786c5f149fd112a73f7ca5720cf9647ea6ac071ee"
+    },
+    {
+      "path": "09_Graph_API_Advanced/88_Throttle-GraphRequests.ps1",
+      "source_sha256": "8b295ac0acee6f6ed41a00b1bbbe7b6434c940051219013034caeddec9523790"
+    },
+    {
+      "path": "09_Graph_API_Advanced/89_Get-GraphPermissions.ps1",
+      "source_sha256": "a782bf48710bbda8e23ee81a3b577c07c0f7deaa940c967eaf86d7e0601025af"
+    },
+    {
+      "path": "09_Graph_API_Advanced/90_Disconnect-Graph.ps1",
+      "source_sha256": "6e288f1c3e1a739243db50498f77ecc3efc14fc7492f3bdcfd70706e3a144c8c"
+    },
+    {
+      "path": "10_Utility_Misc/100_Show-ScriptMenu.ps1",
+      "source_sha256": "2b15d01b7808157a2d20e9f8e9e879348cf343988e9e2bbee491e3e761d91450"
+    },
+    {
+      "path": "10_Utility_Misc/91_Send-Mail.ps1",
+      "source_sha256": "af98ba1750c6f73dbb6f8fb11ad144306433037cad86a90e5f5675d78a500ac6"
+    },
+    {
+      "path": "10_Utility_Misc/92_Log-Activity.ps1",
+      "source_sha256": "309b0b7d4149650224e99804494ad4213fb2e5ff9d6f3cd7fab3697c6264a5bb"
+    },
+    {
+      "path": "10_Utility_Misc/93_Convert-IntuneTime.ps1",
+      "source_sha256": "c1a5a6a21e864c5d8b6e81b72326de296bb5d9c93d45ade48407402b16a7c54e"
+    },
+    {
+      "path": "10_Utility_Misc/94_Get-LocalIntuneLogs.ps1",
+      "source_sha256": "1af0b95723a5b56b3c1bfe296b4d81f281c5a78678da252772b36ac448075244"
+    },
+    {
+      "path": "10_Utility_Misc/95_Check-InternetConnection.ps1",
+      "source_sha256": "62da863a87aef40a45c7ade63739e2845fd99541dfa4beabd34781b65c406bdf"
+    },
+    {
+      "path": "10_Utility_Misc/96_Install-IntuneModule.ps1",
+      "source_sha256": "8b9938ca63e13618ce8421108ad6b80c547a41274c53c01d599fe50f85a3b6ba"
+    },
+    {
+      "path": "10_Utility_Misc/97_Update-IntuneModule.ps1",
+      "source_sha256": "0996f75b18648959fdbdf81687837d7f09a9dacff5a80aafa96204d6a8a36b93"
+    },
+    {
+      "path": "10_Utility_Misc/98_Get-MyIntunePermissions.ps1",
+      "source_sha256": "ef62fbeacfd1097ed69591d3825f97bac6cd82ae4885e19c1bc67a1b2d7da4ae"
+    },
+    {
+      "path": "10_Utility_Misc/99_Measure-ScriptExecution.ps1",
+      "source_sha256": "cc3938c13f10c56b3ef4e7e9561635410f8e1afa5e6791fdc38259f51ef3c4f8"
+    },
+    {
+      "path": "11_EntraID_UserManagement/101_Invite-GuestUser.ps1",
+      "source_sha256": "1dfabf96642d79ccbf8eff55af7a3cf492d5948b18864a5d21937580991b9c23"
+    },
+    {
+      "path": "11_EntraID_UserManagement/102_BulkCreate-Users.ps1",
+      "source_sha256": "60ffbc42a698b04d7252f93f524e32f1a5adc5baff3e40a02a51dc1d32edbf08"
+    },
+    {
+      "path": "11_EntraID_UserManagement/103_Reset-UserPassword.ps1",
+      "source_sha256": "d0bbb76def66f0c204d19152d748bf65c202fc36f18180dfa985746d607a1478"
+    },
+    {
+      "path": "11_EntraID_UserManagement/104_Get-UserRiskyStatus.ps1",
+      "source_sha256": "5d6043d07a284d840650266fd3ac90c9be4645f690e81651d529def50c79938b"
+    },
+    {
+      "path": "11_EntraID_UserManagement/105_Revoke-UserSessions.ps1",
+      "source_sha256": "9087945fa550106ccfccfecf673fd4986ce2721aba41f7e8505ddc1040bef3c1"
+    },
+    {
+      "path": "11_EntraID_UserManagement/106_Update-UserProfile.ps1",
+      "source_sha256": "eabc4d4091ee20ab72b26718e88e2a748e6450b5e4f8740457c5254c11199954"
+    },
+    {
+      "path": "11_EntraID_UserManagement/107_Get-UserDirectReports.ps1",
+      "source_sha256": "8f61d8be2c836b92bc1da29891ecfadea12e543f181226ba99e6bfe1c13c0a09"
+    },
+    {
+      "path": "11_EntraID_UserManagement/108_Set-UserManager.ps1",
+      "source_sha256": "a7404d5bc2afd08759e2d686df3ce72396d9084450845a725046bc21602f508c"
+    },
+    {
+      "path": "11_EntraID_UserManagement/109_Delete-UserHard.ps1",
+      "source_sha256": "44118c802de4ec6e1ec76c03f3ba962d111a7ef21444d87a5516f9ed4cf29794"
+    },
+    {
+      "path": "11_EntraID_UserManagement/110_Restore-DeletedUser.ps1",
+      "source_sha256": "35fcb0d94cd56c3bc1fb333f5560f464aeea7a262d59e93a39ca8924451ff5d2"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/111_Get-DynamicGroupRules.ps1",
+      "source_sha256": "a810873676e23f0bc8093a251335a8129080ed25e13c3dad87ff1fafac058028"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/112_Validate-DynamicGroup.ps1",
+      "source_sha256": "faf999d7f1a28da3e8b1e30c45947349871b35381ef7898049e7302a9d7d8d11"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/113_Clone-Group.ps1",
+      "source_sha256": "3787c950048b7b9a7539907c8f38592f820f0f580b4721d166c56c5e7664e67f"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/114_Get-GroupOwners.ps1",
+      "source_sha256": "f45c05b5fd803515ff400e7af7f1054cc1e9cd0cc3b5af4d841d4e4e16fa9b96"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/115_Set-GroupOwner.ps1",
+      "source_sha256": "00be5ba867b38ccf658a3c112eca4f596e2e9c6e18a6ed2388455d0b2e9174cd"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/116_Find-OrphanedGroups.ps1",
+      "source_sha256": "b86526cfb390710f77f6189a948b6ae8076f19d24c2140ea80c2a97223317d01"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/117_Get-GroupLicenseDetails.ps1",
+      "source_sha256": "ecb110aa557a1cf0138159413fa3930163933e529ce2016269088fe8f2ae9951"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/118_Hidden-GroupMembership.ps1",
+      "source_sha256": "93e4ee52041a8b7905b018e87c59c531e75f512093b2b7e2f231d26a0c8f264f"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/119_Export-GroupMembers-CSV.ps1",
+      "source_sha256": "95f16bb7b49926fe8661e7e8d210cd4a3a6154df914ca461c11db30f8a914597"
+    },
+    {
+      "path": "12_EntraID_GroupManagement/120_Sync-OnPremGroups.ps1",
+      "source_sha256": "fade63939241be2289822f3db976e4c353bed173406d05e695d24810362b5865"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/121_Get-AppRegistrations.ps1",
+      "source_sha256": "440357c1922f923f577d77069eee0e1c0f9c8a7c337a4a4d823733c66296929e"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/122_Create-AppRegistration.ps1",
+      "source_sha256": "6cfaabd1b7f34e6474fde64b22bc6c077ef03021bda8254dc431209d9357e80e"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/123_Add-AppSecret.ps1",
+      "source_sha256": "43ae40566a1e595b5930ee6856c1389a662f3e9d8cdd71a0adcfb144ad0267e0"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/124_Get-ExpiringSecrets.ps1",
+      "source_sha256": "9c25b4824836f889ba263e5975d1941976557250a5cbf62e548da9f3286037b4"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/125_Grant-AdminConsent.ps1",
+      "source_sha256": "fbb474fc962e77064117478ec21fb36efb43bdecde050ae8e865b26f12de7dd4"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/126_Get-ServicePrincipals.ps1",
+      "source_sha256": "2ba48aa091a3c70b40d3401c910fb55bd36c820f86d9ca17976c073a3ed803d5"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/127_Remove-AppRegistration.ps1",
+      "source_sha256": "9b82b8f0e466122ca4c187ed28e0e8a364413fd9bd22e8a9599c98bb16957e54"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/128_Get-AppPermissions.ps1",
+      "source_sha256": "5a9735e1ee6ae3872b4ef5615a04f42262dc0d80e1b417e487ed92b4c26a832f"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/129_Update-AppManifest.ps1",
+      "source_sha256": "42bdb6493f3ddeb4594d8e7855eb92153651b21230f73b144e6732111c782ff8"
+    },
+    {
+      "path": "13_EntraID_AppRegistration/130_Check-AppSignInLogs.ps1",
+      "source_sha256": "71235cb0995bf4dc75ebc49bf18d4cbbe21c28910aa210e6c248991a7818e757"
+    },
+    {
+      "path": "14_EntraID_Security_CA/131_Get-CAPolicies.ps1",
+      "source_sha256": "aa4ddf50c2269f135de7666c0e01c13a0b4b57167899c82cd4624598b3543ead"
+    },
+    {
+      "path": "14_EntraID_Security_CA/132_Backup-CAPolicies.ps1",
+      "source_sha256": "7da25e02be540bd74155200101efae1984095dd06f1be7cb843a93ebea01e74a"
+    },
+    {
+      "path": "14_EntraID_Security_CA/133_Get-CAPolicyStatus.ps1",
+      "source_sha256": "25be2c096045228e5020041014ee71346d3a2bd95d430f53bc5c474d530629f7"
+    },
+    {
+      "path": "14_EntraID_Security_CA/134_Create-Emergency-Account.ps1",
+      "source_sha256": "3191ce51029b05f46d399579754a214c7ce764c5a1341fdc979a4595135b0855"
+    },
+    {
+      "path": "14_EntraID_Security_CA/135_Get-MfaStatus.ps1",
+      "source_sha256": "89095b6b2302d2395bc5ba6ad9e9a8a3fb48d498659e137cf577b2e59ce3af6f"
+    },
+    {
+      "path": "14_EntraID_Security_CA/136_Enable-PerUserMfa.ps1",
+      "source_sha256": "6bac62dd7dea91f1abee580fc184637eae587a6cb86df28eeaf320be4c6000ed"
+    },
+    {
+      "path": "14_EntraID_Security_CA/137_Get-TenantSecureScore.ps1",
+      "source_sha256": "32ebc0e55f13106a8675e736bbb435d39faec4f7040e534d64ac2a357be02282"
+    },
+    {
+      "path": "14_EntraID_Security_CA/138_List-ConsentGrantPolicies.ps1",
+      "source_sha256": "d2f6eb1dface2781625e0f657f8a8ecc001642e29613f14b749370355cba2cac"
+    },
+    {
+      "path": "14_EntraID_Security_CA/139_Get-AdminDirectoryRoles.ps1",
+      "source_sha256": "47ae7b1cb5f6e0b0022cd7d2f219705d694ee971af3e8066f234ee5b13e7af2d"
+    },
+    {
+      "path": "14_EntraID_Security_CA/140_Detect-ShadowIT-Apps.ps1",
+      "source_sha256": "5f2dcee7c8582f88061a973c6c4bb8134e15d9624ea493ed8a8a21fb4f63f4e1"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/141_Get-DeviceEnrollmentProfile.ps1",
+      "source_sha256": "430f143b3de55bda05bac8b0a2f77696557ecd70a2312af434670131ca341e96"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/142_Create-EnrollmentProfile-iOS.ps1",
+      "source_sha256": "d7b614371e8adfc07a45b678e7a5199554b1c8e2d48508e52f95cde5313a0cfb"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/143_Create-EnrollmentProfile-Android.ps1",
+      "source_sha256": "c10d3fb2c89bb75a580a4e7448fec1d921cce1c2e52988767c0ab130c5ea3999"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/144_Get-ApplePushNotificationStatus.ps1",
+      "source_sha256": "d7da60297ff7cbc4526796635123b065c49dadc0ac6f81050a5d54b78cec567b"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/145_Upload-ApplePushCert.ps1",
+      "source_sha256": "634b713c92251415d678dfe597159072f93f4b30fbb96eabc2a6bb113691a987"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/146_Get-VppTokens.ps1",
+      "source_sha256": "015e155cd32167863456b2ae48d8934b95bf64ca04fe073748a1433f0a6c30bf"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/147_Sync-VppToken.ps1",
+      "source_sha256": "b471f34aa74b1491ea6978864659166cdba87c4920bc3eeb24d45b971cf1b2e2"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/148_Get-AutopilotEvents.ps1",
+      "source_sha256": "27b58ade1261b965297ecc4fb6b0f9f339e12f402d1bb426ccd96f9a9fe01bf3"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/149_Get-TermsAndConditions.ps1",
+      "source_sha256": "41c5c02e766ce66fc0c674cfd30479be2ae5101fe69d27e739e2d4627c3ba757"
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/150_Create-TermsAndConditions.ps1",
+      "source_sha256": "a475197f9265b8d122d02399b79775d0c81e6e2aa9965eb0d37342f40b031f7f"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/101_Get-IntuneCoManagementEligibility.ps1",
+      "source_sha256": "de7defb47459e73ae51de58e0de511b1ac98fde936f80bc2c8d323ea84f99f73"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/102_Get-IntunePolicyPerSettingStatus.ps1",
+      "source_sha256": "13a4ae2851d4b0af72507c1c32b0b91136f3a1a3782a94e8592b99a6bcb7ed66"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/103_Get-IntuneDeviceHardwareHashBulk.ps1",
+      "source_sha256": "f8913302bea01c8b4008d22b26ba80e513b4fe51f66976bf13de7458c52ba4be"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/104_Get-IntuneAppRevisionHistory.ps1",
+      "source_sha256": "ca4422b5d613d593d57ee6686f08d7b1d5393a333f7e422dfc06eb33c457b332"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/105_Get-IntuneAssignmentFiltersUsage.ps1",
+      "source_sha256": "115b1ba46b4100eff406354b645b2cdf4329634ba6061a9d2e463b84953cad86"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/106_Get-IntuneDeviceStalenessScore.ps1",
+      "source_sha256": "eb90b3546e39ea9125fd59a2b7faa68fda9691bdf632eff00ae78863111bdba3"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/107_Get-IntuneScopeTagInventory.ps1",
+      "source_sha256": "7ca1e2a6c50e74e8378fcfeaf3bcf1efed2f7981951a5626087305aeb26eccb3"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1",
+      "source_sha256": "6ccc5ed76e7a52c5097113aa78e97b964c8bcef3f3ad22c018def29941d907bc"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/109_Get-IntuneDeviceRestorePoints.ps1",
+      "source_sha256": "6237e36d7560c3fc0870a5b3585a85ce0cc43981bcb3d282221f48a202fbc269"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/110_Get-IntuneMAMPolicyDeployment.ps1",
+      "source_sha256": "c9c1f174f7c306a57cc3a2ecb0c985a43cc550647bf43832ee75108d28b97e66"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/111_Get-EntraIDShadowITApps.ps1",
+      "source_sha256": "250542968e2b3e1b0b25cae66c998357a9390ea8cb1eae136ea12a6749d5525f"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/112_Get-EntraIDGuestUserSponsors.ps1",
+      "source_sha256": "0c4d1d8dd91ca239f3b4b6ec97f0ef6b49807775b36a906081f18126e757fce1"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/113_Remove-EntraIDExpiredGroupLifecycle.ps1",
+      "source_sha256": "57260f8eab4a593f853e9c29e62eeabd8c0cb24c611fad70e572496c5cb47661"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/114_Get-EntraIDMFAAuthenticationMethodUsage.ps1",
+      "source_sha256": "e41728ecb4f333e02ec82dfc73ae55ed8f6595c19670b2385645667546d6a8d2"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/115_Get-EntraIDStaleServicePrincipals.ps1",
+      "source_sha256": "690db23c441538b061886346c1237443e68b15c3fce3c986e79bf4aacc151aa7"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/116_Get-EntraIDAdministrativeUnitMembership.ps1",
+      "source_sha256": "e133e3a9b2e51ce210d662f6c99fba6798a93c35eff6f51d7a20ecb3bff4a60f"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/117_Get-EntraIDConditionalAccessGaps.ps1",
+      "source_sha256": "c94e4c32fa8a5256eaa1e551dc7c139e8a7edd800364f9b2d132ea34d61c5036"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/118_Set-EntraIDUserLocationFromIP.ps1",
+      "source_sha256": "a1979988ac0d76dff54a8ef9f2e37909377ce297138da2cb9b3d83511ac1e672"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/119_Get-EntraIDDirectoryRoleTemplates.ps1",
+      "source_sha256": "ec2c3f981102550d7da79996f28c9a92e19e7f4e04ac5858e23d96ce2830c10d"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/120_Get-EntraIDApplicationOwnerAudit.ps1",
+      "source_sha256": "f6d62e35d5647c4247c5323a7b3930a07d755b8804c51fd366c2df4138961263"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/121_Get-AzVMHybridUseBenefitCandidate.ps1",
+      "source_sha256": "b66bb20de833ea16a2605589a26caf8eb9254cfad7e03522d2effde2c1c2d6c4"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/122_Get-AzStorageAccountLifecyclePolicy.ps1",
+      "source_sha256": "e8bf785796ed1d21a5a36f66942539ff7b4739d6c52fbfd4ada6c9a797a0ff77"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/123_Get-AzNetworkOrphanedNSGs.ps1",
+      "source_sha256": "3db942776fad61c1fddb8e0ddd9ae00e4a1ff1271602529272af816f8009d73e"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/124_Get-AzKeyVaultSecretVersionHistory.ps1",
+      "source_sha256": "033aea4b5e3b9b7b304e451ab5f68eb7edae79cdcff893c35996676d95d8e9ce"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/125_Get-AzResourceChangeHistory.ps1",
+      "source_sha256": "2815e7f5732e3ab9d8e5d688e337d4d44e2224f0808348b766d78e7ae7ffbd70"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/126_Get-AzAppServicePlanDensity.ps1",
+      "source_sha256": "7f58aeb7293d03b74d9c3102456d31c921257acd85abe4457a80df212fcbdcea"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/127_Get-AzVMPublicIPInsecurePorts.ps1",
+      "source_sha256": "9743444c899ef7f3e77948a8c0f25f577c4cf68a6ed94ce5df3c594f0e94e642"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/128_Get-AzSubscriptionPolicyExemptions.ps1",
+      "source_sha256": "d08eff1774f5a89aa71bc6d5b1885f7bad28a8a3e2b16d0e3d9cccdbd398d06b"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/129_Get-AzRecoveryServicesVaultStorage.ps1",
+      "source_sha256": "5c95d9e690fe68bca9f4584a907e78d2e3993fa7342d35d25e3ae62e63a94569"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/130_Get-AzLoadBalancerEmptyPools.ps1",
+      "source_sha256": "b22a410db51e27229ad49e2bab29344e1467ac3c28f4c8b92d2791d2503441ea"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/131_Get-TeamsOrphanedTeams.ps1",
+      "source_sha256": "0fd758c19d2cb5b12267610aaa5b54b8b1f9f2cb78b59ea598ee52d3688bf7a6"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/132_Get-ExoMailboxDelegationReport.ps1",
+      "source_sha256": "552aefdc2f9e8fe3c47439d95f3e98442a99fa13265be9d07dd922be0d876750"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/133_Set-TeamsPrivateChannelLifecycle.ps1",
+      "source_sha256": "a349e42706ff55e6dd8e1c70b79403cab3e0fa836e0a7191f6bf0cd8d723a29c"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/134_Get-ExoMailFlowTransportRuleHits.ps1",
+      "source_sha256": "96f9afed9cf0f0c1d958c3195cec99a2fe4fa4a1b0791c6ea8ce142871cc1747"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/135_Get-M365GroupStorageTrend.ps1",
+      "source_sha256": "87e0b890cee1e2d0c69724876c5d9e805d54e6dfde464b8f810b2fb0e07d988b"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/136_Get-TeamsAppPermissionGrants.ps1",
+      "source_sha256": "7e0467039ae70ffb3100613715f240bab9a29a8bf8c4f228b0a39b7001da9f3d"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/137_Get-ExoRoomMailboxEfficiency.ps1",
+      "source_sha256": "9b72d132283b57e58e1a64be27c3b1895893f3d60fb1583f0f8de86f0f059949"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/138_Set-M365UserLicenseReclaim.ps1",
+      "source_sha256": "5a8590fd6235b6f703c8e4735723708fcc7d790ffeb33abcfc3ad3c35491003c"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/139_Get-ExoPhishingSimulationStats.ps1",
+      "source_sha256": "587f38ba6eb89e2c29b2cc01fdd083fe19644d43fc5fc5980c9595ede6b41d6f"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/140_Get-TeamsDeviceHealthDetailed.ps1",
+      "source_sha256": "f023400232834afeb74a7721818bd31388883683bb13e4a463a412ab96c087db"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/141_Invoke-AzAutomationJobCleanup.ps1",
+      "source_sha256": "0e22af932a879f130a1371f48009b47f66dca0c90683c28186d14a7393b7ddb6"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/142_Get-ScriptExecutionTelemetry.ps1",
+      "source_sha256": "2a053ff23b0781b01191fc72e5c38a881093c1f1ede13f991359cbe92195d7af"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/143_New-ScheduledTaskMaintenance.ps1",
+      "source_sha256": "e7f70dc7b130be0f4111437b65e8ec14f7ad3cdfbc4b8df23220eee22e1ae90f"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/144_Get-SystemUptimeReportBulk.ps1",
+      "source_sha256": "e58358eedea474de14a09af3b8f2a50e855abc56e23acb36c3c1bc195b77d78d"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/145_Get-LocalUserProfileSize.ps1",
+      "source_sha256": "4be00495cf18442cc2281ff231e413ce65055adceb5e7a49328fdd800c78a385"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/146_Remove-OldLogFiles.ps1",
+      "source_sha256": "82e9973f6004149a6383a4bd4033d3c0f3dc9d3e38675dc1ec369857598bbf65"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/147_Get-DriverVersionInventory.ps1",
+      "source_sha256": "5af5b298109d9802bbfefc4807edc01220c133efc1bd158c11c6466785b64def"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/148_Set-PowerPlanHighPerformance.ps1",
+      "source_sha256": "5ba114f2be9fe6ed4b08d5cd98a40b02f4c10c956a90ecb53be47dc7c99a0cda"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/149_Get-InstalledSoftwareFuzzy.ps1",
+      "source_sha256": "c46edec4aa29fadac78b5f5067e316d8a717cae679635bd0fb88c58ac8c10930"
+    },
+    {
+      "path": "16_Mixed_New_Scripts/150_Repair-WMIHealth.ps1",
+      "source_sha256": "e9e70fd79880d2c794b86b0575012fdba9735c2d8109daab6576aafe34a5f2ea"
+    },
+    {
+      "path": "16_Teams_Telephony/151_Get-TeamsPhoneNumberInventory.ps1",
+      "source_sha256": "e3f247536711f4381e95966711b7daa278fc36221d3055b14d720a61411bf195"
+    },
+    {
+      "path": "16_Teams_Telephony/152_Get-TeamsUsersWithoutPhoneNumber.ps1",
+      "source_sha256": "494d36eb606a2642d7f395cc1955e24a1dcfe96e52c1b2ae78002b4e9dfc72c3"
+    },
+    {
+      "path": "16_Teams_Telephony/153_Get-TeamsEnterpriseVoiceUsers.ps1",
+      "source_sha256": "c2f3d19c3062cb5d9ce91e40c5475b240fbabe80136e5a8b239e6a5286892a7b"
+    },
+    {
+      "path": "16_Teams_Telephony/154_Find-TeamsUsersWithDirectRoutingNumber.ps1",
+      "source_sha256": "13efab346db9334c3a9aab18acb8de74f02cda7981b7156091363f59fc6e5bc0"
+    },
+    {
+      "path": "16_Teams_Telephony/155_Find-TeamsUsersWithoutHostedVoicemail.ps1",
+      "source_sha256": "747aea419b0dfc64a5da1214a985df9029fa162d03d72bf34cfba25164d942ac"
+    },
+    {
+      "path": "16_Teams_Telephony/156_Get-TeamsUsersByUsageLocation.ps1",
+      "source_sha256": "e1e91d27077339cd4fde3dd3be1df5c74d2ec60df9ff9e589f21777a7b738253"
+    },
+    {
+      "path": "16_Teams_Telephony/157_Get-TeamsUsersByDepartment.ps1",
+      "source_sha256": "1e5c3f7e18773849fe722cdd4fd8df288bd9f35d45efef960b97b4e63548d1a3"
+    },
+    {
+      "path": "16_Teams_Telephony/158_Get-TeamsUsersByOffice.ps1",
+      "source_sha256": "e0e6dfa22475ff040ce27c819e41f8a5cbf9b05416108bb9e1f3dbcf508a071e"
+    },
+    {
+      "path": "16_Teams_Telephony/159_Get-TeamsUsersByCity.ps1",
+      "source_sha256": "6b5d3f01bea4cdbeaf797c5c246d849ae58113e2c16c7a50d72b6d15a1113403"
+    },
+    {
+      "path": "16_Teams_Telephony/160_Get-TeamsUsersByCountry.ps1",
+      "source_sha256": "19d01baa2a12f543d43150457796be7669a23953042567ca9c471f0e9462f5d0"
+    },
+    {
+      "path": "16_Teams_Telephony/161_Get-TeamsUsersWithExtensionNumbers.ps1",
+      "source_sha256": "094094ca548e958556c112b95b29927ebbbd81980bfbe520b9fbdb0c57d2d2a8"
+    },
+    {
+      "path": "16_Teams_Telephony/162_Find-TeamsUsersWithoutVoiceEnablement.ps1",
+      "source_sha256": "64db8f971bad1a21e56718108d9675c2abbba9f32fb6e355a8bed9930647a8d5"
+    },
+    {
+      "path": "16_Teams_Telephony/163_Get-TeamsUsersWithOnPremLineUri.ps1",
+      "source_sha256": "b7a7de40df3dc612d7ccd46a4e96305a92a45750afe48f2da8517d455bb259ee"
+    },
+    {
+      "path": "16_Teams_Telephony/164_Compare-TeamsLineUriAndOnPremLineUri.ps1",
+      "source_sha256": "b037491f93df530768e22f10c06f31e1b2fdb24472882c2554b2589b29c9036e"
+    },
+    {
+      "path": "16_Teams_Telephony/165_Measure-TeamsNumberAssignmentCoverage.ps1",
+      "source_sha256": "2c03fbc0f13377fe1f04c202b407844bd81e62c1418fe4d72aa73f4cc8e35fde"
+    },
+    {
+      "path": "16_Teams_Telephony/166_Export-TeamsVoiceEnabledUsers.ps1",
+      "source_sha256": "148029d7c498849bc3dfead44516e806d07c6ffc8fbb6d7ae2de1f5321ca4e58"
+    },
+    {
+      "path": "16_Teams_Telephony/167_Export-TeamsUsersWithPhoneNumbers.ps1",
+      "source_sha256": "f38c3438e2b7e3c379259c99d49413c00e4a700af83a001d0aab788cf00bcc6f"
+    },
+    {
+      "path": "16_Teams_Telephony/168_Test-TeamsUserLineUriFormatting.ps1",
+      "source_sha256": "eeea6358ee707b0ac27e00833d3e1231b4f4d8dbf7b89fe630ddf02d0fa9d6e9"
+    },
+    {
+      "path": "16_Teams_Telephony/169_Find-TeamsDuplicateLineUriCandidates.ps1",
+      "source_sha256": "9ed778225e8d90eb294cad6fb4338c66698822b59bb14688e21f6c1d9988e9da"
+    },
+    {
+      "path": "16_Teams_Telephony/170_Get-TeamsTelephonyUserOverview.ps1",
+      "source_sha256": "b5506573f588e2b76ee1b9fc033e99a0e4149a5d786900d48218577569091383"
+    },
+    {
+      "path": "16_Teams_Telephony/171_Get-TeamsTenantDialPlans.ps1",
+      "source_sha256": "683ab083469f3e35092bcb864f5d45f2860bf569d4d3659e7c6ad6dcb8772ed2"
+    },
+    {
+      "path": "16_Teams_Telephony/172_Export-TeamsTenantDialPlans.ps1",
+      "source_sha256": "c7c23e4356379bfbde9fe78b0c5fab2863347f69f8f78d0da98b33867f576303"
+    },
+    {
+      "path": "16_Teams_Telephony/173_Get-TeamsVoiceRoutes.ps1",
+      "source_sha256": "583c2ba155a9568f3582e0c3b826460aa9ad65d615c5990e80e85e6bf93d8e49"
+    },
+    {
+      "path": "16_Teams_Telephony/174_Export-TeamsVoiceRoutes.ps1",
+      "source_sha256": "74736d4f25120a2ae6f10077b8d831404d79fbbb935cc03453120d0d060da9b3"
+    },
+    {
+      "path": "16_Teams_Telephony/175_Get-TeamsVoiceRoutingPolicies.ps1",
+      "source_sha256": "eab1a6ecdc8235e04a94429ca87a543a3c26af4c741ce6ea0fa4eb8b827112a4"
+    },
+    {
+      "path": "16_Teams_Telephony/176_Export-TeamsVoiceRoutingPolicies.ps1",
+      "source_sha256": "c2c6ca98dc5f95b69bf0831fa127e5abef2c7341a8e40e0c9088d64234d866f4"
+    },
+    {
+      "path": "16_Teams_Telephony/177_Get-TeamsCallingPolicies.ps1",
+      "source_sha256": "916bdadd91b49e07ce52828a84ec73da1830a93500df96fd1cfddb3bcaaf2535"
+    },
+    {
+      "path": "16_Teams_Telephony/178_Export-TeamsCallingPolicies.ps1",
+      "source_sha256": "844995649be4481b57072d5febf3c8b127e248827417fdb8f32ae673e741e92c"
+    },
+    {
+      "path": "16_Teams_Telephony/179_Get-TeamsCallingLineIdentities.ps1",
+      "source_sha256": "0e77a8d02a7eda34bf457d1256474eb263ed0d35d74b3d8dec0057b225ec8f1c"
+    },
+    {
+      "path": "16_Teams_Telephony/180_Export-TeamsCallingLineIdentities.ps1",
+      "source_sha256": "651b0027db3c9ba1d67540a9502da6475f87aed2652a72485437a75d63f5386b"
+    },
+    {
+      "path": "16_Teams_Telephony/181_Get-TeamsCallParkPolicies.ps1",
+      "source_sha256": "a3fd651d4c9d683899d8300e76c621b36ea49db4b64b12e1f6279e3cae1f6d7e"
+    },
+    {
+      "path": "16_Teams_Telephony/182_Export-TeamsCallParkPolicies.ps1",
+      "source_sha256": "a29922765e5432b8b4a666c0bf27943b447629efdd178348ea3f5577d2b115be"
+    },
+    {
+      "path": "16_Teams_Telephony/183_Get-TeamsIPPhonePolicies.ps1",
+      "source_sha256": "8ec4f69994875ebf25dbb583bd748fcacda09e83c67920eb91de29f4090a7868"
+    },
+    {
+      "path": "16_Teams_Telephony/184_Export-TeamsIPPhonePolicies.ps1",
+      "source_sha256": "083b0d0652f7be45a81e97d93255e81dd7f41337c38c0ae263efa50f373c3c60"
+    },
+    {
+      "path": "16_Teams_Telephony/185_Get-TeamsEmergencyCallingPolicies.ps1",
+      "source_sha256": "f345dccee4511a67ee24be992a4c52f1b2a0a0c7df6940882595109af831167f"
+    },
+    {
+      "path": "16_Teams_Telephony/186_Export-TeamsEmergencyCallingPolicies.ps1",
+      "source_sha256": "2da45f72feeeb6fc2e8734e3b396030d8025f35431b53be2ddc943f7e8e785f0"
+    },
+    {
+      "path": "16_Teams_Telephony/187_Get-TeamsEmergencyCallRoutingPolicies.ps1",
+      "source_sha256": "92fe0b0ed77fe40735905042040fa19b98837389a45161bba8f7ecb07b358d27"
+    },
+    {
+      "path": "16_Teams_Telephony/188_Export-TeamsEmergencyCallRoutingPolicies.ps1",
+      "source_sha256": "36dbe2c30a12d09ef34552fbc9b038b76d28fe0679a434895378d6a812d0ae56"
+    },
+    {
+      "path": "16_Teams_Telephony/189_Get-TeamsPolicyInventorySummary.ps1",
+      "source_sha256": "5818850f4d5729dc9ce6d7f4fb062812b7a1c13facb838310d072993a3fb350b"
+    },
+    {
+      "path": "16_Teams_Telephony/190_Backup-TeamsCoreTelephonyPolicies.ps1",
+      "source_sha256": "0f00e49dd96643c219ff7c11bbe03c773ae3422e46f849e7f0d99216975162ff"
+    },
+    {
+      "path": "16_Teams_Telephony/191_Get-TeamsCallQueueInventory.ps1",
+      "source_sha256": "2b2e60fc9de23f84f0313c3b42bba15fda1c27edab49964865ab5badd38550d3"
+    },
+    {
+      "path": "16_Teams_Telephony/192_Export-TeamsCallQueueInventory.ps1",
+      "source_sha256": "a49bba38bfd4f84873277293a280434206c754612a4d452872ac68c09fb43bd8"
+    },
+    {
+      "path": "16_Teams_Telephony/193_Find-TeamsCallQueuesWithoutResourceAccounts.ps1",
+      "source_sha256": "14d0430a06d308f30618b619fbe5ab65961faa553d556b511529fdc8a7a43b6e"
+    },
+    {
+      "path": "16_Teams_Telephony/194_Find-TeamsCallQueuesWithoutAgents.ps1",
+      "source_sha256": "31f32c6f9cc3d885ceefa85dbfc52fe125084abe2421fc0c46fe6da6475825df"
+    },
+    {
+      "path": "16_Teams_Telephony/195_Get-TeamsCallQueuesByLanguage.ps1",
+      "source_sha256": "ffe9b0241fd8bb352362de2d32562ab45ad6f9682522292821524ffc60be92da"
+    },
+    {
+      "path": "16_Teams_Telephony/196_Get-TeamsCallQueuesByRoutingMethod.ps1",
+      "source_sha256": "1cb71fc087956002087932fd89e1fb64fc17e2bb11a311e419436375bf495bd7"
+    },
+    {
+      "path": "16_Teams_Telephony/197_Get-TeamsCallQueuesWithPresenceRouting.ps1",
+      "source_sha256": "ff4a320569ee1ad6b2480114681afe320fd0fce695946dfdc2b41dc0c1eea60a"
+    },
+    {
+      "path": "16_Teams_Telephony/198_Get-TeamsCallQueuesByConferenceMode.ps1",
+      "source_sha256": "1343d31a3c40e82973a34cd5c3a176d51e9733a800ec5c20e9cd6fd93d0f0769"
+    },
+    {
+      "path": "16_Teams_Telephony/199_Find-TeamsCallQueuesWithConferenceModeDisabled.ps1",
+      "source_sha256": "67d41bec5b66b87234882ef71440bb8043296a470954df9d4b93ed5b7d46cd7b"
+    },
+    {
+      "path": "16_Teams_Telephony/200_Get-TeamsCallQueuesWithOverflowConfiguration.ps1",
+      "source_sha256": "c52f463dc7915221ec29afb852103b5228df98134e0c3d98e435387e465bbab1"
+    },
+    {
+      "path": "16_Teams_Telephony/201_Get-TeamsCallQueuesWithTimeoutConfiguration.ps1",
+      "source_sha256": "9c45df1556ba93570ae8b8614dd8206a5e0b5c4e1f9436fc7d919c1e678a0463"
+    },
+    {
+      "path": "16_Teams_Telephony/202_Get-TeamsCallQueueAgentSummary.ps1",
+      "source_sha256": "3451408a610ed13e6328549518f6d3317c886b6f3774335f7fba3c1919509704"
+    },
+    {
+      "path": "16_Teams_Telephony/203_Get-TeamsCallQueueDistributionLists.ps1",
+      "source_sha256": "4e7766ce04569e138d3faa75ce0b961c358fb2448d83dfa68cc51aa78bc671c9"
+    },
+    {
+      "path": "16_Teams_Telephony/204_Compare-TeamsCallQueueRoutingModes.ps1",
+      "source_sha256": "5ecb5fcf7e30bb2c3f3cc9f52b9b089bb61b7c5018ba178262f2666c91ed57ab"
+    },
+    {
+      "path": "16_Teams_Telephony/205_Measure-TeamsCallQueueAgentCoverage.ps1",
+      "source_sha256": "d5349533e174ab381d16bb67f5cc71ccaf6d7ed818150c82c350593b7aa3bbb8"
+    },
+    {
+      "path": "16_Teams_Telephony/206_Test-TeamsCallQueueNamingStandard.ps1",
+      "source_sha256": "ac69e9f26dd027d5725df86d8f96a246868c7cbe628df23ba40f4d757427f522"
+    },
+    {
+      "path": "16_Teams_Telephony/207_Find-TeamsCallQueuesWithoutLanguage.ps1",
+      "source_sha256": "f6d273baea86ddd6eb705c3dbdc9d6fdee60f4c4a950599d906d66f2ddbc80b0"
+    },
+    {
+      "path": "16_Teams_Telephony/208_Get-TeamsCallQueueChannelBindings.ps1",
+      "source_sha256": "6e142b9af271c90a0d91b83a858df2e6af5bdd41cdd5bbc03ef63f9421fca96c"
+    },
+    {
+      "path": "16_Teams_Telephony/209_Export-TeamsCallQueueResourceAccounts.ps1",
+      "source_sha256": "bd1fe9ab3b6aed288eae66cb5cad5f84017bfe7abbc93945533304d5537c1cef"
+    },
+    {
+      "path": "16_Teams_Telephony/210_Backup-TeamsCallQueueConfiguration.ps1",
+      "source_sha256": "88e7c57e0c58d97bafeadc9f986914690b77c12d41153bdd003d23f615e04487"
+    },
+    {
+      "path": "16_Teams_Telephony/211_Get-TeamsCallQueueOverview.ps1",
+      "source_sha256": "9b1da384bae13c608f8f083eeefb2c374e04dbff44bcecab69b9b6520d808f4d"
+    },
+    {
+      "path": "16_Teams_Telephony/212_Get-TeamsAutoAttendantInventory.ps1",
+      "source_sha256": "243364f3e7134078a570d51f07a950372fd13638cc3417b9e25902266cf8e4dc"
+    },
+    {
+      "path": "16_Teams_Telephony/213_Export-TeamsAutoAttendantInventory.ps1",
+      "source_sha256": "0fb8ea624f84a18322bd87981bebdd901640277cc4c875879beec861e0e343be"
+    },
+    {
+      "path": "16_Teams_Telephony/214_Find-TeamsAutoAttendantsWithoutResourceAccounts.ps1",
+      "source_sha256": "015bbd01c68fb70cd8d19f7f3133a12b74ac623d48e9a8535078af778b0132c1"
+    },
+    {
+      "path": "16_Teams_Telephony/215_Get-TeamsAutoAttendantsByLanguage.ps1",
+      "source_sha256": "1099e26f7bc2cc070e204bc9bd2722e73984413b2f3cc770a583cce9796770e3"
+    },
+    {
+      "path": "16_Teams_Telephony/216_Get-TeamsAutoAttendantsWithVoiceResponse.ps1",
+      "source_sha256": "7d078380f57991776b76bc5bc92e38565efa8aa59ad5a50f9f040337cc3ffb7c"
+    },
+    {
+      "path": "16_Teams_Telephony/217_Get-TeamsAutoAttendantsByVoiceResponse.ps1",
+      "source_sha256": "22f813bd3246f5989ca40d5192d0e9ad0f60975cdb6cd50b541573dc93c38be1"
+    },
+    {
+      "path": "16_Teams_Telephony/218_Find-TeamsAutoAttendantsWithoutOperator.ps1",
+      "source_sha256": "64b501dc5cac309bfd2a94613c1225b8a8607c43e94462bc5db7d34f987023f3"
+    },
+    {
+      "path": "16_Teams_Telephony/219_Get-TeamsAutoAttendantScheduleSummary.ps1",
+      "source_sha256": "51798124cf8ad7663c2df1cde9a281016c0e53b976a6a22da6d8079940f298f4"
+    },
+    {
+      "path": "16_Teams_Telephony/220_Get-TeamsAutoAttendantHolidaySummary.ps1",
+      "source_sha256": "f502afad5ff217b085a03e6aec6f91dfb17177c3b1eb29db6203d38be13558bf"
+    },
+    {
+      "path": "16_Teams_Telephony/221_Get-TeamsAutoAttendantCallFlowSummary.ps1",
+      "source_sha256": "3abccbd851aeda751fb14924934d1de3b7656166b7ac7334716b9e158323387d"
+    },
+    {
+      "path": "16_Teams_Telephony/222_Compare-TeamsAutoAttendantDialScopes.ps1",
+      "source_sha256": "5bc9fbd0365612a7c6ad2f2af515f2c0766d3ba2153ec8081aaac67d1923d31f"
+    },
+    {
+      "path": "16_Teams_Telephony/223_Test-TeamsAutoAttendantNamingStandard.ps1",
+      "source_sha256": "05c695f532249f752a665e97071d10b0e65ad9379b1d4c01e07db3be1ccfe4f0"
+    },
+    {
+      "path": "16_Teams_Telephony/224_Measure-TeamsAutoAttendantBusinessHoursCoverage.ps1",
+      "source_sha256": "00e7b20b10849a01c2a952ad265e93de14a1111ebc4492a4e14d6622d359906e"
+    },
+    {
+      "path": "16_Teams_Telephony/225_Get-TeamsAutoAttendantDirectorySearchModes.ps1",
+      "source_sha256": "519cba98c9ccd4dba7dfc3ea5004edb0d8a7fdff6f8aaee9151174220323210e"
+    },
+    {
+      "path": "16_Teams_Telephony/226_Find-TeamsAutoAttendantsWithoutDefaultCallFlow.ps1",
+      "source_sha256": "cf8ceb161c2cf549fdf8da5806b2ed7d1be3f7f40569aba767a2343b48d73df6"
+    },
+    {
+      "path": "16_Teams_Telephony/227_Get-TeamsAutoAttendantOperatorTargets.ps1",
+      "source_sha256": "8835c7d69d0f41102022d192ed4dcd5551c0cfac2dea5e5679e217b8532fa234"
+    },
+    {
+      "path": "16_Teams_Telephony/228_Export-TeamsAutoAttendantResourceAccounts.ps1",
+      "source_sha256": "9eb6478f180e942f021d605a022af513800b604d47005d87c7b893e722009694"
+    },
+    {
+      "path": "16_Teams_Telephony/229_Backup-TeamsAutoAttendantConfiguration.ps1",
+      "source_sha256": "00f77f1102c9fb383df589d6a34a01ac8f6828f02691bab891fd5f99a4b5b8ee"
+    },
+    {
+      "path": "16_Teams_Telephony/230_Get-TeamsAutoAttendantCallableEntities.ps1",
+      "source_sha256": "9b96243734968f031de0b0e792b96f590d2df453a4dfc3c8d91d7284d7e4742a"
+    },
+    {
+      "path": "16_Teams_Telephony/231_Find-TeamsAutoAttendantsWithoutAfterHoursCallFlow.ps1",
+      "source_sha256": "2e8585f69b3d9bf026b53f001567988ade165daaa300d1204be50afb950c9619"
+    },
+    {
+      "path": "16_Teams_Telephony/232_Get-TeamsAutoAttendantOverview.ps1",
+      "source_sha256": "297be5d4f45fb450bef07b16d91166f849f4717dbb7101f4bc429980cafe6ee7"
+    },
+    {
+      "path": "16_Teams_Telephony/233_Get-TeamsResourceAccountInventory.ps1",
+      "source_sha256": "ba5a29d69f3967442c0407780c576de5bbca4c1434dd208e2d1e4598e1e48f21"
+    },
+    {
+      "path": "16_Teams_Telephony/234_Export-TeamsResourceAccountInventory.ps1",
+      "source_sha256": "2f2506064f1c4136002044c9a7c9274d15da90d97d8de10d92193dafd9c218fa"
+    },
+    {
+      "path": "16_Teams_Telephony/235_Find-TeamsResourceAccountsWithoutPhoneNumber.ps1",
+      "source_sha256": "199100f66998b3d84c6f4ef5dd0a090a71419bbd4027683f5e7cf6c5757c5bab"
+    },
+    {
+      "path": "16_Teams_Telephony/236_Find-TeamsResourceAccountsWithoutApplicationAssignment.ps1",
+      "source_sha256": "8e184509247d622dd94354848d343e6fe238a0d9471a884b2ad8d8967023fedb"
+    },
+    {
+      "path": "16_Teams_Telephony/237_Get-TeamsResourceAccountsByApplicationType.ps1",
+      "source_sha256": "3d3fdb2cf5cd261076305b9ed2df5a80259109f04e4ea036ecf0d8a84e0202fd"
+    },
+    {
+      "path": "16_Teams_Telephony/238_Get-TeamsResourceAccountsByUsageLocation.ps1",
+      "source_sha256": "8738ff4df598b0b11d521db3a62f6cb52fa1565cf16a5cb0f816555895f2b03a"
+    },
+    {
+      "path": "16_Teams_Telephony/239_Find-TeamsResourceAccountsWithoutDisplayName.ps1",
+      "source_sha256": "2ce185f256f814fdc92afab2012e2227463a35aa77704acca7139995e3bb7437"
+    },
+    {
+      "path": "16_Teams_Telephony/240_Find-TeamsResourceAccountsWithoutUPNSuffixMatch.ps1",
+      "source_sha256": "73eaa6e0ddaa13902de86edcb7849f137479969cbe75da52d9e02f43fd8ad85e"
+    },
+    {
+      "path": "16_Teams_Telephony/241_Test-TeamsResourceAccountNamingStandard.ps1",
+      "source_sha256": "275f46d350c46581d8efc8d978ee5acc382168b01f973c658ba8dc95c378af84"
+    },
+    {
+      "path": "16_Teams_Telephony/242_Get-TeamsResourceAccountsWithPhoneNumbers.ps1",
+      "source_sha256": "389edb0ab0a2c2d08418135edbfd129b58dcd42eccb5c8fce0ceaf53d29c2f16"
+    },
+    {
+      "path": "16_Teams_Telephony/243_Measure-TeamsResourceAccountPhoneCoverage.ps1",
+      "source_sha256": "18a3ec0b55d1588bdae3a0e8250d837efe3911c13d82e2156adfc68593f0b94f"
+    },
+    {
+      "path": "16_Teams_Telephony/244_Get-TeamsResourceAccountsByDomain.ps1",
+      "source_sha256": "bc10562a400316412e8cb4070565b45061b67af6da8d632c8e04e04ef777eb06"
+    },
+    {
+      "path": "16_Teams_Telephony/245_Get-TeamsResourceAccountsByPhoneNumberPrefix.ps1",
+      "source_sha256": "f0adef02263abfde3ec29b1f04620257d4e224086e099ace37d1c17ac6675044"
+    },
+    {
+      "path": "16_Teams_Telephony/246_Find-TeamsResourceAccountsWithoutUsageLocation.ps1",
+      "source_sha256": "0c6746888bac83e71ccad8435c564879357f278c4f4847c1c18ccd15b1410a90"
+    },
+    {
+      "path": "16_Teams_Telephony/247_Find-TeamsResourceAccountsWithDuplicateDisplayName.ps1",
+      "source_sha256": "54211bf7529a6f39e63eb7f831602d38a6988c752ae024d0cc846d27db5c2b54"
+    },
+    {
+      "path": "16_Teams_Telephony/248_Find-TeamsResourceAccountsWithDuplicatePhoneNumber.ps1",
+      "source_sha256": "37c192c2f68d2daf7cfb87f4cc07f8d22dff7724b03c20522fe92adcd4503dfe"
+    },
+    {
+      "path": "16_Teams_Telephony/249_Export-TeamsResourceAccountPhoneNumbers.ps1",
+      "source_sha256": "c9748d880b78447d16aed802822a619e27e56f91949b3d6fedbd041685a16115"
+    },
+    {
+      "path": "16_Teams_Telephony/250_Backup-TeamsResourceAccounts.ps1",
+      "source_sha256": "26f83f70c3e8810fe07c09dcdfcd1475a9abf0fde1405a3ec6f204d69a4eeb95"
+    },
+    {
+      "path": "16_Teams_Telephony/251_Get-TeamsResourceAccountOverview.ps1",
+      "source_sha256": "148fa1c1315e619a7e0febda7b731edca18ddb4a22946b90421ad4893c1ce4a3"
+    },
+    {
+      "path": "16_Teams_Telephony/252_Get-TeamsPstnGatewayInventory.ps1",
+      "source_sha256": "9eb1eb2497bb14cd7c2456e5eae51096136104febddc98919471d5505f1a29ed"
+    },
+    {
+      "path": "16_Teams_Telephony/253_Export-TeamsPstnGatewayInventory.ps1",
+      "source_sha256": "bd5860da5a599461f34809813d9f938ef9f597421bfedc37c856d3a011713f99"
+    },
+    {
+      "path": "16_Teams_Telephony/254_Find-TeamsDisabledPstnGateways.ps1",
+      "source_sha256": "945b94df3390500781e0603a0b4de783ba88ab300dbb1350d9f8441b40a2fc93"
+    },
+    {
+      "path": "16_Teams_Telephony/255_Get-TeamsPstnGatewaysBySipSignalingPort.ps1",
+      "source_sha256": "dc9d015cc558fda15507d97a0e6b0faa026c0a5c40728fafc51425900e57095f"
+    },
+    {
+      "path": "16_Teams_Telephony/256_Test-TeamsPstnGatewayForwardingState.ps1",
+      "source_sha256": "d7cbe2508fcaaddafa0db9402e2542ae2d87b906ad3beaff6ad1fccac25a4c73"
+    },
+    {
+      "path": "16_Teams_Telephony/257_Get-TeamsVoiceRouteInventory.ps1",
+      "source_sha256": "9a6f40b7473661ccc2622783b10bef9b7631c198bc7c623e50260cde08513dc7"
+    },
+    {
+      "path": "16_Teams_Telephony/258_Export-TeamsVoiceRouteInventory.ps1",
+      "source_sha256": "930ad698b931837966d2b6b9ac9a8e4dd566e43b7535a815770a21fff189e89c"
+    },
+    {
+      "path": "16_Teams_Telephony/259_Find-TeamsVoiceRoutesWithoutGateways.ps1",
+      "source_sha256": "3cbf92fb23ddf86ba977ae2c8eaf67cb52ea2f5708a5284a231365a0ccf9adfc"
+    },
+    {
+      "path": "16_Teams_Telephony/260_Compare-TeamsVoiceRoutesByPriority.ps1",
+      "source_sha256": "4847a275fa857515bfa186c56f5c769106bae8caee1c65e4c589cb59e4618b8f"
+    },
+    {
+      "path": "16_Teams_Telephony/261_Get-TeamsVoiceRoutesByNumberPattern.ps1",
+      "source_sha256": "08776d5178b5adf122fd02e4157b0adb3ca88b80143bcecdce713cccd24003d5"
+    },
+    {
+      "path": "16_Teams_Telephony/262_Get-TeamsVoiceRoutingPolicyInventory.ps1",
+      "source_sha256": "8060e1167e0058c077bb527d54116bfc9d39fa4ae3c0d407804ffc55a36f1e73"
+    },
+    {
+      "path": "16_Teams_Telephony/263_Export-TeamsVoiceRoutingPolicyInventory.ps1",
+      "source_sha256": "0b7eb7eec048e286584e09a2e39e5ef1a7f7e9b5807e90c06820ce711793a5da"
+    },
+    {
+      "path": "16_Teams_Telephony/264_Find-TeamsVoiceRoutingPoliciesWithoutRoutes.ps1",
+      "source_sha256": "03cec174ea79f176740df563bc437d594767a3fc23f138c3afc426d671b59ba9"
+    },
+    {
+      "path": "16_Teams_Telephony/265_Compare-TeamsVoiceRoutingPolicyAssignments.ps1",
+      "source_sha256": "d53b7295eb2d52fdc9f77b44d0a68c62e8bb4cece214f1dbcd7c716ab13a3e38"
+    },
+    {
+      "path": "16_Teams_Telephony/266_Measure-TeamsGatewayRouteCoverage.ps1",
+      "source_sha256": "7bb81098c9590f8414019838b1dbdfcb2ce7d78d3bdce7c17c42e94cfecd2f0f"
+    },
+    {
+      "path": "16_Teams_Telephony/267_Backup-TeamsDirectRoutingConfiguration.ps1",
+      "source_sha256": "35076ae8befc9e222b03dddbb561b0e756f665da55975d98402402c0f970c84f"
+    },
+    {
+      "path": "16_Teams_Telephony/268_Get-TeamsDirectRoutingOverview.ps1",
+      "source_sha256": "1298909378a9bed31b1cbc5e559fb9a481f4673f82bc39be9cd23e7c51b1bcc5"
+    },
+    {
+      "path": "16_Teams_Telephony/269_Find-TeamsRoutesWithDuplicatePatterns.ps1",
+      "source_sha256": "1929c4688b0e35cc1a052cd0de1b19a1704c847750c6982d36cd5aa2e70319ee"
+    },
+    {
+      "path": "16_Teams_Telephony/270_Get-TeamsPstnGatewayFailoverSummary.ps1",
+      "source_sha256": "3780bd55c20db35922d7f6b0d0c30c4c0196c246aedb8764eae350d8e15ebf14"
+    },
+    {
+      "path": "16_Teams_Telephony/271_Get-TeamsVoiceRoutingPolicyPstnUsageMap.ps1",
+      "source_sha256": "6ae039a6bb2dc18907dd58d29ec2eb66ffcd1ce5ad2cbef49d9d5c80b76d6482"
+    },
+    {
+      "path": "16_Teams_Telephony/272_Get-TeamsDialPlanInventory.ps1",
+      "source_sha256": "6aba3fd12ac8dea19a434ef7f67476f958e41f65a64effaa9c5f24b8037d1669"
+    },
+    {
+      "path": "16_Teams_Telephony/273_Export-TeamsDialPlanInventory.ps1",
+      "source_sha256": "aefa1683d2f47f93626d4c0be72a91249560b5350cc683d7c3601e3fe51b5a50"
+    },
+    {
+      "path": "16_Teams_Telephony/274_Find-TeamsDialPlansWithoutNormalizationRules.ps1",
+      "source_sha256": "72dcbbcf3738da5e9200ae3cd712ce2e2c43f04d9de4692777ace8b5466e9519"
+    },
+    {
+      "path": "16_Teams_Telephony/275_Compare-TeamsDialPlanNormalizationCounts.ps1",
+      "source_sha256": "7c89c6e8d76a3d6f8c4ad9ad383b889aae422bd74ecc453e4698de534910d06f"
+    },
+    {
+      "path": "16_Teams_Telephony/276_Get-TeamsDialPlansBySimpleName.ps1",
+      "source_sha256": "9894bb1bc752af07eedf47e2e05029cd8874741274dc6c70cb687451d212fbda"
+    },
+    {
+      "path": "16_Teams_Telephony/277_Get-TeamsDialPlanNormalizationRuleSummary.ps1",
+      "source_sha256": "48ebe07f0a7dc7110bca1c687cbb5465e468e134840196a56a2aed17bed697e3"
+    },
+    {
+      "path": "16_Teams_Telephony/278_Find-TeamsDialPlansWithoutExternalAccessPrefix.ps1",
+      "source_sha256": "eddda5851daf2a9edd60f4f71a67bc8bfe61b10362300423e64754887d6cc0c3"
+    },
+    {
+      "path": "16_Teams_Telephony/279_Test-TeamsDialPlanNormalizationPatterns.ps1",
+      "source_sha256": "a8fc1d2a4b1169bba8294d4a759147e24966ae36c05202393f760e9bb29bcf00"
+    },
+    {
+      "path": "16_Teams_Telephony/280_Measure-TeamsDialPlanComplexity.ps1",
+      "source_sha256": "d05032d2bcd5a9dfb512dd54540936526d6c2c08add903118dd2639504f87a98"
+    },
+    {
+      "path": "16_Teams_Telephony/281_Backup-TeamsDialPlans.ps1",
+      "source_sha256": "fa9d475a92ff7e56382aa15b35564163dc1c61611ed9d3caddeb6d6f4abd63de"
+    },
+    {
+      "path": "16_Teams_Telephony/282_Get-TeamsDialPlanOverview.ps1",
+      "source_sha256": "475083d404f082332bb1ad1b8c6407dcc612f30befb6e2c9c3a97733b595f541"
+    },
+    {
+      "path": "16_Teams_Telephony/283_Compare-TeamsDialPlanUsages.ps1",
+      "source_sha256": "65af2395608ff0cc14fdf9615b30db4b57a807835446de286e942a9546599736"
+    },
+    {
+      "path": "16_Teams_Telephony/284_Find-TeamsDialPlansWithDuplicateNormalizationNames.ps1",
+      "source_sha256": "04e1601585b2d8f50141dcf11eb7daf5e1a387e7d2443b1093409f89028c0ae6"
+    },
+    {
+      "path": "16_Teams_Telephony/285_Find-TeamsDialPlansWithDuplicateNormalizationPatterns.ps1",
+      "source_sha256": "e53db7f64741d9db28ba16b78144362e24192454d003037f460826405b763362"
+    },
+    {
+      "path": "16_Teams_Telephony/286_Get-TeamsDialPlansByDescription.ps1",
+      "source_sha256": "5d9e3e51cbc5bef891789beb779366242710316faa1e65871ff270abe6effa46"
+    },
+    {
+      "path": "16_Teams_Telephony/287_Export-TeamsDialPlanNormalizationRules.ps1",
+      "source_sha256": "d239a414fddac896a177bdb5820d66fe6dcb211705da83d864e9a45324ce4101"
+    },
+    {
+      "path": "16_Teams_Telephony/288_Get-TeamsDialPlanTranslationPatterns.ps1",
+      "source_sha256": "d73ef8ac9371107dcde2ac883a1f35734c60403e652a9e8f3a6922eb4f34ddd6"
+    },
+    {
+      "path": "16_Teams_Telephony/289_Get-TeamsDialPlanPstnUsages.ps1",
+      "source_sha256": "ee2d84bae4eb41a6ad4e737bc38a358f8ddc5908c8c40f470cc7208389b65c8f"
+    },
+    {
+      "path": "16_Teams_Telephony/290_Find-TeamsDialPlansWithoutPstnUsage.ps1",
+      "source_sha256": "0cb6dc5b20dde43faee56551028870858be0a917677998be75d399c7ba660ca5"
+    },
+    {
+      "path": "16_Teams_Telephony/291_Get-TeamsTenantDialPlanSummary.ps1",
+      "source_sha256": "5c26313a3f3b5bf3429bfad5a1af9b70e23ab86d0e99d58e5321ef92eb0a2486"
+    },
+    {
+      "path": "16_Teams_Telephony/292_Get-TeamsEmergencyCallingPoliciesOverview.ps1",
+      "source_sha256": "1459da41bce7ef16b2ae1638638804a546358cbcab375316237f4281553061b3"
+    },
+    {
+      "path": "16_Teams_Telephony/293_Export-TeamsEmergencyCallingPoliciesOverview.ps1",
+      "source_sha256": "b2341c09fcce7bb1fad8d2682c29106f3ca57f20256ac8114af0ba92bb70ccd0"
+    },
+    {
+      "path": "16_Teams_Telephony/294_Get-TeamsEmergencyCallRoutingPoliciesOverview.ps1",
+      "source_sha256": "89c2e8f6e862f21b31281b9a2adf73829bf48fa203ec82b37d6bbea276617cc2"
+    },
+    {
+      "path": "16_Teams_Telephony/295_Export-TeamsEmergencyCallRoutingPoliciesOverview.ps1",
+      "source_sha256": "b75d0d9c7bd78801a4e1dc734af1bd5dd4a80fcd81253f58a17943cb89054bb3"
+    },
+    {
+      "path": "16_Teams_Telephony/296_Get-TeamsLisLocationInventory.ps1",
+      "source_sha256": "65e4785dbfed8103d0fc8f8b6174bee3bb616e7bbe6b31f75c49bcfe35ba525a"
+    },
+    {
+      "path": "16_Teams_Telephony/297_Export-TeamsLisLocationInventory.ps1",
+      "source_sha256": "05cab40e7ddda1cd926d10dc491db916e3480029d24346694e6931daa42b4dfd"
+    },
+    {
+      "path": "16_Teams_Telephony/298_Get-TeamsLisCivicAddressInventory.ps1",
+      "source_sha256": "470c56228b8294589c832d3fbc98d83ef510cef762d0817fd0dba328adaabbe8"
+    },
+    {
+      "path": "16_Teams_Telephony/299_Export-TeamsLisCivicAddressInventory.ps1",
+      "source_sha256": "2654acd10789f4e9044682f3f370ba35cd7b7711cc9bd889aaf87896eaf15200"
+    },
+    {
+      "path": "16_Teams_Telephony/300_Find-TeamsLisLocationsWithoutNetworkMapping.ps1",
+      "source_sha256": "71e64d0330aa9fb92a8ab8ae6af8fb01def3b8c2968bc0c2be17a6eebec4d667"
+    },
+    {
+      "path": "16_Teams_Telephony/301_Get-TeamsTenantNetworkSiteInventory.ps1",
+      "source_sha256": "ca246dc80857b172724e3b272e24a4d091637573b27dfe9243f9def0893e016e"
+    },
+    {
+      "path": "16_Teams_Telephony/302_Export-TeamsTenantNetworkSiteInventory.ps1",
+      "source_sha256": "d2d7a57e2232cdbc4b64da7ca2044965029e15e1b24efeb614618eeec31ad828"
+    },
+    {
+      "path": "16_Teams_Telephony/303_Get-TeamsTenantNetworkSubnetInventory.ps1",
+      "source_sha256": "0d69a4cfa037d50d52a832589cb8010df1e89b50278b83134e4e2c9fdd80e9da"
+    },
+    {
+      "path": "16_Teams_Telephony/304_Export-TeamsTenantNetworkSubnetInventory.ps1",
+      "source_sha256": "2e81070c933619b6db90ddadf202f25d8ab8b67983e2cfbb43c744c9fa450e9d"
+    },
+    {
+      "path": "16_Teams_Telephony/305_Find-TeamsNetworkSubnetsWithoutSites.ps1",
+      "source_sha256": "66e03ef2306002fe6bfd9305056cc291f390d43587f5a29fffef27153144859d"
+    },
+    {
+      "path": "16_Teams_Telephony/306_Compare-TeamsEmergencyPoliciesAndNetworkSites.ps1",
+      "source_sha256": "0216cf0b854c20080d3d7fd139a6f17d513accc86d61c63592d1b0ee698a30d4"
+    },
+    {
+      "path": "16_Teams_Telephony/307_Measure-TeamsEmergencyAddressCoverage.ps1",
+      "source_sha256": "54eb74e90476c0d21d74e929c1a246b359fda4fcbdbfbae3fda1f7ce4c9a9039"
+    },
+    {
+      "path": "16_Teams_Telephony/308_Test-TeamsEmergencyPolicyNamingStandard.ps1",
+      "source_sha256": "7d52136d8ca20dc96d1c50cd898eb32c13dbfdff7d651694efb2f3898ffff566"
+    },
+    {
+      "path": "16_Teams_Telephony/309_Backup-TeamsEmergencyConfiguration.ps1",
+      "source_sha256": "db0ed9f41f86eedba4e29145b6b456322da8d7f03a3d02242c84526dfadb331c"
+    },
+    {
+      "path": "16_Teams_Telephony/310_Get-TeamsEmergencyRoutingOverview.ps1",
+      "source_sha256": "7929ca1b0ecfabadb0bc4d6dc4d06420ebfac52e1bfe72b80e72adf8014314e6"
+    },
+    {
+      "path": "16_Teams_Telephony/311_Get-TeamsEmergencyNetworkOverview.ps1",
+      "source_sha256": "ff0b4e2189a1ce5efb50537e8640fed2f5fca18cedfa230c54fccc78b7721738"
+    },
+    {
+      "path": "16_Teams_Telephony/312_Get-TeamsUserCallingSettingsInventory.ps1",
+      "source_sha256": "3281b3f54684a5928b973f69cddf32b9aab4ad621d68c14562006def15ac4738"
+    },
+    {
+      "path": "16_Teams_Telephony/313_Export-TeamsUserCallingSettingsInventory.ps1",
+      "source_sha256": "80d7202486c7c23d6cb5ca1d46f0d3db431751513aeb8ccd311b78723996c00d"
+    },
+    {
+      "path": "16_Teams_Telephony/314_Find-TeamsUsersWithCallForwardingEnabled.ps1",
+      "source_sha256": "4d144b789018ea1c68f08f56e0da371ba72bfd4e59412beb5dfdf841e2b830a5"
+    },
+    {
+      "path": "16_Teams_Telephony/315_Find-TeamsUsersWithDelegationConfigured.ps1",
+      "source_sha256": "b38de8ba2403d843939d74ec44e4ccc16fceb151b56aa2e572b99dfb19aed692"
+    },
+    {
+      "path": "16_Teams_Telephony/316_Find-TeamsUsersWithSimultaneousRing.ps1",
+      "source_sha256": "daffaadb7a37a3a728c391bee58ecbe13a05d8af4b549f3275154619f15653e4"
+    },
+    {
+      "path": "16_Teams_Telephony/317_Find-TeamsUsersWithUnansweredSettings.ps1",
+      "source_sha256": "262a7b01cdd98cc2dd5a231ae1c8b52535082a020657e7a7a57ba94263e5000c"
+    },
+    {
+      "path": "16_Teams_Telephony/318_Get-TeamsUsersByCallGroupConfiguration.ps1",
+      "source_sha256": "ff83ab67ebc4e4f7218029c3231c64a378770557d611a8b9cb1ca35a1e254eed"
+    },
+    {
+      "path": "16_Teams_Telephony/319_Get-TeamsUsersByForwardingType.ps1",
+      "source_sha256": "6e0ae83b36cf04ae44dd587e87600309b19092e7fc9d6b6583d3c09060aec077"
+    },
+    {
+      "path": "16_Teams_Telephony/320_Get-TeamsUsersByForwardingTargetType.ps1",
+      "source_sha256": "f8387995ba425886a17f03dde62413ed6e6280b7f57f87250a0e42ade9dcc4b5"
+    },
+    {
+      "path": "16_Teams_Telephony/321_Measure-TeamsCallForwardingAdoption.ps1",
+      "source_sha256": "0fcf531ae57578327d01f2199e95e0039e7b9285e445bfa7d58c399093ab85ee"
+    },
+    {
+      "path": "16_Teams_Telephony/322_Find-TeamsUsersWithUnansweredToVoicemail.ps1",
+      "source_sha256": "9f97009dd37087d18f1b356aa899df963b095685f97f13e9c3d14eae5e86f1cd"
+    },
+    {
+      "path": "16_Teams_Telephony/323_Find-TeamsUsersWithExternalForwarding.ps1",
+      "source_sha256": "72a4831e5fe999c311a14c2d0dfedbf8c67a8ec3a2d36ef1ee464369c2ffc6c1"
+    },
+    {
+      "path": "16_Teams_Telephony/324_Export-TeamsCallDelegationTargets.ps1",
+      "source_sha256": "eddf771bceba1d520a598f825895ab53efb5cd8246ee000a206b372c7f24342c"
+    },
+    {
+      "path": "16_Teams_Telephony/325_Test-TeamsCallingSettingsConsistency.ps1",
+      "source_sha256": "4496c93484f1f87aab21cfce7262b6d20c5ea7d18073a32e954650931a8b8e3e"
+    },
+    {
+      "path": "16_Teams_Telephony/326_Backup-TeamsUserCallingSettings.ps1",
+      "source_sha256": "2a0b87a451bce5bb87e858f07c7a676afaafa8b7c1a2deab7f5713190b311b7d"
+    },
+    {
+      "path": "16_Teams_Telephony/327_Get-TeamsCallingSettingsOverview.ps1",
+      "source_sha256": "8fc339c4868aaf917408f5f7621b198e613e4175a3ec076c9db528c6eb3e7af8"
+    },
+    {
+      "path": "16_Teams_Telephony/328_Find-TeamsUsersWithCallGroupMembers.ps1",
+      "source_sha256": "22036dea7c01b20d87a22c248ed2869623e909e215f4963f01a38accc5de9553"
+    },
+    {
+      "path": "16_Teams_Telephony/329_Measure-TeamsVoicemailCoverage.ps1",
+      "source_sha256": "3e4ba2958acea8b7766000803139c878d76190ee5df5714dc70f08fe18b117a4"
+    },
+    {
+      "path": "16_Teams_Telephony/330_Compare-TeamsForwardingAndDelegationUsage.ps1",
+      "source_sha256": "1a234f4fa24dd4e0ea147f241e36db95b822d7a0cfeeaa6dfb774eb8380b6fc1"
+    },
+    {
+      "path": "16_Teams_Telephony/331_Get-TeamsTelephonyReadinessOverview.ps1",
+      "source_sha256": "88086d634ed5d3bdd68ade1b2e96a4554803ae7e60f0b577aba991487ef23487"
+    },
+    {
+      "path": "16_Teams_Telephony/332_Find-TeamsLicensedUsersWithoutTelephonyConfig.ps1",
+      "source_sha256": "b6ea48f6f5a826b4819789caf66f6d8ba28cbcdcb5b5fb18519b584733c4b042"
+    },
+    {
+      "path": "16_Teams_Telephony/333_Find-TeamsTelephonyUsersWithoutUsageLocation.ps1",
+      "source_sha256": "f1142a4b161e759b1d84d7ba82b36a2c3c57a6d8cb26e476d7ca48d2f4cda694"
+    },
+    {
+      "path": "16_Teams_Telephony/334_Find-TeamsVoiceEnabledUsersWithoutDialPlan.ps1",
+      "source_sha256": "1e63b178c88afb1deeb6ca04511b36d668576d0d5e7188f6a56c4b3ff1d9dd2b"
+    },
+    {
+      "path": "16_Teams_Telephony/335_Find-TeamsVoiceEnabledUsersWithoutVoiceRoutingPolicy.ps1",
+      "source_sha256": "91330eec56339b4a73229f7e2a5879c5370eb34c56d0e51baba3a8184657983a"
+    },
+    {
+      "path": "16_Teams_Telephony/336_Find-TeamsVoiceEnabledUsersWithoutCallingPolicy.ps1",
+      "source_sha256": "82efabb7844f0464907d2b1d8ce41cd462ac91e48f0b0426b1529258833eb225"
+    },
+    {
+      "path": "16_Teams_Telephony/337_Find-TeamsVoiceEnabledUsersWithoutEmergencyPolicy.ps1",
+      "source_sha256": "a80e863719189ea22aecc62950886ec015785304436b7fb43f260ec3442455a2"
+    },
+    {
+      "path": "16_Teams_Telephony/338_Compare-TeamsTelephonyAssignmentsByDomain.ps1",
+      "source_sha256": "de6d3184ebd98dce4fa16002f2cb2ef20702e0da8b3e854763d67d9766e9b9b1"
+    },
+    {
+      "path": "16_Teams_Telephony/339_Compare-TeamsTelephonyAssignmentsByCountry.ps1",
+      "source_sha256": "af2b8cec6bad7366d47863f4c70a5f35bbdf9749e4a22ac891c4ccb32854d94e"
+    },
+    {
+      "path": "16_Teams_Telephony/340_Measure-TeamsTelephonyAdoptionByOffice.ps1",
+      "source_sha256": "73241a21565ed0ea7b1e3c3c7fe5a661f6eff1a6c814aef4faeb285d60a212f4"
+    },
+    {
+      "path": "16_Teams_Telephony/341_Export-TeamsTelephonyAssignmentMatrix.ps1",
+      "source_sha256": "4c140455da5a14b84de09f5c28253c2f08c0e2fe854b6abbd4506ddd8d6c7c5f"
+    },
+    {
+      "path": "16_Teams_Telephony/342_Export-TeamsTelephonyPolicyMatrix.ps1",
+      "source_sha256": "27deb90883e8452c7c5ed9f32faeb628370dfad7a2664967aa0a8124a4515677"
+    },
+    {
+      "path": "16_Teams_Telephony/343_Backup-TeamsTelephonyUserConfiguration.ps1",
+      "source_sha256": "0c78eb94f05d9a891f34c32072c3b77ed0d8663f500ee354c39ba8f0de8abb4d"
+    },
+    {
+      "path": "16_Teams_Telephony/344_Test-TeamsTelephonyConfigurationCompleteness.ps1",
+      "source_sha256": "155022991f5add230230ba554fa9576e289b3f38705a69821cb4fea2ca8e4795"
+    },
+    {
+      "path": "16_Teams_Telephony/345_Find-TeamsPotentialCommonAreaPhoneUsers.ps1",
+      "source_sha256": "5772c12b8a9d28a3feaf7b0eb96d7071ec0fef9d8ab0607bd9ebb7112082e42b"
+    },
+    {
+      "path": "16_Teams_Telephony/346_Find-TeamsUsersWithNonE164Numbers.ps1",
+      "source_sha256": "1a97528c5d3fca598c9da29e5c55bd4ffa726caf57cda8e0164c13f8898b87d7"
+    },
+    {
+      "path": "16_Teams_Telephony/347_Find-TeamsVoiceUsersWithoutHostedVoicemail.ps1",
+      "source_sha256": "a72019a40995695bc7ada4afb2ac22d5ae141df80489df0393f3bd70c0bfebb2"
+    },
+    {
+      "path": "16_Teams_Telephony/348_Measure-TeamsTelephonyCoverageByDepartment.ps1",
+      "source_sha256": "a2d3735e9707bcc4a4f87bf56699b391ebce781815f2103e109afc52a75213b1"
+    },
+    {
+      "path": "16_Teams_Telephony/349_Export-TeamsTelephonyExecutiveSummary.ps1",
+      "source_sha256": "2c2dfd97972fd42dab903159415b7d07e4323d2678f6c67ec939b06b8c9065a9"
+    },
+    {
+      "path": "16_Teams_Telephony/350_Get-TeamsTelephonyTenantSummary.ps1",
+      "source_sha256": "81b838691dbf4f45dfa0f98191d7153b9697df90ed33e3c2f9d2740e39bbba87"
+    },
+    {
+      "path": "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
+      "source_sha256": "ecf061b8a7ef6bcc2fb925eb319e883c69f8a390b7089d25e2c35622e9a29d84"
+    },
+    {
+      "path": "17_Intune_Workflows/352_Resolve-IntuneAssignmentForDevice.ps1",
+      "source_sha256": "ee093d312133d5c895f6d200c7db677c8965d441435f7b79e8f649d4ce8d0e63"
+    },
+    {
+      "path": "17_Intune_Workflows/353_Export-IntuneConfigurationSnapshot.ps1",
+      "source_sha256": "5f5ed790d0630501c7f57fab9551eb502ca33a48518aa7964258b0a64150c822"
+    },
+    {
+      "path": "17_Intune_Workflows/354_Compare-IntuneConfigurationSnapshot.ps1",
+      "source_sha256": "e7e429504ecb8f3ebf9b3060ca2f95ef1eb49896a7ac3cd1e425cdf17ef89c1b"
+    },
+    {
+      "path": "17_Intune_Workflows/355_Test-IntuneWin32AppDetection.ps1",
+      "source_sha256": "2fb56a2b1063daa17df2ae3e4accc802073df0df387eb080bfbb48be110274cf"
+    },
+    {
+      "path": "17_Intune_Workflows/356_Test-IntuneWin32PackageFolder.ps1",
+      "source_sha256": "1f7e556b79c75fa0249ada2cdc1ca024c2e98891ecccdf283d65b4882b4e993e"
+    },
+    {
+      "path": "17_Intune_Workflows/357_Get-IntuneWin32AppRelationshipGraph.ps1",
+      "source_sha256": "1876a23e73d0bd1ecf4956e79af26e1c4043e72d7de25c9c90c711ff6a78b394"
+    },
+    {
+      "path": "17_Intune_Workflows/358_Get-IntuneUpdateRolloutReport.ps1",
+      "source_sha256": "e9604f0781257a93037d9ee7625632de472fef317217e5ce887552cd8e1b2d82"
+    },
+    {
+      "path": "17_Intune_Workflows/359_Test-IntuneAutopilotReadiness.ps1",
+      "source_sha256": "93bd7c560ff4165eb13049e360f9bfbaf356a72ba354c617853ab2168bb5f847"
+    },
+    {
+      "path": "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1",
+      "source_sha256": "afa993f487d3d504052bde13698e178ebceb51479207baa418c7c5ae319251ec"
+    }
+  ]
+}

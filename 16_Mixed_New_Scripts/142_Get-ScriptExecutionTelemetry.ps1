@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Parses local Intune Management Extension logs to analyze script execution times.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Designed to run LOCALLY on a client.
     Reads 'IntuneManagementExtension.log' and extracts script execution events.
     Calculates how long each remediation/script took to run.
@@ -36,7 +42,7 @@ foreach ($Match in $Lines) {
     $Line = $Match.Line
     if ($Line -match "execution time:\s*(\d+)") {
         $Time = $matches[1]
-        
+
         $Report += [PSCustomObject]@{
             TimeStamp = $Line.Split(" ")[1] # Date logic needed
             DurationMS = $Time

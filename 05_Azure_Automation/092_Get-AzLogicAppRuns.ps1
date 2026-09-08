@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt die letzten Ausführungen einer Logic App an (Success/Failed).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft beim Monitoring von Workflows.
-    
+
     Parameter:
     - ResourceGroupName: RG
     - Name: Logic App Name

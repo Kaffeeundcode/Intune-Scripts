@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Kopiert eine Datei von einem Source-Pfad, falls sie fehlt.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Source kann ein Netzwerk-Share oder ein temporär abgelegtes File durch ein Win32 App Paket sein.
-    
+
     Parameter:
     - SourcePath: Quelle
     - DestinationPath: Ziel

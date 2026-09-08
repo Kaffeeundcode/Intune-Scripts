@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine Gruppe mit versteckter Mitgliedschaft (HiddenMembership).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Erstellt eine M365/Security Gruppe, deren Mitglieder für User nicht sichtbar sind.
     Erfordert die Berechtigung 'Group.ReadWrite.All'.
 

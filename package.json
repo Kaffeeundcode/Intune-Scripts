@@ -1,0 +1,12 @@
+{
+  "name": "kaffeeundcode-intune-library",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:library": "node tools/bundle-script-dependencies.mjs && node tools/sync-script-status.mjs && node script_catalog/tools/generate_script_catalog.mjs",
+    "bundles:check": "node tools/bundle-script-dependencies.mjs --check",
+    "catalog": "node script_catalog/tools/generate_script_catalog.mjs",
+    "catalog:check": "node script_catalog/tools/generate_script_catalog.mjs --check",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

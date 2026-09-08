@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Fügt einer App ein Client Secret hinzu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Erstellt einen neuen geheimen Schlüssel (Secret) für eine App.
     WICHTIG: Das Secret wird nur einmal angezeigt!
     Erfordert die Berechtigung 'Application.ReadWrite.All'.

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Defender-Status.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Liest aus, ob der Echtzeitschutz aktiv ist und wann der letzte Scan war.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

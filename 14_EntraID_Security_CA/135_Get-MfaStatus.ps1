@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft MFA Registrierungen (Authentication Methods).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, welche Auth-Methoden ein User registriert hat (App, Phone etc.).
     Erfordert die Berechtigung 'UserAuthenticationMethod.Read.All'.
 

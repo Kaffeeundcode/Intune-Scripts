@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft den BitLocker Recovery Key für ein Gerät ab.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Liest den 48-stelligen Wiederherstellungsschlüssel aus Azure AD / Intune.
     Erfordert die Berechtigung 'BitlockerKey.Read.All'.
 

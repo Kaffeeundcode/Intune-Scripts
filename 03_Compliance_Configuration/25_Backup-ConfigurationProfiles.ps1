@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein Backup (JSON Export) aller Konfigurationsprofile.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Exportiert die Definition jedes Profils als JSON-Datei in einen lokalen Ordner.
     Nützlich für Disaster Recovery oder Dokumentation.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
@@ -23,9 +29,9 @@ if (!(Test-Path $ExportPath)) { New-Item -ItemType Directory -Path $ExportPath |
 
 $Profiles = Get-MgDeviceManagementDeviceConfiguration -All
 
-foreach ($Profile in $Profiles) {
-    $SafeName = $Profile.DisplayName -replace '[\\/:*?"<>|]', ''
-    $Json = $Profile | ConvertTo-Json -Depth 5
+foreach ($configurationProfile in $Profiles) {
+    $SafeName = $configurationProfile.DisplayName -replace '[\\/:*?"<>|]', ''
+    $Json = $configurationProfile | ConvertTo-Json -Depth 5
     $File = Join-Path $ExportPath "$SafeName.json"
     $Json | Set-Content $File
     Write-Host "Exportiert: $SafeName"

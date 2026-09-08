@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Erkennen von abgelaufenen Zertifikaten im 'Personal' Store.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Prüft, ob Zertifikate vorhanden sind, die abgelaufen sind.
 
 .NOTES
@@ -14,7 +20,7 @@
 
 try {
     $Expired = Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object { $_.NotAfter -lt (Get-Date) }
-    
+
     if ($Expired) {
         Write-Host "Abgelaufene Zertifikate gefunden: $($Expired.Count)"
         exit 1 # Trigger Remediation

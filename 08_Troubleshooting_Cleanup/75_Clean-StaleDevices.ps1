@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Bereinigt inaktive Geräte (Löschen).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Löscht Geräte, die länger als X Tage inaktiv waren.
     WARNUNG: Destruktive Aktion!
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.

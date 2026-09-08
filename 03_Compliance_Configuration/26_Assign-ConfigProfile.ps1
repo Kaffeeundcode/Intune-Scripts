@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Weist ein Konfigurationsprofil einer Gruppe zu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Setzt eine Zuweisung für ein bestimmtes Profil.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.ReadWrite.All'.
 
@@ -36,7 +42,7 @@ $Params = @{
 # Note: This overwrites existing assignments if not handled carefully.
 # For simplicity, we assume creating a new assignment structure.
 try {
-    # Update-MgDeviceManagementDeviceConfiguration accepts body for properties, 
+    # Update-MgDeviceManagementDeviceConfiguration accepts body for properties,
     # but assignments are often handled via a specific endpoint or by updating the object.
     # The SDK allows updating the profile with assignment data.
     Update-MgDeviceManagementDeviceConfiguration -DeviceConfigurationId $ProfileId -BodyParameter $Params

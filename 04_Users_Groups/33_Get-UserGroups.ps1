@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Gruppenmitgliedschaften eines Benutzers auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt alle Gruppen an, in denen der angegebene Benutzer Mitglied ist.
     Erfordert die Berechtigung 'User.Read.All'.
 
@@ -26,6 +32,6 @@ $Groups = Get-MgUserMemberOf -UserId $User.Id
 Write-Host "Gruppen für $($User.DisplayName):"
 foreach ($Group in $Groups) {
     # Note: MemberOf returns directory objects, casting usually handled by output
-    Write-Host " - $($Group.Id)" 
+    Write-Host " - $($Group.Id)"
     # To get DisplayName usually needs parsing or different cmd let depending on SDK version
 }

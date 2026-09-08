@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Demonstriert Batching von Requests.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, wie mehrere Abfragen in einem HTTP-Call gesendet werden (JSON Batch).
     Performance-Optimierung.
 

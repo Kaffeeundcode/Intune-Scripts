@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet und löscht (optional) Managed Disks, die an keine VM angehängt sind (verwaiste Disks).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Nicht angehängte Disks verursachen Speicherkosten. Dieses Skript listet alle 'Unattached' Disks in einer Subscription auf.
     Mit dem Switch '-Delete' werden diese gelöscht. VORSICHT!
 

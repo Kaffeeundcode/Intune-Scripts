@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Maps Assignment Filters to the Applications and Policies that use them.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Assignment Filters are powerful but hard to track. This script retrieves all
     assignment filters and then queries Apps and Policies to find where they are referenced.
-    
+
     It outputs a mapping of Filter -> Assigned Object Name -> Object Type.
 
 .NOTES
@@ -53,7 +59,7 @@ foreach ($Filter in $Filters) {
                 # Target can have a filter ID mapping usually in 'Target' complex object or separate property depending on API version
                 # In Beta, it's often more visible. V1.0 might hide it inside specific objects.
                 # Use a specific property check.
-                
+
                 # Check properties of the assignment for filter ID match
                 # The SDK object structure varies. We look for commonly known patterns.
                 if ($Asn.Target.DeviceAndAppManagementAssignmentFilterId -eq $Filter.Id) {

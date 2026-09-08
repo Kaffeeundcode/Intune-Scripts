@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt das Passwort eines Benutzers zurück.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Vergibt ein neues Passwort für einen existierenden Benutzer (Admin Reset).
     Erfordert die Berechtigung 'User.ReadWrite.All' oder 'Directory.AccessAsUser.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Entfernt/Setzt den Passcode zurück (iOS/Android).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Löscht den Geräte-Passcode (nicht User-Passwort!), damit User wieder Zugriff haben.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

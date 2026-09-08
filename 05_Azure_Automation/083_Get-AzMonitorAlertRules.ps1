@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle aktivierten Monitor Alert Rules auf.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, welche Alerts (Metrik oder Log) aktiv sind.
-    
+
     Parameter:
     - ResourceGroupName: (Optional) Filter
 
@@ -20,7 +26,7 @@ param (
 
 try {
     Write-Host "Rufe Alert Rules ab..." -ForegroundColor Cyan
-    
+
     $Alerts = if ($ResourceGroupName) { Get-AzAlertRule -ResourceGroup $ResourceGroupName } else { Get-AzAlertRule }
 
     foreach ($a in $Alerts) {

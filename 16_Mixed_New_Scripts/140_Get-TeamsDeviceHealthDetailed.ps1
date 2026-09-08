@@ -1,13 +1,19 @@
-<#
+﻿<#
 .SYNOPSIS
     Deep dive into Teams Devices (Rooms, Panels, Phones) health.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lists all provisioned Teams devices and checks their health status:
     - Software version
     - Network connectivity
     - Peripherals status (Camera/Mic)
-    
+
     Useful for MTR (Microsoft Teams Room) fleet management.
 
 .NOTES
@@ -30,7 +36,7 @@ $Report = @()
 
 foreach ($Dev in $Devices) {
     $H = $Dev.Health
-    
+
     $obj = [PSCustomObject]@{
         Name = $Dev.ActivityState
         Type = $Dev.DeviceType

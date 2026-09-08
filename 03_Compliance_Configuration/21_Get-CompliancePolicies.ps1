@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Compliance-Richtlinien auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft eine Liste aller in Intune definierten Compliance-Policies ab (iOS, Android, Windows etc.).
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

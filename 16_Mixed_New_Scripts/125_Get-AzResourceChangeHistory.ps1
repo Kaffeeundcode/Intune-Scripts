@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Summarizes "Who changed what" in the last 24 hours via Activity Log.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Filters Azure Activity Log for 'Write', 'Delete', or 'Action' events.
     Groups them by Caller (User) and Resource.
-    
+
     Quick way to catch "Who turned off the VM?" or "Who modified the NSG?".
 
 .NOTES
@@ -21,9 +27,9 @@ Write-Host "Querying Activity Log since $StartTime..." -ForegroundColor Cyan
 $Logs = Get-AzLog -StartTime $StartTime -DetailedOutput
 
 # filtering for interesting operations
-$Changes = $Logs | Where-Object { 
-    $_.Authorization.Action -notmatch "read" -and 
-    $_.Status.Value -eq "Succeeded" 
+$Changes = $Logs | Where-Object {
+    $_.Authorization.Action -notmatch "read" -and
+    $_.Status.Value -eq "Succeeded"
 }
 
 $Report = @()

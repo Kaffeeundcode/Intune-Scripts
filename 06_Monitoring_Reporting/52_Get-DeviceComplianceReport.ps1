@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt einen schnellen Compliance-Bericht.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zählt Compliant vs. Non-Compliant Geräte und gibt eine Pivot-Tabelle aus.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

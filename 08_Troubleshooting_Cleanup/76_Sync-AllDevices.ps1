@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Synchronisiert ALLE Geräte (Massenaktion).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sendet Sync-Befehl an jedes verwaltete Gerät. Vorsicht bei großen Umgebungen (Throttling)!
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Konfiguriert die automatische Verarbeitung von Raumbuchungen.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Stellt sicher, dass Raumpostfächer Einladungen automatisch annehmen (AutoAccept).
     Entfernt außerdem den Betreff, wenn gewünscht (Privacy).
 
@@ -27,14 +33,14 @@ try {
     Write-Host "Konfiguriere Raum '$Identity'..." -ForegroundColor Cyan
 
     $Mode = if ($AutoAccept) { "AutoAccept" } else { "None" }
-    
+
     Set-CalendarProcessing -Identity $Identity `
                            -AutomateProcessing $Mode `
                            -AddOrganizerToSubject $AddOrganizerToSubject `
                            -DeleteComments $false `
                            -AllowConflicts $false `
                            -ErrorAction Stop
-                           
+
     Write-Host "Konfiguration angewendet ($Mode)." -ForegroundColor Green
 
 } catch {

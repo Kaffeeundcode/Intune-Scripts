@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt einen Break-Glass Account (Notfall-Admin).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Legt einen Cloud-Only User an, der von CA-Policies ausgenommen werden sollte.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft Verschlüsselungsstatus aller Geräte.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet Geräte auf, die nicht verschlüsselt sind.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

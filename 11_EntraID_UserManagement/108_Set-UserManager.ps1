@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt den Manager für einen Benutzer.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Definiert die hierarchische Beziehung (Vorgesetzter) im AD.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 
@@ -15,7 +21,7 @@
 param (
     [Parameter(Mandatory=$true)]
     [string]$UserUPN,
-    
+
     [Parameter(Mandatory=$true)]
     [string]$ManagerUPN
 )

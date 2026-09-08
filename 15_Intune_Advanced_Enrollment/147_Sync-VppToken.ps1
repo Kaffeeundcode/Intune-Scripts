@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Startet Synchronisation eines VPP Tokens.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktualisiert Apps und Lizenzen von Apple Business Manager.
     Erfordert die Berechtigung 'DeviceManagementApps.ReadWrite.All'.
 

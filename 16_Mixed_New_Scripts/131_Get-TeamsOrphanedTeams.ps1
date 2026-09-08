@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies Microsoft Teams that have no owners.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     "Orphaned" Teams are hard to manage because no user has control.
     This script scans all groups associated with Teams and checks for owner count = 0.
 

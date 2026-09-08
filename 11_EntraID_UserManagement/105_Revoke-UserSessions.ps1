@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Widerruft alle Sitzungen eines Benutzers (Revoke Sessions).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zwingt den Benutzer zur erneuten Anmeldung auf allen Geräten/Apps.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 

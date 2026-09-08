@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine neue Sicherheitsgruppe für Intune.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Legt eine neue Azure AD Security Group an.
     Erfordert die Berechtigung 'Group.ReadWrite.All'.
 

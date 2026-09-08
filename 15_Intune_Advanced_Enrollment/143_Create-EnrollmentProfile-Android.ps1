@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein Android Enrollment Profil (Kiosk/Dedicated).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Legt ein Token für Android Enterprise Dedicated Devices an.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.ReadWrite.All'.
 

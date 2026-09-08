@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Sicherheitsbewertung (Mockup).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Liest Security-Properties. (Hinweis: Echte Secure Score API ist separat).
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet SharePoint Sites auf, deren Speicher fast voll ist.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Prüft alle Site Collections und berechnet die Auslastung.
     Benötigt SharePoint Online Management Shell.
 
@@ -22,18 +28,18 @@ param (
 try {
     Write-Host "Analysiere SPO Storage..." -ForegroundColor Cyan
 
-    $Sites = Get-SPOSite -Limit All 
-    
+    $Sites = Get-SPOSite -Limit All
+
     foreach ($s in $Sites) {
         if ($s.StorageQuota -gt 0) {
             $Percent = [math]::Round(($s.StorageUsageCurrent / $s.StorageQuota) * 100, 2)
-            
+
             if ($Percent -ge $WarnPercent) {
                 Write-Warning "Site: $($s.Url) ist zu $Percent % voll ($($s.StorageUsageCurrent) MB von $($s.StorageQuota) MB)"
             }
         }
     }
-    
+
     Write-Host "Prüfung beendet." -ForegroundColor Green
 
 } catch {

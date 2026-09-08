@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifiziert inaktive Geräte (Stale Devices).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Findet Geräte, die sich seit X Tagen nicht gemeldet haben.
     Standard: 30 Tage.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.

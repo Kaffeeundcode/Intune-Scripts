@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Exports driver versions for specific hardware components (e.g., Display, Net).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Useful for compliance checking (e.g. "Do we have the bad Nvidia driver?").
     Queries Win32_PnPSignedDriver.
 

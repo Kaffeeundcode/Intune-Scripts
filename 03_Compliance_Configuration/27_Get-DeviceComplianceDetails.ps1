@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Details zur Compliance eines bestimmten Geräts.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet auf, welche Compliance-Policies auf das Gerät angewendet wurden und deren Status (Success/Error/NonCompliant).
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

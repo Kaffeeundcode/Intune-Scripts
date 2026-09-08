@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht eine App Registration.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Entfernt die App endgültig.
     Erfordert die Berechtigung 'Application.ReadWrite.All'.
 

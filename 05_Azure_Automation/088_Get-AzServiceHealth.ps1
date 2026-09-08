@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den globalen Azure Service Health Status.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt an, ob es aktuell Störungen in den abonnierten Regionen gibt.
-    
+
     Parameter:
     - CoreServicesOnly: Filtert auf "Core" Services.
 
@@ -18,7 +24,7 @@ try {
     Write-Host "Rufe Azure Service Health Events ab..." -ForegroundColor Cyan
 
     # Service Health liegt in Activity Logs unter Kategorie 'ServiceHealth'
-    
+
     $Events = Get-AzLog -StartTime (Get-Date).AddDays(-1) -Status "Active" | Where-Object { $_.Category.Value -eq "ServiceHealth" }
 
     if ($Events) {

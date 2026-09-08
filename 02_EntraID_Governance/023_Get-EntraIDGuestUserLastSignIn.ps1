@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet inaktive Gast-Benutzer basierend auf dem letzten Login.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle Guest-User, die sich seit X Tagen nicht angemeldet haben.
     Wichtig für Lizenz-Management und Sicherheit.
 
@@ -25,7 +31,7 @@ try {
 
     Get-MgUser -Filter "userType eq 'Guest'" -Property Id, DisplayName, UserPrincipalName, SignInActivity -All | ForEach-Object {
         $LastSign = $_.SignInActivity.LastSignInDateTime
-        
+
         if (-not $LastSign) {
             Write-Host "Gast '$($_.DisplayName)' hat sich noch NIE angemeldet." -ForegroundColor Red
         } elseif ($LastSign -lt $DateCutoff) {

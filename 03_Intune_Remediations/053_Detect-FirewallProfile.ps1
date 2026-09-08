@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob die Windows Firewall für alle Profile aktiviert ist.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     NonCompliant, wenn Domain, Public oder Private Profile deaktiviert sind.
 
 .NOTES

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft die globalen Gast-Einstellungen in Teams.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Gibt aus, ob Gäste in Teams erlaubt sind und was sie dürfen (Löschen, Editieren etc.).
 
 .NOTES
@@ -13,14 +19,14 @@
 
 try {
     Write-Host "Rufe Teams Client Configuration ab..." -ForegroundColor Cyan
-    
+
     # CsTeamsClientConfiguration steuert viele Gast-Aspekte
     $Config = Get-CsTeamsClientConfiguration
-    
+
     Write-Host "AllowGuestUser:            $($Config.AllowGuestUser)"
     Write-Host "AllowGuestUserToEditMsgs:  $($Config.AllowGuestUserToEditMessage)"
     Write-Host "AllowGuestUserToDeleteMsgs:$($Config.AllowGuestUserToDeleteMessage)"
-    
+
     if ($Config.AllowGuestUser -eq $false) {
         Write-Warning "Gäste sind global in Teams DEAKTIVIERT!"
     } else {

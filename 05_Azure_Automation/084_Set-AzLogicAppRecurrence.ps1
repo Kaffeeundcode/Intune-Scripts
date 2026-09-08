@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktiviert/Deaktiviert einen Logic App Trigger (Recurrence).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilfreich um Logic Apps temporär zu stoppen (Wartung) oder zu starten.
-    
+
     Parameter:
     - ResourceGroupName: RG Name
     - LogicAppName: Name der App
@@ -26,7 +32,7 @@ try {
     Write-Host "Setze Logic App '$LogicAppName' auf '$State'..." -ForegroundColor Cyan
 
     $App = Get-AzLogicApp -ResourceGroupName $ResourceGroupName -Name $LogicAppName -ErrorAction Stop
-    
+
     if ($State -eq "Enabled") {
         Set-AzLogicApp -ResourceGroupName $ResourceGroupName -Name $LogicAppName -State Enabled -ErrorAction Stop | Out-Null
     } else {

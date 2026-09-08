@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "packages": [
+    {
+      "id": "7zip",
+      "name": "7-Zip",
+      "vendor": "Igor Pavlov",
+      "version": "26.03",
+      "architecture": "x64",
+      "revision": 1,
+      "source_url": "https://github.com/ip7z/7zip/releases/download/26.03/7z2603-x64.exe",
+      "installer_filename": "7z2603-x64.exe",
+      "publisher_sha256": "0859c524b8a63551848f0c246abddcb1d0b7b656b0fbfe879f8d85e61a9e6edd",
+      "install_arguments": "/S",
+      "uninstall_command": "\"%ProgramFiles%\\7-Zip\\Uninstall.exe\" /S",
+      "detection_path": "%ProgramFiles%\\7-Zip\\7zFM.exe",
+      "status": "built_unreleased",
+      "created_with": "PilotDeploy: buildGenericPackageArchive (local source engine)",
+      "windows_validation": "pending",
+      "intune_validation": "pending",
+      "redistribution_review": "pending",
+      "release_assets": [],
+      "pilotdeploy_commit": "bf44d07313f9bdbf40bf82ee3c4e4eb389c0bd36",
+      "installer_sha256": "0859c524b8a63551848f0c246abddcb1d0b7b656b0fbfe879f8d85e61a9e6edd",
+      "local_artifacts": [
+        {
+          "path": ".artifacts/packages/7zip-26.03-x64-r1-PSADT.zip",
+          "sha256": "d613fa25b2157f2c7e0039d8d1ef7c494ada4512e27f7792aea85255168191a1"
+        },
+        {
+          "path": ".artifacts/packages/7zip-26.03-x64-r1.intunewin",
+          "sha256": "a3d36d3dbcceb45b1e07dc0aee9bd016f242dcf13b52d43682c66631c1a2f369"
+        }
+      ],
+      "intunewin_build": {
+        "result": "passed",
+        "built_at": "2026-09-08T08:32:06.6150561Z",
+        "tool": "Microsoft Win32 Content Prep Tool",
+        "tool_version": "6.2509.50.0",
+        "tool_sha256": "c1ba45b5cb939e84af064bb7ff4b38fb3dfe33c8dc1078fd9b157672eae671f6",
+        "evidence": "validation/evidence/package-builds.json"
+      }
+    },
+    {
+      "id": "notepadplusplus",
+      "name": "Notepad++",
+      "vendor": "Notepad++",
+      "version": "8.9.8",
+      "architecture": "x64",
+      "revision": 1,
+      "source_url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.9.8/npp.8.9.8.Installer.x64.exe",
+      "installer_filename": "npp.8.9.8.Installer.x64.exe",
+      "publisher_sha256": "7b2a949bf460fb37a3888c9048698f43222a185a48323023df1c51e78a3ca1c2",
+      "install_arguments": "/S",
+      "uninstall_command": "\"%ProgramFiles%\\Notepad++\\uninstall.exe\" /S",
+      "detection_path": "%ProgramFiles%\\Notepad++\\notepad++.exe",
+      "status": "built_unreleased",
+      "created_with": "PilotDeploy: buildGenericPackageArchive (local source engine)",
+      "windows_validation": "pending",
+      "intune_validation": "pending",
+      "redistribution_review": "pending",
+      "release_assets": [],
+      "pilotdeploy_commit": "bf44d07313f9bdbf40bf82ee3c4e4eb389c0bd36",
+      "installer_sha256": "7b2a949bf460fb37a3888c9048698f43222a185a48323023df1c51e78a3ca1c2",
+      "local_artifacts": [
+        {
+          "path": ".artifacts/packages/notepadplusplus-8.9.8-x64-r1-PSADT.zip",
+          "sha256": "82ae4d228329853333412b738cbfa6462ad0ffe83c0d19c959564d53d6f2003b"
+        },
+        {
+          "path": ".artifacts/packages/notepadplusplus-8.9.8-x64-r1.intunewin",
+          "sha256": "44c97fb67a9d2cdb14d96520dd1d8c5619f33e9d393ac60607dc8b72acc1aa13"
+        }
+      ],
+      "intunewin_build": {
+        "result": "passed",
+        "built_at": "2026-09-08T08:32:07.8761968Z",
+        "tool": "Microsoft Win32 Content Prep Tool",
+        "tool_version": "6.2509.50.0",
+        "tool_sha256": "c1ba45b5cb939e84af064bb7ff4b38fb3dfe33c8dc1078fd9b157672eae671f6",
+        "evidence": "validation/evidence/package-builds.json"
+      }
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "vendor": "VideoLAN",
+      "version": "3.0.23",
+      "architecture": "x64",
+      "revision": 1,
+      "source_url": "https://download.videolan.org/pub/videolan/vlc/3.0.23/win64/vlc-3.0.23-win64.exe",
+      "installer_filename": "vlc-3.0.23-win64.exe",
+      "publisher_sha256": null,
+      "install_arguments": "/S",
+      "uninstall_command": "\"%ProgramFiles%\\VideoLAN\\VLC\\uninstall.exe\" /S",
+      "detection_path": "%ProgramFiles%\\VideoLAN\\VLC\\vlc.exe",
+      "status": "built_unreleased",
+      "created_with": "PilotDeploy: buildGenericPackageArchive (local source engine)",
+      "windows_validation": "pending",
+      "intune_validation": "pending",
+      "redistribution_review": "pending",
+      "release_assets": [],
+      "pilotdeploy_commit": "bf44d07313f9bdbf40bf82ee3c4e4eb389c0bd36",
+      "installer_sha256": "20ad191348684b470ddc4e05204316f3d8e39655f412b3e392a0eef97639daaf",
+      "local_artifacts": [
+        {
+          "path": ".artifacts/packages/vlc-3.0.23-x64-r1-PSADT.zip",
+          "sha256": "ec90f1aaeb37598c377707202b2541b123fd6b6fc2cd63379f2000b43d25a849"
+        },
+        {
+          "path": ".artifacts/packages/vlc-3.0.23-x64-r1.intunewin",
+          "sha256": "368cf273b383175eca853c333e1e0861a8f21f84347e7d6ba3635ac583ea2671"
+        }
+      ],
+      "intunewin_build": {
+        "result": "passed",
+        "built_at": "2026-09-08T08:32:11.4454033Z",
+        "tool": "Microsoft Win32 Content Prep Tool",
+        "tool_version": "6.2509.50.0",
+        "tool_sha256": "c1ba45b5cb939e84af064bb7ff4b38fb3dfe33c8dc1078fd9b157672eae671f6",
+        "evidence": "validation/evidence/package-builds.json"
+      }
+    },
+    {
+      "id": "git",
+      "name": "Git for Windows",
+      "vendor": "Git for Windows",
+      "version": "2.55.0.5",
+      "architecture": "x64",
+      "revision": 1,
+      "source_url": "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/Git-2.55.0.5-64-bit.exe",
+      "installer_filename": "Git-2.55.0.5-64-bit.exe",
+      "publisher_sha256": "d065a4e23c3d9a6b5073d609b5be0830227ec3ca053c083ba385061ddfaf94c6",
+      "install_arguments": "/VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS",
+      "uninstall_command": "\"%ProgramFiles%\\Git\\unins000.exe\" /VERYSILENT /NORESTART",
+      "detection_path": "%ProgramFiles%\\Git\\cmd\\git.exe",
+      "status": "built_unreleased",
+      "created_with": "PilotDeploy: buildGenericPackageArchive (local source engine)",
+      "windows_validation": "pending",
+      "intune_validation": "pending",
+      "redistribution_review": "pending",
+      "release_assets": [],
+      "pilotdeploy_commit": "bf44d07313f9bdbf40bf82ee3c4e4eb389c0bd36",
+      "installer_sha256": "d065a4e23c3d9a6b5073d609b5be0830227ec3ca053c083ba385061ddfaf94c6",
+      "local_artifacts": [
+        {
+          "path": ".artifacts/packages/git-2.55.0.5-x64-r1-PSADT.zip",
+          "sha256": "2df38342e8fecc13433bd422d7dd90ab0786e5d6461ee65add931976344367fa"
+        },
+        {
+          "path": ".artifacts/packages/git-2.55.0.5-x64-r1.intunewin",
+          "sha256": "36c0565641cec7cf46724f92ff65d3f5457f511622113d46402a718e42f779db"
+        }
+      ],
+      "intunewin_build": {
+        "result": "passed",
+        "built_at": "2026-09-08T08:32:16.8881417Z",
+        "tool": "Microsoft Win32 Content Prep Tool",
+        "tool_version": "6.2509.50.0",
+        "tool_sha256": "c1ba45b5cb939e84af064bb7ff4b38fb3dfe33c8dc1078fd9b157672eae671f6",
+        "evidence": "validation/evidence/package-builds.json"
+      }
+    },
+    {
+      "id": "powertoys",
+      "name": "PowerToys",
+      "vendor": "Microsoft",
+      "version": "0.101.2362.0",
+      "architecture": "x64",
+      "revision": 1,
+      "source_url": "https://github.com/microsoft/PowerToys/releases/download/v0.101.2362.0/PowerToysSetup-0.101.2362.0-x64.exe",
+      "installer_filename": "PowerToysSetup-0.101.2362.0-x64.exe",
+      "publisher_sha256": "f27e4b4b01bff1a74bfa0116c99f9205f7138db6f7dfcaa9223fb8b635fe6050",
+      "install_arguments": "/install /quiet /norestart",
+      "uninstall_command": "\"Files/Source/PowerToysSetup-0.101.2362.0-x64.exe\" /uninstall /quiet /norestart",
+      "detection_path": "%ProgramFiles%\\PowerToys\\PowerToys.exe",
+      "status": "built_unreleased",
+      "created_with": "PilotDeploy: buildGenericPackageArchive (local source engine)",
+      "windows_validation": "pending",
+      "intune_validation": "pending",
+      "redistribution_review": "pending",
+      "release_assets": [],
+      "pilotdeploy_commit": "bf44d07313f9bdbf40bf82ee3c4e4eb389c0bd36",
+      "installer_sha256": "f27e4b4b01bff1a74bfa0116c99f9205f7138db6f7dfcaa9223fb8b635fe6050",
+      "local_artifacts": [
+        {
+          "path": ".artifacts/packages/powertoys-0.101.2362.0-x64-r1-PSADT.zip",
+          "sha256": "15cf295262b072c7fb28cb84b0c76507b8f0c63486f323cbc04fc5c12a1d1e9d"
+        },
+        {
+          "path": ".artifacts/packages/powertoys-0.101.2362.0-x64-r1.intunewin",
+          "sha256": "370c17035a3b908c3bf75ad36cc7a3e56ebd6d1d8ae601a0d5b00daf0fa63756"
+        }
+      ],
+      "intunewin_build": {
+        "result": "passed",
+        "built_at": "2026-09-08T08:32:37.9123098Z",
+        "tool": "Microsoft Win32 Content Prep Tool",
+        "tool_version": "6.2509.50.0",
+        "tool_sha256": "c1ba45b5cb939e84af064bb7ff4b38fb3dfe33c8dc1078fd9b157672eae671f6",
+        "evidence": "validation/evidence/package-builds.json"
+      }
+    }
+  ],
+  "next_wave": [
+    "KeePass",
+    "SumatraPDF",
+    "WinSCP",
+    "PuTTY",
+    "Firefox ESR"
+  ]
+}

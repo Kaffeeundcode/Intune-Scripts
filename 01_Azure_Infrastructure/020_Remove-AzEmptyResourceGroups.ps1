@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet und löscht leere Resource Groups.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Leere RGs verschmutzen die Umgebung. Dieses Skript findet Gruppen ohne Ressourcen.
     Mit -Delete werden sie gelöscht.
 
@@ -21,7 +27,7 @@ param (
 
 try {
     Write-Host "Suche leere Resource Groups..." -ForegroundColor Cyan
-    
+
     $RGs = Get-AzResourceGroup
     $EmptyRGs = @()
 

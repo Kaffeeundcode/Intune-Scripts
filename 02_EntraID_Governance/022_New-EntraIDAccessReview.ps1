@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt eine neue Access Review für eine Entra ID Gruppe.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Access Reviews zwingen Gruppenbesitzer, die Mitgliedschaften regelmäßig zu bestätigen.
     Dieses Skript erstellt eine Review für eine spezifische Gruppe.
 
@@ -60,9 +66,9 @@ try {
 
     # API Call (Cmdlets für Access Reviews sind komplex, JSON Body ist oft sicherer)
     $Uri = "https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions"
-    
+
     Invoke-MgGraphRequest -Method POST -Uri $Uri -Body ($Body | ConvertTo-Json -Depth 5) -ContentType "application/json"
-    
+
     Write-Host "Access Review '$DisplayName' erfolgreich angelegt." -ForegroundColor Green
 
 } catch {

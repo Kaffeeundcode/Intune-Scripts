@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies the "Sponsor" or inviter of Guest Users in Entra ID.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Often, Guest users are created but nobody knows who invited them.
     This script attempts to look up the 'manager' or creation logs to find the sponsor.
-    
-    Note: 'Sponsor' is not a default attribute for old guests, but modern logic often 
+
+    Note: 'Sponsor' is not a default attribute for old guests, but modern logic often
     uses the 'Manager' field or 'CreatedBy' audit log (if recent).
 
 .NOTES
@@ -28,7 +34,7 @@ $Report = @()
 
 foreach ($Guest in $Guests) {
     $Sponsor = "Unknown"
-    
+
     # Check Manager first (Best Practice)
     try {
         # Manager is a relationship, need to expand or fetch
@@ -42,7 +48,7 @@ foreach ($Guest in $Guests) {
 
     # If no manager, check description (sometimes stored there)
     # If very new, check audit logs (expensive)
-    
+
     $obj = [PSCustomObject]@{
         GuestName = $Guest.DisplayName
         GuestUPN  = $Guest.UserPrincipalName

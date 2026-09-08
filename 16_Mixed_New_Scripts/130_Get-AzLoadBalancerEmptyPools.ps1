@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies Load Balancers that have no backend pool members defined.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     An empty Load Balancer incurs costs (Standard SKU) and adds complexity.
     This script flags LBs with 0 backend servers.
 
@@ -24,10 +30,10 @@ foreach ($LB in $LBs) {
             $MemberCount += $Pool.BackendIpConfigurations.Count
         }
     }
-    
+
     $Status = "Active"
     if ($MemberCount -eq 0) { $Status = "Empty (Unused)" }
-    
+
     $Report += [PSCustomObject]@{
         LBName = $LB.Name
         Sku = $LB.Sku.Name

@@ -1,0 +1,4672 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/Kaffeeundcode/Intune-Scripts",
+  "targets": {
+    "existing_scripts": 500,
+    "first_review_batch": 100,
+    "expanded_review_batch": 200,
+    "new_tools": 10,
+    "initial_packages": 5,
+    "expanded_packages": 10
+  },
+  "review_groups": {
+    "devices": 20,
+    "apps": 15,
+    "configuration": 15,
+    "enrollment": 10,
+    "remediations": 10,
+    "teams": 20,
+    "entra": 5,
+    "graph": 5
+  },
+  "scripts": [
+    {
+      "path": "01_Azure_Infrastructure/001_Get-AzResourceGroupCosts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/001_Get-AzResourceGroupCosts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/002_New-AzVNetPeeringConfig.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/002_New-AzVNetPeeringConfig.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/003_Set-AzStorageAccountSecureTransfer.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/003_Set-AzStorageAccountSecureTransfer.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/004_Get-AzVMAutoShutdownStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/004_Get-AzVMAutoShutdownStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/005_Remove-AzUnattachedDisks.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/005_Remove-AzUnattachedDisks.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/006_Get-AzNetworkSecurityGroupFlowLogs.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/006_Get-AzNetworkSecurityGroupFlowLogs.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/007_New-AzKeyVaultAccessPolicy.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/007_New-AzKeyVaultAccessPolicy.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/008_Get-AzPublicIpAddressUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/008_Get-AzPublicIpAddressUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/009_Set-AzSqlDatabaseAuditing.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/009_Set-AzSqlDatabaseAuditing.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/010_Export-AzActivityLog.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/010_Export-AzActivityLog.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/011_Get-AzSubscriptionQuotas.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/011_Get-AzSubscriptionQuotas.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/012_New-AzStorageContainerSAS.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/012_New-AzStorageContainerSAS.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/013_Get-AzVNetSubnetUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/013_Get-AzVNetSubnetUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/014_Set-AzResourceLock.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/014_Set-AzResourceLock.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/015_Get-AzRecoveryServicesBackupStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/015_Get-AzRecoveryServicesBackupStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/016_New-AzBastionHost.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/016_New-AzBastionHost.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/017_Get-AzLoadBalancerHealth.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/017_Get-AzLoadBalancerHealth.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/018_Set-AzDiagnositcSettingTemplate.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/018_Set-AzDiagnositcSettingTemplate.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/019_Get-AzPolicyComplianceState.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/019_Get-AzPolicyComplianceState.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Azure_Infrastructure/020_Remove-AzEmptyResourceGroups.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "01_Azure_Infrastructure/020_Remove-AzEmptyResourceGroups.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/01_Sync-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/01_Sync-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/02_Restart-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/02_Restart-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/03_Rename-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "01_Device_Management/03_Rename-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/04_Wipe-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/04_Wipe-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/05_Get-IntuneDeviceDetails.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "01_Device_Management/05_Get-IntuneDeviceDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/06_Retire-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/06_Retire-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/07_Get-DevicePrimaryUser.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "01_Device_Management/07_Get-DevicePrimaryUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/08_Set-DevicePrimaryUser.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/08_Set-DevicePrimaryUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/09_Delete-IntuneDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "01_Device_Management/09_Delete-IntuneDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "01_Device_Management/10_Export-AllDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "01_Device_Management/10_Export-AllDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/11_Get-AllApps.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/11_Get-AllApps.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/12_Find-AppByName.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/12_Find-AppByName.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/13_Get-AppAssignments.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/13_Get-AppAssignments.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/14_Assign-AppToGroup_Required.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 2,
+      "canonical_path": "02_App_Management/14_Assign-AppToGroup_Required.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/15_Assign-AppToGroup_Available.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 2,
+      "canonical_path": "02_App_Management/15_Assign-AppToGroup_Available.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/16_Assign-AppToGroup_Uninstall.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 2,
+      "canonical_path": "02_App_Management/16_Assign-AppToGroup_Uninstall.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/17_Delete-App.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 2,
+      "canonical_path": "02_App_Management/17_Delete-App.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/18_Get-DeviceAppInstallStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/18_Get-DeviceAppInstallStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/19_Get-UserAppInstallStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/19_Get-UserAppInstallStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_App_Management/20_Get-AppProtectionPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "02_App_Management/20_Get-AppProtectionPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/021_Get-EntraIDPIMAlerts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/021_Get-EntraIDPIMAlerts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/022_New-EntraIDAccessReview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/022_New-EntraIDAccessReview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/023_Get-EntraIDGuestUserLastSignIn.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/023_Get-EntraIDGuestUserLastSignIn.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/024_Set-EntraIDBreakGlassAccountAlert.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/024_Set-EntraIDBreakGlassAccountAlert.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/025_Get-EntraIDAppRoleAssignments.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/025_Get-EntraIDAppRoleAssignments.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/026_Remove-EntraIDStaleDevices.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/026_Remove-EntraIDStaleDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/027_Get-EntraIDBranding.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/027_Get-EntraIDBranding.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/028_Get-EntraIDAuthStrengthPolicy.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/028_Get-EntraIDAuthStrengthPolicy.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/029_Get-EntraIDRoleEligibleAssignments.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/029_Get-EntraIDRoleEligibleAssignments.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/030_Get-EntraIDRiskyUsers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/030_Get-EntraIDRiskyUsers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/031_Revoke-EntraIDUserAllRefreshTokens.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/031_Revoke-EntraIDUserAllRefreshTokens.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/032_Get-EntraIDApplicationExpiry.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/032_Get-EntraIDApplicationExpiry.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/033_New-EntraIDConditionalAccessPolicyJson.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/033_New-EntraIDConditionalAccessPolicyJson.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/034_Get-EntraIDGroupMemberCount.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/034_Get-EntraIDGroupMemberCount.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/035_Get-EntraIDUserMfaStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/035_Get-EntraIDUserMfaStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/036_Remove-EntraIDInvitedUsersNeverSignedIn.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/036_Remove-EntraIDInvitedUsersNeverSignedIn.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/037_Get-EntraIDAuditLogRecentFailures.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/037_Get-EntraIDAuditLogRecentFailures.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/038_Get-EntraIDPasswordExpiryPolicy.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/038_Get-EntraIDPasswordExpiryPolicy.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/039_Get-EntraIDDomains.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/039_Get-EntraIDDomains.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "02_EntraID_Governance/040_Get-EntraIDTenantDetails.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "02_EntraID_Governance/040_Get-EntraIDTenantDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/21_Get-CompliancePolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/21_Get-CompliancePolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/22_Get-NonCompliantDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/22_Get-NonCompliantDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/23_Create-CompliancePolicy_Windows.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "03_Compliance_Configuration/23_Create-CompliancePolicy_Windows.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/24_Get-ConfigurationProfiles.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/24_Get-ConfigurationProfiles.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/25_Backup-ConfigurationProfiles.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/25_Backup-ConfigurationProfiles.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/26_Assign-ConfigProfile.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "03_Compliance_Configuration/26_Assign-ConfigProfile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/27_Get-DeviceComplianceDetails.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/27_Get-DeviceComplianceDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/28_Get-DeviceConfigStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/28_Get-DeviceConfigStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/29_Find-ProfileByName.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/29_Find-ProfileByName.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Compliance_Configuration/30_Duplicate-CompliancePolicy.ps1",
+      "status": "example",
+      "review_group": "configuration",
+      "review_wave": 1,
+      "canonical_path": "03_Compliance_Configuration/30_Duplicate-CompliancePolicy.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/041_Detect-DiskSpace.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/041_Detect-DiskSpace.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/042_Remediate-DiskSpace.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/042_Remediate-DiskSpace.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/043_Detect-OldCertificates.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/043_Detect-OldCertificates.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/044_Remediate-OldCertificates.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/044_Remediate-OldCertificates.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/045_Detect-LocalAdmin.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/045_Detect-LocalAdmin.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/046_Remediate-RemoveLocalAdmin.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/046_Remediate-RemoveLocalAdmin.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/047_Detect-ServiceStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/047_Detect-ServiceStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/048_Remediate-ServiceStart.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/048_Remediate-ServiceStart.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/049_Detect-PendingReboot.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/049_Detect-PendingReboot.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/050_Remediate-PendingReboot.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/050_Remediate-PendingReboot.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/051_Detect-OldAppVersion.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/051_Detect-OldAppVersion.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/052_Remediate-UpdateApp.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/052_Remediate-UpdateApp.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/053_Detect-FirewallProfile.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/053_Detect-FirewallProfile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/054_Remediate-EnableFirewall.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/054_Remediate-EnableFirewall.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/055_Detect-MissingFile.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/055_Detect-MissingFile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/056_Remediate-CopyFile.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/056_Remediate-CopyFile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/057_Detect-RegistryValue.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/057_Detect-RegistryValue.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/058_Remediate-SetRegistryValue.ps1",
+      "status": "unreviewed",
+      "review_group": "remediations",
+      "review_wave": 2,
+      "canonical_path": "03_Intune_Remediations/058_Remediate-SetRegistryValue.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/059_Detect-BitLockerSuspended.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/059_Detect-BitLockerSuspended.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "03_Intune_Remediations/060_Remediate-BitLockerResume.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "03_Intune_Remediations/060_Remediate-BitLockerResume.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/061_Get-ExoMailboxForwardingRules.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/061_Get-ExoMailboxForwardingRules.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/062_Set-TeamsMeetingPolicyBulk.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/062_Set-TeamsMeetingPolicyBulk.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/063_Get-SPOSiteStorageHighUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/063_Get-SPOSiteStorageHighUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/064_New-ExoSharedMailboxAutomation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/064_New-ExoSharedMailboxAutomation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/065_Get-TeamsGuestAccessSettings.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/065_Get-TeamsGuestAccessSettings.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/066_Set-ExoMailboxCalendarPermissions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/066_Set-ExoMailboxCalendarPermissions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/067_Get-M365LicensingGranularDetails.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/067_Get-M365LicensingGranularDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/068_Remove-ExoDisconnectedMailboxes.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/068_Remove-ExoDisconnectedMailboxes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/069_Set-ExoClutterJunkSettings.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/069_Set-ExoClutterJunkSettings.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/070_Get-ExoMobileDeviceStatistics.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/070_Get-ExoMobileDeviceStatistics.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/071_Get-ExoMailTrafficReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/071_Get-ExoMailTrafficReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/072_Add-TeamsChannelUser.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/072_Add-TeamsChannelUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/073_Get-ExoDistributionGroupMembers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/073_Get-ExoDistributionGroupMembers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/074_Set-ExoOofMessageGraph.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/074_Set-ExoOofMessageGraph.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/075_Get-TeamsDeviceUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/075_Get-TeamsDeviceUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/076_Get-OneDriveUsageReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/076_Get-OneDriveUsageReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/077_New-ExoRoomList.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/077_New-ExoRoomList.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/078_Set-ExoCalendarProcessing.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/078_Set-ExoCalendarProcessing.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/079_Clear-TeamsCache.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/079_Clear-TeamsCache.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_M365_Exchange/080_Get-ExoInactiveTeams.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_M365_Exchange/080_Get-ExoInactiveTeams.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/31_Get-AllUsers.ps1",
+      "status": "unreviewed",
+      "review_group": "entra",
+      "review_wave": 2,
+      "canonical_path": "04_Users_Groups/31_Get-AllUsers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/32_Find-User.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/32_Find-User.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/33_Get-UserGroups.ps1",
+      "status": "unreviewed",
+      "review_group": "entra",
+      "review_wave": 2,
+      "canonical_path": "04_Users_Groups/33_Get-UserGroups.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/34_Add-UserToGroup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/34_Add-UserToGroup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/35_Remove-UserFromGroup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/35_Remove-UserFromGroup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/36_Get-GroupMembers.ps1",
+      "status": "unreviewed",
+      "review_group": "entra",
+      "review_wave": 2,
+      "canonical_path": "04_Users_Groups/36_Get-GroupMembers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/37_Create-IntuneGroup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/37_Create-IntuneGroup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/38_Assign-LicenseToUser.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/38_Assign-LicenseToUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/39_Get-UserDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "entra",
+      "review_wave": 2,
+      "canonical_path": "04_Users_Groups/39_Get-UserDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "04_Users_Groups/40_Get-GroupDetails.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "04_Users_Groups/40_Get-GroupDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/081_Get-AzLogAnalyticsRetention.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/081_Get-AzLogAnalyticsRetention.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/082_New-AzAutomationRunbookImport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/082_New-AzAutomationRunbookImport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/083_Get-AzMonitorAlertRules.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/083_Get-AzMonitorAlertRules.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/084_Set-AzLogicAppRecurrence.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/084_Set-AzLogicAppRecurrence.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/085_Get-AzMetricAlertStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/085_Get-AzMetricAlertStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/086_Export-AzAutomationJobOutput.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/086_Export-AzAutomationJobOutput.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/087_New-AzEventGridTopic.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/087_New-AzEventGridTopic.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/088_Get-AzServiceHealth.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/088_Get-AzServiceHealth.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/089_Set-AzKeyVaultKeyRotation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/089_Set-AzKeyVaultKeyRotation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/090_Invoke-AzRunbookWebhook.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/090_Invoke-AzRunbookWebhook.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/091_Get-AzAutomationVariable.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/091_Get-AzAutomationVariable.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/092_Get-AzLogicAppRuns.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/092_Get-AzLogicAppRuns.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/093_Get-AzMonitorActionGroup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/093_Get-AzMonitorActionGroup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/094_Remove-AzDiagnosticSetting.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/094_Remove-AzDiagnosticSetting.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/095_Export-AzLogAnalyticsQuery.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/095_Export-AzLogAnalyticsQuery.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/096_New-AzAutomationSchedule.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/096_New-AzAutomationSchedule.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/097_Update-AzAutomationModule.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/097_Update-AzAutomationModule.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/098_Get-AzAutomationConnection.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/098_Get-AzAutomationConnection.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/099_Enable-AzMonitorAlert.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/099_Enable-AzMonitorAlert.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Azure_Automation/100_Get-AzResourceGraphQuery.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "05_Azure_Automation/100_Get-AzResourceGraphQuery.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/41_Get-AutopilotDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/41_Get-AutopilotDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/42_Import-AutopilotCSV.ps1",
+      "status": "example",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/42_Import-AutopilotCSV.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/43_Assign-AutopilotProfile.ps1",
+      "status": "known_issues",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/43_Assign-AutopilotProfile.ps1",
+      "notes": [
+        "Setzt Statusfelder statt einer gruppenbasierten Profilzuweisung; nicht ausfuehren."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/44_Get-EnrollmentStatusPage.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/44_Get-EnrollmentStatusPage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/45_Get-AutopilotProfileDetails.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/45_Get-AutopilotProfileDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/46_Delete-AutopilotDevice.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/46_Delete-AutopilotDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/47_Sync-AutopilotDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/47_Sync-AutopilotDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/48_Get-EnrollmentRestrictions.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/48_Get-EnrollmentRestrictions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1",
+      "status": "example",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "05_Enrollment_Autopilot/50_Check-EnrollmentStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "enrollment",
+      "review_wave": 2,
+      "canonical_path": "05_Enrollment_Autopilot/50_Check-EnrollmentStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/51_Get-IntuneAuditLogs.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "06_Monitoring_Reporting/51_Get-IntuneAuditLogs.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/52_Get-DeviceComplianceReport.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "06_Monitoring_Reporting/52_Get-DeviceComplianceReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/53_Check-ConnectorStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "06_Monitoring_Reporting/53_Check-ConnectorStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/54_Get-StaleDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "06_Monitoring_Reporting/54_Get-StaleDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/55_Get-ManagedAppsReport.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "06_Monitoring_Reporting/55_Get-ManagedAppsReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/56_Get-DeviceEncryptionStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "06_Monitoring_Reporting/56_Get-DeviceEncryptionStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/57_Get-UserLoginHistory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "06_Monitoring_Reporting/57_Get-UserLoginHistory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/58_Export-ReportToHtml.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "canonical_path": "06_Monitoring_Reporting/58_Export-ReportToHtml.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/59_Get-DeviceModelSummary.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "06_Monitoring_Reporting/59_Get-DeviceModelSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "06_Monitoring_Reporting/60_Send-TeamsNotification.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "06_Monitoring_Reporting/60_Send-TeamsNotification.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/61_Get-BitLockerKeys.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "07_Security_BitLocker/61_Get-BitLockerKeys.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/62_Rotate-BitLockerKeys.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "07_Security_BitLocker/62_Rotate-BitLockerKeys.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/63_Get-DefenderStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "07_Security_BitLocker/63_Get-DefenderStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/64_Update-DefenderSignatures.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "07_Security_BitLocker/64_Update-DefenderSignatures.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/65_QuickScan-Defender.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "07_Security_BitLocker/65_QuickScan-Defender.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/66_FullScan-Defender.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "07_Security_BitLocker/66_FullScan-Defender.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/67_Get-SecurityBaselines.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 2,
+      "canonical_path": "07_Security_BitLocker/67_Get-SecurityBaselines.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/68_Assign-SecurityBaseline.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "07_Security_BitLocker/68_Assign-SecurityBaseline.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/69_Get-TpmStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "07_Security_BitLocker/69_Get-TpmStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "07_Security_BitLocker/70_Check-DeviceSecurityScore.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "07_Security_BitLocker/70_Check-DeviceSecurityScore.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/71_Collect-Diagnostics.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "08_Troubleshooting_Cleanup/71_Collect-Diagnostics.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/72_Get-DeviceDiagnosticsDownloadUrl.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "08_Troubleshooting_Cleanup/72_Get-DeviceDiagnosticsDownloadUrl.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/73_RemoteLock-Device.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "08_Troubleshooting_Cleanup/73_RemoteLock-Device.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/74_Reset-DevicePasscode.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "08_Troubleshooting_Cleanup/74_Reset-DevicePasscode.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/75_Clean-StaleDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "08_Troubleshooting_Cleanup/75_Clean-StaleDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/76_Sync-AllDevices.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "08_Troubleshooting_Cleanup/76_Sync-AllDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/77_Restart-AllDevices.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "08_Troubleshooting_Cleanup/77_Restart-AllDevices.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/78_Get-TroubleshootingEvents.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 1,
+      "canonical_path": "08_Troubleshooting_Cleanup/78_Get-TroubleshootingEvents.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/79_Check-IntuneServiceHealth.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "08_Troubleshooting_Cleanup/79_Check-IntuneServiceHealth.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "08_Troubleshooting_Cleanup/80_Repair-IntuneExtension.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 2,
+      "canonical_path": "08_Troubleshooting_Cleanup/80_Repair-IntuneExtension.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/81_Authentication-Test.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 2,
+      "canonical_path": "09_Graph_API_Advanced/81_Authentication-Test.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/82_Get-GraphTokenDetails.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/82_Get-GraphTokenDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/83_Invoke-GraphRequest.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/83_Invoke-GraphRequest.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/84_Get-IntunePowerShellVersion.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 2,
+      "canonical_path": "09_Graph_API_Advanced/84_Get-IntunePowerShellVersion.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/85_Batch-GraphRequests.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/85_Batch-GraphRequests.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/86_Explore-GraphSchema.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/86_Explore-GraphSchema.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/87_Get-PagingResults.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 2,
+      "canonical_path": "09_Graph_API_Advanced/87_Get-PagingResults.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/88_Throttle-GraphRequests.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/88_Throttle-GraphRequests.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/89_Get-GraphPermissions.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 2,
+      "canonical_path": "09_Graph_API_Advanced/89_Get-GraphPermissions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "09_Graph_API_Advanced/90_Disconnect-Graph.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "09_Graph_API_Advanced/90_Disconnect-Graph.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/100_Show-ScriptMenu.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/100_Show-ScriptMenu.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/91_Send-Mail.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/91_Send-Mail.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/92_Log-Activity.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/92_Log-Activity.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/93_Convert-IntuneTime.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/93_Convert-IntuneTime.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/94_Get-LocalIntuneLogs.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/94_Get-LocalIntuneLogs.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/95_Check-InternetConnection.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 2,
+      "canonical_path": "10_Utility_Misc/95_Check-InternetConnection.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/96_Install-IntuneModule.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/96_Install-IntuneModule.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/97_Update-IntuneModule.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/97_Update-IntuneModule.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/98_Get-MyIntunePermissions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/98_Get-MyIntunePermissions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "10_Utility_Misc/99_Measure-ScriptExecution.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "10_Utility_Misc/99_Measure-ScriptExecution.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/101_Invite-GuestUser.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/101_Invite-GuestUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/102_BulkCreate-Users.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/102_BulkCreate-Users.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/103_Reset-UserPassword.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/103_Reset-UserPassword.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/104_Get-UserRiskyStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/104_Get-UserRiskyStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/105_Revoke-UserSessions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/105_Revoke-UserSessions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/106_Update-UserProfile.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/106_Update-UserProfile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/107_Get-UserDirectReports.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/107_Get-UserDirectReports.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/108_Set-UserManager.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/108_Set-UserManager.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/109_Delete-UserHard.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/109_Delete-UserHard.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "11_EntraID_UserManagement/110_Restore-DeletedUser.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "11_EntraID_UserManagement/110_Restore-DeletedUser.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/111_Get-DynamicGroupRules.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/111_Get-DynamicGroupRules.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/112_Validate-DynamicGroup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/112_Validate-DynamicGroup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/113_Clone-Group.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/113_Clone-Group.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/114_Get-GroupOwners.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/114_Get-GroupOwners.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/115_Set-GroupOwner.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/115_Set-GroupOwner.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/116_Find-OrphanedGroups.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/116_Find-OrphanedGroups.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/117_Get-GroupLicenseDetails.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/117_Get-GroupLicenseDetails.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/118_Hidden-GroupMembership.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/118_Hidden-GroupMembership.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/119_Export-GroupMembers-CSV.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/119_Export-GroupMembers-CSV.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "12_EntraID_GroupManagement/120_Sync-OnPremGroups.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "12_EntraID_GroupManagement/120_Sync-OnPremGroups.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/121_Get-AppRegistrations.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/121_Get-AppRegistrations.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/122_Create-AppRegistration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/122_Create-AppRegistration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/123_Add-AppSecret.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/123_Add-AppSecret.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/124_Get-ExpiringSecrets.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/124_Get-ExpiringSecrets.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/125_Grant-AdminConsent.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/125_Grant-AdminConsent.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/126_Get-ServicePrincipals.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/126_Get-ServicePrincipals.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/127_Remove-AppRegistration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/127_Remove-AppRegistration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/128_Get-AppPermissions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/128_Get-AppPermissions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/129_Update-AppManifest.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/129_Update-AppManifest.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "13_EntraID_AppRegistration/130_Check-AppSignInLogs.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "13_EntraID_AppRegistration/130_Check-AppSignInLogs.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/131_Get-CAPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/131_Get-CAPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/132_Backup-CAPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/132_Backup-CAPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/133_Get-CAPolicyStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/133_Get-CAPolicyStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/134_Create-Emergency-Account.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/134_Create-Emergency-Account.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/135_Get-MfaStatus.ps1",
+      "status": "unreviewed",
+      "review_group": "entra",
+      "review_wave": 2,
+      "canonical_path": "14_EntraID_Security_CA/135_Get-MfaStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/136_Enable-PerUserMfa.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/136_Enable-PerUserMfa.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/137_Get-TenantSecureScore.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/137_Get-TenantSecureScore.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/138_List-ConsentGrantPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/138_List-ConsentGrantPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/139_Get-AdminDirectoryRoles.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/139_Get-AdminDirectoryRoles.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "14_EntraID_Security_CA/140_Detect-ShadowIT-Apps.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "14_EntraID_Security_CA/140_Detect-ShadowIT-Apps.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/141_Get-DeviceEnrollmentProfile.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/141_Get-DeviceEnrollmentProfile.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/142_Create-EnrollmentProfile-iOS.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/142_Create-EnrollmentProfile-iOS.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/143_Create-EnrollmentProfile-Android.ps1",
+      "status": "example",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/143_Create-EnrollmentProfile-Android.ps1",
+      "notes": [
+        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/144_Get-ApplePushNotificationStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/144_Get-ApplePushNotificationStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/145_Upload-ApplePushCert.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/145_Upload-ApplePushCert.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/146_Get-VppTokens.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/146_Get-VppTokens.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/147_Sync-VppToken.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 2,
+      "canonical_path": "15_Intune_Advanced_Enrollment/147_Sync-VppToken.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/148_Get-AutopilotEvents.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/148_Get-AutopilotEvents.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/149_Get-TermsAndConditions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/149_Get-TermsAndConditions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "15_Intune_Advanced_Enrollment/150_Create-TermsAndConditions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "15_Intune_Advanced_Enrollment/150_Create-TermsAndConditions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/101_Get-IntuneCoManagementEligibility.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/101_Get-IntuneCoManagementEligibility.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/102_Get-IntunePolicyPerSettingStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/102_Get-IntunePolicyPerSettingStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/103_Get-IntuneDeviceHardwareHashBulk.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/103_Get-IntuneDeviceHardwareHashBulk.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/104_Get-IntuneAppRevisionHistory.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "16_Mixed_New_Scripts/104_Get-IntuneAppRevisionHistory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/105_Get-IntuneAssignmentFiltersUsage.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "16_Mixed_New_Scripts/105_Get-IntuneAssignmentFiltersUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/106_Get-IntuneDeviceStalenessScore.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/106_Get-IntuneDeviceStalenessScore.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/107_Get-IntuneScopeTagInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/107_Get-IntuneScopeTagInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/109_Get-IntuneDeviceRestorePoints.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/109_Get-IntuneDeviceRestorePoints.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/110_Get-IntuneMAMPolicyDeployment.ps1",
+      "status": "unreviewed",
+      "review_group": "apps",
+      "review_wave": 1,
+      "canonical_path": "16_Mixed_New_Scripts/110_Get-IntuneMAMPolicyDeployment.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/111_Get-EntraIDShadowITApps.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/111_Get-EntraIDShadowITApps.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/112_Get-EntraIDGuestUserSponsors.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/112_Get-EntraIDGuestUserSponsors.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/113_Remove-EntraIDExpiredGroupLifecycle.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/113_Remove-EntraIDExpiredGroupLifecycle.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/114_Get-EntraIDMFAAuthenticationMethodUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/114_Get-EntraIDMFAAuthenticationMethodUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/115_Get-EntraIDStaleServicePrincipals.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/115_Get-EntraIDStaleServicePrincipals.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/116_Get-EntraIDAdministrativeUnitMembership.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/116_Get-EntraIDAdministrativeUnitMembership.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/117_Get-EntraIDConditionalAccessGaps.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/117_Get-EntraIDConditionalAccessGaps.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/118_Set-EntraIDUserLocationFromIP.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/118_Set-EntraIDUserLocationFromIP.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/119_Get-EntraIDDirectoryRoleTemplates.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/119_Get-EntraIDDirectoryRoleTemplates.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/120_Get-EntraIDApplicationOwnerAudit.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/120_Get-EntraIDApplicationOwnerAudit.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/121_Get-AzVMHybridUseBenefitCandidate.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/121_Get-AzVMHybridUseBenefitCandidate.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/122_Get-AzStorageAccountLifecyclePolicy.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/122_Get-AzStorageAccountLifecyclePolicy.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/123_Get-AzNetworkOrphanedNSGs.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/123_Get-AzNetworkOrphanedNSGs.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/124_Get-AzKeyVaultSecretVersionHistory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/124_Get-AzKeyVaultSecretVersionHistory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/125_Get-AzResourceChangeHistory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/125_Get-AzResourceChangeHistory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/126_Get-AzAppServicePlanDensity.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/126_Get-AzAppServicePlanDensity.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/127_Get-AzVMPublicIPInsecurePorts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/127_Get-AzVMPublicIPInsecurePorts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/128_Get-AzSubscriptionPolicyExemptions.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/128_Get-AzSubscriptionPolicyExemptions.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/129_Get-AzRecoveryServicesVaultStorage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/129_Get-AzRecoveryServicesVaultStorage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/130_Get-AzLoadBalancerEmptyPools.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/130_Get-AzLoadBalancerEmptyPools.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/131_Get-TeamsOrphanedTeams.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/131_Get-TeamsOrphanedTeams.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/132_Get-ExoMailboxDelegationReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/132_Get-ExoMailboxDelegationReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/133_Set-TeamsPrivateChannelLifecycle.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/133_Set-TeamsPrivateChannelLifecycle.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/134_Get-ExoMailFlowTransportRuleHits.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/134_Get-ExoMailFlowTransportRuleHits.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/135_Get-M365GroupStorageTrend.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/135_Get-M365GroupStorageTrend.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/136_Get-TeamsAppPermissionGrants.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/136_Get-TeamsAppPermissionGrants.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/137_Get-ExoRoomMailboxEfficiency.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/137_Get-ExoRoomMailboxEfficiency.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/138_Set-M365UserLicenseReclaim.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/138_Set-M365UserLicenseReclaim.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/139_Get-ExoPhishingSimulationStats.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/139_Get-ExoPhishingSimulationStats.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/140_Get-TeamsDeviceHealthDetailed.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/140_Get-TeamsDeviceHealthDetailed.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/141_Invoke-AzAutomationJobCleanup.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/141_Invoke-AzAutomationJobCleanup.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/142_Get-ScriptExecutionTelemetry.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/142_Get-ScriptExecutionTelemetry.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/143_New-ScheduledTaskMaintenance.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/143_New-ScheduledTaskMaintenance.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/144_Get-SystemUptimeReportBulk.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/144_Get-SystemUptimeReportBulk.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/145_Get-LocalUserProfileSize.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/145_Get-LocalUserProfileSize.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/146_Remove-OldLogFiles.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/146_Remove-OldLogFiles.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/147_Get-DriverVersionInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/147_Get-DriverVersionInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/148_Set-PowerPlanHighPerformance.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/148_Set-PowerPlanHighPerformance.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/149_Get-InstalledSoftwareFuzzy.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/149_Get-InstalledSoftwareFuzzy.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Mixed_New_Scripts/150_Repair-WMIHealth.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Mixed_New_Scripts/150_Repair-WMIHealth.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/151_Get-TeamsPhoneNumberInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/151_Get-TeamsPhoneNumberInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/152_Get-TeamsUsersWithoutPhoneNumber.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/152_Get-TeamsUsersWithoutPhoneNumber.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/153_Get-TeamsEnterpriseVoiceUsers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/153_Get-TeamsEnterpriseVoiceUsers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/154_Find-TeamsUsersWithDirectRoutingNumber.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/154_Find-TeamsUsersWithDirectRoutingNumber.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/155_Find-TeamsUsersWithoutHostedVoicemail.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/155_Find-TeamsUsersWithoutHostedVoicemail.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/156_Get-TeamsUsersByUsageLocation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/156_Get-TeamsUsersByUsageLocation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/157_Get-TeamsUsersByDepartment.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/157_Get-TeamsUsersByDepartment.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/158_Get-TeamsUsersByOffice.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/158_Get-TeamsUsersByOffice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/159_Get-TeamsUsersByCity.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/159_Get-TeamsUsersByCity.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/160_Get-TeamsUsersByCountry.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/160_Get-TeamsUsersByCountry.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/161_Get-TeamsUsersWithExtensionNumbers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/161_Get-TeamsUsersWithExtensionNumbers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/162_Find-TeamsUsersWithoutVoiceEnablement.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/162_Find-TeamsUsersWithoutVoiceEnablement.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/163_Get-TeamsUsersWithOnPremLineUri.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/163_Get-TeamsUsersWithOnPremLineUri.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/164_Compare-TeamsLineUriAndOnPremLineUri.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/164_Compare-TeamsLineUriAndOnPremLineUri.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/165_Measure-TeamsNumberAssignmentCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/165_Measure-TeamsNumberAssignmentCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/166_Export-TeamsVoiceEnabledUsers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/153_Get-TeamsEnterpriseVoiceUsers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/167_Export-TeamsUsersWithPhoneNumbers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/167_Export-TeamsUsersWithPhoneNumbers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/168_Test-TeamsUserLineUriFormatting.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/168_Test-TeamsUserLineUriFormatting.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/169_Find-TeamsDuplicateLineUriCandidates.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/169_Find-TeamsDuplicateLineUriCandidates.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/170_Get-TeamsTelephonyUserOverview.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/170_Get-TeamsTelephonyUserOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/171_Get-TeamsTenantDialPlans.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/171_Get-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/172_Export-TeamsTenantDialPlans.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/172_Export-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/173_Get-TeamsVoiceRoutes.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/173_Get-TeamsVoiceRoutes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/174_Export-TeamsVoiceRoutes.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/174_Export-TeamsVoiceRoutes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/175_Get-TeamsVoiceRoutingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/175_Get-TeamsVoiceRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/176_Export-TeamsVoiceRoutingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/176_Export-TeamsVoiceRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/177_Get-TeamsCallingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/177_Get-TeamsCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/178_Export-TeamsCallingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/178_Export-TeamsCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/179_Get-TeamsCallingLineIdentities.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/179_Get-TeamsCallingLineIdentities.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/180_Export-TeamsCallingLineIdentities.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/180_Export-TeamsCallingLineIdentities.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/181_Get-TeamsCallParkPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/181_Get-TeamsCallParkPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/182_Export-TeamsCallParkPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/182_Export-TeamsCallParkPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/183_Get-TeamsIPPhonePolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/183_Get-TeamsIPPhonePolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/184_Export-TeamsIPPhonePolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/184_Export-TeamsIPPhonePolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/185_Get-TeamsEmergencyCallingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/185_Get-TeamsEmergencyCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/186_Export-TeamsEmergencyCallingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/186_Export-TeamsEmergencyCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/187_Get-TeamsEmergencyCallRoutingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/187_Get-TeamsEmergencyCallRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/188_Export-TeamsEmergencyCallRoutingPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/188_Export-TeamsEmergencyCallRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/189_Get-TeamsPolicyInventorySummary.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/189_Get-TeamsPolicyInventorySummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/190_Backup-TeamsCoreTelephonyPolicies.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/190_Backup-TeamsCoreTelephonyPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/191_Get-TeamsCallQueueInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/191_Get-TeamsCallQueueInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/192_Export-TeamsCallQueueInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/192_Export-TeamsCallQueueInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/193_Find-TeamsCallQueuesWithoutResourceAccounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/193_Find-TeamsCallQueuesWithoutResourceAccounts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/194_Find-TeamsCallQueuesWithoutAgents.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/194_Find-TeamsCallQueuesWithoutAgents.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/195_Get-TeamsCallQueuesByLanguage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/195_Get-TeamsCallQueuesByLanguage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/196_Get-TeamsCallQueuesByRoutingMethod.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/196_Get-TeamsCallQueuesByRoutingMethod.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/197_Get-TeamsCallQueuesWithPresenceRouting.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/197_Get-TeamsCallQueuesWithPresenceRouting.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/198_Get-TeamsCallQueuesByConferenceMode.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/198_Get-TeamsCallQueuesByConferenceMode.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/199_Find-TeamsCallQueuesWithConferenceModeDisabled.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/199_Find-TeamsCallQueuesWithConferenceModeDisabled.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/200_Get-TeamsCallQueuesWithOverflowConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/200_Get-TeamsCallQueuesWithOverflowConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/201_Get-TeamsCallQueuesWithTimeoutConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/201_Get-TeamsCallQueuesWithTimeoutConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/202_Get-TeamsCallQueueAgentSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/202_Get-TeamsCallQueueAgentSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/203_Get-TeamsCallQueueDistributionLists.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/203_Get-TeamsCallQueueDistributionLists.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/204_Compare-TeamsCallQueueRoutingModes.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/204_Compare-TeamsCallQueueRoutingModes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/205_Measure-TeamsCallQueueAgentCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/205_Measure-TeamsCallQueueAgentCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/206_Test-TeamsCallQueueNamingStandard.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/206_Test-TeamsCallQueueNamingStandard.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/207_Find-TeamsCallQueuesWithoutLanguage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/207_Find-TeamsCallQueuesWithoutLanguage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/208_Get-TeamsCallQueueChannelBindings.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/208_Get-TeamsCallQueueChannelBindings.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/209_Export-TeamsCallQueueResourceAccounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/209_Export-TeamsCallQueueResourceAccounts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/210_Backup-TeamsCallQueueConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/192_Export-TeamsCallQueueInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/211_Get-TeamsCallQueueOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/191_Get-TeamsCallQueueInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/212_Get-TeamsAutoAttendantInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/212_Get-TeamsAutoAttendantInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/213_Export-TeamsAutoAttendantInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/213_Export-TeamsAutoAttendantInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/214_Find-TeamsAutoAttendantsWithoutResourceAccounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/214_Find-TeamsAutoAttendantsWithoutResourceAccounts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/215_Get-TeamsAutoAttendantsByLanguage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/215_Get-TeamsAutoAttendantsByLanguage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/216_Get-TeamsAutoAttendantsWithVoiceResponse.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/216_Get-TeamsAutoAttendantsWithVoiceResponse.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/217_Get-TeamsAutoAttendantsByVoiceResponse.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/217_Get-TeamsAutoAttendantsByVoiceResponse.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/218_Find-TeamsAutoAttendantsWithoutOperator.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/218_Find-TeamsAutoAttendantsWithoutOperator.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/219_Get-TeamsAutoAttendantScheduleSummary.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/219_Get-TeamsAutoAttendantScheduleSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/220_Get-TeamsAutoAttendantHolidaySummary.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/220_Get-TeamsAutoAttendantHolidaySummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/221_Get-TeamsAutoAttendantCallFlowSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/221_Get-TeamsAutoAttendantCallFlowSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/222_Compare-TeamsAutoAttendantDialScopes.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/222_Compare-TeamsAutoAttendantDialScopes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/223_Test-TeamsAutoAttendantNamingStandard.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/223_Test-TeamsAutoAttendantNamingStandard.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/224_Measure-TeamsAutoAttendantBusinessHoursCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/224_Measure-TeamsAutoAttendantBusinessHoursCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/225_Get-TeamsAutoAttendantDirectorySearchModes.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/225_Get-TeamsAutoAttendantDirectorySearchModes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/226_Find-TeamsAutoAttendantsWithoutDefaultCallFlow.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/226_Find-TeamsAutoAttendantsWithoutDefaultCallFlow.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/227_Get-TeamsAutoAttendantOperatorTargets.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/227_Get-TeamsAutoAttendantOperatorTargets.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/228_Export-TeamsAutoAttendantResourceAccounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/228_Export-TeamsAutoAttendantResourceAccounts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/229_Backup-TeamsAutoAttendantConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/213_Export-TeamsAutoAttendantInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/230_Get-TeamsAutoAttendantCallableEntities.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/230_Get-TeamsAutoAttendantCallableEntities.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/231_Find-TeamsAutoAttendantsWithoutAfterHoursCallFlow.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/231_Find-TeamsAutoAttendantsWithoutAfterHoursCallFlow.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/232_Get-TeamsAutoAttendantOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/212_Get-TeamsAutoAttendantInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/233_Get-TeamsResourceAccountInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/233_Get-TeamsResourceAccountInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/234_Export-TeamsResourceAccountInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/234_Export-TeamsResourceAccountInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/235_Find-TeamsResourceAccountsWithoutPhoneNumber.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/235_Find-TeamsResourceAccountsWithoutPhoneNumber.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/236_Find-TeamsResourceAccountsWithoutApplicationAssignment.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/236_Find-TeamsResourceAccountsWithoutApplicationAssignment.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/237_Get-TeamsResourceAccountsByApplicationType.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/237_Get-TeamsResourceAccountsByApplicationType.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/238_Get-TeamsResourceAccountsByUsageLocation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/238_Get-TeamsResourceAccountsByUsageLocation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/239_Find-TeamsResourceAccountsWithoutDisplayName.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/239_Find-TeamsResourceAccountsWithoutDisplayName.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/240_Find-TeamsResourceAccountsWithoutUPNSuffixMatch.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/240_Find-TeamsResourceAccountsWithoutUPNSuffixMatch.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/241_Test-TeamsResourceAccountNamingStandard.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/241_Test-TeamsResourceAccountNamingStandard.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/242_Get-TeamsResourceAccountsWithPhoneNumbers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/242_Get-TeamsResourceAccountsWithPhoneNumbers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/243_Measure-TeamsResourceAccountPhoneCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/243_Measure-TeamsResourceAccountPhoneCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/244_Get-TeamsResourceAccountsByDomain.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/244_Get-TeamsResourceAccountsByDomain.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/245_Get-TeamsResourceAccountsByPhoneNumberPrefix.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/245_Get-TeamsResourceAccountsByPhoneNumberPrefix.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/246_Find-TeamsResourceAccountsWithoutUsageLocation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/246_Find-TeamsResourceAccountsWithoutUsageLocation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/247_Find-TeamsResourceAccountsWithDuplicateDisplayName.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/247_Find-TeamsResourceAccountsWithDuplicateDisplayName.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/248_Find-TeamsResourceAccountsWithDuplicatePhoneNumber.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/248_Find-TeamsResourceAccountsWithDuplicatePhoneNumber.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/249_Export-TeamsResourceAccountPhoneNumbers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/249_Export-TeamsResourceAccountPhoneNumbers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/250_Backup-TeamsResourceAccounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/234_Export-TeamsResourceAccountInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/251_Get-TeamsResourceAccountOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/233_Get-TeamsResourceAccountInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/252_Get-TeamsPstnGatewayInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/252_Get-TeamsPstnGatewayInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/253_Export-TeamsPstnGatewayInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/253_Export-TeamsPstnGatewayInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/254_Find-TeamsDisabledPstnGateways.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/254_Find-TeamsDisabledPstnGateways.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/255_Get-TeamsPstnGatewaysBySipSignalingPort.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/255_Get-TeamsPstnGatewaysBySipSignalingPort.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/256_Test-TeamsPstnGatewayForwardingState.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/256_Test-TeamsPstnGatewayForwardingState.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/257_Get-TeamsVoiceRouteInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/173_Get-TeamsVoiceRoutes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/258_Export-TeamsVoiceRouteInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/174_Export-TeamsVoiceRoutes.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/259_Find-TeamsVoiceRoutesWithoutGateways.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/259_Find-TeamsVoiceRoutesWithoutGateways.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/260_Compare-TeamsVoiceRoutesByPriority.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/260_Compare-TeamsVoiceRoutesByPriority.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/261_Get-TeamsVoiceRoutesByNumberPattern.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/261_Get-TeamsVoiceRoutesByNumberPattern.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/262_Get-TeamsVoiceRoutingPolicyInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/175_Get-TeamsVoiceRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/263_Export-TeamsVoiceRoutingPolicyInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/176_Export-TeamsVoiceRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/264_Find-TeamsVoiceRoutingPoliciesWithoutRoutes.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/264_Find-TeamsVoiceRoutingPoliciesWithoutRoutes.ps1",
+      "notes": [
+        "Prueft PSTN-Usages, loest aber keine zugeordneten Routen auf."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/265_Compare-TeamsVoiceRoutingPolicyAssignments.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/265_Compare-TeamsVoiceRoutingPolicyAssignments.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/266_Measure-TeamsGatewayRouteCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/266_Measure-TeamsGatewayRouteCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/267_Backup-TeamsDirectRoutingConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/267_Backup-TeamsDirectRoutingConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/268_Get-TeamsDirectRoutingOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/268_Get-TeamsDirectRoutingOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/269_Find-TeamsRoutesWithDuplicatePatterns.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/269_Find-TeamsRoutesWithDuplicatePatterns.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/270_Get-TeamsPstnGatewayFailoverSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/270_Get-TeamsPstnGatewayFailoverSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/271_Get-TeamsVoiceRoutingPolicyPstnUsageMap.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/271_Get-TeamsVoiceRoutingPolicyPstnUsageMap.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/272_Get-TeamsDialPlanInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/171_Get-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/273_Export-TeamsDialPlanInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/172_Export-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/274_Find-TeamsDialPlansWithoutNormalizationRules.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/274_Find-TeamsDialPlansWithoutNormalizationRules.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/275_Compare-TeamsDialPlanNormalizationCounts.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/275_Compare-TeamsDialPlanNormalizationCounts.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/276_Get-TeamsDialPlansBySimpleName.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/276_Get-TeamsDialPlansBySimpleName.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/277_Get-TeamsDialPlanNormalizationRuleSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/277_Get-TeamsDialPlanNormalizationRuleSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/278_Find-TeamsDialPlansWithoutExternalAccessPrefix.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/278_Find-TeamsDialPlansWithoutExternalAccessPrefix.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/279_Test-TeamsDialPlanNormalizationPatterns.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/279_Test-TeamsDialPlanNormalizationPatterns.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/280_Measure-TeamsDialPlanComplexity.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/280_Measure-TeamsDialPlanComplexity.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/281_Backup-TeamsDialPlans.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/172_Export-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/282_Get-TeamsDialPlanOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/171_Get-TeamsTenantDialPlans.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/283_Compare-TeamsDialPlanUsages.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/283_Compare-TeamsDialPlanUsages.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/284_Find-TeamsDialPlansWithDuplicateNormalizationNames.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/284_Find-TeamsDialPlansWithDuplicateNormalizationNames.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/285_Find-TeamsDialPlansWithDuplicateNormalizationPatterns.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/285_Find-TeamsDialPlansWithDuplicateNormalizationPatterns.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/286_Get-TeamsDialPlansByDescription.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/286_Get-TeamsDialPlansByDescription.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/287_Export-TeamsDialPlanNormalizationRules.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/287_Export-TeamsDialPlanNormalizationRules.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/288_Get-TeamsDialPlanTranslationPatterns.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/288_Get-TeamsDialPlanTranslationPatterns.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/289_Get-TeamsDialPlanPstnUsages.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/289_Get-TeamsDialPlanPstnUsages.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/290_Find-TeamsDialPlansWithoutPstnUsage.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/290_Find-TeamsDialPlansWithoutPstnUsage.ps1",
+      "notes": [
+        "PSTN-Usage-Zuordnung gehoert zur Voice-Routing-Konfiguration."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/291_Get-TeamsTenantDialPlanSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/291_Get-TeamsTenantDialPlanSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/292_Get-TeamsEmergencyCallingPoliciesOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/185_Get-TeamsEmergencyCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/293_Export-TeamsEmergencyCallingPoliciesOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/186_Export-TeamsEmergencyCallingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/294_Get-TeamsEmergencyCallRoutingPoliciesOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/187_Get-TeamsEmergencyCallRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/295_Export-TeamsEmergencyCallRoutingPoliciesOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/188_Export-TeamsEmergencyCallRoutingPolicies.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/296_Get-TeamsLisLocationInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/296_Get-TeamsLisLocationInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/297_Export-TeamsLisLocationInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/297_Export-TeamsLisLocationInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/298_Get-TeamsLisCivicAddressInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/298_Get-TeamsLisCivicAddressInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/299_Export-TeamsLisCivicAddressInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/299_Export-TeamsLisCivicAddressInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/300_Find-TeamsLisLocationsWithoutNetworkMapping.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/300_Find-TeamsLisLocationsWithoutNetworkMapping.ps1",
+      "notes": [
+        "Netzwerkzuordnung wird nicht gegen LIS-Netzwerkobjekte aufgeloest."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/301_Get-TeamsTenantNetworkSiteInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/301_Get-TeamsTenantNetworkSiteInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/302_Export-TeamsTenantNetworkSiteInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/302_Export-TeamsTenantNetworkSiteInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/303_Get-TeamsTenantNetworkSubnetInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/303_Get-TeamsTenantNetworkSubnetInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/304_Export-TeamsTenantNetworkSubnetInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/304_Export-TeamsTenantNetworkSubnetInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/305_Find-TeamsNetworkSubnetsWithoutSites.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/305_Find-TeamsNetworkSubnetsWithoutSites.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/306_Compare-TeamsEmergencyPoliciesAndNetworkSites.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/306_Compare-TeamsEmergencyPoliciesAndNetworkSites.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/307_Measure-TeamsEmergencyAddressCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/307_Measure-TeamsEmergencyAddressCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/308_Test-TeamsEmergencyPolicyNamingStandard.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/308_Test-TeamsEmergencyPolicyNamingStandard.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/309_Backup-TeamsEmergencyConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/309_Backup-TeamsEmergencyConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/310_Get-TeamsEmergencyRoutingOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/310_Get-TeamsEmergencyRoutingOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/311_Get-TeamsEmergencyNetworkOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/311_Get-TeamsEmergencyNetworkOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/312_Get-TeamsUserCallingSettingsInventory.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/312_Get-TeamsUserCallingSettingsInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/313_Export-TeamsUserCallingSettingsInventory.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/313_Export-TeamsUserCallingSettingsInventory.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/314_Find-TeamsUsersWithCallForwardingEnabled.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/314_Find-TeamsUsersWithCallForwardingEnabled.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/315_Find-TeamsUsersWithDelegationConfigured.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/315_Find-TeamsUsersWithDelegationConfigured.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/316_Find-TeamsUsersWithSimultaneousRing.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/316_Find-TeamsUsersWithSimultaneousRing.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/317_Find-TeamsUsersWithUnansweredSettings.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/317_Find-TeamsUsersWithUnansweredSettings.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/318_Get-TeamsUsersByCallGroupConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/318_Get-TeamsUsersByCallGroupConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/319_Get-TeamsUsersByForwardingType.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/319_Get-TeamsUsersByForwardingType.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/320_Get-TeamsUsersByForwardingTargetType.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/320_Get-TeamsUsersByForwardingTargetType.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/321_Measure-TeamsCallForwardingAdoption.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/321_Measure-TeamsCallForwardingAdoption.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/322_Find-TeamsUsersWithUnansweredToVoicemail.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/322_Find-TeamsUsersWithUnansweredToVoicemail.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/323_Find-TeamsUsersWithExternalForwarding.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/323_Find-TeamsUsersWithExternalForwarding.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/324_Export-TeamsCallDelegationTargets.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/324_Export-TeamsCallDelegationTargets.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/325_Test-TeamsCallingSettingsConsistency.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/325_Test-TeamsCallingSettingsConsistency.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/326_Backup-TeamsUserCallingSettings.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/326_Backup-TeamsUserCallingSettings.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/327_Get-TeamsCallingSettingsOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/327_Get-TeamsCallingSettingsOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/328_Find-TeamsUsersWithCallGroupMembers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/328_Find-TeamsUsersWithCallGroupMembers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/329_Measure-TeamsVoicemailCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/329_Measure-TeamsVoicemailCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/330_Compare-TeamsForwardingAndDelegationUsage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/330_Compare-TeamsForwardingAndDelegationUsage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/331_Get-TeamsTelephonyReadinessOverview.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/331_Get-TeamsTelephonyReadinessOverview.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/332_Find-TeamsLicensedUsersWithoutTelephonyConfig.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/332_Find-TeamsLicensedUsersWithoutTelephonyConfig.ps1",
+      "notes": [
+        "Lizenzpruefung fehlt; Ergebnis belegt keine Teams-Phone-Lizenz."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/333_Find-TeamsTelephonyUsersWithoutUsageLocation.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/333_Find-TeamsTelephonyUsersWithoutUsageLocation.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/334_Find-TeamsVoiceEnabledUsersWithoutDialPlan.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/334_Find-TeamsVoiceEnabledUsersWithoutDialPlan.ps1",
+      "notes": [
+        "Globale/geerbte effektive Richtlinien werden nicht vollstaendig aufgeloest."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/335_Find-TeamsVoiceEnabledUsersWithoutVoiceRoutingPolicy.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/335_Find-TeamsVoiceEnabledUsersWithoutVoiceRoutingPolicy.ps1",
+      "notes": [
+        "Globale/geerbte effektive Richtlinien werden nicht vollstaendig aufgeloest."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/336_Find-TeamsVoiceEnabledUsersWithoutCallingPolicy.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/336_Find-TeamsVoiceEnabledUsersWithoutCallingPolicy.ps1",
+      "notes": [
+        "Globale/geerbte effektive Richtlinien werden nicht vollstaendig aufgeloest."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/337_Find-TeamsVoiceEnabledUsersWithoutEmergencyPolicy.ps1",
+      "status": "known_issues",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/337_Find-TeamsVoiceEnabledUsersWithoutEmergencyPolicy.ps1",
+      "notes": [
+        "Globale/geerbte effektive Richtlinien werden nicht vollstaendig aufgeloest."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/338_Compare-TeamsTelephonyAssignmentsByDomain.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/338_Compare-TeamsTelephonyAssignmentsByDomain.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/339_Compare-TeamsTelephonyAssignmentsByCountry.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/339_Compare-TeamsTelephonyAssignmentsByCountry.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/340_Measure-TeamsTelephonyAdoptionByOffice.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/340_Measure-TeamsTelephonyAdoptionByOffice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/341_Export-TeamsTelephonyAssignmentMatrix.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/341_Export-TeamsTelephonyAssignmentMatrix.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/342_Export-TeamsTelephonyPolicyMatrix.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/342_Export-TeamsTelephonyPolicyMatrix.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/343_Backup-TeamsTelephonyUserConfiguration.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/343_Backup-TeamsTelephonyUserConfiguration.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/344_Test-TeamsTelephonyConfigurationCompleteness.ps1",
+      "status": "unreviewed",
+      "review_group": "teams",
+      "review_wave": 2,
+      "canonical_path": "16_Teams_Telephony/344_Test-TeamsTelephonyConfigurationCompleteness.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/345_Find-TeamsPotentialCommonAreaPhoneUsers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/345_Find-TeamsPotentialCommonAreaPhoneUsers.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/346_Find-TeamsUsersWithNonE164Numbers.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/168_Test-TeamsUserLineUriFormatting.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/347_Find-TeamsVoiceUsersWithoutHostedVoicemail.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/155_Find-TeamsUsersWithoutHostedVoicemail.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/348_Measure-TeamsTelephonyCoverageByDepartment.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/348_Measure-TeamsTelephonyCoverageByDepartment.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/349_Export-TeamsTelephonyExecutiveSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/349_Export-TeamsTelephonyExecutiveSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "16_Teams_Telephony/350_Get-TeamsTelephonyTenantSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": null,
+      "canonical_path": "16_Teams_Telephony/350_Get-TeamsTelephonyTenantSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/352_Resolve-IntuneAssignmentForDevice.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/352_Resolve-IntuneAssignmentForDevice.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/353_Export-IntuneConfigurationSnapshot.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/353_Export-IntuneConfigurationSnapshot.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/354_Compare-IntuneConfigurationSnapshot.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "local",
+      "canonical_path": "17_Intune_Workflows/354_Compare-IntuneConfigurationSnapshot.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/355_Test-IntuneWin32AppDetection.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "local",
+      "canonical_path": "17_Intune_Workflows/355_Test-IntuneWin32AppDetection.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/356_Test-IntuneWin32PackageFolder.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "local",
+      "canonical_path": "17_Intune_Workflows/356_Test-IntuneWin32PackageFolder.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/357_Get-IntuneWin32AppRelationshipGraph.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/357_Get-IntuneWin32AppRelationshipGraph.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/358_Get-IntuneUpdateRolloutReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/358_Get-IntuneUpdateRolloutReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/359_Test-IntuneAutopilotReadiness.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/359_Test-IntuneAutopilotReadiness.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1",
+      "notes": [],
+      "evidence": []
+    }
+  ]
+}

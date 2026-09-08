@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt mehrere Benutzer aus einer CSV-Datei.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Importiert Benutzerdaten (DisplayName, UPN, Password, etc.) aus einer CSV und legt die Accounts an.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 
@@ -26,7 +32,7 @@ foreach ($User in $Users) {
         Password = $User.Password
         ForceChangePasswordNextSignIn = $true
     }
-    
+
     $Params = @{
         DisplayName = $User.DisplayName
         UserPrincipalName = $User.UserPrincipalName
@@ -34,7 +40,7 @@ foreach ($User in $Users) {
         AccountEnabled = $true
         PasswordProfile = $PasswordProfile
     }
-    
+
     try {
         New-MgUser -BodyParameter $Params
         Write-Host "Benutzer erstellt: $($User.UserPrincipalName)" -ForegroundColor Green

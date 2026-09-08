@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktiviert eine Monitor Alert Rule (falls deaktiviert).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Massenaktivierung von Alerts.
-    
+
     Parameter:
     - AlertName: Name des Alerts (Wildcard möglich)
 
@@ -24,10 +30,10 @@ try {
     # Azure Alerts sind Ressourcen, wir nutzen Get-AzResource für generischen Zugriff oder spezifische Cmdlets.
     # Für GenMetric Alerts: Get-AzMetricAlertRuleV2 -> etwas komplex.
     # Einfacher Weg für Classic Alerts:
-    
+
     # Hier Beispiel für Activity Log Alert aktivieren:
     $Alert = Get-AzActivityLogAlert -Name $AlertName -ErrorAction SilentlyContinue
-    
+
     if ($Alert) {
         Enable-AzActivityLogAlert -Name $AlertName -ResourceGroupName $Alert.ResourceGroupName -ErrorAction Stop
         Write-Host "Alert aktiviert." -ForegroundColor Green

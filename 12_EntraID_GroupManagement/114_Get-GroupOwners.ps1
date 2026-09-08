@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt die Besitzer (Owners) einer Gruppe.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet User auf, die Owner-Rechte an der Gruppe haben.
     Erfordert die Berechtigung 'Group.Read.All'.
 

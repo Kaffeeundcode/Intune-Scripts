@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Startet einen gestoppten Dienst.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Versucht, den Dienst zu starten und setzt den Starttyp auf 'Automatic'.
 
     Parameter:
@@ -23,7 +29,7 @@ try {
     Write-Host "Konfiguriere Dienst $ServiceName..."
     Set-Service -Name $ServiceName -StartupType Automatic -ErrorAction Stop
     Start-Service -Name $ServiceName -ErrorAction Stop
-    
+
     Write-Host "Dienst gestartet."
 
 } catch {

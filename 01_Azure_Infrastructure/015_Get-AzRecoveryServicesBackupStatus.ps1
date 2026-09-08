@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Backup-Status aller VMs in einem Recovery Services Vault.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt an, welche VMs geschützt sind, wann das letzte Backup lief und ob es Fehler gab.
-    
+
     Parameter:
     - ResourceGroupName: RG des Vaults
     - VaultName: Name des Recovery Services Vault
@@ -31,7 +37,7 @@ try {
     foreach ($item in $Items) {
         $Status = $item.LastBackupStatus
         $Color = if ($Status -eq "Completed") { "Green" } else { "Red" }
-        
+
         Write-Host "VM: $($item.Name)" -ForegroundColor Yellow
         Write-Host " - Status:        $Status" -ForegroundColor $Color
         Write-Host " - Letztes Backup: $($item.LastBackupTime)"

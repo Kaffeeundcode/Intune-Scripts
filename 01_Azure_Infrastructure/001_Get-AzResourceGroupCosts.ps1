@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft die angefallenen Kosten für eine bestimmte Azure Resource Group ab.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Dieses Skript analysiert die Kosten einer Resource Group für einen bestimmten Zeitraum (Standard: letzte 30 Tage).
     Es verwendet das 'Az'-Modul (Az.CostManagement).
-    
+
     Parameter:
     - ResourceGroupName: Name der Ressourcengruppe
     - DaysBack: Zeitraum in Tagen (Standard: 30)
@@ -38,7 +44,7 @@ try {
 
     $StartDate = (Get-Date).AddDays(-$DaysBack)
     $EndDate = (Get-Date)
-    
+
     Write-Host "Rufe Kosten für Resource Group '$ResourceGroupName' ab ($($StartDate.ToShortDateString()) - $($EndDate.ToShortDateString()))..." -ForegroundColor Cyan
 
     # Kosten abrufen

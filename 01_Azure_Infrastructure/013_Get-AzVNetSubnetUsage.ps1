@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt die Belegung von Subnetzen in einem virtuellen Netzwerk an.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft bei der Planung von neuen Deployments, um sicherzustellen, dass genügend IP-Adressen im Subnetz frei sind.
-    
+
     Parameter:
     - ResourceGroupName: RG Name
     - VNetName: Name des VNet
@@ -22,7 +28,7 @@ param (
 
 try {
     $VNet = Get-AzVirtualNetwork -ResourceGroupName $ResourceGroupName -Name $VNetName -ErrorAction Stop
-    
+
     Write-Host "Analyse der Subnetze in '$VNetName'..." -ForegroundColor Cyan
 
     foreach ($subnet in $VNet.Subnets) {
@@ -30,8 +36,8 @@ try {
         # Berechnung der totalen IPs basierend auf CIDR
         $Prefix = $subnet.AddressPrefix
         $Cidr =  [int]($Prefix -split '/')[1]
-        $TotalIPs = [Math]::Pow(2, (32 - $Cidr)) - 5 
-        
+        $TotalIPs = [Math]::Pow(2, (32 - $Cidr)) - 5
+
         # IpConfigurations enthält die verbundenen Interfaces
         $UsedIPs = $subnet.IpConfigurations.Count
         $FreeIPs = $TotalIPs - $UsedIPs

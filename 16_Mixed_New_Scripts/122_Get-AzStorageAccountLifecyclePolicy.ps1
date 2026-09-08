@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Audits Storage Accounts to check if they have a Lifecycle Management Policy.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lifecycle rules allow automatic tiering (Cool/Archive) or deletion of old data.
     Storage accounts WITHOUT these policies may be accumulating costs indefinitely.
 
@@ -18,7 +24,7 @@ $Report = @()
 
 foreach ($SA in $StorageAccounts) {
     Write-Host "Checking $($SA.StorageAccountName)..." -NoNewline
-    
+
     $HasPolicy = $false
     try {
         $Policy = Get-AzStorageAccountManagementPolicy -ResourceGroupName $SA.ResourceGroupName -StorageAccountName $SA.StorageAccountName -ErrorAction Stop

@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet Microsoft Teams, die seit X Tagen keine Aktivität hatten.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Basierend auf Group Renewal / Activity Reports.
     Hilft beim Aufräumen von ungenutzten Teams.
-    
+
     Parameter:
     - DaysInactive: Tage (Default: 90)
 
@@ -31,7 +37,7 @@ try {
             Write-Warning "Team '$($g.DisplayName)' wurde seit $($g.RenewedDateTime) nicht erneuert/genutzt."
         }
     }
-    
+
     Write-Host "Prüfung abgeschlossen."
 
 } catch {

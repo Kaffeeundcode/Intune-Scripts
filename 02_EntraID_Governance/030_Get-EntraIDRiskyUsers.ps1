@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Benutzer mit erhöhtem Risiko-Level (Identity Protection).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     High Risk User sind wahrscheinlich kompromittiert.
     Dieses Skript filtert Benutzer nach 'RiskLevel'.
 
@@ -16,7 +22,7 @@
 #>
 
 param (
-    [Parameter(Mandatory=$false)] 
+    [Parameter(Mandatory=$false)]
     [ValidateSet("low","medium","high")]
     [string]$MinRiskLevel = "medium"
 )
@@ -24,7 +30,7 @@ param (
 try {
     Write-Host "Suche Risky Users (Level >= $MinRiskLevel)..." -ForegroundColor Cyan
 
-    $Users = Get-MgRiskyUser -All 
+    $Users = Get-MgRiskyUser -All
 
     $Filtered = switch ($MinRiskLevel) {
         "low"    { $Users | Where-Object { $_.RiskLevel -in @("low","medium","high") } }

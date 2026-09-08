@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies users who are NOT covered by specific critical Conditional Access policies.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Checks all Enabled CA policies.
     If a policy targets "All Users" but has Exclusions, it lists the Excluded users.
     If a policy targets specific groups, it's harder to check gaps without a "baseline".
-    
+
     Focus: Finding users consistently excluded from MFA or Block Legacy Auth rules.
 
 .NOTES
@@ -31,11 +37,11 @@ foreach ($Pol in $Policies) {
     $ExcludedUsers = $Pol.Conditions.Users.ExcludeUsers
     $ExcludedGroups = $Pol.Conditions.Users.ExcludeGroups
     $ExcludedRoles = $Pol.Conditions.Users.ExcludeRoles
-    
+
     if ($ExcludedUsers -or $ExcludedGroups -or $ExcludedRoles) {
-        
+
         $ResolvedExclusions = @()
-        
+
         # Direct User Exclusions
         if ($ExcludedUsers) {
              foreach ($UId in $ExcludedUsers) {
@@ -45,14 +51,14 @@ foreach ($Pol in $Policies) {
                  }
              }
         }
-        
+
         # Group Exclusions
         if ($ExcludedGroups) {
              foreach ($GId in $ExcludedGroups) {
                  try { $G = Get-MgGroup -GroupId $GId; $ResolvedExclusions += "Group: $($G.DisplayName)" } catch { $ResolvedExclusions += $GId }
              }
         }
-        
+
         $Report += [PSCustomObject]@{
             PolicyName = $Pol.DisplayName
             GrantControls = ($Pol.GrantControls.BuiltInControls -join ", ")

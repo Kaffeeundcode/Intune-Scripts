@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft aktive PIM (Privileged Identity Management) Alerts ab.
 
 .DESCRIPTION
-    Zeigt Sicherheitswarnungen aus PIM an, z.B. wenn Administratoren keine MFA nutzen 
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Zeigt Sicherheitswarnungen aus PIM an, z.B. wenn Administratoren keine MFA nutzen
     oder Rollen außerhalb von PIM zugewiesen wurden.
     Benötigt Microsoft.Graph.Identity.Governance Modul.
 
@@ -17,7 +23,7 @@
 #>
 
 param (
-    [Parameter(Mandatory=$false)] 
+    [Parameter(Mandatory=$false)]
     [ValidateSet("High","Medium","Low","All")]
     [string]$AlertLevel = "All"
 )
@@ -28,13 +34,13 @@ try {
     Connect-MgGraph -Scopes "PrivilegedAccess.Read.AzureADGroup" -ErrorAction SilentlyContinue
 
     Write-Host "Rufe PIM Alerts ab..." -ForegroundColor Cyan
-    
+
     # Da reines PIM Alert cmdlet in v1.0 rar ist, nutzen wir oft Invoke-MgGraphRequest für volle Details
     # Hier vereinfacht über Beta-Profil oder Invoke
-    
+
     $Uri = "https://graph.microsoft.com/beta/privilegedAccess/aadRoles/alerts"
     $Alerts = Invoke-MgGraphRequest -Method GET -Uri $Uri -ErrorAction Stop
-    
+
     $Results = $Alerts.value | Select-Object id, alertLevel, isRemediatable, severity, status
 
     if ($AlertLevel -ne "All") {

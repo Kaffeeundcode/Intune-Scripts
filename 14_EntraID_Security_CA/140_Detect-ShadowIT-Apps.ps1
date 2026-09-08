@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erkennt neu registrierte Apps (Shadow IT Detection).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet Apps auf, die in den letzten 7 Tagen registriert wurden.
     Erfordert die Berechtigung 'Application.Read.All'.
 

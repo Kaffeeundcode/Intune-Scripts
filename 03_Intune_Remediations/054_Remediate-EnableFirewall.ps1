@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktiviert alle Windows Firewall Profile.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Setzt Domain, Public und Private Profile auf 'Enabled'.
 
 .NOTES

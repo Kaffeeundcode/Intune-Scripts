@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Analyzes Room Mailbox usage and decline rates (Capacity Planning).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Checks calendar stats for Room mailboxes.
     Note: Requires access to calendar data or usage logs.
     This script checks the 'BookingWindowInDays' and configuration, plus basic item count
@@ -28,10 +34,10 @@ $Report = @()
 foreach ($Room in $Rooms) {
     # Get Calendar Processing options
     $Proc = Get-CalendarProcessing -Identity $Room.UserPrincipalName
-    
+
     # Get Item Count (Intensity)
     $Stats = Get-ExoMailboxStatistics -Identity $Room.UserPrincipalName
-    
+
     $Report += [PSCustomObject]@{
         RoomName = $Room.DisplayName
         Email = $Room.UserPrincipalName

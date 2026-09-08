@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Triggered eine Rotation des BitLocker-Schlüssels.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Fordert das Gerät auf, einen neuen Recovery Key zu generieren und hochzuladen.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

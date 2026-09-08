@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Searches installed software (Registry) using fuzzy matching/wildcards.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     "Get-Package" or "Get-WmiObject" can be slow or incomplete.
     This script quickly scans Uninstall keys in Registry for a keyword (e.g. "Adobe", "Java").
 

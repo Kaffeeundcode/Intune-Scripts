@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft die Nutzungsquoten (vCPUs) in einer Region und warnt bei hohem Verbrauch.
 
 .DESCRIPTION
-    Azure Subscriptions haben Limits für vCPUs pro Region. 
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Azure Subscriptions haben Limits für vCPUs pro Region.
     Dieses Skript listet die aktuelle Auslastung auf, um Engpässe vor Deployments zu erkennen.
 
     Parameter:
@@ -32,7 +38,7 @@ try {
     } else {
         Write-Host "Alle Quoten im grünen Bereich (< 80%)." -ForegroundColor Green
     }
-    
+
     # Übersicht aller Quoten (Top 10 nach Nutzung)
     Write-Host "`nTop 10 genutzte Quoten:" -ForegroundColor Cyan
     $Usages | Sort-Object CurrentValue -Descending | Select-Object -First 10 Name, CurrentValue, Limit, Unit | Format-Table

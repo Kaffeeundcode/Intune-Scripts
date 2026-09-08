@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft APNs Zertifikat-Status.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Ablaufdatum des Apple Push Certs.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

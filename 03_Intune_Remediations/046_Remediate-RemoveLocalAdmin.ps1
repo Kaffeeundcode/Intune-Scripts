@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Entfernt unerwünschte lokale Administratoren.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Entfernt alle User aus der Admin-Gruppe, die nicht auf der Allowed-Liste stehen.
     VORSICHT: Kann Admin-Rechte entziehen!
 
@@ -29,7 +35,7 @@ try {
             Remove-LocalGroupMember -Group "Administrators" -Member $m.Name -ErrorAction Stop
         }
     }
-    
+
     Write-Host "Bereinigung abgeschlossen."
 
 } catch {

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Klont eine statische Gruppe (nur Struktur, keine Mitglieder).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Erstellt eine neue leere Gruppe mit demselben Namen (+ Copy) und Beschreibung.
     Erfordert die Berechtigung 'Group.ReadWrite.All'.
 

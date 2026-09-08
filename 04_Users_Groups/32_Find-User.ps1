@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet einen Benutzer anhand des Namens oder UPN.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Sucht nach Benutzern, deren Name oder UPN mit dem Suchbegriff beginnt.
     Erfordert die Berechtigung 'User.Read.All'.
 

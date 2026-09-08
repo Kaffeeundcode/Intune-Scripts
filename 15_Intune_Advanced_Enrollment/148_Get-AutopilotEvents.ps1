@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet Autopilot Events auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Events im Zusammenhang mit Autopilot Deployments.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

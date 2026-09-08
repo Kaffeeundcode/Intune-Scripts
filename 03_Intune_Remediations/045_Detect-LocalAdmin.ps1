@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob unerwünschte Benutzer in der lokalen Administratorengruppe sind.
     (Intune Detection Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Vergleicht die Mitglieder der Gruppe "Administrators" mit einer Allowed-List.
     NonCompliant, wenn Unbekannte gefunden werden.
 
@@ -17,7 +23,7 @@
 #>
 
 param (
-    [string[]]$AllowedUsers = @("Administrator", "Domain Admins", "AzureAD\TheUser") 
+    [string[]]$AllowedUsers = @("Administrator", "Domain Admins", "AzureAD\TheUser")
 )
 
 try {

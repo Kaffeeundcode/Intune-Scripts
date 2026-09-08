@@ -3,6 +3,8 @@
     Gemeinsame Hilfsfunktionen fuer generierte Teams-Telefonie-Skripte.
 #>
 
+$ErrorActionPreference = 'Stop'
+
 function Initialize-TtSession {
     param(
         [switch]$SkipConnect
@@ -16,9 +18,30 @@ function Initialize-TtSession {
         try {
             Connect-MicrosoftTeams -ErrorAction Stop | Out-Null
         } catch {
-            Write-Warning "Automatische Teams-Anmeldung fehlgeschlagen: $($_.Exception.Message)"
+            throw "Teams-Anmeldung fehlgeschlagen: $($_.Exception.Message)"
         }
+    } else { throw 'Connect-MicrosoftTeams fehlt. MicrosoftTeams-Modul installieren.' }
+}
+
+function Get-TtAllPaged {
+    [CmdletBinding()]
+    param([Parameter(Mandatory)][ValidateSet('Get-CsCallQueue','Get-CsAutoAttendant')][string]$Command)
+    $rows = New-Object 'System.Collections.Generic.List[object]'
+    $seen = @{}
+    for ($skip = 0; ; $skip += 100) {
+        $page = @(& $Command -First 100 -Skip $skip -ErrorAction Stop)
+        foreach ($item in $page) {
+            $id = [string](Get-TtProp $item 'Identity')
+            if (-not $id) { $id = [string](Get-TtProp $item 'Id') }
+            if (-not $id) { throw "$Command lieferte ein Objekt ohne ID; Vollstaendigkeit nicht pruefbar." }
+            if ($seen.ContainsKey($id)) { throw "$Command lieferte eine wiederholte ID. Lauf wegen instabiler Seitennavigation abgebrochen." }
+            $seen[$id] = $true
+            $rows.Add($item)
+        }
+        if ($page.Count -lt 100) { break }
+        if ($skip -ge 999900) { throw 'Teams-Seitenlimit erreicht.' }
     }
+    return $rows.ToArray()
 }
 
 function Ensure-TtCommand {
@@ -53,7 +76,7 @@ function Convert-TtValue {
 
     if ($Value -is [System.Collections.IEnumerable]) {
         return (@($Value) | ForEach-Object {
-            if ($_ -is [string]) { $_ } else { $_ | Out-String }
+            if ($_ -is [string]) { $_ } else { ConvertTo-Json -InputObject $_ -Depth 20 -Compress }
         } | ForEach-Object { $_.Trim() } | Where-Object { $_ }) -join "; "
     }
 
@@ -88,7 +111,7 @@ function Get-TtProp {
                 $current = @($current).Count
             } else {
                 $prop = $current.PSObject.Properties["Count"]
-                $current = if ($prop) { $prop.Value } else { $null }
+                $current = if ($prop) { $prop.Value } else { 1 }
             }
             continue
         }
@@ -140,8 +163,9 @@ function Where-TtHasValue {
     return @($Items | Where-Object {
         $value = Get-TtProp -InputObject $_ -Path $Path
         if ($null -eq $value) { return $false }
+        if ($value -is [bool]) { return $value }
         $text = [string](Convert-TtValue $value)
-        return -not [string]::IsNullOrWhiteSpace($text)
+        return -not [string]::IsNullOrWhiteSpace($text) -and $text -ne '0'
     })
 }
 
@@ -154,6 +178,7 @@ function Where-TtMissingValue {
     return @($Items | Where-Object {
         $value = Get-TtProp -InputObject $_ -Path $Path
         if ($null -eq $value) { return $true }
+        if ($value -is [bool]) { return -not $value }
         $text = [string](Convert-TtValue $value)
         return [string]::IsNullOrWhiteSpace($text) -or $text -eq "0"
     })
@@ -185,12 +210,12 @@ function Where-TtMatchIssue {
             return $false
         }
 
-        $matches = $value -match $Pattern
+        $patternMatches = $value -match $Pattern
         if ($ExpectMatch) {
-            return -not $matches
+            return -not $patternMatches
         }
 
-        return $matches
+        return $patternMatches
     })
 }
 
@@ -329,7 +354,7 @@ function Export-TtData {
 
     $extension = [System.IO.Path]::GetExtension($OutputPath)
     if ($extension -eq ".json") {
-        $Data | ConvertTo-Json -Depth 20 | Set-Content -Path $OutputPath -Encoding UTF8
+        ConvertTo-Json -InputObject @($Data) -Depth 100 | Set-Content -LiteralPath $OutputPath -Encoding UTF8 -ErrorAction Stop
         return
     }
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Fehlerberichte bei der Registrierung.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Liest Enrollment-Fehler aus dem Monitoring-Bereich.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

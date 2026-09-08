@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Status der Intune Connectors (z.B. Chrome, TeamViewer).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet Status von Partner-Connectors auf.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

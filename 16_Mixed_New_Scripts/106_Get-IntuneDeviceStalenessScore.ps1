@@ -1,13 +1,19 @@
-<#
+﻿<#
 .SYNOPSIS
     Calculates a "Staleness Score" for devices to help identify candidates for cleanup.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Devices are scored based on:
     - Last Check-in date (More than 30/60/90 days)
     - OS Version Lag (Is it an old build?)
     - Compliance State
-    
+
     A high score indicates a device that is likely abandoned or broken.
 
 .NOTES

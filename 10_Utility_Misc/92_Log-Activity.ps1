@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Einfache Logging-Funktion.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Schreibt Text in eine lokale Logdatei mit Zeitstempel.
-    
+
 .NOTES
     File Name: 92_Log-Activity.ps1
     Author: Mattia Cirillo

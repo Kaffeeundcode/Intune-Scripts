@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Findet ablaufende Secrets.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Durchsucht Apps nach Secrets, die bald ablaufen.
     Erfordert die Berechtigung 'Application.Read.All'.
 
@@ -16,7 +22,7 @@ param()
 
 Connect-MgGraph -Scopes "Application.Read.All"
 
-$Apps = Get-MgApplication -All 
+$Apps = Get-MgApplication -All
 foreach ($App in $Apps) {
     # PasswordCredentials contains secrets
     foreach ($Cred in $App.PasswordCredentials) {

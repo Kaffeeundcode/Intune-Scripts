@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zusammenfassung der Gerätemodelle.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Gruppiert Geräte nach Modell und Hersteller.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Audits the usage of Scope Tags across Intune objects.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Scope Tags are critical for RBAC (Role Based Access Control).
-    This script retrieves all Scope Tags and then lists which Device Configs, Compliance Policies, 
+    This script retrieves all Scope Tags and then lists which Device Configs, Compliance Policies,
     and Scripts are tagged with them.
-    
+
     Helps ensure that restrictions are correctly applied to objects.
 
 .NOTES
@@ -40,7 +46,7 @@ $Report = @()
 foreach ($Type in $ObjectTypes) {
     Write-Host "Checking $Type..." -ForegroundColor Yellow
     $Items = $null
-    
+
     switch ($Type) {
         "DeviceConfiguration" { $Items = Get-MgDeviceManagementDeviceConfiguration -All }
         "Compliance" { $Items = Get-MgDeviceManagementDeviceCompliancePolicy -All }
@@ -54,7 +60,7 @@ foreach ($Type in $ObjectTypes) {
              foreach ($TagId in $Item.RoleScopeTagIds) {
                 # 0 is Default
                 $TagName = if ($TagId -eq "0") { "Default" } else { $AllTagsRef[$TagId] }
-                
+
                 $Report += [PSCustomObject]@{
                     ObjectType   = $Type
                     ObjectName   = $Item.DisplayName

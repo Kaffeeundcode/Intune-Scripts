@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Konfigurationen der Enrollment Status Page (ESP).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft ESP-Profile ab.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

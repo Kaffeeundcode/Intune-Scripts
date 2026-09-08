@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktualisiert das App-Manifest (Advanced).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lädt ein JSON hoch, um das Manifest zu ändern.
     Erfordert die Berechtigung 'Application.ReadWrite.All'.
 

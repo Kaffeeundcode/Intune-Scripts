@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Enforces 'High Performance' power plan when connected to AC power.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Prevents devices from sleeping aggressively when plugged in.
     Useful for Kiosk devices or developer machines.
-    
+
     Uses powercfg.exe.
 
 .NOTES
@@ -24,16 +30,16 @@ if ($HighPerf) {
     if ($HighPerf -match "GUID: ([a-f0-9\-]+)") {
         $Guid = $matches[1]
         Write-Host "Found High Performance: $Guid" -ForegroundColor Green
-        
+
         # Set Active
         powercfg /setactive $Guid
         Write-Host "Set to Active."
-        
+
         # Ensure AC settings prevent sleep (Timeout 0)
         powercfg /change monitor-timeout-ac 0
         powercfg /change standby-timeout-ac 0
         powercfg /change hibernate-timeout-ac 0
-        
+
         Write-Host "Sleep timeouts disabled on AC." -ForegroundColor Green
     }
 } else {

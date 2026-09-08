@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Fügt einem Private Channel in Teams einen Benutzer hinzu.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Private Channels haben eigene Mitgliederlisten.
     Dieses Skript fügt User hinzu.
 

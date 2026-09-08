@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Basic check and repair for WMI consistency.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Runs 'winmgmt /verifyrepository'.
     If inconsistent, attempts '/salvagerepository'.
-    
+
     WARNING: Restarting WMI service can impact running services (IPHelper, etc).
     Use with caution.
 
@@ -21,10 +27,10 @@ $Res = winmgmt /verifyrepository
 
 if ($Res -match "INCONSISTENT") {
     Write-Warning "WMI Repository is INCONSISTENT!"
-    
+
     Write-Host "Attempting Salvage..." -ForegroundColor Yellow
     winmgmt /salvagerepository
-    
+
     # Check again
     $Res2 = winmgmt /verifyrepository
     if ($Res2 -match "CONSISTENT") {

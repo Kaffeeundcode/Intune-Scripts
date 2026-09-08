@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeit Details zum Tenant (ID, Name, Technischer Kontakt) an.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Basis-Informationen über den eigenen Tenant. Hilfreich für Dokumentation.
 
 .NOTES
@@ -13,12 +19,12 @@
 
 try {
     $Org = Get-MgOrganization -All
-    
+
     Write-Host "Tenant Details:" -ForegroundColor Cyan
     Write-Host "name:           $($Org.DisplayName)"
     Write-Host "ID:             $($Org.Id)"
     Write-Host "Primary Domain: $($Org.VerifiedDomains | Where-Object IsDefault -eq $true | Select-Object -ExpandProperty Name)"
-    
+
     # Technical Contact
     Write-Host "Technical Contacts:"
     $Org.TechnicalNotificationMails | ForEach-Object { Write-Host " - $_" }

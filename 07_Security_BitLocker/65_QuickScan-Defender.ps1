@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Startet einen Defender Quick Scan.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Remote Action für einen schnellen Virenscan.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
 

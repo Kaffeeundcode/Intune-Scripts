@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Archives or alerts on Teams Private Channels with no recent activity.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Private channels have their own separate SharePoint sites.
     When a Team is archived, private channels might remain ignored.
     This script finds private channels where the underlying site has not been modified recently.
@@ -33,7 +39,7 @@ $Cutoff = (Get-Date).AddDays(-$Days)
 foreach ($Team in $Teams) {
     # Get Channels
     $Channels = Get-MgTeamChannel -TeamId $Team.Id -All | Where-Object { $_.MembershipType -eq "private" }
-    
+
     foreach ($Chan in $Channels) {
         # Check Files Folder (SharePoint)
         # We need the drive item for the channel

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists all available Directory Rules and Templates (Built-in Roles).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Exports the definitions of all Entra ID text-based roles (e.g. "Global Administrator", "Helpdesk Admin").
     Includes the description and verify if they are enabled.
     Useful for understanding the RBAC landscape.

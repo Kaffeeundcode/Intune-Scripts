@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein SAS-Token (Shared Access Signature) für einen Storage Container.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     SAS-Tokens ermöglichen zeitbegrenzten Zugriff auf Storage-Ressourcen ohne Key-Weitergabe.
     Dieses Skript generiert ein Token für einen spezifischen Container.
 
@@ -29,12 +35,12 @@ param (
 
 try {
     $Ctx = (Get-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageAccountName -ErrorAction Stop).Context
-    
+
     $StartTime = Get-Date
     $ExpiryTime = $StartTime.AddHours($ValidityHours)
 
     Write-Host "Generiere SAS Token für Container '$ContainerName'..." -ForegroundColor Cyan
-    
+
     $Token = New-AzStorageContainerSASToken -Context $Ctx `
                                             -Name $ContainerName `
                                             -Permission $Permission `

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Entfernt einen Benutzer aus einer Gruppe.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Löscht die Mitgliedschaft eines Benutzers in einer Gruppe.
     Erfordert die Berechtigung 'GroupMember.ReadWrite.All'.
 

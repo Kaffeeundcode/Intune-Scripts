@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Audit Applications (App Registrations) to find those with no owners or disabled owners.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Orphaned apps are a security risk. This script iterates all App Registrations,
     retrieves their owners, and checks if the owner account is Enabled.
-    
+
     Report flags:
     - No Owners
     - Disabled Owner
@@ -31,7 +37,7 @@ $Report = @()
 foreach ($App in $Apps) {
     try {
         $Owners = Get-MgApplicationOwner -ApplicationId $App.Id -All
-        
+
         if ($Owners.Count -eq 0) {
             $Status = "No Owners"
         } else {

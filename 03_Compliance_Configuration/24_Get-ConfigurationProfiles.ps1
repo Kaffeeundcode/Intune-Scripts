@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Konfigurationsprofile (Device Configuration) auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft alle Konfigurationsprofile ab, inkl. Settings Catalog und Admin Templates.
     Erfordert die Berechtigung 'DeviceManagementConfiguration.Read.All'.
 

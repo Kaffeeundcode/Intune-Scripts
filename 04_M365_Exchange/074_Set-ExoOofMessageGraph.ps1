@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt eine Abwesenheitsnotiz (Out of Office) via Graph API.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Alternativ zu Set-MailboxAutoReplyConfiguration (wenn kein EXO V2 verfügbar).
     Setzt Internal und External Message.
 
@@ -47,9 +53,9 @@ try {
 
     # PATCH /users/{id}/mailboxSettings
     # Benötigt MailboxSettings.ReadWrite Permission
-    
+
     Update-MgUserMailboxSetting -UserId $UserPrincipalName -AutomaticRepliesSetting $Body.automaticRepliesSetting -ErrorAction Stop
-    
+
     Write-Host "OOF erfolgreich gesetzt." -ForegroundColor Green
 
 } catch {

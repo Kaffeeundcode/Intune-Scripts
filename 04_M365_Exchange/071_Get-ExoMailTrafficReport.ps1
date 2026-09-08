@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt einen Bericht über gesendete/empfangene E-Mails pro Tag.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft, das Mailaufkommen zu analysieren.
     Nutzt Get-MailTrafficSummaryReport (Exchange Online).
 

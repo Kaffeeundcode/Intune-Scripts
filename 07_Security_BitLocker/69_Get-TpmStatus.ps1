@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft TPM Informationen (über Hardware-Inventar).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Versucht, TPM-Version und Status aus den Hardwareinformationen zu lesen.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

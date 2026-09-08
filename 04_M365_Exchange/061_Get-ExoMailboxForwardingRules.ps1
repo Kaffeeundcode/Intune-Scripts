@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft alle Mailboxen auf Weiterleitungsregeln (Inbox Rules).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Weiterleitungen sind ein Sicherheitsrisiko (Data Exfiltration).
     Dieses Skript listet alle Regeln auf, die "ForwardTo" oder "RedirectTo" nutzen.
     Benötigt ExchangeOnlineManagement Modul (Connect-ExchangeOnline).
@@ -22,12 +28,12 @@ param (
 
 try {
     Write-Host "Suche Weiterleitungsregeln..." -ForegroundColor Cyan
-    
+
     $Mailboxes = if ($UserPrincipalName) { Get-ExoMailbox -Identity $UserPrincipalName } else { Get-ExoMailbox -ResultSize Unlimited }
 
     foreach ($mb in $Mailboxes) {
         $Rules = Get-InboxRule -Mailbox $mb.UserPrincipalName -ErrorAction SilentlyContinue | Where-Object { $_.ForwardTo -or $_.RedirectTo }
-        
+
         if ($Rules) {
             foreach ($r in $Rules) {
                 Write-Warning "User: $($mb.UserPrincipalName) | Regel: $($r.Name) | Leitet an: $($r.ForwardTo)$($r.RedirectTo)"

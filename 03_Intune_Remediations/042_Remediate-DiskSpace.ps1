@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Bereinigt temporäre Dateien, um Speicherplatz freizugeben.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Löscht C:\Windows\Temp und %TEMP% Inhalte.
     Leert den Papierkorb.
 
@@ -24,10 +30,10 @@ try {
     # 2. User Temp (läuft im System Context -> daher oft nur System Temp, aber Versuch wert)
     # Bei System Context ist $env:TEMP meist C:\Windows\Temp.
     # Für User-Cleanup müsste das Skript im User-Context laufen.
-    
+
     # 3. Papierkorb (PowerShell Weg ohne Interaktion)
     Clear-RecycleBin -Force -ErrorAction SilentlyContinue
-    
+
     Write-Host "Bereinigung abgeschlossen."
 
 } catch {

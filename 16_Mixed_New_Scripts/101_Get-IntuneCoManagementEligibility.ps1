@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Analyzes devices to determine their eligibility for Co-Management (Intune + ConfigMgr).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     This script connects to Microsoft Graph to retrieve Windows devices and checks various
     attributes (OS version, Join Type, Management capability) to report if they are ready
     to be co-managed.
-    
+
     It highlights devices that are:
     - Domain Joined (Hybrid)
     - Running compatible Windows 10/11 versions
@@ -60,7 +66,7 @@ foreach ($Dev in $Devices) {
 
     # Criteria 2: OS Version (Basic check for Win10+)
     if ($Dev.OperatingSystem -notmatch "Windows") {
-        $Eligibility = "Not Eligible" 
+        $Eligibility = "Not Eligible"
         $Reason = "Non-Windows OS"
     }
 

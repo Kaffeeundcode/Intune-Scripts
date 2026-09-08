@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Reports on Administrative Unit (AU) membership and their assigned roles.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Administrative Units are used for delegated administration.
     This script lists all AUs, the members inside them, and which roles are scoped
     to that specific unit.
@@ -27,7 +33,7 @@ $Report = @()
 
 foreach ($AU in $AUs) {
     Write-Host "Processing AU: $($AU.DisplayName)" -ForegroundColor Yellow
-    
+
     # Get Members (Users/Groups/Devices)
     $Members = Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $AU.Id -All
     $UserCount = ($Members | Where-Object { $_.AdditionalProperties["@odata.type"] -match "user" }).Count
@@ -36,11 +42,11 @@ foreach ($AU in $AUs) {
 
     # Get Scoped Role Assignments (Who is admin of this AU?)
     $ScopedAdmins = Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $AU.Id -All
-    
+
     $AdminNames = @()
     foreach ($SA in $ScopedAdmins) {
         # Fetch Role Def Name
-        $RoleDef = Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $SA.RoleDefinitionId 
+        $RoleDef = Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId $SA.RoleDefinitionId
         # Fetch User Name
         try {
             $User = Get-MgUser -UserId $SA.RoleMemberInfo.Id -ErrorAction SilentlyContinue

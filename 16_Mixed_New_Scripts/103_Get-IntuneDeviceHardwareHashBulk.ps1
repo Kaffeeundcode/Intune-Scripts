@@ -1,13 +1,19 @@
-<#
+﻿<#
 .SYNOPSIS
     Retrieves Hardware Hashes for Windows Autopilot from existing Intune devices.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     IMPORTANT: You cannot retrieve the full hardware hash from the Graph API for *existing* Intune devices
-    if they were not already registered with Autopilot. 
-    However, if they ARE in Autopilot, this script exports them. 
-    
-    For non-Autopilot devices, this script collects SerialNumbers and details to help 
+    if they were not already registered with Autopilot.
+    However, if they ARE in Autopilot, this script exports them.
+
+    For non-Autopilot devices, this script collects SerialNumbers and details to help
     target the 'Get-WindowsAutoPilotInfo' remediation script.
 
 .NOTES
@@ -31,7 +37,7 @@ $Report = @()
 foreach ($Dev in $AutopilotDevices) {
     # Note: The Graph API does NOT return the actual 4K HW Hash for security reasons in list mode.
     # It returns identifying info.
-    
+
     $obj = [PSCustomObject]@{
         SerialNumber = $Dev.SerialNumber
         Model        = $Dev.Model

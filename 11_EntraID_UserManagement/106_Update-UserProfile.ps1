@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Aktualisiert Benutzerprofil-Informationen (Abteilung, Job Title etc.).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Setzt Standardattribute eines AD-Benutzers.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 
@@ -15,7 +21,7 @@
 param (
     [Parameter(Mandatory=$true)]
     [string]$UserPrincipalName,
-    
+
     [string]$Department,
     [string]$JobTitle,
     [string]$OfficeLocation

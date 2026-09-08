@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft den Status der NSG Flow Logs für Network Security Groups.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Network Security Group (NSG) Flow Logs ermöglichen es, Traffic-Muster zu analysieren.
     Dieses Skript listet alle NSGs in einer Resource Group auf und zeigt, ob Flow Logs aktiviert sind.
-    
+
     Voraussetzung: Network Watcher muss in der Region aktiv sein.
 
     Parameter:
@@ -32,7 +38,7 @@ try {
     foreach ($nsg in $NSGs) {
         try {
             $Status = Get-AzNetworkWatcherFlowLogStatus -NetworkWatcher $NetworkWatcher -TargetResourceId $nsg.Id -ErrorAction Stop
-            
+
             Write-Host "NSG: $($nsg.Name)" -NoNewline
             if ($Status.Enabled) {
                 Write-Host " [AKTIV]" -ForegroundColor Green

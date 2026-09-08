@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Fügt eine Access Policy zu einem Azure KeyVault hinzu.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Gewährt einem Benutzer oder Service Principal (SPN) Zugriff auf Secrets/Keys/Zertifikate in einem KeyVault.
-    
+
     Parameter:
     - VaultName: Name des KeyVaults
     - ResourceGroupName: RG des KeyVaults

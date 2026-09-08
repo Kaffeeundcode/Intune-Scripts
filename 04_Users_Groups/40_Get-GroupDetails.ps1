@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft Details zu einer Gruppe ab (ID, Typ etc.).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Eigenschaften einer Gruppe anhand des Namens an.
     Erfordert die Berechtigung 'Group.Read.All'.
 

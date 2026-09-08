@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Erstellt ein iOS Enrollment Profil.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Legt ein Profil für Apple ADE (Automated Device Enrollment) an.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.ReadWrite.All'.
 

@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Exports a comprehensive report of Mailbox Delegations (Full Access, Send As).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Iterates through all user mailboxes and retrieves permissions.
     Filters out 'Self' permissions to show only delegated access.
-    
+
     Warning: Can be slow on large tenants.
 
 .NOTES
@@ -28,13 +34,13 @@ $Report = @()
 
 foreach ($Mbx in $Mailboxes) {
     Write-Host "Checking $($Mbx.UserPrincipalName)..." -NoNewline
-    
+
     # Full Access
     $Perms = Get-ExoMailboxPermission -Identity $Mbx.UserPrincipalName | Where-Object { $_.User -notlike "*S-1-5-*" -and $_.User -ne "NT AUTHORITY\SELF" }
-    
+
     # Send As
     $SendAs = Get-ExoRecipientPermission -Identity $Mbx.UserPrincipalName | Where-Object { $_.Trustee -notlike "*S-1-5-*" -and $_.Trustee -ne "NT AUTHORITY\SELF" }
-    
+
     foreach ($P in $Perms) {
         $Report += [PSCustomObject]@{
             Mailbox = $Mbx.UserPrincipalName
@@ -42,7 +48,7 @@ foreach ($Mbx in $Mailboxes) {
             AccessType = "FullAccess"
         }
     }
-    
+
     foreach ($S in $SendAs) {
         $Report += [PSCustomObject]@{
             Mailbox = $Mbx.UserPrincipalName

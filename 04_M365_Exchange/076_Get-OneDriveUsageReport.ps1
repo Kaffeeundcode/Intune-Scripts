@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Report über OneDrive Nutzung (Storage, File Count).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Nutzt Graph API Report "getOneDriveUsageUserDetail".
     Zeigt, wer wie viel Speicher in OneDrive for Business belegt.
 
@@ -23,14 +29,14 @@ try {
     Write-Host "Rufe OneDrive Usage ($Period) ab..." -ForegroundColor Cyan
 
     $Url = "https://graph.microsoft.com/v1.0/reports/getOneDriveUsageUserDetail(period='$Period')"
-    
+
     $TempFile = New-TemporaryFile
     Invoke-MgGraphRequest -Method GET -Uri $Url -OutputFilePath $TempFile.FullName -ErrorAction Stop
 
     $Data = Import-Csv $TempFile.FullName
-    
-    $Data | Select-Object "Owner Principal Name", "Storage Used (Byte)", "File Count", "Active File Count" | 
-            Sort-Object {[long]$_."Storage Used (Byte)"} -Descending | 
+
+    $Data | Select-Object "Owner Principal Name", "Storage Used (Byte)", "File Count", "Active File Count" |
+            Sort-Object {[long]$_."Storage Used (Byte)"} -Descending |
             Format-Table -AutoSize
 
     Remove-Item $TempFile.FullName -Force

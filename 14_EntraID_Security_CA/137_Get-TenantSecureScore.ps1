@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft den Identity Secure Score ab.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt den aktuellen Sicherheits-Score des Tenants.
     Erfordert die Berechtigung 'SecurityEvents.Read.All' (variiert).
 

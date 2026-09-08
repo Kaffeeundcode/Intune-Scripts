@@ -1,50 +1,185 @@
-<#
+﻿<#
 .SYNOPSIS
     Setzt oder ändert den primären Benutzer eines Intune-Geräts.
-    
 .DESCRIPTION
-    Aktualisiert die Referenz des primären Benutzers auf dem Gerät.
-    Erfordert die Berechtigung 'DeviceManagementManagedDevices.ReadWrite.All'.
-    Hinweis: Dies ist eine komplexe Operation, die das 'users/$ref' Endpoint manipuliert.
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
 
+    <!-- library-status:end -->
+
+    Setzt die Primaerbenutzer-Referenz (Graph beta). Bereits passende Zuordnung bleibt unveraendert. Plattformunterstuetzung vorab pruefen.
+    Graph-Scopes: DeviceManagementManagedDevices.ReadWrite.All, User.Read.All.
+    Hilfslogik ist enthalten. Benoetigt Microsoft.Graph.Authentication.
+    Alle Abfragen sind vollstaendig paginiert; nicht eindeutige Geraetenamen brechen den Lauf ab.
+.EXAMPLE
+    ./01_Device_Management/08_Set-DevicePrimaryUser.ps1 -DeviceName "TEST-PC" -UserPrincipalName "test@example.com" -WhatIf
 .NOTES
-    File Name: 08_Set-DevicePrimaryUser.ps1
-    Author: Mattia Cirillo
-    Version: 1.0
+    Version: 1.1.0
 #>
-
-param (
-    [Parameter(Mandatory=$true)]
-    [string]$DeviceName,
-
-    [Parameter(Mandatory=$true)]
-    [string]$UserPrincipalName
+[CmdletBinding(SupportsShouldProcess,ConfirmImpact='High',DefaultParameterSetName='Name')]
+param(
+    [Parameter(Mandatory,ParameterSetName='Id')][string]$DeviceId,
+    [Parameter(Mandatory,ParameterSetName='Name')][Alias('CurrentName')][string]$DeviceName,
+    [Parameter(Mandatory)][string]$UserPrincipalName,
+    [string]$TenantId,[switch]$SkipConnect
 )
+# kc-bundle:graph:start sha256=168d7f232db5d14cf1be94255b5d535f3739213158e781a4214040a070571864
+# Eingebettete Hilfslogik aus Common/IntuneLibrary.psm1; durch tools/bundle-script-dependencies.mjs gepflegt.
+New-Module -Name IntuneLibrary -ScriptBlock {
+#requires -Version 5.1
+Set-StrictMode -Version Latest
 
-Connect-MgGraph -Scopes "DeviceManagementManagedDevices.ReadWrite.All", "User.Read.All"
-
-$Device = Get-MgDeviceManagementManagedDevice -Filter "deviceName eq '$DeviceName'"
-$User = Get-MgUser -UserId $UserPrincipalName
-
-if ($Device -and $User) {
-    # Remove existing user(s) - generic approach
-    # In Graph SDK, setting primary user directly is via specific endpoint or by managing the reference
-    # For simplicity in this generated script, we will use the Update-MgDevice... if users property is writable, 
-    # but typically it requires DELETE/POST on the ref.
-    
-    # Using the /users/$ref endpoint logic is safer
-    $Uri = "https://graph.microsoft.com/v1.0/deviceManagement/managedDevices('$($Device.Id)')/users/`$ref"
-    $Body = @{
-        "@odata.id" = "https://graph.microsoft.com/v1.0/users('$($User.Id)')"
+function Connect-IlGraph {
+    [CmdletBinding()]
+    param([Parameter(Mandatory)][string[]]$Scopes, [string]$TenantId, [switch]$SkipConnect)
+    if (-not (Get-Command Get-MgContext -ErrorAction SilentlyContinue)) {
+        throw 'Microsoft.Graph.Authentication fehlt. Install-Module Microsoft.Graph.Authentication -Scope CurrentUser'
     }
-
-    try {
-        Invoke-MgGraphRequest -Method POST -Uri $Uri -Body $Body
-        Write-Host "Primärer Benutzer auf $($User.UserPrincipalName) gesetzt." -ForegroundColor Green
-    } catch {
-        Write-Error "Fehler beim Setzen des Benutzers: $_"
+    $context = Get-MgContext
+    if (-not $SkipConnect -and (-not $context -or ($TenantId -and $context.TenantId -ne $TenantId))) {
+        $arguments = @{ Scopes = $Scopes; ErrorAction = 'Stop'; NoWelcome = $true; ContextScope = 'Process' }
+        if ($TenantId) { $arguments.TenantId = $TenantId }
+        Connect-MgGraph @arguments | Out-Null
+        $context = Get-MgContext
     }
+    if (-not $context) { throw 'Keine aktive Graph-Sitzung.' }
+    if ($TenantId -and $context.TenantId -ne $TenantId) { throw 'Die aktive Graph-Sitzung gehoert zu einem anderen Tenant.' }
+    if ($context.AuthType -eq 'Delegated') {
+        $missing = @($Scopes | Where-Object { $_ -notin $context.Scopes })
+        if ($missing.Count) { throw "Der Sitzung fehlen angeforderte Scopes: $($missing -join ', '). Neu mit diesen Scopes anmelden." }
+    }
+}
 
-} else {
-    Write-Warning "Gerät oder Benutzer nicht gefunden."
+function Assert-IlGraphUri {
+    param([Parameter(Mandatory)][string]$Uri)
+    $parsed = [uri]$Uri
+    if (-not $parsed.IsAbsoluteUri -or $parsed.Scheme -ne 'https' -or $parsed.Host -ne 'graph.microsoft.com' -or $parsed.UserInfo -or $parsed.Port -ne 443) {
+        throw 'Nur HTTPS-Anfragen an graph.microsoft.com sind erlaubt (Global Cloud).'
+    }
+    if ($parsed.AbsolutePath -notmatch '^/(v1\.0|beta)/') { throw 'Graph-API-Version fehlt.' }
+}
+
+function Invoke-IlGraph {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)][string]$Uri,
+        [ValidateSet('GET','POST','PATCH','DELETE')][string]$Method = 'GET',
+        [object]$Body,
+        [ValidateRange(0,8)][int]$MaxRetries = 4
+    )
+    Assert-IlGraphUri $Uri
+    for ($attempt = 0; ; $attempt++) {
+        try {
+            $arguments = @{ Uri = $Uri; Method = $Method; OutputType = 'PSObject'; ErrorAction = 'Stop' }
+            if ($PSBoundParameters.ContainsKey('Body')) {
+                $arguments.Body = ConvertTo-Json -InputObject $Body -Depth 100 -Compress
+                $arguments.ContentType = 'application/json'
+            }
+            return Invoke-MgGraphRequest @arguments
+        } catch {
+            $status = 0
+            $delay = [math]::Min(60, [math]::Pow(2, $attempt))
+            if ($_.Exception.PSObject.Properties['Response'] -and $_.Exception.Response) {
+                $response = $_.Exception.Response
+                if ($response.PSObject.Properties['StatusCode']) { $status = [int]$response.StatusCode }
+                if ($response.PSObject.Properties['Headers'] -and $response.Headers) {
+                    try {
+                        $retryAfter = $response.Headers.RetryAfter
+                        if ($retryAfter.Delta) { $delay = [math]::Ceiling($retryAfter.Delta.TotalSeconds) }
+                        elseif ($retryAfter.Date) { $delay = [math]::Ceiling(($retryAfter.Date - [DateTimeOffset]::UtcNow).TotalSeconds) }
+                    } catch { Write-Verbose 'Retry-After nicht lesbar; exponentieller Backoff.' }
+                }
+            }
+            # Mutationen niemals automatisch wiederholen: ihre Annahme kann unklar sein.
+            if ($Method -ne 'GET' -or $status -notin @(429,503,504) -or $attempt -ge $MaxRetries) { throw }
+            if ($delay -gt 300) { throw 'Server fordert mehr als 300 Sekunden Wartezeit; Lauf spaeter erneut starten.' }
+            Start-Sleep -Seconds ([math]::Max(1,$delay))
+        }
+    }
+}
+
+function Get-IlGraphCollection {
+    [CmdletBinding()]
+    param([Parameter(Mandatory)][string]$Uri, [ValidateRange(1,100000)][int]$MaxPages = 10000)
+    $seen = @{}
+    $rows = New-Object 'System.Collections.Generic.List[object]'
+    while ($Uri) {
+        if ($seen.ContainsKey($Uri)) { throw 'Wiederholter Graph-nextLink; unvollstaendige Abfrage verworfen.' }
+        if ($seen.Count -ge $MaxPages) { throw 'Seitenlimit erreicht; unvollstaendige Abfrage verworfen.' }
+        $seen[$Uri] = $true
+        $page = Invoke-IlGraph -Uri $Uri
+        if (-not $page -or -not $page.PSObject.Properties['value']) { throw "Keine Graph-Collection: $Uri" }
+        foreach ($row in @($page.value)) { if ($null -ne $row) { $rows.Add($row) } }
+        $Uri = if ($page.PSObject.Properties['@odata.nextLink']) { [string]$page.'@odata.nextLink' } else { $null }
+    }
+    return $rows.ToArray()
+}
+
+function ConvertTo-IlSegment {
+    param([Parameter(Mandatory)][ValidateNotNullOrEmpty()][string]$Value)
+    return [uri]::EscapeDataString($Value)
+}
+
+function Resolve-IlDevice {
+    [CmdletBinding(DefaultParameterSetName='Name')]
+    param(
+        [Parameter(Mandatory,ParameterSetName='Id')][string]$DeviceId,
+        [Parameter(Mandatory,ParameterSetName='Name')][string]$DeviceName,
+        [Parameter(Mandatory,ParameterSetName='Serial')][string]$SerialNumber
+    )
+    $base = 'https://graph.microsoft.com/v1.0/deviceManagement/managedDevices'
+    if ($DeviceId) { return Invoke-IlGraph -Uri ($base + '/' + (ConvertTo-IlSegment $DeviceId)) }
+    $field = if ($PSCmdlet.ParameterSetName -eq 'Serial') { 'serialNumber' } else { 'deviceName' }
+    $value = if ($SerialNumber) { $SerialNumber } else { $DeviceName }
+    $filter = [uri]::EscapeDataString("$field eq '$($value.Replace("'","''"))'")
+    $devices = @(Get-IlGraphCollection -Uri ($base + '?$filter=' + $filter))
+    if ($devices.Count -ne 1) { throw "$($devices.Count) Geraete gefunden. Eine eindeutige DeviceId verwenden." }
+    return $devices[0]
+}
+
+function Get-IlProperty {
+    param([AllowNull()][object]$Object, [Parameter(Mandatory)][string]$Name, [object]$Default = $null)
+    if ($null -eq $Object) { return $Default }
+    if ($Object -is [System.Collections.IDictionary]) {
+        if ($Object.Contains($Name)) { return $Object[$Name] }
+    } elseif ($Object.PSObject.Properties[$Name]) { return $Object.$Name }
+    return $Default
+}
+
+function New-IlFinding {
+    param([string]$Check, [ValidateSet('OK','Auffaellig','Nicht anwendbar','Nicht pruefbar')][string]$Status,
+          [string]$ObjectId, [string]$Detail, [object]$Data)
+    [pscustomobject][ordered]@{ Check=$Check; Status=$Status; ObjectId=$ObjectId; Detail=$Detail; Data=$Data }
+}
+
+function Export-IlResult {
+    [CmdletBinding()]
+    param([AllowNull()][object]$Data, [string]$OutputPath)
+    if ($OutputPath) {
+        $parent = Split-Path $OutputPath -Parent
+        if ($parent -and -not (Test-Path -LiteralPath $parent)) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
+        if ([IO.Path]::GetExtension($OutputPath) -eq '.csv') {
+            @($Data) | Export-Csv -LiteralPath $OutputPath -NoTypeInformation -Encoding UTF8 -ErrorAction Stop
+        } else {
+            ConvertTo-Json -InputObject @($Data) -Depth 100 | Set-Content -LiteralPath $OutputPath -Encoding UTF8 -ErrorAction Stop
+        }
+    }
+    return $Data
+}
+
+Export-ModuleMember -Function Connect-IlGraph,Invoke-IlGraph,Get-IlGraphCollection,ConvertTo-IlSegment,Resolve-IlDevice,Get-IlProperty,New-IlFinding,Export-IlResult
+
+} | Import-Module -Scope Local -Force
+# kc-bundle:graph:end
+Connect-IlGraph -Scopes @('DeviceManagementManagedDevices.ReadWrite.All','User.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
+$selector=if($DeviceId){@{DeviceId=$DeviceId}}else{@{DeviceName=$DeviceName}}
+$Device=Resolve-IlDevice @selector
+$id=ConvertTo-IlSegment $Device.id
+$user=Invoke-IlGraph "https://graph.microsoft.com/v1.0/users/$(ConvertTo-IlSegment $UserPrincipalName)"
+$current=@(Get-IlGraphCollection "https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/$id/users")
+if ($current.Count -eq 1 -and $current[0].id -eq $user.id) { return $current[0] }
+if ($PSCmdlet.ShouldProcess("$($Device.deviceName) [$id]", "Primaerbenutzer auf $UserPrincipalName setzen")) {
+    $null=Invoke-IlGraph -Method POST -Uri "https://graph.microsoft.com/beta/deviceManagement/managedDevices/$id/users/`$ref" -Body @{'@odata.id'="https://graph.microsoft.com/beta/users/$($user.id)"}
+    [pscustomobject]@{DeviceId=$Device.id;UserId=$user.id;Status='RequestAccepted';Detail='Primaerbenutzer nach Replikation erneut abfragen.'}
 }

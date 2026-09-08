@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert Mitglieder aller Verteilerlisten in eine CSV.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Erstellt eine Übersicht, wer in welchen Distribution Groups ist.
-    
+
     Parameter:
     - OutputFile: Pfad zur CSV (Default: Desktop)
 
@@ -27,7 +33,7 @@ try {
     foreach ($g in $Groups) {
         Write-Host " - $($g.DisplayName)"
         $Members = Get-DistributionGroupMember -Identity $g.PrimarySmtpAddress -ResultSize Unlimited
-        
+
         foreach ($m in $Members) {
             $Results += [PSCustomObject]@{
                 GroupName = $g.DisplayName

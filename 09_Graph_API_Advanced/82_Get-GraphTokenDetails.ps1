@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt Details zum aktuellen Access Token.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet Scopes (Berechtigungen) und Ablaufdatum des aktuellen Tickets auf.
     Erfordert keine spezielle Berechtigung (lokaler Kontext).
 

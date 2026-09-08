@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert den Output eines bestimmten Automation Jobs.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Hilft beim Debugging von fehlgeschlagenen Runbook-Jobs.
-    
+
     Parameter:
     - ResourceGroupName: RG Name
     - AutomationAccountName: Account Name

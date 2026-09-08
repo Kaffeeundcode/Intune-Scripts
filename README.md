@@ -1,61 +1,54 @@
-# Intune PowerShell Library
-Dieses Repository enthält eine umfassende Sammlung von PowerShell-Skripten für die Verwaltung und Automatisierung von Microsoft Intune. Die Skripte interagieren hauptsächlich mit der Microsoft Graph API, um Aufgaben zu erledigen, die über das UI gar nicht oder nur umständlich möglich sind.
-## Struktur
-Das Repository ist in thematische Ordner unterteilt:
-*   **01_Azure_Infrastructure**: Infrastruktur-Management für Azure Ressourcen.
-*   **01_Device_Management**: Skripte für Geräteaktionen (Sync, Restart, Wipe, Retire, Delete) und Abruf von Gerätedetails.
-*   **02_App_Management**: Verwaltung von Applikationen, Zuweisungen und Installationsstatus.
-*   **02_EntraID_Governance**: Governance-Skripte für Entra ID (PIM, Access Reviews, etc.).
-*   **03_Compliance_Configuration**: Management von Compliance-Policies und Konfigurationsprofilen.
-*   **03_Intune_Remediations**: Proactive Remediation Skripte für Intune.
-*   **04_M365_Exchange**: Exchange Online und M365 Management.
-*   **04_Users_Groups**: Verwaltung von Benutzern und Gruppen in Bezug auf Intune-Zuweisungen.
-*   **05_Azure_Automation**: Azure Automation Runbooks und Management.
-*   **05_Enrollment_Autopilot**: Skripte rund um Windows Autopilot und Enrollment-Profile.
-*   **06_Monitoring_Reporting**: Generierung von Berichten und Überwachung.
-*   **07_Security_BitLocker**: Spezifische Skripte für BitLocker-Keys und Security Baselines.
-*   **08_Troubleshooting_Cleanup**: Bereinigung und Fehlerbehebung.
-*   **09_Graph_API_Advanced**: Erweiterte Interaktionen direkt mit der Graph API.
-*   **10_Utility_Misc**: Nützliche Hilfsskripte und Tools.
-*   **11_EntraID_UserManagement**: Spezifische User-Management Tasks.
-*   **12_EntraID_GroupManagement**: Erweiterte Gruppenverwaltung.
-*   **13_EntraID_AppRegistration**: Management von App Registrations & Service Principals.
-*   **14_EntraID_Security_CA**: Conditional Access und Security Einstellungen.
-*   **15_Intune_Advanced_Enrollment**: Weiterführende Enrollment-Szenarien.
-*   **16_Mixed_New_Scripts**: Sammlung von 50 gemischten Skripten zu Intune, Entra ID, Azure, Exchange, M365 und ersten Teams-Themen.
-*   **16_Teams_Telephony**: Dedizierte Sammlung von 200 Teams-Telefonie-Skripten inklusive Helper-Datei und Beschreibungsübersicht.
-## Voraussetzungen
-Um diese Skripte auszuführen, müssen folgende Voraussetzungen erfüllt sein:
-1.  **Microsoft Graph PowerShell SDK**:
-    ```powershell
-    Install-Module Microsoft.Graph -Scope CurrentUser
-    ```
-2.  **Verbindung herstellen**:
-    Die meisten Skripte benötigen eine aktive Session. Starten Sie diese mit:
-    ```powershell
-    Connect-MgGraph -Scopes "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementApps.ReadWrite.All", "User.Read.All"
-    ```
-    (Passen Sie die Scopes je nach benötigter Berechtigung an).
-## Verwendung
-Navigieren Sie in den entsprechenden Ordner und führen Sie das gewünschte Skript aus.
-Beispiel (Gerät synchronisieren):
-```powershell
-./01_Device_Management/01_Sync-IntuneDevice.ps1 -DeviceName "DESKTOP-XYZ123"
-```
-## Hinweis
-Bitte testen Sie Skripte ('besonders solche mit Löschfunktionen wie Wipe oder Delete') immer zuerst in einer Testumgebung oder mit einem einzelnen Testgerät.
-## FAQ
-**Q: Ich bekomme einen Fehler "Execution of scripts is disabled on this system".**
-A: Die PowerShell Execution Policy muss angepasst werden. Führen Sie folgendes aus:
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-**Q: Welche Module werden benötigt?**
-A: Die Skripte basieren auf dem `Microsoft.Graph` Modul. Stellen Sie sicher, dass es installiert ist: `Install-Module Microsoft.Graph`.
-**Q: Wie melde ich mich an?**
-A: Nutzen Sie `Connect-MgGraph`. Beim ersten Mal müssen Sie im Browser-Fenster zustimmen (Consent).
+# KaffeeundCode Skriptbibliothek
 
-## Autor
-**Mattia Cirillo**
-*   [Webseite / kaffeeundcode](https://kaffeeundcode.com)
-*   Entwickelt mit ❤️ für Intune-Admins.
+510 PowerShell-Skriptdateien für Intune, Teams-Telefonie, Entra ID, Azure und M365. Die 500 bestehenden Dateipfade bleiben erhalten; zehn Intune-Workflows sind hinzugekommen. GitHub ist die Quelle für die bestehende Skriptbibliothek auf [KaffeeundCode](https://www.kaffeeundcode.com/scripts/).
+
+## Einzeldateien verwenden
+
+Die 230 Skripte mit eigener Hilfslogik enthalten diese jetzt direkt. Eine kopierte Datei benötigt weder den restlichen Repository-Ordner noch einen automatischen Nachladevorgang. Externe Voraussetzungen wie Microsoft Graph, MicrosoftTeams, Az oder ExchangeOnlineManagement und die jeweiligen Berechtigungen gelten weiterhin. Parameter, Voraussetzungen und Beispiele stehen in der Skripthilfe.
+
+```powershell
+Get-Help ./01_Device_Management/05_Get-IntuneDeviceDetails.ps1 -Full
+./01_Device_Management/05_Get-IntuneDeviceDetails.ps1 -DeviceId 'managed-device-id'
+```
+
+Speichere Skripte für Windows PowerShell 5.1 als UTF-8 mit BOM. Ändernde Skripte vor Verwendung auf Zielgeräte und Berechtigungen prüfen; `-WhatIf` verwenden, wenn das Skript es unterstützt.
+
+## Bestand und Prüfstatus
+
+Der [Katalog](script_catalog/README.md) enthält 510 Einträge. Die erste Auswahl umfasst 100 bestehende Skripte, davon 70 mit direktem Intune-Bezug. Auswahl bedeutet keine Freigabe.
+
+- **Ungeprüft:** vollständige fachliche Abnahme fehlt.
+- **Geprüft:** aktuelle, quellenbezogene Nachweise für alle erforderlichen Prüfungen vorhanden.
+- **Beispiel:** muss für die konkrete Umgebung ergänzt oder angepasst werden.
+- **Bekannte Fehler:** Einschränkungen sind konkret dokumentiert.
+
+Stand 8. September 2026: Syntaxprüfung für alle 510 Skripte und 25 Offline-Pester-Tests unter Windows PowerShell 5.1 und PowerShell 7.6.5 bestanden. Darunter sind Tests kopierter Einzeldateien in frischen Prozessen. Graph-/Teams-Antworten werden in diesen Tests simuliert. Kein Testtenant verbunden; deshalb keine vollständige Cloud-Abnahme und keine pauschale Produktionsfreigabe. Die statische Analyse enthält weiterhin Warnungen; der vollständige aktuelle Bericht liegt unter `validation/evidence/psscriptanalyzer.json`.
+
+## Darstellung auf KaffeeundCode
+
+Der vorhandene Import verarbeitet die PowerShell-Dateien und deren SYNOPSIS/DESCRIPTION. Deshalb steht der Prüfstatus direkt in jeder Skripthilfe. Der zusätzliche JSON-/Markdown-Katalog ist ein Repository-Verzeichnis, keine neue Website und keine Voraussetzung für den bestehenden Import.
+
+Der öffentliche Bestandsabgleich ergab 535 Website-Einträge: 500 passende Bestandsskripte, eine Helper-Seite und 34 weitere Seiten ohne aktuellen gleichnamigen Skriptpfad. Diese bestehenden Seiten werden nicht gelöscht. Die zehn neuen Dateien und fünf Paketbeschreibungen kommen beim Import hinzu. Die bisherige Website-Sortierung wird durch diese Repository-Änderung nicht automatisch auf Intune umgestellt.
+
+## PilotDeploy-App-Pakete
+
+[7-Zip](18_App_Packages/7zip/README.md), [Notepad++](18_App_Packages/notepadplusplus/README.md), [VLC](18_App_Packages/vlc/README.md), [Git for Windows](18_App_Packages/git/README.md) und [PowerToys](18_App_Packages/powertoys/README.md) besitzen je eine deutsche Beschreibung für den vorhandenen README-Import.
+
+Die fünf PSADT-ZIPs wurden mit der vorhandenen PilotDeploy-Engine erzeugt und anschließend mit Microsofts Content Prep Tool unter Windows separat in INTUNEWIN-Dateien verpackt. Herkunft, Versionen und SHA-256-Werte stehen im [Paketmanifest](app-packages.manifest.json). Die Binärdateien liegen lokal unter `.artifacts/packages/` und gehören nicht in Git-Commits.
+
+Diese App-Pakete sind noch nicht öffentlich freigegeben: Installation, Wiederholung, Upgrade, Deinstallation, tatsächliche Detection, Intune-Bereitstellung und vollständige Hersteller-Weitergabeprüfung stehen aus. Die Beschreibungen enthalten deshalb noch keine öffentlichen Downloadlinks.
+
+## Pflege und Tests
+
+```text
+npm run prepare:library
+npm run bundles:check
+npm run catalog:check
+npm test
+```
+
+Hilfsfunktionen in `Common/IntuneLibrary.psm1` beziehungsweise der bestehenden Teams-Helper-Datei pflegen und danach `prepare:library` ausführen. Eingebettete Bereiche werden daraus reproduzierbar aktualisiert. Änderungen am Quellcode machen alte fachliche Nachweise ungültig. Die PowerShell-Testläufe werden getrennt durch die Werkzeuge unter `tools/qa/powershell/` ausgeführt.
+
+Apps monatlich auf neue Versionen und Quellen prüfen; Skripte spätestens nach sechs Monaten oder relevanten Moduländerungen erneut abnehmen. Es wird keine Automation eingerichtet.
+
+Autor: Mattia Cirillo · [KaffeeundCode](https://www.kaffeeundcode.com/)

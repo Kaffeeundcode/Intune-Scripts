@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt ein einfaches Menü aller Skripte (Demo).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle .ps1 Dateien im aktuellen Ordner auf.
-    
+
 .NOTES
     File Name: 100_Show-ScriptMenu.ps1
     Author: Mattia Cirillo

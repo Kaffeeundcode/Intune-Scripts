@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Zeigt die "Direct Reports" (Untergebenen) eines Managers.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Listet alle Benutzer auf, die diesen User als Manager eingetragen haben.
     Erfordert die Berechtigung 'User.Read.All'.
 

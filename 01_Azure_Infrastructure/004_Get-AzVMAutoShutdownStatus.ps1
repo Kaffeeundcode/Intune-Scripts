@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft, ob für eine Azure VM der Auto-Shutdown konfiguriert ist.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Auto-Shutdown hilft Kosten zu sparen, besonders bei Dev/Test-Maschinen.
     Dieses Skript prüft den Status der Auto-Shutdown-Schedule für eine VM.
 
@@ -22,13 +28,13 @@ param (
 )
 
 try {
-    # Auto-Shutdown ist in Azure eine Ressource vom Typ 'microsoft.devtestlab/schedules' 
+    # Auto-Shutdown ist in Azure eine Ressource vom Typ 'microsoft.devtestlab/schedules'
     # und hat meist den Namen "shutdown-computevm-<VMName>"
-    
+
     $ScheduleName = "shutdown-computevm-$VMName"
-    
+
     Write-Host "Suche Auto-Shutdown Schedule für '$VMName'..." -ForegroundColor Cyan
-    
+
     $Schedule = Get-AzResource -ResourceGroupName $ResourceGroupName -Name $ScheduleName -ResourceType "microsoft.devtestlab/schedules" -ErrorAction SilentlyContinue
 
     if ($Schedule) {

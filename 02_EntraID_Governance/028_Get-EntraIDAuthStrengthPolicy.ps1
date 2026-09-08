@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Authentication Strength Policies (FIDO2, MFA, etc.) auf.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Authentication Strengths sind Teil der neuen Conditional Access Features.
     Dieses Skript zeigt, welche Policies definiert sind und welche Methoden sie erlauben.
 
@@ -16,12 +22,12 @@ try {
     Write-Host "Rufe Authentication Strength Policies ab..." -ForegroundColor Cyan
 
     $Policies = Get-MgPolicyAuthenticationStrengthPolicy -All
-    
+
     foreach ($pol in $Policies) {
         Write-Host "Policy: $($pol.DisplayName)" -ForegroundColor Cyan
         Write-Host " - Typ: $($pol.PolicyType)"
         Write-Host " - Erlaubte Methoden:"
-        
+
         # AllowedCombinations ist ein Array von Auth-Methoden
         foreach ($combo in $pol.AllowedCombinations) {
             Write-Host "   * $combo"

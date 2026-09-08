@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Pausiert/Startet die Verarbeitung einer dynamischen Gruppe.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Kann genutzt werden, um das ProcessingState neu zu triggern (wenn unterstützt).
     Hinweis: Direktes 'Validate' ist nur via UI einfach, hier prüfen wir den Status.
     Erfordert die Berechtigung 'Group.ReadWrite.All'.

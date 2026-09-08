@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Identifies Network Security Groups (NSGs) that are not associated with any Subnet or Network Interface.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Orphaned NSGs clutter the environment and provide no value.
     This script checks the 'Subnets' and 'NetworkInterfaces' properties of every NSG.
 
@@ -20,7 +26,7 @@ $Report = @()
 foreach ($NSG in $NSGs) {
     $Subnets = $NSG.Subnets.Count
     $NICs = $NSG.NetworkInterfaces.Count
-    
+
     if ($Subnets -eq 0 -and $NICs -eq 0) {
         Write-Host "Orphaned: $($NSG.Name)" -ForegroundColor Yellow
         $Report += [PSCustomObject]@{

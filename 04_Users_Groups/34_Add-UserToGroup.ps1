@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Fügt einen Benutzer einer Gruppe hinzu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Nimmt einen Benutzer in eine (Sicherheits-)Gruppe auf.
     Erfordert die Berechtigung 'GroupMember.ReadWrite.All'.
 

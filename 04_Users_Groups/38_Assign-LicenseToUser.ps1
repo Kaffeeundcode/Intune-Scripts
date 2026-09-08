@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Weist einem Benutzer eine Lizenz zu.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Fügt dem Benutzer Lizenzen hinzu (SKU ID).
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 

@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle mobilen Geräte (ActiveSync) auf, die mit Exchange verbunden sind.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt DeviceModel, OS und letzten Sync-Zeitpunkt.
     Unabhängig von Intune (nur Exchange ActiveSync Sicht).
 
@@ -21,12 +27,12 @@ param (
 
 try {
     Write-Host "Rufe Mobile Device Statistiken ab..." -ForegroundColor Cyan
-    
+
     $Mailboxes = if ($UserPrincipalName) { Get-ExoMailbox -Identity $UserPrincipalName } else { Get-ExoMailbox -ResultSize Unlimited }
-    
+
     foreach ($mb in $Mailboxes) {
         $Devices = Get-MobileDeviceStatistics -Mailbox $mb.UserPrincipalName -ErrorAction SilentlyContinue
-        
+
         foreach ($dev in $Devices) {
             [PSCustomObject]@{
                 User = $mb.UserPrincipalName

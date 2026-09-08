@@ -1,12 +1,18 @@
-<#
+﻿<#
 .SYNOPSIS
     Maintenance script to clean up old Automation Job history.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Azure Automation keeps job logs which can be noisy.
-    This script finds jobs older than X days and effectively clears them from view 
+    This script finds jobs older than X days and effectively clears them from view
     (though archiving is native, this is for operational dashboard cleanup).
-    
+
     Note: Can't delete jobs via simple cmdlet easily, often used to just export-and-purge logic.
     Here we focus on identifying the purge candidates.
 
@@ -30,7 +36,7 @@ foreach ($Job in $Jobs) {
     # Azure doesn't have a direct 'Remove-AzAutomationJob' (Logs are immutable usually till retention period).
     # This script serves to audit what is 'Old'.
     # Real cleanup is retention policy based.
-    
+
     Write-Host "Old Job: $($Job.JobId) - $($Job.RunbookName) - $($Job.EndTime)" -ForegroundColor Gray
 }
 

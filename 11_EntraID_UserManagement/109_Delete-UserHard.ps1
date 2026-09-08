@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Löscht einen Benutzer (Soft Delete).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Verschiebt einen Benutzer in den Papierkorb. Endgültiges Löschen erfolgt nach 30 Tagen oder via 'Restore-'.
     Erfordert die Berechtigung 'User.ReadWrite.All'.
 

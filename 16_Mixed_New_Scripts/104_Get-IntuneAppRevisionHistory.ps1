@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Tracks version history and revision changes for Intune Apps (Win32).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Gets all Win32 apps and reports their current version, created date, and last modified date.
     Useful for auditing when applications were last updated by administrators.
 
@@ -28,7 +34,7 @@ $Report = @()
 
 foreach ($App in $Apps) {
     # Cast to specific type to access properties if needed, but PS handles dynamic props well from Graph SDK
-    
+
     $obj = [PSCustomObject]@{
         AppName          = $App.DisplayName
         AppId            = $App.Id

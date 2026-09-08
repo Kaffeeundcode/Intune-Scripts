@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Exportiert einen Gerätestatus-Bericht als HTML.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Erstellt eine einfache HTML-Datei mit einer Tabelle aller Geräte und deren Status.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

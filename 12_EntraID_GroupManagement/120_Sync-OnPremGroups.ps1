@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft Sync-Status von On-Premises Gruppen.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt an, wann eine synchronisierte Gruppe zuletzt aktualisiert wurde.
     Erfordert die Berechtigung 'Group.Read.All'.
 

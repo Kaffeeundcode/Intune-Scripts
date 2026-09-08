@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lädt ein APNs Zertifikat hoch.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktualisiert das Apple Push Cert. Wichtig für iOS Management.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.ReadWrite.All'.
 

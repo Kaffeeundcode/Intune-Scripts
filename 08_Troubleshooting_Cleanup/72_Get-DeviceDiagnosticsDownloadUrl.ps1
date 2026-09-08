@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Holt Download-URL für Diagnoseprotokolle.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Wenn 'Collect Diagnostics' fertig ist, kann hier die URL abgerufen werden.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

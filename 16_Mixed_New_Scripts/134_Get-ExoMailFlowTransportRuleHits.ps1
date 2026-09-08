@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Exports Transport Rules and (where possible) analyzes if they are active.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Lists all Transport Rules with their priority, state, and actions.
     Note: Exact "Hit Count" is not directly exposed via simple cmdlet, but we can infer
-    usage based on Message Trace correlation if needed. 
+    usage based on Message Trace correlation if needed.
     This script focuses on the Configuration audit part: Which rules enforce encryption, blocking, etc.
 
 .NOTES

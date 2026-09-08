@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Führt eine KQL Query gegen Log Analytics aus und exportiert das Ergebnis als CSV.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Automatisiert Reportings aus Logs (z.B. Security Events, Performance).
-    
+
     Parameter:
     - WorkspaceId: ID des Workspaces
     - Query: KQL Abfrage
@@ -26,7 +32,7 @@ try {
     Write-Host "Führe Query aus..." -ForegroundColor Cyan
 
     $Result = Invoke-AzOperationalInsightsQuery -WorkspaceId $WorkspaceId -Query $Query -ErrorAction Stop
-    
+
     if ($Result.Results) {
         $Result.Results | Export-Csv -Path $OutputFile -NoTypeInformation -Encoding UTF8
         Write-Host "Ergebnisse exportiert nach: $OutputFile" -ForegroundColor Green

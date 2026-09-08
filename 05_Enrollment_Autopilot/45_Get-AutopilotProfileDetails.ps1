@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft Details zu einem Autopilot Profil ab.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt Einstellungen wie OOBE-Verhalten, Admin-Rechte etc. eines Profils.
     Erfordert die Berechtigung 'DeviceManagementServiceConfig.Read.All'.
 

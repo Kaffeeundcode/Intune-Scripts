@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Geräte eines Benutzers auf.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Ruft alle Managed Devices ab, die einem bestimmten Benutzer zugeordnet sind.
     Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
 

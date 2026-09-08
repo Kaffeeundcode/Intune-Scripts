@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Listet alle Benutzer und Gruppen auf, die einer Enterprise App zugewiesen sind.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, wer Zugriff auf eine bestimmte App hat.
-    
+
     Parameter:
     - AppParams: Name der Applikation (DisplayName)
 
@@ -21,9 +27,9 @@ param (
 try {
     $SP = Get-MgServicePrincipal -Filter "displayName eq '$AppDisplayName'" -ErrorAction Stop
     if (-not $SP) { Throw "App nicht gefunden." }
-    
+
     Write-Host "App ID: $($SP.Id)" -ForegroundColor Cyan
-    
+
     Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $SP.Id -All | ForEach-Object {
         [PSCustomObject]@{
             PrincipalDisplayName = $_.PrincipalDisplayName

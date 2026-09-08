@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Sammelt lokale Intune Logs (Client-Side).
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zippt den Ordner C:\ProgramData\Microsoft\IntuneManagementExtension\Logs.
     Muss auf dem Client laufen.
 

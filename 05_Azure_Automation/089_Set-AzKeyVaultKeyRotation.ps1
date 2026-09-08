@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Konfiguriert automatisches Key-Rotation Policy Template für einen KeyVault Key.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Aktiviert Rotation (z.B. alle 90 Tage).
-    Hinweis: Dies ist ein komplexes Feature, dieses Skript setzt eine Standard-Policy. 
+    Hinweis: Dies ist ein komplexes Feature, dieses Skript setzt eine Standard-Policy.
     Nur für Keys, nicht für Secrets!
 
     Parameter:
@@ -27,7 +33,7 @@ try {
 
     # Beispiel JSON Policy für 90 Tage Rotation, 30 Tage vor Ablauf Notification
     # Achtung: Benötigt Az.KeyVault > 4.x
-    
+
     $Policy = @{
         "lifetimeActions" = @(
             @{
@@ -43,7 +49,7 @@ try {
             "expiryTime" = "P180D"
         }
     }
-    
+
     # Set-AzKeyVaultKeyRotationPolicy ist neu, falls nicht da, Warnung
     if (Get-Command Set-AzKeyVaultKeyRotationPolicy -ErrorAction SilentlyContinue) {
         Set-AzKeyVaultKeyRotationPolicy -VaultName $VaultName -Name $KeyName -Policy $Policy -ErrorAction Stop

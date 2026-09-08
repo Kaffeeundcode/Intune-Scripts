@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Prüft Sign-Ins für eine spezifische App.
-    
+
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt, wer sich wann an dieser App angemeldet hat.
     Erfordert die Berechtigung 'AuditLog.Read.All'.
 

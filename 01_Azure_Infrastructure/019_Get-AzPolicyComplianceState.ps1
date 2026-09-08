@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Ruft den Compliance-Status von Azure Policies für eine Subscription oder Ressource ab.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Zeigt an, ob Ressourcen "Compliant" oder "NonCompliant" sind.
-    
+
     Parameter:
     - Scope: (Optional) Scope (Subscription ID oder RG Pfad). Default: Aktuelle Subscription.
 
@@ -24,9 +30,9 @@ try {
     }
 
     Write-Host "Rufe Policy Status ab für Scope: $Scope" -ForegroundColor Cyan
-    
+
     $States = Get-AzPolicyState -Scope $Scope -ErrorAction Stop
-    
+
     $NonCompliant = $States | Where-Object ComplianceState -eq "NonCompliant"
 
     if ($NonCompliant) {

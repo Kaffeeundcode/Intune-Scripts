@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Calculates the density of App Services running per App Service Plan.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     App Service Plans (ASP) are the billing unit.
     If you have many ASPs with only 1 App each, you are paying for unused compute.
     This script finds ASPs with low density (e.g. < 2 apps) to suggest consolidation.
@@ -30,11 +36,11 @@ foreach ($Plan in $Plans) {
     # Method varies by module version, standard is to query Get-AzWebApp with plan ID
     $Apps = Get-AzWebApp -ResourceGroupName $Plan.ResourceGroup | Where-Object { $_.ServerFarmId -eq $Plan.Id }
     $AppCount = $Apps.Count
-    
+
     $Status = "Optimized"
     if ($AppCount -eq 0) { $Status = "Empty (Cost Waster)" }
     elseif ($AppCount -eq 1) { $Status = "Low Density (Consider Compacting)" }
-    
+
     $Report += [PSCustomObject]@{
         PlanName = $Plan.Name
         ResourceGroup = $Plan.ResourceGroup

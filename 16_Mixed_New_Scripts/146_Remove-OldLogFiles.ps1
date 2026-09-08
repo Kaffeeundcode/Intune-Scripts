@@ -1,13 +1,19 @@
-<#
+﻿<#
 .SYNOPSIS
     Rotates or deletes old log files in a specific directory.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Generic maintenance tool.
     Target a folder (e.g. IIS logs, Custom App logs) and delete files older than X days.
-    
+
     Safe mode included (WhatIf).
-    
+
 .NOTES
     File Name  : 146_Remove-OldLogFiles.ps1
     Author     : Kaffeeundcode
@@ -17,11 +23,11 @@
 Param(
     [Parameter(Mandatory=$true)]
     [string]$TargetFolder,
-    
+
     [int]$Days = 30,
-    
+
     [string]$Extension = "*.log",
-    
+
     [switch]$Force
 )
 

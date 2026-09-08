@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Lists Restore Points for Cloud PCs (Windows 365).
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Windows 365 Cloud PCs support point-in-time restore. This script inspects
     Cloud PC devices and lists the available restore points for auditing backup frequency.
 
@@ -33,9 +39,9 @@ if (-not $Devices) {
     Write-Warning "No Cloud PC devices found via standard filter (Model 'Cloud PC'). Checking dedicated CloudPC API..."
     try {
         $CPCs = Get-MgDeviceManagementVirtualEndpointCloudPC -All
-    } catch { 
+    } catch {
         Write-Warning "CloudPC API not available."
-        exit 
+        exit
     }
 } else {
     # If we found via standard list, map to ID
@@ -52,7 +58,7 @@ foreach ($PC in $CPCs) {
         $Points = Get-MgDeviceManagementVirtualEndpointCloudPCRestorePoint -CloudPCId $PC.Id -All
         $Count = $Points.Count
         Write-Host " Found $Count points." -ForegroundColor Green
-        
+
         foreach ($P in $Points) {
             $Report += [PSCustomObject]@{
                 PCName = $PC.DisplayName

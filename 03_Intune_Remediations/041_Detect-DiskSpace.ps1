@@ -1,10 +1,16 @@
-<#
+﻿<#
 .SYNOPSIS
     Erkennt, ob der freie Speicherplatz auf C: unter einem Schwellenwert liegt.
     (Intune Detection Script)
 
 .DESCRIPTION
-    Ausgabe "NonCompliant", wenn Speicher < Threshold. 
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Ausgabe "NonCompliant", wenn Speicher < Threshold.
     Sonst "Compliant".
 
     Parameter:
@@ -23,7 +29,7 @@ param (
 try {
     $Disk = Get-Volume -DriveLetter C -ErrorAction Stop
     $Free = [math]::Round(($Disk.SizeRemaining / $Disk.Size) * 100, 2)
-    
+
     if ($Free -lt $ThresholdPercent) {
         Write-Host "NonCompliant"
         exit 1 # Intune wertet Exit Code 1 als "Fehler/Gefunden" für Remediation

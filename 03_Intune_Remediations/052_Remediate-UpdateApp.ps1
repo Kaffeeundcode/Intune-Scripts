@@ -1,9 +1,15 @@
-<#
+﻿<#
 .SYNOPSIS
     Platzhalter für einen App-Update Trigger.
     (Intune Remediation Script)
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Beispiel
+    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+
+    <!-- library-status:end -->
+
     Da Updates app-spezifisch sind (MSI exec, Winget, Chocolatey), dient dieses Skript als Template.
     Beispiel: Nutzung von Winget zum Upgrade.
 
@@ -22,12 +28,12 @@ param (
 
 try {
     Write-Host "Versuche Update für '$AppId' via Winget..."
-    
+
     # Hinweis: Winget benötigt System-Kontext Handling (oft tricky).
     # Hier als generischer Aufruf:
-    
+
     winget upgrade --id $AppId --accept-package-agreements --accept-source-agreements --silent
-    
+
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Update erfolgreich angestoßen."
     } else {

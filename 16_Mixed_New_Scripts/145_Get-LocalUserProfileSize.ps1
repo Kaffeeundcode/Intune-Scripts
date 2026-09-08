@@ -1,8 +1,14 @@
-<#
+﻿<#
 .SYNOPSIS
     Calculates the size of User Profiles on the local machine.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Useful for shared devices to identify space hogs.
     Iterates C:\Users and calculates folder size.
     Warning: Slow on large drives.
@@ -22,7 +28,7 @@ foreach ($P in $Profiles) {
     try {
         $Size = Get-ChildItem $P.FullName -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum
         $MB = [math]::Round($Size.Sum / 1MB, 2)
-        
+
         $Report += [PSCustomObject]@{
             Profile = $P.Name
             SizeMB = $MB

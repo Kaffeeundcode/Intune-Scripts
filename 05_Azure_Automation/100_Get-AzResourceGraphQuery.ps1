@@ -1,11 +1,17 @@
-<#
+﻿<#
 .SYNOPSIS
     Führt eine schnelle Azure Resource Graph Query aus.
 
 .DESCRIPTION
+    <!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
     Resource Graph ist oft schneller als Get-AzResource.
     Beispiel: Zähle alle Ressourcen pro Typ.
-    
+
     Parameter:
     - Query: (Optional) Custom Query.
 
@@ -23,9 +29,9 @@ try {
     Write-Host "Führe Resource Graph Query aus..." -ForegroundColor Cyan
 
     $Result = Search-AzGraph -Query $Query -ErrorAction Stop
-    
+
     $Result | Format-Table -AutoSize
-    
+
     Write-Host "Query erfolgreich." -ForegroundColor Green
 
 } catch {
