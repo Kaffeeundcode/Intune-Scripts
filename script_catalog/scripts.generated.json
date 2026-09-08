@@ -16830,6 +16830,114 @@
     "content_de": "# Get-TeamsTelephonyTenantSummary\n\n**Prüfstatus: Ungeprüft**\n\nTeams Telephony Tenant Summary\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Ruft Teams Telephony Tenant Summary aus der Teams-Telefonie ab.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: MicrosoftTeams\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './16_Teams_Telephony/350_Get-TeamsTelephonyTenantSummary.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/16_Teams_Telephony/350_Get-TeamsTelephonyTenantSummary.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   },
   {
+    "slug": "ai-graph-query-wrapper",
+    "script_name": "AI-GraphQuery-Wrapper.ps1",
+    "source_path": "17_AI_Automation/AI-GraphQuery-Wrapper.ps1",
+    "category": "17_AI_Automation",
+    "title_de": "AI-GraphQuery-Wrapper",
+    "synopsis": "AI-GraphQuery-Wrapper - Translates natural language to Microsoft Graph OData filters.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    This script leverages an LLM to convert human-readable requests into precise\n    OData filter strings for Microsoft Graph API calls.\n\n    Example Request: \"All HP laptops that haven't synced in 30 days\"\n    Resulting Filter: \"manufacturer eq 'HP' and lastSyncDateTime lt 2026-06-15T00:00:00Z\"",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "17_AI_Automation/AI-GraphQuery-Wrapper.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "569016faa771a621371cddbc937f7788f1e0ebeea07de4d502d0c016e0cc6301",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# AI-GraphQuery-Wrapper\n\n**Prüfstatus: Ungeprüft**\n\nAI-GraphQuery-Wrapper - Translates natural language to Microsoft Graph OData filters.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    This script leverages an LLM to convert human-readable requests into precise\n    OData filter strings for Microsoft Graph API calls.\n\n    Example Request: \"All HP laptops that haven't synced in 30 days\"\n    Resulting Filter: \"manufacturer eq 'HP' and lastSyncDateTime lt 2026-06-15T00:00:00Z\"\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './17_AI_Automation/AI-GraphQuery-Wrapper.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_AI_Automation/AI-GraphQuery-Wrapper.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "auto-tenant-doc-generator",
+    "script_name": "Auto-Tenant-Doc-Generator.ps1",
+    "source_path": "17_AI_Automation/Auto-Tenant-Doc-Generator.ps1",
+    "category": "17_AI_Automation",
+    "title_de": "Auto-Tenant-Doc-Generator",
+    "synopsis": "Auto-Tenant-Doc-Generator - Exports full Intune configuration to a structured Markdown Wiki.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Iterates through Configuration Profiles, Compliance Policies, and App Assignments\n    to create a comprehensive documentation file in Markdown format.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "17_AI_Automation/Auto-Tenant-Doc-Generator.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "cae26e5e4f54e9efc416dd1dc882f4dbd7af930a8a5e6e79ec340d2bb9ba8fa8",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Auto-Tenant-Doc-Generator\n\n**Prüfstatus: Ungeprüft**\n\nAuto-Tenant-Doc-Generator - Exports full Intune configuration to a structured Markdown Wiki.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Iterates through Configuration Profiles, Compliance Policies, and App Assignments\n    to create a comprehensive documentation file in Markdown format.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './17_AI_Automation/Auto-Tenant-Doc-Generator.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_AI_Automation/Auto-Tenant-Doc-Generator.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "intune-discord-alert-hub",
+    "script_name": "Intune-Discord-Alert-Hub.ps1",
+    "source_path": "17_AI_Automation/Intune-Discord-Alert-Hub.ps1",
+    "category": "17_AI_Automation",
+    "title_de": "Intune-Discord-Alert-Hub",
+    "synopsis": "Intune-Discord-Alert-Hub - Pushes critical Intune events to a Discord Webhook.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Monitors for critical state changes (e.g., VIP device non-compliance or\n    high failure rates in app deployments) and sends an industrial-style\n    alert to a configured Discord channel.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "17_AI_Automation/Intune-Discord-Alert-Hub.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "d30cf2528ccbd2786b00d228697417303910a53e7e93c432f0e6d66c88bb1a76",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Intune-Discord-Alert-Hub\n\n**Prüfstatus: Ungeprüft**\n\nIntune-Discord-Alert-Hub - Pushes critical Intune events to a Discord Webhook.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Monitors for critical state changes (e.g., VIP device non-compliance or\n    high failure rates in app deployments) and sends an industrial-style\n    alert to a configured Discord channel.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './17_AI_Automation/Intune-Discord-Alert-Hub.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_AI_Automation/Intune-Discord-Alert-Hub.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
     "slug": "get-intune-device-diagnostic-report",
     "script_name": "351_Get-IntuneDeviceDiagnosticReport.ps1",
     "source_path": "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
@@ -17177,5 +17285,541 @@
     "dependencies": [],
     "risk_level": "elevated",
     "content_de": "# Get-IntuneRemediationFailureReport\n\n**Prüfstatus: Ungeprüft**\n\nFasst fehlgeschlagene oder nicht auswertbare Remediation-Laeufe zusammen.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest deviceHealthScripts und deviceRunStates aus Graph beta. Report enthaelt Fehlermeldungen, kein erfolgreiches Remediation-Signal aus leeren Abfragen.\n    Detailausgaben koennen Benutzer-/Geraetedaten enthalten; nur im internen Reportordner speichern.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1 -OutputPath './reports/remediations.json'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "app-consistency-checker",
+    "script_name": "APP-Consistency-Checker.ps1",
+    "source_path": "18_Security_Hardening/APP-Consistency-Checker.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "APP-Consistency-Checker",
+    "synopsis": "APP-Consistency-Checker - Validates App Protection Policies vs Device State.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Cross-references configured App Protection Policies (MAM) with the\n    actual registration state to ensure no 'unmanaged' leaks.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/APP-Consistency-Checker.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "36f052a340fb6b3e2ef8f0a08d46a7bb2640ca2ef2ff05194f02091b73b3f28f",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# APP-Consistency-Checker\n\n**Prüfstatus: Ungeprüft**\n\nAPP-Consistency-Checker - Validates App Protection Policies vs Device State.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Cross-references configured App Protection Policies (MAM) with the\n    actual registration state to ensure no 'unmanaged' leaks.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/APP-Consistency-Checker.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/APP-Consistency-Checker.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "bit-locker-recovery-audit",
+    "script_name": "BitLocker-Recovery-Audit.ps1",
+    "source_path": "18_Security_Hardening/BitLocker-Recovery-Audit.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "BitLocker-Recovery-Audit",
+    "synopsis": "BitLocker-Recovery-Audit - Scans for devices missing BitLocker recovery keys in Entra ID.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Iterates through managed devices and verifies if a recovery key is stored\n    in the cloud. Critical for preventing permanent data loss during hardware failure.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/BitLocker-Recovery-Audit.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "73c7045555eedf077a51676bab5538212e90c2aacba3bbf06a46a08a591c7b8f",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# BitLocker-Recovery-Audit\n\n**Prüfstatus: Ungeprüft**\n\nBitLocker-Recovery-Audit - Scans for devices missing BitLocker recovery keys in Entra ID.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Iterates through managed devices and verifies if a recovery key is stored\n    in the cloud. Critical for preventing permanent data loss during hardware failure.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/BitLocker-Recovery-Audit.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/BitLocker-Recovery-Audit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "ca-policy-auditor",
+    "script_name": "CA-Policy-Auditor.ps1",
+    "source_path": "18_Security_Hardening/CA-Policy-Auditor.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "CA-Policy-Auditor",
+    "synopsis": "CA-Policy-Auditor - Audits Conditional Access policies for security gaps.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Analyzes all Conditional Access policies to find 'Too Permissive' rules,\n    missing MFA requirements, or oversized exclusions.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/CA-Policy-Auditor.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "198cef66fae8ad900d17791d37f5db1843b7d31365560933b71da96c371f966c",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# CA-Policy-Auditor\n\n**Prüfstatus: Ungeprüft**\n\nCA-Policy-Auditor - Audits Conditional Access policies for security gaps.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Analyzes all Conditional Access policies to find 'Too Permissive' rules,\n    missing MFA requirements, or oversized exclusions.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/CA-Policy-Auditor.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/CA-Policy-Auditor.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "compliance-drift-detector",
+    "script_name": "Compliance-Drift-Detector.ps1",
+    "source_path": "18_Security_Hardening/Compliance-Drift-Detector.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "Compliance-Drift-Detector",
+    "synopsis": "Compliance-Drift-Detector - Detects configuration drift in compliance policies.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Compares the current state of a target compliance policy against a\n    defined 'Golden Image' to identify unauthorized or accidental changes.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/Compliance-Drift-Detector.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "09aa2039824dcaaef4ca0cd0e2cf941738af1474052971c97bde1723312c4601",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Compliance-Drift-Detector\n\n**Prüfstatus: Ungeprüft**\n\nCompliance-Drift-Detector - Detects configuration drift in compliance policies.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Compares the current state of a target compliance policy against a\n    defined 'Golden Image' to identify unauthorized or accidental changes.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/Compliance-Drift-Detector.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/Compliance-Drift-Detector.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "guest-user-audit",
+    "script_name": "Guest-User-Audit.ps1",
+    "source_path": "18_Security_Hardening/Guest-User-Audit.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "Guest-User-Audit",
+    "synopsis": "Guest-User-Audit - Lists external guest users and their last activity.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies all guest users in the tenant to manage external access and\n    clean up stale guest accounts.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/Guest-User-Audit.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "79dd270b920dc10b3b4a01581f5913765d6537ecff88927c5874b1b4e9fd1dd4",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Guest-User-Audit\n\n**Prüfstatus: Ungeprüft**\n\nGuest-User-Audit - Lists external guest users and their last activity.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies all guest users in the tenant to manage external access and\n    clean up stale guest accounts.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/Guest-User-Audit.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/Guest-User-Audit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "inactive-admin-hunter",
+    "script_name": "Inactive-Admin-Hunter.ps1",
+    "source_path": "18_Security_Hardening/Inactive-Admin-Hunter.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "Inactive-Admin-Hunter",
+    "synopsis": "Inactive-Admin-Hunter - Detects stale high-privileged accounts.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies users with administrative roles who have not signed in for a\n    defined period (e.g., 90 days), posing a security risk.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/Inactive-Admin-Hunter.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "80c54ca2efe1c8a6b9a896855694cf797b86bb4810ab6c52333e23f894a3a1cb",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Inactive-Admin-Hunter\n\n**Prüfstatus: Ungeprüft**\n\nInactive-Admin-Hunter - Detects stale high-privileged accounts.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies users with administrative roles who have not signed in for a\n    defined period (e.g., 90 days), posing a security risk.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/Inactive-Admin-Hunter.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/Inactive-Admin-Hunter.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "pim-review-automator",
+    "script_name": "PIM-Review-Automator.ps1",
+    "source_path": "18_Security_Hardening/PIM-Review-Automator.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "PIM-Review-Automator",
+    "synopsis": "PIM-Review-Automator - Audits Privileged Identity Management (PIM) role assignments.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies users with permanent administrative assignments and compares them\n    against eligible assignments to ensure the Principle of Least Privilege (PoLP).",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/PIM-Review-Automator.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "c4f6e1257b48688e79f6bf08627fc5b96da1f1e48030a4ebd865e04b0365c49e",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# PIM-Review-Automator\n\n**Prüfstatus: Ungeprüft**\n\nPIM-Review-Automator - Audits Privileged Identity Management (PIM) role assignments.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies users with permanent administrative assignments and compares them\n    against eligible assignments to ensure the Principle of Least Privilege (PoLP).\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/PIM-Review-Automator.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/PIM-Review-Automator.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "shadow-it-scanner",
+    "script_name": "Shadow-IT-Scanner.ps1",
+    "source_path": "18_Security_Hardening/Shadow-IT-Scanner.ps1",
+    "category": "18_Security_Hardening",
+    "title_de": "Shadow-IT-Scanner",
+    "synopsis": "Shadow-IT-Scanner - Identifies unmanaged Enterprise App registrations.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Scans Entra ID for App Registrations that were created by users\n    without administrative oversight or lacking a proper owner.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "configuration",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Security_Hardening/Shadow-IT-Scanner.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "b56a3c1285a86286ece6ae288a2356215412ce14a5f3b36a316e2821d282824a",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Shadow-IT-Scanner\n\n**Prüfstatus: Ungeprüft**\n\nShadow-IT-Scanner - Identifies unmanaged Enterprise App registrations.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Scans Entra ID for App Registrations that were created by users\n    without administrative oversight or lacking a proper owner.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/Shadow-IT-Scanner.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/Shadow-IT-Scanner.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "licensing-optimizer",
+    "script_name": "Licensing-Optimizer.ps1",
+    "source_path": "19_Lifecycle_Cleanup/Licensing-Optimizer.ps1",
+    "category": "19_Lifecycle_Cleanup",
+    "title_de": "Licensing-Optimizer",
+    "synopsis": "Licensing-Optimizer - Reports on unassigned or unused license seats.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies licensed users who are not utilizing their assigned\n    services or where licenses are assigned but not activated.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_Lifecycle_Cleanup/Licensing-Optimizer.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "6ca7a7d367aa5d88102d7ae6479ef615f79ac0264289d2d2a5a526f532cf8b5c",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Licensing-Optimizer\n\n**Prüfstatus: Ungeprüft**\n\nLicensing-Optimizer - Reports on unassigned or unused license seats.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Identifies licensed users who are not utilizing their assigned\n    services or where licenses are assigned but not activated.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './19_Lifecycle_Cleanup/Licensing-Optimizer.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_Lifecycle_Cleanup/Licensing-Optimizer.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "stale-group-purge",
+    "script_name": "Stale-Group-Purge.ps1",
+    "source_path": "19_Lifecycle_Cleanup/Stale-Group-Purge.ps1",
+    "category": "19_Lifecycle_Cleanup",
+    "title_de": "Stale-Group-Purge",
+    "synopsis": "Stale-Group-Purge - Cleans up empty or orphaned groups in Entra ID.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Scans for groups that have zero members or no assigned owners,\n    reducing clutter and improving security posture.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_Lifecycle_Cleanup/Stale-Group-Purge.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "5a48ffb15c02e379fa53ed74c4a930e85ce3758667639cc04b1476e247d8be27",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Stale-Group-Purge\n\n**Prüfstatus: Ungeprüft**\n\nStale-Group-Purge - Cleans up empty or orphaned groups in Entra ID.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Scans for groups that have zero members or no assigned owners,\n    reducing clutter and improving security posture.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './19_Lifecycle_Cleanup/Stale-Group-Purge.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_Lifecycle_Cleanup/Stale-Group-Purge.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "zombie-device-hunter",
+    "script_name": "Zombie-Device-Hunter.ps1",
+    "source_path": "19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1",
+    "category": "19_Lifecycle_Cleanup",
+    "title_de": "Zombie-Device-Hunter",
+    "synopsis": "Zombie-Device-Hunter - Identifies and manages stale devices in Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Implements a 3-stage lifecycle process for inactive devices:\n    Stage 1 (Detect): Find devices not synced for X days.\n    Stage 2 (Warn): Mark for communication/notification.\n    Stage laSt (Purge): Identify candidates for deletion.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "80ca2eecf2b815c573e59ff137dd56626a0b7f54562b3b77c5325dd124b6aefe",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Zombie-Device-Hunter\n\n**Prüfstatus: Ungeprüft**\n\nZombie-Device-Hunter - Identifies and manages stale devices in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Implements a 3-stage lifecycle process for inactive devices:\n    Stage 1 (Detect): Find devices not synced for X days.\n    Stage 2 (Warn): Mark for communication/notification.\n    Stage laSt (Purge): Identify candidates for deletion.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "connectivity-diagnostic-tool",
+    "script_name": "Connectivity-Diagnostic-Tool.ps1",
+    "source_path": "20_User_SelfService/Connectivity-Diagnostic-Tool.ps1",
+    "category": "20_User_SelfService",
+    "title_de": "Connectivity-Diagnostic-Tool",
+    "synopsis": "Connectivity-Diagnostic-Tool - Tests Intune and Graph API reachability.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Pings and tests TCP connections to critical Microsoft endpoints to\n    diagnose \"Not Syncing\" issues. Distinguishes between local network\n    blocks and service outages.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_User_SelfService/Connectivity-Diagnostic-Tool.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "ca1311e1872059f044fb9088516570e081aadcb0693a50faa38be39ee5df926f",
+    "modules": [],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Connectivity-Diagnostic-Tool\n\n**Prüfstatus: Ungeprüft**\n\nConnectivity-Diagnostic-Tool - Tests Intune and Graph API reachability.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Pings and tests TCP connections to critical Microsoft endpoints to\n    diagnose \"Not Syncing\" issues. Distinguishes between local network\n    blocks and service outages.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Skript prüfen; keine Cloud-Module erkannt.\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './20_User_SelfService/Connectivity-Diagnostic-Tool.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_User_SelfService/Connectivity-Diagnostic-Tool.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "device-health-check",
+    "script_name": "Device-Health-Check.ps1",
+    "source_path": "20_User_SelfService/Device-Health-Check.ps1",
+    "category": "20_User_SelfService",
+    "title_de": "Device-Health-Check",
+    "synopsis": "Device-Health-Check - A self-service diagnostic tool for end-users.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Gathers basic device health information (Sync status, Compliance, OS version)\n    and presents it as a \"Health Card\". Ideal for users to provide a snapshot\n    of their device state to the helpdesk.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_User_SelfService/Device-Health-Check.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "a649b1dc19faaa283eae24e3d257be69f5d729898f76118f405919c33fd69218",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Device-Health-Check\n\n**Prüfstatus: Ungeprüft**\n\nDevice-Health-Check - A self-service diagnostic tool for end-users.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Gathers basic device health information (Sync status, Compliance, OS version)\n    and presents it as a \"Health Card\". Ideal for users to provide a snapshot\n    of their device state to the helpdesk.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './20_User_SelfService/Device-Health-Check.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_User_SelfService/Device-Health-Check.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "saml-token-refresh-helper",
+    "script_name": "SAML-Token-Refresh-Helper.ps1",
+    "source_path": "20_User_SelfService/SAML-Token-Refresh-Helper.ps1",
+    "category": "20_User_SelfService",
+    "title_de": "SAML-Token-Refresh-Helper",
+    "synopsis": "SAML-Token-Refresh-Helper - Assists users with Entra ID token issues.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Forces a refresh of the local authentication tokens and\n    re-triggers the device registration process to fix \"Account Error\"\n    messages in company-managed apps.",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_User_SelfService/SAML-Token-Refresh-Helper.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "be48182c59d5b6e6107346f9ab1431425da58226a6f508035b16aab79944ef29",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# SAML-Token-Refresh-Helper\n\n**Prüfstatus: Ungeprüft**\n\nSAML-Token-Refresh-Helper - Assists users with Entra ID token issues.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Forces a refresh of the local authentication tokens and\n    re-triggers the device registration process to fix \"Account Error\"\n    messages in company-managed apps.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './20_User_SelfService/SAML-Token-Refresh-Helper.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_User_SelfService/SAML-Token-Refresh-Helper.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "self-service-enrollment-fix",
+    "script_name": "Self-Service-Enrollment-Fix.ps1",
+    "source_path": "20_User_SelfService/Self-Service-Enrollment-Fix.ps1",
+    "category": "20_User_SelfService",
+    "title_de": "Self-Service-Enrollment-Fix",
+    "synopsis": "Self-Service-Enrollment-Fix - Diagnostics for Autopilot/Enrollment failures.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Checks for common enrollment blockers:\n    - Duplicate device records\n    - Pending Autopilot registrations\n    - Local policy conflicts",
+    "example": "",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "graph",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_User_SelfService/Self-Service-Enrollment-Fix.ps1",
+    "notes": [
+      "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+    ],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "19eddbf2f671178ecced634f401571ea7c08d12bb20fc39faa3203e1d87241a1",
+    "modules": [
+      "Microsoft.Graph.Authentication",
+      "Microsoft.Graph (passende SDK-Untermodule)"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "normal",
+    "content_de": "# Self-Service-Enrollment-Fix\n\n**Prüfstatus: Ungeprüft**\n\nSelf-Service-Enrollment-Fix - Diagnostics for Autopilot/Enrollment failures.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Checks for common enrollment blockers:\n    - Duplicate device records\n    - Pending Autopilot registrations\n    - Local policy conflicts\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './20_User_SelfService/Self-Service-Enrollment-Fix.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_User_SelfService/Self-Service-Enrollment-Fix.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   }
 ]

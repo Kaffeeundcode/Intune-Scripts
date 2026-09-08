@@ -1,10 +1,10 @@
 # PowerShell-Bibliothek
 
-510 Skripteinträge; 489 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
+528 Skripteinträge; 507 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
 
 ## Prüfstatus
 
-- Ungeprüft: 491
+- Ungeprüft: 509
 - Geprüft: 0
 - Beispiel: 10
 - Bekannte Fehler: 9
@@ -616,6 +616,9 @@
 - [Measure-TeamsTelephonyCoverageByDepartment](pages/measure-teams-telephony-coverage-by-department.md) — Ungeprüft
 - [Export-TeamsTelephonyExecutiveSummary](pages/export-teams-telephony-executive-summary.md) — Ungeprüft
 - [Get-TeamsTelephonyTenantSummary](pages/get-teams-telephony-tenant-summary.md) — Ungeprüft
+- [AI-GraphQuery-Wrapper](pages/ai-graph-query-wrapper.md) — Ungeprüft
+- [Auto-Tenant-Doc-Generator](pages/auto-tenant-doc-generator.md) — Ungeprüft
+- [Intune-Discord-Alert-Hub](pages/intune-discord-alert-hub.md) — Ungeprüft
 - [Get-IntuneDeviceDiagnosticReport](pages/get-intune-device-diagnostic-report.md) — Ungeprüft
 - [Resolve-IntuneAssignmentForDevice](pages/resolve-intune-assignment-for-device.md) — Ungeprüft
 - [Export-IntuneConfigurationSnapshot](pages/export-intune-configuration-snapshot.md) — Ungeprüft
@@ -626,3 +629,18 @@
 - [Get-IntuneUpdateRolloutReport](pages/get-intune-update-rollout-report.md) — Ungeprüft
 - [Test-IntuneAutopilotReadiness](pages/test-intune-autopilot-readiness.md) — Ungeprüft
 - [Get-IntuneRemediationFailureReport](pages/get-intune-remediation-failure-report.md) — Ungeprüft
+- [APP-Consistency-Checker](pages/app-consistency-checker.md) — Ungeprüft
+- [BitLocker-Recovery-Audit](pages/bit-locker-recovery-audit.md) — Ungeprüft
+- [CA-Policy-Auditor](pages/ca-policy-auditor.md) — Ungeprüft
+- [Compliance-Drift-Detector](pages/compliance-drift-detector.md) — Ungeprüft
+- [Guest-User-Audit](pages/guest-user-audit.md) — Ungeprüft
+- [Inactive-Admin-Hunter](pages/inactive-admin-hunter.md) — Ungeprüft
+- [PIM-Review-Automator](pages/pim-review-automator.md) — Ungeprüft
+- [Shadow-IT-Scanner](pages/shadow-it-scanner.md) — Ungeprüft
+- [Licensing-Optimizer](pages/licensing-optimizer.md) — Ungeprüft
+- [Stale-Group-Purge](pages/stale-group-purge.md) — Ungeprüft
+- [Zombie-Device-Hunter](pages/zombie-device-hunter.md) — Ungeprüft
+- [Connectivity-Diagnostic-Tool](pages/connectivity-diagnostic-tool.md) — Ungeprüft
+- [Device-Health-Check](pages/device-health-check.md) — Ungeprüft
+- [SAML-Token-Refresh-Helper](pages/saml-token-refresh-helper.md) — Ungeprüft
+- [Self-Service-Enrollment-Fix](pages/self-service-enrollment-fix.md) — Ungeprüft

@@ -4,11 +4,11 @@
 
 - [x] 500 bestehende Skripte bleiben einzeln auffindbar.
 - [x] Zehn neue Intune-Workflows sind als eigene Dateien ergänzt.
-- [x] Katalog mit 510 Einträgen, Statuswerten und 100er-Erstauswahl erzeugt.
+- [x] Katalog mit 528 Einträgen, Statuswerten und 100er-Erstauswahl erzeugt.
 - [x] Syntaxprüfung und 25 Offline-Pester-Tests bestanden, inklusive separat kopierter Dateien in frischen Prozessen.
 - [x] PSScriptAnalyzer 1.24.0 ausgeführt: 0 Fehler, 2.382 Warnungen dokumentiert (einschließlich wiederholt eingebetteter Hilfsfunktionen).
 - [x] Windows-PowerShell-5.1-Test ausgeführt und als Evidence abgelegt; PowerShell 7.6.5 zusätzlich auf macOS geprüft.
-- [x] 230 lokale Hilfsabhängigkeiten direkt in veröffentlichte Einzeldateien eingebettet; Status in allen 510 Skripthilfen.
+- [x] 230 lokale Hilfsabhängigkeiten direkt in veröffentlichte Einzeldateien eingebettet; Status in allen 528 Skripthilfen.
 - [x] Alle 535 öffentlichen Website-Einträge abgeglichen; 500 passen zum Bestand, 34 weitere Seiten und ein Helper bleiben erhalten.
 - [ ] Für die cloudseitigen Werkzeuge Tenant-ID, Berechtigungen, Paging, Vererbung und Fehlerfälle testen.
 - [ ] Erst danach einzelne Einträge auf `Geprüft` setzen.

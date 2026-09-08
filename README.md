@@ -1,6 +1,6 @@
 # KaffeeundCode Skriptbibliothek
 
-510 PowerShell-Skriptdateien für Intune, Teams-Telefonie, Entra ID, Azure und M365. Die 500 bestehenden Dateipfade bleiben erhalten; zehn Intune-Workflows sind hinzugekommen. GitHub ist die Quelle für die bestehende Skriptbibliothek auf [KaffeeundCode](https://www.kaffeeundcode.com/scripts/).
+528 PowerShell-Skriptdateien für Intune, Teams-Telefonie, Entra ID, Azure und M365. Die 500 bestehenden Dateipfade bleiben erhalten; zehn Intune-Workflows sind hinzugekommen. GitHub ist die Quelle für die bestehende Skriptbibliothek auf [KaffeeundCode](https://www.kaffeeundcode.com/scripts/).
 
 ## Einzeldateien verwenden
 
@@ -15,14 +15,14 @@ Speichere Skripte für Windows PowerShell 5.1 als UTF-8 mit BOM. Ändernde Skrip
 
 ## Bestand und Prüfstatus
 
-Der [Katalog](script_catalog/README.md) enthält 510 Einträge. Die erste Auswahl umfasst 100 bestehende Skripte, davon 70 mit direktem Intune-Bezug. Auswahl bedeutet keine Freigabe.
+Der [Katalog](script_catalog/README.md) enthält 528 Einträge. Die erste Auswahl umfasst 100 bestehende Skripte, davon 70 mit direktem Intune-Bezug. Auswahl bedeutet keine Freigabe.
 
 - **Ungeprüft:** vollständige fachliche Abnahme fehlt.
 - **Geprüft:** aktuelle, quellenbezogene Nachweise für alle erforderlichen Prüfungen vorhanden.
 - **Beispiel:** muss für die konkrete Umgebung ergänzt oder angepasst werden.
 - **Bekannte Fehler:** Einschränkungen sind konkret dokumentiert.
 
-Stand 8. September 2026: Syntaxprüfung für alle 510 Skripte und 25 Offline-Pester-Tests unter Windows PowerShell 5.1 und PowerShell 7.6.5 bestanden. Darunter sind Tests kopierter Einzeldateien in frischen Prozessen. Graph-/Teams-Antworten werden in diesen Tests simuliert. Kein Testtenant verbunden; deshalb keine vollständige Cloud-Abnahme und keine pauschale Produktionsfreigabe. Die statische Analyse enthält weiterhin Warnungen; der vollständige aktuelle Bericht liegt unter `validation/evidence/psscriptanalyzer.json`.
+Stand 8. September 2026: Syntaxprüfung für alle 528 Skripte und 25 Offline-Pester-Tests unter Windows PowerShell 5.1 und PowerShell 7.6.5 bestanden. Darunter sind Tests kopierter Einzeldateien in frischen Prozessen. Graph-/Teams-Antworten werden in diesen Tests simuliert. Kein Testtenant verbunden; deshalb keine vollständige Cloud-Abnahme und keine pauschale Produktionsfreigabe. Die statische Analyse enthält weiterhin Warnungen; der vollständige aktuelle Bericht liegt unter `validation/evidence/psscriptanalyzer.json`.
 
 ## Darstellung auf KaffeeundCode
 

@@ -4559,6 +4559,42 @@
       "evidence": []
     },
     {
+      "path": "17_AI_Automation/AI-GraphQuery-Wrapper.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "17_AI_Automation/AI-GraphQuery-Wrapper.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "17_AI_Automation/Auto-Tenant-Doc-Generator.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "17_AI_Automation/Auto-Tenant-Doc-Generator.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "17_AI_Automation/Intune-Discord-Alert-Hub.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "17_AI_Automation/Intune-Discord-Alert-Hub.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
       "path": "17_Intune_Workflows/351_Get-IntuneDeviceDiagnosticReport.ps1",
       "status": "unreviewed",
       "review_group": null,
@@ -4666,6 +4702,186 @@
       "execution_context": "tenant",
       "canonical_path": "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1",
       "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/APP-Consistency-Checker.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/APP-Consistency-Checker.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/BitLocker-Recovery-Audit.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/BitLocker-Recovery-Audit.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/CA-Policy-Auditor.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/CA-Policy-Auditor.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/Compliance-Drift-Detector.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/Compliance-Drift-Detector.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/Guest-User-Audit.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/Guest-User-Audit.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/Inactive-Admin-Hunter.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/Inactive-Admin-Hunter.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/PIM-Review-Automator.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/PIM-Review-Automator.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "18_Security_Hardening/Shadow-IT-Scanner.ps1",
+      "status": "unreviewed",
+      "review_group": "configuration",
+      "review_wave": 3,
+      "canonical_path": "18_Security_Hardening/Shadow-IT-Scanner.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "19_Lifecycle_Cleanup/Licensing-Optimizer.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 3,
+      "canonical_path": "19_Lifecycle_Cleanup/Licensing-Optimizer.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "19_Lifecycle_Cleanup/Stale-Group-Purge.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 3,
+      "canonical_path": "19_Lifecycle_Cleanup/Stale-Group-Purge.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1",
+      "status": "unreviewed",
+      "review_group": "devices",
+      "review_wave": 3,
+      "canonical_path": "19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "20_User_SelfService/Connectivity-Diagnostic-Tool.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "20_User_SelfService/Connectivity-Diagnostic-Tool.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "20_User_SelfService/Device-Health-Check.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "20_User_SelfService/Device-Health-Check.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "20_User_SelfService/SAML-Token-Refresh-Helper.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "20_User_SelfService/SAML-Token-Refresh-Helper.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
+      "evidence": []
+    },
+    {
+      "path": "20_User_SelfService/Self-Service-Enrollment-Fix.ps1",
+      "status": "unreviewed",
+      "review_group": "graph",
+      "review_wave": 3,
+      "canonical_path": "20_User_SelfService/Self-Service-Enrollment-Fix.ps1",
+      "is_new": true,
+      "notes": [
+        "Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend."
+      ],
       "evidence": []
     }
   ]

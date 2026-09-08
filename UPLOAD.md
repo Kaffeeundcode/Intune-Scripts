@@ -2,7 +2,7 @@
 
 ## Das kann hochgeladen werden
 
-Der vollständige Repository-Inhalt ist als dokumentierte Skriptbibliothek vorbereitet: 510 Skripte mit sichtbarem Prüfstatus, Hilfsquellen für die Pflege, Katalog, Tests und fünf App-Beschreibungen. Ungeprüfte Einträge bleiben ausdrücklich ungeprüft.
+Der vollständige Repository-Inhalt ist als dokumentierte Skriptbibliothek vorbereitet: 528 Skripte mit sichtbarem Prüfstatus, Hilfsquellen für die Pflege, Katalog, Tests und fünf App-Beschreibungen. Ungeprüfte Einträge bleiben ausdrücklich ungeprüft.
 
 1. Das Quellarchiv entpacken und seinen Inhalt in den vorhandenen lokalen Checkout von `Kaffeeundcode/Intune-Scripts` übernehmen. Bestehende Ordnerstruktur und Dateinamen erhalten. Den `.git`-Ordner des Checkouts behalten.
 2. Änderungen mit Git beziehungsweise GitHub Desktop als Commit hochladen. Das ZIP nicht als Ersatz für die einzelnen Repository-Dateien hochladen: Der Website-Import liest die Verzeichnisse und Skriptdateien.

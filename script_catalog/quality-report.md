@@ -1,7 +1,7 @@
 # Katalog- und Prüfbericht
 
-- Skripteinträge: 510
-- Unterschiedliche Implementierungen laut Manifest: 489
+- Skripteinträge: 528
+- Unterschiedliche Implementierungen laut Manifest: 507
 - Erste Auswahl: 100
 - Weitere Bestandskandidaten: 100
 - Geprüft: 0
