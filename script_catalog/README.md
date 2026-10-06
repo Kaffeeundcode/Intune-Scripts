@@ -1,10 +1,10 @@
 # PowerShell-Bibliothek
 
-537 Skripteinträge; 516 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
+597 Skripteinträge; 576 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
 
 ## Prüfstatus
 
-- Ungeprüft: 519
+- Ungeprüft: 579
 - Geprüft: 0
 - Beispiel: 9
 - Bekannte Fehler: 9
@@ -638,6 +638,10 @@
 - [Get-IntuneEpmElevationAudit](pages/get-intune-epm-elevation-audit.md) — Ungeprüft
 - [Get-IntuneAppControlDeploymentReport](pages/get-intune-app-control-deployment-report.md) — Ungeprüft
 - [Get-IntuneEnterpriseAppCatalogUpdateReport](pages/get-intune-enterprise-app-catalog-update-report.md) — Ungeprüft
+- [Get-IntuneDeviceHardwareSummary](pages/get-intune-device-hardware-summary.md) — Ungeprüft
+- [Get-IntuneDevicePrimaryUserAudit](pages/get-intune-device-primary-user-audit.md) — Ungeprüft
+- [Get-IntuneDeviceCategoryAudit](pages/get-intune-device-category-audit.md) — Ungeprüft
+- [Get-IntuneDeviceOwnershipAudit](pages/get-intune-device-ownership-audit.md) — Ungeprüft
 - [APP-Consistency-Checker](pages/app-consistency-checker.md) — Ungeprüft
 - [BitLocker-Recovery-Audit](pages/bit-locker-recovery-audit.md) — Ungeprüft
 - [CA-Policy-Auditor](pages/ca-policy-auditor.md) — Ungeprüft
@@ -646,10 +650,66 @@
 - [Inactive-Admin-Hunter](pages/inactive-admin-hunter.md) — Ungeprüft
 - [PIM-Review-Automator](pages/pim-review-automator.md) — Ungeprüft
 - [Shadow-IT-Scanner](pages/shadow-it-scanner.md) — Ungeprüft
+- [Get-IntuneWin32AppSupersedenceAudit](pages/get-intune-win32-app-supersedence-audit.md) — Ungeprüft
+- [Get-IntuneAppConfigurationPolicyExport](pages/get-intune-app-configuration-policy-export.md) — Ungeprüft
+- [Get-IntuneAppDeploymentAudit](pages/get-intune-app-deployment-audit.md) — Ungeprüft
+- [Get-IntuneAppDependencyReport](pages/get-intune-app-dependency-report.md) — Ungeprüft
 - [Licensing-Optimizer](pages/licensing-optimizer.md) — Ungeprüft
 - [Stale-Group-Purge](pages/stale-group-purge.md) — Ungeprüft
 - [Zombie-Device-Hunter](pages/zombie-device-hunter.md) — Ungeprüft
+- [Get-IntuneEmptyPolicyReport](pages/get-intune-empty-policy-report.md) — Ungeprüft
+- [Get-IntunePolicyAssignmentAudit](pages/get-intune-policy-assignment-audit.md) — Ungeprüft
+- [Get-IntuneSettingsCatalogCoverageReport](pages/get-intune-settings-catalog-coverage-report.md) — Ungeprüft
+- [Get-IntunePolicyFilterCoverageReport](pages/get-intune-policy-filter-coverage-report.md) — Ungeprüft
 - [Connectivity-Diagnostic-Tool](pages/connectivity-diagnostic-tool.md) — Ungeprüft
 - [Device-Health-Check](pages/device-health-check.md) — Ungeprüft
 - [SAML-Token-Refresh-Helper](pages/saml-token-refresh-helper.md) — Ungeprüft
 - [Self-Service-Enrollment-Fix](pages/self-service-enrollment-fix.md) — Ungeprüft
+- [Get-IntuneWindowsSecurityBaselineReport](pages/get-intune-windows-security-baseline-report.md) — Ungeprüft
+- [Get-IntuneAntivirusStatusReport](pages/get-intune-antivirus-status-report.md) — Ungeprüft
+- [Get-IntuneEndpointSecurityPolicyAudit](pages/get-intune-endpoint-security-policy-audit.md) — Ungeprüft
+- [Get-IntuneCustomComplianceTemplateGenerator](pages/get-intune-custom-compliance-template-generator.md) — Ungeprüft
+- [Get-IntuneLicenseUsageAudit](pages/get-intune-license-usage-audit.md) — Ungeprüft
+- [Get-IntuneScopeTagCoverageReport](pages/get-intune-scope-tag-coverage-report.md) — Ungeprüft
+- [Get-IntuneConnectorHealthReport](pages/get-intune-connector-health-report.md) — Ungeprüft
+- [Get-IntuneRbacRoleHygieneReport](pages/get-intune-rbac-role-hygiene-report.md) — Ungeprüft
+- [Get-IntuneUserDeviceAffinityReport](pages/get-intune-user-device-affinity-report.md) — Ungeprüft
+- [Get-IntuneUserGroupMembershipAudit](pages/get-intune-user-group-membership-audit.md) — Ungeprüft
+- [Get-IntuneDeviceUserAssignmentGapReport](pages/get-intune-device-user-assignment-gap-report.md) — Ungeprüft
+- [Get-IntuneGroupMembershipCoverageReport](pages/get-intune-group-membership-coverage-report.md) — Ungeprüft
+- [Get-IntuneNetworkProfileInventory](pages/get-intune-network-profile-inventory.md) — Ungeprüft
+- [Get-IntuneWiFiConfigurationAudit](pages/get-intune-wi-fi-configuration-audit.md) — Ungeprüft
+- [Get-IntuneVPNProfileAudit](pages/get-intune-vpnprofile-audit.md) — Ungeprüft
+- [Get-IntuneProxyConfigurationAudit](pages/get-intune-proxy-configuration-audit.md) — Ungeprüft
+- [Get-IntuneTenantOperationalHealthReport](pages/get-intune-tenant-operational-health-report.md) — Ungeprüft
+- [Get-IntuneServiceHealthSummary](pages/get-intune-service-health-summary.md) — Ungeprüft
+- [Get-IntuneAutomationReadinessReport](pages/get-intune-automation-readiness-report.md) — Ungeprüft
+- [Get-IntuneConfigurationChangeAudit](pages/get-intune-configuration-change-audit.md) — Ungeprüft
+- [Get-IntuneDeviceAgeDistributionReport](pages/get-intune-device-age-distribution-report.md) — Ungeprüft
+- [Get-IntuneRetirementCandidateReport](pages/get-intune-retirement-candidate-report.md) — Ungeprüft
+- [Get-IntuneLifecycleSummary](pages/get-intune-lifecycle-summary.md) — Ungeprüft
+- [Get-IntuneProvisioningStateReport](pages/get-intune-provisioning-state-report.md) — Ungeprüft
+- [Get-IntuneComplianceGapReport](pages/get-intune-compliance-gap-report.md) — Ungeprüft
+- [Get-IntuneSecurityBaselineGapReport](pages/get-intune-security-baseline-gap-report.md) — Ungeprüft
+- [Get-IntunePolicyAssignmentGapReport](pages/get-intune-policy-assignment-gap-report.md) — Ungeprüft
+- [Get-IntuneUpdateComplianceGapReport](pages/get-intune-update-compliance-gap-report.md) — Ungeprüft
+- [Get-IntuneDuplicateDeviceAudit](pages/get-intune-duplicate-device-audit.md) — Ungeprüft
+- [Get-IntuneDeviceFieldCompletenessAudit](pages/get-intune-device-field-completeness-audit.md) — Ungeprüft
+- [Get-IntunePolicyFieldCompletenessAudit](pages/get-intune-policy-field-completeness-audit.md) — Ungeprüft
+- [Get-IntuneAssignmentReferenceAudit](pages/get-intune-assignment-reference-audit.md) — Ungeprüft
+- [Get-IntuneAuditLogCoverageReport](pages/get-intune-audit-log-coverage-report.md) — Ungeprüft
+- [Get-IntuneTenantOperationAudit](pages/get-intune-tenant-operation-audit.md) — Ungeprüft
+- [Get-IntunePolicyDeploymentStatusReport](pages/get-intune-policy-deployment-status-report.md) — Ungeprüft
+- [Get-IntuneOperationalBaselineReport](pages/get-intune-operational-baseline-report.md) — Ungeprüft
+- [Get-IntuneDeviceAdoptionMetrics](pages/get-intune-device-adoption-metrics.md) — Ungeprüft
+- [Get-IntunePolicyAdoptionMetrics](pages/get-intune-policy-adoption-metrics.md) — Ungeprüft
+- [Get-IntuneAppAdoptionMetrics](pages/get-intune-app-adoption-metrics.md) — Ungeprüft
+- [Get-IntuneUpdateAdoptionMetrics](pages/get-intune-update-adoption-metrics.md) — Ungeprüft
+- [Get-IntuneFirewallComplianceGapReport](pages/get-intune-firewall-compliance-gap-report.md) — Ungeprüft
+- [Get-IntuneAntivirusComplianceGapReport](pages/get-intune-antivirus-compliance-gap-report.md) — Ungeprüft
+- [Get-IntuneBitLockerComplianceGapReport](pages/get-intune-bit-locker-compliance-gap-report.md) — Ungeprüft
+- [Get-IntuneSecurityTaskGapReport](pages/get-intune-security-task-gap-report.md) — Ungeprüft
+- [Get-IntuneAssignmentMatrixReport](pages/get-intune-assignment-matrix-report.md) — Ungeprüft
+- [Get-IntuneComplianceStatusMatrixReport](pages/get-intune-compliance-status-matrix-report.md) — Ungeprüft
+- [Get-IntuneDeploymentStatusMatrixReport](pages/get-intune-deployment-status-matrix-report.md) — Ungeprüft
+- [Get-IntunePolicyCoverageMatrixReport](pages/get-intune-policy-coverage-matrix-report.md) — Ungeprüft

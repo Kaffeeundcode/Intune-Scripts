@@ -6,11 +6,11 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {buildCatalog,parseHelp,sourceHash,verificationProblems} from '../script_catalog/tools/catalog.mjs';
 
-test('all 500 original paths and 37 added scripts remain individually visible; helpers excluded',()=>{
+test('all 500 original paths and 97 added scripts remain individually visible; helpers excluded',()=>{
   const {entries}=buildCatalog();
-  assert.equal(entries.length,537);
-  assert.equal(entries.filter(e=>e.is_new).length,37);
-  assert.equal(new Set(entries.map(e=>e.slug)).size,537);
+  assert.equal(entries.length,597);
+  assert.equal(entries.filter(e=>e.is_new).length,97);
+  assert.equal(new Set(entries.map(e=>e.slug)).size,597);
   assert.ok(entries.every(e=>!e.script_name.startsWith('000_')));
 });
 test('first batch is exactly 100 with requested category quotas and 30 wave-one items',()=>{

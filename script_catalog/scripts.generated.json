@@ -17607,6 +17607,146 @@
     "content_de": "# Get-IntuneEnterpriseAppCatalogUpdateReport\n\n**Prüfstatus: Ungeprüft**\n\nListet verfuegbare Updates fuer Intune Enterprise App Catalog Apps.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest CatalogAppsUpdateList und zeigt aktuelle sowie neu verfuegbare Versionen,\n    Updateberechtigung und Supersedence-Status. Das Skript fuehrt keine Aktualisierung\n    aus. Enterprise App Management muss im Tenant lizenziert sein.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1 -OutputPath './reports/eam-updates.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   },
   {
+    "slug": "get-intune-device-hardware-summary",
+    "script_name": "370_Get-IntuneDeviceHardwareSummary.ps1",
+    "source_path": "18_Device_Inventory/370_Get-IntuneDeviceHardwareSummary.ps1",
+    "category": "18_Device_Inventory",
+    "title_de": "Get-IntuneDeviceHardwareSummary",
+    "synopsis": "Erstellt eine vollstaendige Hardware-Inventur aller Intune-Geraete.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest alle verwalteten Geraete und aggregiert Hersteller, Modell, Betriebssystem,\n    Speichervariante und Sync-Status. Im Gegensatz zu 59_Get-DeviceModelSummary.ps1\n    entsteht eine exportierbare Inventur mit Geraetedetails, nicht nur eine\n    Modellzaehlung.",
+    "example": "./18_Device_Inventory/370_Get-IntuneDeviceHardwareSummary.ps1 -OutputPath './reports/hardware-inventory.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Device_Inventory/370_Get-IntuneDeviceHardwareSummary.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "a2b25ed0059d47b1961e375a75741ffe3de9909c94ba85382ab3b6f74adad5ad",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceHardwareSummary\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine vollstaendige Hardware-Inventur aller Intune-Geraete.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest alle verwalteten Geraete und aggregiert Hersteller, Modell, Betriebssystem,\n    Speichervariante und Sync-Status. Im Gegensatz zu 59_Get-DeviceModelSummary.ps1\n    entsteht eine exportierbare Inventur mit Geraetedetails, nicht nur eine\n    Modellzaehlung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./18_Device_Inventory/370_Get-IntuneDeviceHardwareSummary.ps1 -OutputPath './reports/hardware-inventory.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Device_Inventory/370_Get-IntuneDeviceHardwareSummary.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-primary-user-audit",
+    "script_name": "371_Get-IntuneDevicePrimaryUserAudit.ps1",
+    "source_path": "18_Device_Inventory/371_Get-IntuneDevicePrimaryUserAudit.ps1",
+    "category": "18_Device_Inventory",
+    "title_de": "Get-IntuneDevicePrimaryUserAudit",
+    "synopsis": "Prueft im gesamten Tenant, ob Geraete einen zulaessigen Primary User haben.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Windows- und macOS-Geraete ohne Primary User auf und prueft, ob der\n    gemeldete Benutzername vom Geraetedatenobjekt abweicht. Bestehende Skripte\n    lesen nur den Primary User eines einzelnen Geraetes; dieser Report analysiert\n    die Abdeckung mandantenweit.",
+    "example": "./18_Device_Inventory/371_Get-IntuneDevicePrimaryUserAudit.ps1 -OutputPath './reports/primary-user-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Device_Inventory/371_Get-IntuneDevicePrimaryUserAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "096cff6641979bb8b9630d43061e494eb4e47f499238a44ade6d31823e31035b",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDevicePrimaryUserAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft im gesamten Tenant, ob Geraete einen zulaessigen Primary User haben.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Windows- und macOS-Geraete ohne Primary User auf und prueft, ob der\n    gemeldete Benutzername vom Geraetedatenobjekt abweicht. Bestehende Skripte\n    lesen nur den Primary User eines einzelnen Geraetes; dieser Report analysiert\n    die Abdeckung mandantenweit.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./18_Device_Inventory/371_Get-IntuneDevicePrimaryUserAudit.ps1 -OutputPath './reports/primary-user-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Device_Inventory/371_Get-IntuneDevicePrimaryUserAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-category-audit",
+    "script_name": "372_Get-IntuneDeviceCategoryAudit.ps1",
+    "source_path": "18_Device_Inventory/372_Get-IntuneDeviceCategoryAudit.ps1",
+    "category": "18_Device_Inventory",
+    "title_de": "Get-IntuneDeviceCategoryAudit",
+    "synopsis": "Prueft Geradekategorien und listet Geraete ohne Kategorie.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht die im Tenant definierten Geradekategorien mit der Kategoriezuweisung\n    der Geraete. Geraete ohne Kategorie werden ausgegeben, damit Zielgruppenfilter\n    und Reporting-Logiken verbessert werden koennen.",
+    "example": "./18_Device_Inventory/372_Get-IntuneDeviceCategoryAudit.ps1 -OutputPath './reports/device-category-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Device_Inventory/372_Get-IntuneDeviceCategoryAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "f807b5b041a2daacc25a4e7cc3c280180f9d2ce28ef04a3054abe88e14db6056",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceCategoryAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Geradekategorien und listet Geraete ohne Kategorie.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht die im Tenant definierten Geradekategorien mit der Kategoriezuweisung\n    der Geraete. Geraete ohne Kategorie werden ausgegeben, damit Zielgruppenfilter\n    und Reporting-Logiken verbessert werden koennen.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./18_Device_Inventory/372_Get-IntuneDeviceCategoryAudit.ps1 -OutputPath './reports/device-category-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Device_Inventory/372_Get-IntuneDeviceCategoryAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-ownership-audit",
+    "script_name": "374_Get-IntuneDeviceOwnershipAudit.ps1",
+    "source_path": "18_Device_Inventory/374_Get-IntuneDeviceOwnershipAudit.ps1",
+    "category": "18_Device_Inventory",
+    "title_de": "Get-IntuneDeviceOwnershipAudit",
+    "synopsis": "Analysiert die Ownership-Kennzeichnung aller verwalteten Geraete.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Zaehlt Geraete nach managedDeviceOwnerType und listet personal-markierte Geraete,\n    damit Firmen- und BYOD-Grenzen kontrolliert werden koennen. Das Skript aendert\n    keine Zuordnung und bewertet nicht automatisch, ob eine Markierung falsch ist.",
+    "example": "./18_Device_Inventory/374_Get-IntuneDeviceOwnershipAudit.ps1 -OutputPath './reports/ownership-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": "devices",
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "18_Device_Inventory/374_Get-IntuneDeviceOwnershipAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "39bf1524cce419072efc6ac34e5adc25bef3cfe3b5b7db6f0857dfe5b7ae3464",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceOwnershipAudit\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert die Ownership-Kennzeichnung aller verwalteten Geraete.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Zaehlt Geraete nach managedDeviceOwnerType und listet personal-markierte Geraete,\n    damit Firmen- und BYOD-Grenzen kontrolliert werden koennen. Das Skript aendert\n    keine Zuordnung und bewertet nicht automatisch, ob eine Markierung falsch ist.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./18_Device_Inventory/374_Get-IntuneDeviceOwnershipAudit.ps1 -OutputPath './reports/ownership-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Device_Inventory/374_Get-IntuneDeviceOwnershipAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
     "slug": "app-consistency-checker",
     "script_name": "APP-Consistency-Checker.ps1",
     "source_path": "18_Security_Hardening/APP-Consistency-Checker.ps1",
@@ -17895,6 +18035,146 @@
     "content_de": "# Shadow-IT-Scanner\n\n**Prüfstatus: Ungeprüft**\n\nShadow-IT-Scanner - Identifies unmanaged Enterprise App registrations.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Scans Entra ID for App Registrations that were created by users\n    without administrative oversight or lacking a proper owner.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './18_Security_Hardening/Shadow-IT-Scanner.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/18_Security_Hardening/Shadow-IT-Scanner.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   },
   {
+    "slug": "get-intune-win32-app-supersedence-audit",
+    "script_name": "375_Get-IntuneWin32AppSupersedenceAudit.ps1",
+    "source_path": "19_App_Ecosystem/375_Get-IntuneWin32AppSupersedenceAudit.ps1",
+    "category": "19_App_Ecosystem",
+    "title_de": "Get-IntuneWin32AppSupersedenceAudit",
+    "synopsis": "Prueft Supersedence-Beziehungen von Intune-Apps.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit supersedingAppId oder supersededAppId und loest die beteiligten\n    App-Namen auf. Das Skript bewertet nicht, ob eine Supersedence fachlich gewuenscht ist.",
+    "example": "./19_App_Ecosystem/375_Get-IntuneWin32AppSupersedenceAudit.ps1 -OutputPath './reports/app-supersedence.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_App_Ecosystem/375_Get-IntuneWin32AppSupersedenceAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "44fed20d7f951350c73a26a03729e764a059726a8ff053e6d78f608958f7f79a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneWin32AppSupersedenceAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Supersedence-Beziehungen von Intune-Apps.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit supersedingAppId oder supersededAppId und loest die beteiligten\n    App-Namen auf. Das Skript bewertet nicht, ob eine Supersedence fachlich gewuenscht ist.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./19_App_Ecosystem/375_Get-IntuneWin32AppSupersedenceAudit.ps1 -OutputPath './reports/app-supersedence.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_App_Ecosystem/375_Get-IntuneWin32AppSupersedenceAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-app-configuration-policy-export",
+    "script_name": "376_Get-IntuneAppConfigurationPolicyExport.ps1",
+    "source_path": "19_App_Ecosystem/376_Get-IntuneAppConfigurationPolicyExport.ps1",
+    "category": "19_App_Ecosystem",
+    "title_de": "Get-IntuneAppConfigurationPolicyExport",
+    "synopsis": "Exportiert Intune-App-Konfigurationsrichtlinien als JSON.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest alle targetedManagedAppConfigurations und exportiert die vollstaendige\n    JSON-Struktur. Diese Ausgabe kann als Migration- oder Backup-Quelle dienen.",
+    "example": "./19_App_Ecosystem/376_Get-IntuneAppConfigurationPolicyExport.ps1 -OutputPath './reports/app-configuration-export.json'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_App_Ecosystem/376_Get-IntuneAppConfigurationPolicyExport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "80a4d7ac23366783cd2ec051fe110b152bace35b3b29c1c75a1a815d3cfb18d3",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAppConfigurationPolicyExport\n\n**Prüfstatus: Ungeprüft**\n\nExportiert Intune-App-Konfigurationsrichtlinien als JSON.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest alle targetedManagedAppConfigurations und exportiert die vollstaendige\n    JSON-Struktur. Diese Ausgabe kann als Migration- oder Backup-Quelle dienen.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./19_App_Ecosystem/376_Get-IntuneAppConfigurationPolicyExport.ps1 -OutputPath './reports/app-configuration-export.json'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_App_Ecosystem/376_Get-IntuneAppConfigurationPolicyExport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-app-deployment-audit",
+    "script_name": "377_Get-IntuneAppDeploymentAudit.ps1",
+    "source_path": "19_App_Ecosystem/377_Get-IntuneAppDeploymentAudit.ps1",
+    "category": "19_App_Ecosystem",
+    "title_de": "Get-IntuneAppDeploymentAudit",
+    "synopsis": "Analysiert Zuweisungen und Verteilung von Intune-Apps.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit keiner, breiter oder gruppenbasierter Zuweisung. Das Skript liest\n    mobileApps mit expand=assignments und bewertet die Zuweisungsstruktur.",
+    "example": "./19_App_Ecosystem/377_Get-IntuneAppDeploymentAudit.ps1 -OutputPath './reports/app-deployment-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_App_Ecosystem/377_Get-IntuneAppDeploymentAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "3f7918fa623b290712c2438d0c393e7304f91cd7c01e2b08fdac57d63878eef7",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAppDeploymentAudit\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Zuweisungen und Verteilung von Intune-Apps.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit keiner, breiter oder gruppenbasierter Zuweisung. Das Skript liest\n    mobileApps mit expand=assignments und bewertet die Zuweisungsstruktur.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./19_App_Ecosystem/377_Get-IntuneAppDeploymentAudit.ps1 -OutputPath './reports/app-deployment-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_App_Ecosystem/377_Get-IntuneAppDeploymentAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-app-dependency-report",
+    "script_name": "378_Get-IntuneAppDependencyReport.ps1",
+    "source_path": "19_App_Ecosystem/378_Get-IntuneAppDependencyReport.ps1",
+    "category": "19_App_Ecosystem",
+    "title_de": "Get-IntuneAppDependencyReport",
+    "synopsis": "Berichtet Abhaengigkeiten zwischen Intune-Apps.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit dependentAppCount oder supersededAppCount. Diese Werte geben einen\n    Hinweis auf verschachtelte Verteilungslogik und Supersedence-Ketten.",
+    "example": "./19_App_Ecosystem/378_Get-IntuneAppDependencyReport.ps1 -OutputPath './reports/app-dependencies.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "19_App_Ecosystem/378_Get-IntuneAppDependencyReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "4f58091d772152efeaf98262b60d2e725b23a31033a3c980659716b10f88feb5",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAppDependencyReport\n\n**Prüfstatus: Ungeprüft**\n\nBerichtet Abhaengigkeiten zwischen Intune-Apps.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit dependentAppCount oder supersededAppCount. Diese Werte geben einen\n    Hinweis auf verschachtelte Verteilungslogik und Supersedence-Ketten.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./19_App_Ecosystem/378_Get-IntuneAppDependencyReport.ps1 -OutputPath './reports/app-dependencies.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_App_Ecosystem/378_Get-IntuneAppDependencyReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
     "slug": "licensing-optimizer",
     "script_name": "Licensing-Optimizer.ps1",
     "source_path": "19_Lifecycle_Cleanup/Licensing-Optimizer.ps1",
@@ -18001,6 +18281,150 @@
     "dependencies": [],
     "risk_level": "elevated",
     "content_de": "# Zombie-Device-Hunter\n\n**Prüfstatus: Ungeprüft**\n\nZombie-Device-Hunter - Identifies and manages stale devices in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Implements a 3-stage lifecycle process for inactive devices:\n    Stage 1 (Detect): Find devices not synced for X days.\n    Stage 2 (Warn): Mark for communication/notification.\n    Stage laSt (Purge): Identify candidates for deletion.\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/19_Lifecycle_Cleanup/Zombie-Device-Hunter.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-empty-policy-report",
+    "script_name": "379_Get-IntuneEmptyPolicyReport.ps1",
+    "source_path": "20_Policy_Hygiene/379_Get-IntuneEmptyPolicyReport.ps1",
+    "category": "20_Policy_Hygiene",
+    "title_de": "Get-IntuneEmptyPolicyReport",
+    "synopsis": "Findet Intune-Richtlinien ohne Zuweisung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraetekonfigurationen, Compliance-Richtlinien, Group-Policy-Objekte und\n    Settings-Catalog-Richtlinien auf assignments. Nicht zugewiesene Policies werden\n    als Auffaellig markiert.",
+    "example": "./20_Policy_Hygiene/379_Get-IntuneEmptyPolicyReport.ps1 -OutputPath './reports/empty-policies.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_Policy_Hygiene/379_Get-IntuneEmptyPolicyReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "f7556af73b5c51d253a79de4561bd8fad8fe4587d1bde1e02e5eedb469768250",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneEmptyPolicyReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Intune-Richtlinien ohne Zuweisung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraetekonfigurationen, Compliance-Richtlinien, Group-Policy-Objekte und\n    Settings-Catalog-Richtlinien auf assignments. Nicht zugewiesene Policies werden\n    als Auffaellig markiert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./20_Policy_Hygiene/379_Get-IntuneEmptyPolicyReport.ps1 -OutputPath './reports/empty-policies.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_Policy_Hygiene/379_Get-IntuneEmptyPolicyReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-assignment-audit",
+    "script_name": "380_Get-IntunePolicyAssignmentAudit.ps1",
+    "source_path": "20_Policy_Hygiene/380_Get-IntunePolicyAssignmentAudit.ps1",
+    "category": "20_Policy_Hygiene",
+    "title_de": "Get-IntunePolicyAssignmentAudit",
+    "synopsis": "Analysiert Zielgruppen und Zuweisungsart von Intune-Richtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete-, Compliance-, Group-Policy- und Settings-Catalog-Richtlinien mit\n    Zuweisungsanzahl, Zielgruppen und Filter-Verwendung.",
+    "example": "./20_Policy_Hygiene/380_Get-IntunePolicyAssignmentAudit.ps1 -OutputPath './reports/policy-assignment-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_Policy_Hygiene/380_Get-IntunePolicyAssignmentAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "54373c445729926bd2b63d36afd42ec887125e5c181c12244fc35a9e2bdba686",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyAssignmentAudit\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Zielgruppen und Zuweisungsart von Intune-Richtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete-, Compliance-, Group-Policy- und Settings-Catalog-Richtlinien mit\n    Zuweisungsanzahl, Zielgruppen und Filter-Verwendung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./20_Policy_Hygiene/380_Get-IntunePolicyAssignmentAudit.ps1 -OutputPath './reports/policy-assignment-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_Policy_Hygiene/380_Get-IntunePolicyAssignmentAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-settings-catalog-coverage-report",
+    "script_name": "381_Get-IntuneSettingsCatalogCoverageReport.ps1",
+    "source_path": "20_Policy_Hygiene/381_Get-IntuneSettingsCatalogCoverageReport.ps1",
+    "category": "20_Policy_Hygiene",
+    "title_de": "Get-IntuneSettingsCatalogCoverageReport",
+    "synopsis": "Vergleicht Settings-Catalog- und Group-Policy-Abdeckung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Konfigurationsfamilien mit Anzahl, Zuweisungsanzahl und Filterverwendung.\n    Ziel ist eine schnellen Uebersicht ueber ADMX- und Settings-Catalog-Nutzung.",
+    "example": "./20_Policy_Hygiene/381_Get-IntuneSettingsCatalogCoverageReport.ps1 -OutputPath './reports/settings-catalog-coverage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_Policy_Hygiene/381_Get-IntuneSettingsCatalogCoverageReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "56b64ae9fc79f4bcb0a82b3585d07b360ebc2da35588b556921fe01226363569",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneSettingsCatalogCoverageReport\n\n**Prüfstatus: Ungeprüft**\n\nVergleicht Settings-Catalog- und Group-Policy-Abdeckung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Konfigurationsfamilien mit Anzahl, Zuweisungsanzahl und Filterverwendung.\n    Ziel ist eine schnellen Uebersicht ueber ADMX- und Settings-Catalog-Nutzung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./20_Policy_Hygiene/381_Get-IntuneSettingsCatalogCoverageReport.ps1 -OutputPath './reports/settings-catalog-coverage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_Policy_Hygiene/381_Get-IntuneSettingsCatalogCoverageReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-filter-coverage-report",
+    "script_name": "382_Get-IntunePolicyFilterCoverageReport.ps1",
+    "source_path": "20_Policy_Hygiene/382_Get-IntunePolicyFilterCoverageReport.ps1",
+    "category": "20_Policy_Hygiene",
+    "title_de": "Get-IntunePolicyFilterCoverageReport",
+    "synopsis": "Prueft Intune-Zuweisungsfilter und ihre Verwendung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Zuweisungsfilter und sucht deren Verwendung in Richtlinienzuweisungen.\n    Filter ohne Treffer werden als Auffaellig markiert.",
+    "example": "./20_Policy_Hygiene/382_Get-IntunePolicyFilterCoverageReport.ps1 -OutputPath './reports/filter-coverage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "20_Policy_Hygiene/382_Get-IntunePolicyFilterCoverageReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "f340ff354c8035e1fe245dbafe692f192a32130b58a3aa9d3473c59a4a55eab5",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyFilterCoverageReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Intune-Zuweisungsfilter und ihre Verwendung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Zuweisungsfilter und sucht deren Verwendung in Richtlinienzuweisungen.\n    Filter ohne Treffer werden als Auffaellig markiert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./20_Policy_Hygiene/382_Get-IntunePolicyFilterCoverageReport.ps1 -OutputPath './reports/filter-coverage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_Policy_Hygiene/382_Get-IntunePolicyFilterCoverageReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   },
   {
     "slug": "connectivity-diagnostic-tool",
@@ -18141,5 +18565,1707 @@
     "dependencies": [],
     "risk_level": "normal",
     "content_de": "# Self-Service-Enrollment-Fix\n\n**Prüfstatus: Ungeprüft**\n\nSelf-Service-Enrollment-Fix - Diagnostics for Autopilot/Enrollment failures.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n    <!-- library-status:end -->\n\n    Checks for common enrollment blockers:\n    - Duplicate device records\n    - Pending Autopilot registrations\n    - Local policy conflicts\n\n## Prüfung\n\n- Aus dem bestehenden GitHub-Bestand übernommen; fachliche und Tenant-Abnahme ausstehend.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\nNoch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './20_User_SelfService/Self-Service-Enrollment-Fix.ps1' -Full` lesen.\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/20_User_SelfService/Self-Service-Enrollment-Fix.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-windows-security-baseline-report",
+    "script_name": "383_Get-IntuneWindowsSecurityBaselineReport.ps1",
+    "source_path": "21_Security_Deep_Dive/383_Get-IntuneWindowsSecurityBaselineReport.ps1",
+    "category": "21_Security_Deep_Dive",
+    "title_de": "Get-IntuneWindowsSecurityBaselineReport",
+    "synopsis": "Listet Windows-Sicherheitsbaseline-Richtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Geraetekonfigurationen nach Sicherheitsbaseline-Typen und listet Name,\n    Version und Zuweisungsanzahl.",
+    "example": "./21_Security_Deep_Dive/383_Get-IntuneWindowsSecurityBaselineReport.ps1 -OutputPath './reports/security-baselines.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "21_Security_Deep_Dive/383_Get-IntuneWindowsSecurityBaselineReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "94cd50972b1f755195cce9f2c8f4261d54eec39af38f7b24f35c577399c3e6c1",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneWindowsSecurityBaselineReport\n\n**Prüfstatus: Ungeprüft**\n\nListet Windows-Sicherheitsbaseline-Richtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Geraetekonfigurationen nach Sicherheitsbaseline-Typen und listet Name,\n    Version und Zuweisungsanzahl.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./21_Security_Deep_Dive/383_Get-IntuneWindowsSecurityBaselineReport.ps1 -OutputPath './reports/security-baselines.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/21_Security_Deep_Dive/383_Get-IntuneWindowsSecurityBaselineReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-antivirus-status-report",
+    "script_name": "384_Get-IntuneAntivirusStatusReport.ps1",
+    "source_path": "21_Security_Deep_Dive/384_Get-IntuneAntivirusStatusReport.ps1",
+    "category": "21_Security_Deep_Dive",
+    "title_de": "Get-IntuneAntivirusStatusReport",
+    "synopsis": "Exportiert ungesunde Defender-Agenten aus Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Nutzt den offiziellen Intune-Exportreport UnhealthyDefenderAgents und markiert\n    alle Zeilen als auffaellig. Das Skript startet keine lokale Defender-Aktion.",
+    "example": "./21_Security_Deep_Dive/384_Get-IntuneAntivirusStatusReport.ps1 -OutputPath './reports/unhealthy-defender-agents.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "21_Security_Deep_Dive/384_Get-IntuneAntivirusStatusReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "bc0675d5738f9c5a3b2cca665259f8b7212627078ee8106b211b4b1014fe8006",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAntivirusStatusReport\n\n**Prüfstatus: Ungeprüft**\n\nExportiert ungesunde Defender-Agenten aus Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Nutzt den offiziellen Intune-Exportreport UnhealthyDefenderAgents und markiert\n    alle Zeilen als auffaellig. Das Skript startet keine lokale Defender-Aktion.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./21_Security_Deep_Dive/384_Get-IntuneAntivirusStatusReport.ps1 -OutputPath './reports/unhealthy-defender-agents.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/21_Security_Deep_Dive/384_Get-IntuneAntivirusStatusReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-endpoint-security-policy-audit",
+    "script_name": "385_Get-IntuneEndpointSecurityPolicyAudit.ps1",
+    "source_path": "21_Security_Deep_Dive/385_Get-IntuneEndpointSecurityPolicyAudit.ps1",
+    "category": "21_Security_Deep_Dive",
+    "title_de": "Get-IntuneEndpointSecurityPolicyAudit",
+    "synopsis": "Analysiert Endpoint-Security-Richtlinien in Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraetekonfigurationen und ConfigurationPolicies, deren Typ oder\n    Vorlagenreferenz auf Endpoint Security hindeutet, mit Zuweisungsanzahl.",
+    "example": "./21_Security_Deep_Dive/385_Get-IntuneEndpointSecurityPolicyAudit.ps1 -OutputPath './reports/endpoint-security-policies.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "21_Security_Deep_Dive/385_Get-IntuneEndpointSecurityPolicyAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "89af916f0570b29c3735dc341d43b10011552aac7606f4698faa34606abec7b2",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneEndpointSecurityPolicyAudit\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Endpoint-Security-Richtlinien in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraetekonfigurationen und ConfigurationPolicies, deren Typ oder\n    Vorlagenreferenz auf Endpoint Security hindeutet, mit Zuweisungsanzahl.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./21_Security_Deep_Dive/385_Get-IntuneEndpointSecurityPolicyAudit.ps1 -OutputPath './reports/endpoint-security-policies.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/21_Security_Deep_Dive/385_Get-IntuneEndpointSecurityPolicyAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-custom-compliance-template-generator",
+    "script_name": "386_Get-IntuneCustomComplianceTemplateGenerator.ps1",
+    "source_path": "21_Security_Deep_Dive/386_Get-IntuneCustomComplianceTemplateGenerator.ps1",
+    "category": "21_Security_Deep_Dive",
+    "title_de": "Get-IntuneCustomComplianceTemplateGenerator",
+    "synopsis": "Erzeugt eine Intune-Custom-Compliance-Vorlage.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Erstellt aus SettingName, ExpectedValue und Operator eine JSON-Vorlage fuer\n    Intune Custom Compliance. Der RemediationScriptPath ist optional und wird nur\n    als Text referenziert.",
+    "example": "./21_Security_Deep_Dive/386_Get-IntuneCustomComplianceTemplateGenerator.ps1 -SettingName 'FirewallEnabled' -ExpectedValue 'true' -Operator 'isEqualTo' -OutputPath './compliance-rule.json'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "21_Security_Deep_Dive/386_Get-IntuneCustomComplianceTemplateGenerator.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "ac8ebf5c9c6deb6a95a0c6f8ff39514f4c1c583520611ddb4bd12fbacf1dc00c",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneCustomComplianceTemplateGenerator\n\n**Prüfstatus: Ungeprüft**\n\nErzeugt eine Intune-Custom-Compliance-Vorlage.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Erstellt aus SettingName, ExpectedValue und Operator eine JSON-Vorlage fuer\n    Intune Custom Compliance. Der RemediationScriptPath ist optional und wird nur\n    als Text referenziert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: Nicht angegeben; vor Tenant-Nutzung prüfen.\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./21_Security_Deep_Dive/386_Get-IntuneCustomComplianceTemplateGenerator.ps1 -SettingName 'FirewallEnabled' -ExpectedValue 'true' -Operator 'isEqualTo' -OutputPath './compliance-rule.json'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/21_Security_Deep_Dive/386_Get-IntuneCustomComplianceTemplateGenerator.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-license-usage-audit",
+    "script_name": "387_Get-IntuneLicenseUsageAudit.ps1",
+    "source_path": "22_Governance/387_Get-IntuneLicenseUsageAudit.ps1",
+    "category": "22_Governance",
+    "title_de": "Get-IntuneLicenseUsageAudit",
+    "synopsis": "Prueft Intune-Lizenzen gegen tatsaechliche Geraetenutzung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Benutzer mit Intune-Lizenzen, die keinem verwalteten Geraet zugeordnet sind.\n    Das Skript aendert keine Lizenz und bewertet keine Berechtigung.",
+    "example": "./22_Governance/387_Get-IntuneLicenseUsageAudit.ps1 -OutputPath './reports/license-usage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "22_Governance/387_Get-IntuneLicenseUsageAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "bbfb33eaff7c8a9a4a61a23e7810b1beae1a2570c9fd83011e6b15c7ecde501f",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "User.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneLicenseUsageAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Intune-Lizenzen gegen tatsaechliche Geraetenutzung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Benutzer mit Intune-Lizenzen, die keinem verwalteten Geraet zugeordnet sind.\n    Das Skript aendert keine Lizenz und bewertet keine Berechtigung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, User.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./22_Governance/387_Get-IntuneLicenseUsageAudit.ps1 -OutputPath './reports/license-usage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/22_Governance/387_Get-IntuneLicenseUsageAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-scope-tag-coverage-report",
+    "script_name": "388_Get-IntuneScopeTagCoverageReport.ps1",
+    "source_path": "22_Governance/388_Get-IntuneScopeTagCoverageReport.ps1",
+    "category": "22_Governance",
+    "title_de": "Get-IntuneScopeTagCoverageReport",
+    "synopsis": "Prueft die tatsaechliche Verwendung von Intune-Scope-Tags.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Scope-Tags und zaehlt ihre Verwendung in Konfigurationen, Compliance-\n    Richtlinien und Scripts. Tags ohne Treffer werden markiert.",
+    "example": "./22_Governance/388_Get-IntuneScopeTagCoverageReport.ps1 -OutputPath './reports/scope-tag-coverage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "22_Governance/388_Get-IntuneScopeTagCoverageReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "e751d8f7915f74be761aa50861e9200784d6d391ffd3b75bf1976c312175ac1a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementRBAC.Read.All",
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneScopeTagCoverageReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft die tatsaechliche Verwendung von Intune-Scope-Tags.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Scope-Tags und zaehlt ihre Verwendung in Konfigurationen, Compliance-\n    Richtlinien und Scripts. Tags ohne Treffer werden markiert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementRBAC.Read.All, DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./22_Governance/388_Get-IntuneScopeTagCoverageReport.ps1 -OutputPath './reports/scope-tag-coverage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/22_Governance/388_Get-IntuneScopeTagCoverageReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-connector-health-report",
+    "script_name": "389_Get-IntuneConnectorHealthReport.ps1",
+    "source_path": "22_Governance/389_Get-IntuneConnectorHealthReport.ps1",
+    "category": "22_Governance",
+    "title_de": "Get-IntuneConnectorHealthReport",
+    "synopsis": "Prueft Apple-, Android- und Intune-Connector-Zustaende.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Kombiniert APNs-Zertifikat, VPP-Tokens, ADE-Tokens und Android-Bindung in einem\n    Report. Ablaufdatum und Sync-Fehler werden separat ausgewertet.",
+    "example": "./22_Governance/389_Get-IntuneConnectorHealthReport.ps1 -OutputPath './reports/connector-health.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "22_Governance/389_Get-IntuneConnectorHealthReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "c898f645ef86b4e6d8da77a31fdbc9dfcb22766385cec440b894d2838b2a4660",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementServiceConfig.Read.All",
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneConnectorHealthReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Apple-, Android- und Intune-Connector-Zustaende.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Kombiniert APNs-Zertifikat, VPP-Tokens, ADE-Tokens und Android-Bindung in einem\n    Report. Ablaufdatum und Sync-Fehler werden separat ausgewertet.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All, DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./22_Governance/389_Get-IntuneConnectorHealthReport.ps1 -OutputPath './reports/connector-health.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/22_Governance/389_Get-IntuneConnectorHealthReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-rbac-role-hygiene-report",
+    "script_name": "390_Get-IntuneRbacRoleHygieneReport.ps1",
+    "source_path": "22_Governance/390_Get-IntuneRbacRoleHygieneReport.ps1",
+    "category": "22_Governance",
+    "title_de": "Get-IntuneRbacRoleHygieneReport",
+    "synopsis": "Prueft breite und ungewoehnliche Intune-RBAC-Zuweisungen.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Rollenzuweisungen mit Scope-Tags, Zielgruppen und Rollenname. Besonders\n    Zuweisungen mit ScopeType AllDevices, AllLicensedUsers oder Default-Tag werden\n    hervorgehoben.",
+    "example": "./22_Governance/390_Get-IntuneRbacRoleHygieneReport.ps1 -OutputPath './reports/rbac-hygiene.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "22_Governance/390_Get-IntuneRbacRoleHygieneReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "bd956a2530d11d0cf0adda38f08ba522d49fa8708547f808a3f9b4afc52831d5",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementRBAC.Read.All",
+      "Group.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneRbacRoleHygieneReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft breite und ungewoehnliche Intune-RBAC-Zuweisungen.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Rollenzuweisungen mit Scope-Tags, Zielgruppen und Rollenname. Besonders\n    Zuweisungen mit ScopeType AllDevices, AllLicensedUsers oder Default-Tag werden\n    hervorgehoben.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementRBAC.Read.All, Group.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./22_Governance/390_Get-IntuneRbacRoleHygieneReport.ps1 -OutputPath './reports/rbac-hygiene.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/22_Governance/390_Get-IntuneRbacRoleHygieneReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-user-device-affinity-report",
+    "script_name": "391_Get-IntuneUserDeviceAffinityReport.ps1",
+    "source_path": "23_User_Device_Mapping/391_Get-IntuneUserDeviceAffinityReport.ps1",
+    "category": "23_User_Device_Mapping",
+    "title_de": "Get-IntuneUserDeviceAffinityReport",
+    "synopsis": "Erstellt eine User-Geraete-Affinitaet pro Tenant.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Ordnet Geraete ihrem gemeldeten Benutzer zu und bewertet die Affinitaet. Geraete ohne\n    eindeutige Zuordnung werden markiert. Das Skript aendert keine Affinitaet.",
+    "example": "./23_User_Device_Mapping/391_Get-IntuneUserDeviceAffinityReport.ps1 -OutputPath './reports/user-device-affinity.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "23_User_Device_Mapping/391_Get-IntuneUserDeviceAffinityReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "3c5d0a728a4ca12e9778b7cf6bae8e65f245517bf7ad8e160fa6bace2b7edbd7",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "User.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneUserDeviceAffinityReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine User-Geraete-Affinitaet pro Tenant.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Ordnet Geraete ihrem gemeldeten Benutzer zu und bewertet die Affinitaet. Geraete ohne\n    eindeutige Zuordnung werden markiert. Das Skript aendert keine Affinitaet.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, User.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./23_User_Device_Mapping/391_Get-IntuneUserDeviceAffinityReport.ps1 -OutputPath './reports/user-device-affinity.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/23_User_Device_Mapping/391_Get-IntuneUserDeviceAffinityReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-user-group-membership-audit",
+    "script_name": "392_Get-IntuneUserGroupMembershipAudit.ps1",
+    "source_path": "23_User_Device_Mapping/392_Get-IntuneUserGroupMembershipAudit.ps1",
+    "category": "23_User_Device_Mapping",
+    "title_de": "Get-IntuneUserGroupMembershipAudit",
+    "synopsis": "Prueft Benutzer-Geräte- und Gruppenzugehoerigkeit.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Benutzer mit zugeordneten Geraeten und deren Gruppenzugehoerigkeit. Ziel ist\n    eine schnelle Kontrolle von Zielgruppenlogik und Geraetebindung.",
+    "example": "./23_User_Device_Mapping/392_Get-IntuneUserGroupMembershipAudit.ps1 -OutputPath './reports/user-group-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "23_User_Device_Mapping/392_Get-IntuneUserGroupMembershipAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "066588675000b1c29c18df1ee27fdcc3ab6f8655493d0d3233d09d65ae0791b4",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "Group.Read.All",
+      "User.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneUserGroupMembershipAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Benutzer-Geräte- und Gruppenzugehoerigkeit.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Benutzer mit zugeordneten Geraeten und deren Gruppenzugehoerigkeit. Ziel ist\n    eine schnelle Kontrolle von Zielgruppenlogik und Geraetebindung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, Group.Read.All, User.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./23_User_Device_Mapping/392_Get-IntuneUserGroupMembershipAudit.ps1 -OutputPath './reports/user-group-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/23_User_Device_Mapping/392_Get-IntuneUserGroupMembershipAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-user-assignment-gap-report",
+    "script_name": "393_Get-IntuneDeviceUserAssignmentGapReport.ps1",
+    "source_path": "23_User_Device_Mapping/393_Get-IntuneDeviceUserAssignmentGapReport.ps1",
+    "category": "23_User_Device_Mapping",
+    "title_de": "Get-IntuneDeviceUserAssignmentGapReport",
+    "synopsis": "Findet Geraete ohne eindeutige Benutzerzuordnung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete ohne Primary User oder mit mehreren moeglichen Zuordnungen. Das Skript\n    dient der Qualitaetssicherung fuer Support, Self-Service und Reporting.",
+    "example": "./23_User_Device_Mapping/393_Get-IntuneDeviceUserAssignmentGapReport.ps1 -OutputPath './reports/device-user-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "23_User_Device_Mapping/393_Get-IntuneDeviceUserAssignmentGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "b1b37c95b7e1670c952fbfb931a8da38e48991465f20f1eb2b3ec948bd41c191",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceUserAssignmentGapReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Geraete ohne eindeutige Benutzerzuordnung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete ohne Primary User oder mit mehreren moeglichen Zuordnungen. Das Skript\n    dient der Qualitaetssicherung fuer Support, Self-Service und Reporting.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./23_User_Device_Mapping/393_Get-IntuneDeviceUserAssignmentGapReport.ps1 -OutputPath './reports/device-user-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/23_User_Device_Mapping/393_Get-IntuneDeviceUserAssignmentGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-group-membership-coverage-report",
+    "script_name": "394_Get-IntuneGroupMembershipCoverageReport.ps1",
+    "source_path": "23_User_Device_Mapping/394_Get-IntuneGroupMembershipCoverageReport.ps1",
+    "category": "23_User_Device_Mapping",
+    "title_de": "Get-IntuneGroupMembershipCoverageReport",
+    "synopsis": "Analysiert Gruppenabdeckung der verwalteten Geraete.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Gruppen und prueft, ob sie Geraete, Benutzer oder beide enthalten. Gruppen ohne\n    Mitglieder werden markiert, damit Zielgruppenlogik bereinigt werden kann.",
+    "example": "./23_User_Device_Mapping/394_Get-IntuneGroupMembershipCoverageReport.ps1 -OutputPath './reports/group-coverage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "23_User_Device_Mapping/394_Get-IntuneGroupMembershipCoverageReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "09e34098f20ddd1b7a420aa4bee14d006486c0a14cd95724fffcb77fda977cee",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "Group.Read.All",
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneGroupMembershipCoverageReport\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Gruppenabdeckung der verwalteten Geraete.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Gruppen und prueft, ob sie Geraete, Benutzer oder beide enthalten. Gruppen ohne\n    Mitglieder werden markiert, damit Zielgruppenlogik bereinigt werden kann.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: Group.Read.All, DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./23_User_Device_Mapping/394_Get-IntuneGroupMembershipCoverageReport.ps1 -OutputPath './reports/group-coverage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/23_User_Device_Mapping/394_Get-IntuneGroupMembershipCoverageReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-network-profile-inventory",
+    "script_name": "395_Get-IntuneNetworkProfileInventory.ps1",
+    "source_path": "24_Network_Readiness/395_Get-IntuneNetworkProfileInventory.ps1",
+    "category": "24_Network_Readiness",
+    "title_de": "Get-IntuneNetworkProfileInventory",
+    "synopsis": "Listet netzwerkbezogene Intune-Richtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Konfigurationsobjekte nach Wi-Fi-, VPN-, Proxy- oder Netzwerkbezug und listet\n    Name, Typ und Zuweisungsanzahl.",
+    "example": "./24_Network_Readiness/395_Get-IntuneNetworkProfileInventory.ps1 -OutputPath './reports/network-profiles.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "24_Network_Readiness/395_Get-IntuneNetworkProfileInventory.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "01b9f26c017aaf274c11edf7b15fc47af382b0ef473f4cb8512b4eb293eef287",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneNetworkProfileInventory\n\n**Prüfstatus: Ungeprüft**\n\nListet netzwerkbezogene Intune-Richtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Konfigurationsobjekte nach Wi-Fi-, VPN-, Proxy- oder Netzwerkbezug und listet\n    Name, Typ und Zuweisungsanzahl.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./24_Network_Readiness/395_Get-IntuneNetworkProfileInventory.ps1 -OutputPath './reports/network-profiles.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/24_Network_Readiness/395_Get-IntuneNetworkProfileInventory.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-wi-fi-configuration-audit",
+    "script_name": "396_Get-IntuneWiFiConfigurationAudit.ps1",
+    "source_path": "24_Network_Readiness/396_Get-IntuneWiFiConfigurationAudit.ps1",
+    "category": "24_Network_Readiness",
+    "title_de": "Get-IntuneWiFiConfigurationAudit",
+    "synopsis": "Prueft Wi-Fi-Konfigurationsobjekte in Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Wi-Fi-Richtlinien und markiert unzugeordnete Profile sowie solche ohne\n    erkennbaren SSID-Bezug.",
+    "example": "./24_Network_Readiness/396_Get-IntuneWiFiConfigurationAudit.ps1 -OutputPath './reports/wifi-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "24_Network_Readiness/396_Get-IntuneWiFiConfigurationAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "4a37c4bf650644e0ee90e64378c55de56756d47e1db47961abb093179c5ad67b",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneWiFiConfigurationAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Wi-Fi-Konfigurationsobjekte in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Wi-Fi-Richtlinien und markiert unzugeordnete Profile sowie solche ohne\n    erkennbaren SSID-Bezug.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./24_Network_Readiness/396_Get-IntuneWiFiConfigurationAudit.ps1 -OutputPath './reports/wifi-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/24_Network_Readiness/396_Get-IntuneWiFiConfigurationAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-vpnprofile-audit",
+    "script_name": "397_Get-IntuneVPNProfileAudit.ps1",
+    "source_path": "24_Network_Readiness/397_Get-IntuneVPNProfileAudit.ps1",
+    "category": "24_Network_Readiness",
+    "title_de": "Get-IntuneVPNProfileAudit",
+    "synopsis": "Prueft VPN-Profile und deren Zuweisung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet VPN-Konfigurationen und markiert unzugeordnete oder unvollstaendige Profile.",
+    "example": "./24_Network_Readiness/397_Get-IntuneVPNProfileAudit.ps1 -OutputPath './reports/vpn-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "24_Network_Readiness/397_Get-IntuneVPNProfileAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "b28a5e72aac51ba4238a21344e4eccc0e234ecb2a9eca2a3159299ab84fa14d0",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneVPNProfileAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft VPN-Profile und deren Zuweisung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet VPN-Konfigurationen und markiert unzugeordnete oder unvollstaendige Profile.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./24_Network_Readiness/397_Get-IntuneVPNProfileAudit.ps1 -OutputPath './reports/vpn-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/24_Network_Readiness/397_Get-IntuneVPNProfileAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-proxy-configuration-audit",
+    "script_name": "398_Get-IntuneProxyConfigurationAudit.ps1",
+    "source_path": "24_Network_Readiness/398_Get-IntuneProxyConfigurationAudit.ps1",
+    "category": "24_Network_Readiness",
+    "title_de": "Get-IntuneProxyConfigurationAudit",
+    "synopsis": "Prueft Proxy-Konfigurationen in Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Proxy-Richtlinien und listet deren Zuweisung und Konfigurationsstatus. Das\n    Skript testet keine Netzwerkverbindung.",
+    "example": "./24_Network_Readiness/398_Get-IntuneProxyConfigurationAudit.ps1 -OutputPath './reports/proxy-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "24_Network_Readiness/398_Get-IntuneProxyConfigurationAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "237c6665fd1ddb9e7914904f20fbf60ba36d42926ab2fb24fccdeb9c86e7c81f",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneProxyConfigurationAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Proxy-Konfigurationen in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Proxy-Richtlinien und listet deren Zuweisung und Konfigurationsstatus. Das\n    Skript testet keine Netzwerkverbindung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./24_Network_Readiness/398_Get-IntuneProxyConfigurationAudit.ps1 -OutputPath './reports/proxy-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/24_Network_Readiness/398_Get-IntuneProxyConfigurationAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-tenant-operational-health-report",
+    "script_name": "399_Get-IntuneTenantOperationalHealthReport.ps1",
+    "source_path": "25_Tenant_Operational_Health/399_Get-IntuneTenantOperationalHealthReport.ps1",
+    "category": "25_Tenant_Operational_Health",
+    "title_de": "Get-IntuneTenantOperationalHealthReport",
+    "synopsis": "Erstellt einen Tenant-Gesamtzustands-Report.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Geraete, Richtlinien, Apps, Zuweisungen und Scope-Tags in einem Report.\n    Das Skript bewertet nur Konfigurations- und Zuweisungszustaende, keine Cloud-Verfuegbarkeit.",
+    "example": "./25_Tenant_Operational_Health/399_Get-IntuneTenantOperationalHealthReport.ps1 -OutputPath './reports/tenant-health.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "25_Tenant_Operational_Health/399_Get-IntuneTenantOperationalHealthReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "a9c62a21893427e1861b3d25fc55d76ed6a4b946335c25430faef42355b71918",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementRBAC.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneTenantOperationalHealthReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt einen Tenant-Gesamtzustands-Report.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Geraete, Richtlinien, Apps, Zuweisungen und Scope-Tags in einem Report.\n    Das Skript bewertet nur Konfigurations- und Zuweisungszustaende, keine Cloud-Verfuegbarkeit.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementConfiguration.Read.All, DeviceManagementApps.Read.All, DeviceManagementRBAC.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./25_Tenant_Operational_Health/399_Get-IntuneTenantOperationalHealthReport.ps1 -OutputPath './reports/tenant-health.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/25_Tenant_Operational_Health/399_Get-IntuneTenantOperationalHealthReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-service-health-summary",
+    "script_name": "400_Get-IntuneServiceHealthSummary.ps1",
+    "source_path": "25_Tenant_Operational_Health/400_Get-IntuneServiceHealthSummary.ps1",
+    "category": "25_Tenant_Operational_Health",
+    "title_de": "Get-IntuneServiceHealthSummary",
+    "synopsis": "Fasst Intune-Dienst- und Konfigurationsgesundheit zusammen.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Connector-, Lizenz- und Konfigurationszustaende als Proxy fuer die operationale\n    Gesundheit. Das Skript ruft keinen externen Service-Health-Feed ab.",
+    "example": "./25_Tenant_Operational_Health/400_Get-IntuneServiceHealthSummary.ps1 -OutputPath './reports/service-health-summary.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "25_Tenant_Operational_Health/400_Get-IntuneServiceHealthSummary.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "0e38c6f570051eface980648c6e433e8c79595e1d2b4a4ea34abfaeb311368d2",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementServiceConfig.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneServiceHealthSummary\n\n**Prüfstatus: Ungeprüft**\n\nFasst Intune-Dienst- und Konfigurationsgesundheit zusammen.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Connector-, Lizenz- und Konfigurationszustaende als Proxy fuer die operationale\n    Gesundheit. Das Skript ruft keinen externen Service-Health-Feed ab.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All, DeviceManagementApps.Read.All, DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./25_Tenant_Operational_Health/400_Get-IntuneServiceHealthSummary.ps1 -OutputPath './reports/service-health-summary.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/25_Tenant_Operational_Health/400_Get-IntuneServiceHealthSummary.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-automation-readiness-report",
+    "script_name": "401_Get-IntuneAutomationReadinessReport.ps1",
+    "source_path": "25_Tenant_Operational_Health/401_Get-IntuneAutomationReadinessReport.ps1",
+    "category": "25_Tenant_Operational_Health",
+    "title_de": "Get-IntuneAutomationReadinessReport",
+    "synopsis": "Prueft die operative Bereitschaft fuer Automation.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Geraete, Apps, Richtlinien und Connectoren fuer Automatisierungsvorhaben.\n    Ziel ist die Kontrolle, ob grundlegende Objekte vorhanden sind.",
+    "example": "./25_Tenant_Operational_Health/401_Get-IntuneAutomationReadinessReport.ps1 -OutputPath './reports/automation-readiness.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "25_Tenant_Operational_Health/401_Get-IntuneAutomationReadinessReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "8112ac9ae16610b2a33f34f72f4a949f11af6a184d76c3ad6d6d7e3a29803588",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAutomationReadinessReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft die operative Bereitschaft fuer Automation.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Geraete, Apps, Richtlinien und Connectoren fuer Automatisierungsvorhaben.\n    Ziel ist die Kontrolle, ob grundlegende Objekte vorhanden sind.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementApps.Read.All, DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./25_Tenant_Operational_Health/401_Get-IntuneAutomationReadinessReport.ps1 -OutputPath './reports/automation-readiness.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/25_Tenant_Operational_Health/401_Get-IntuneAutomationReadinessReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-configuration-change-audit",
+    "script_name": "402_Get-IntuneConfigurationChangeAudit.ps1",
+    "source_path": "25_Tenant_Operational_Health/402_Get-IntuneConfigurationChangeAudit.ps1",
+    "category": "25_Tenant_Operational_Health",
+    "title_de": "Get-IntuneConfigurationChangeAudit",
+    "synopsis": "Listet letzte Konfigurationsaenderungen in Intune.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest Konfigurationsobjekte und sortiert sie nach lastModifiedDateTime. Das Skript\n    erstellt einen Audit-Report, keinen Snapshot.",
+    "example": "./25_Tenant_Operational_Health/402_Get-IntuneConfigurationChangeAudit.ps1 -OutputPath './reports/config-change-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "25_Tenant_Operational_Health/402_Get-IntuneConfigurationChangeAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "43ba6bcbb18c876098a792778aacd12fcd6cf35c32cf3da8cc71414103d344e7",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneConfigurationChangeAudit\n\n**Prüfstatus: Ungeprüft**\n\nListet letzte Konfigurationsaenderungen in Intune.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest Konfigurationsobjekte und sortiert sie nach lastModifiedDateTime. Das Skript\n    erstellt einen Audit-Report, keinen Snapshot.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./25_Tenant_Operational_Health/402_Get-IntuneConfigurationChangeAudit.ps1 -OutputPath './reports/config-change-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/25_Tenant_Operational_Health/402_Get-IntuneConfigurationChangeAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-age-distribution-report",
+    "script_name": "403_Get-IntuneDeviceAgeDistributionReport.ps1",
+    "source_path": "26_Lifecycle_Gaps/403_Get-IntuneDeviceAgeDistributionReport.ps1",
+    "category": "26_Lifecycle_Gaps",
+    "title_de": "Get-IntuneDeviceAgeDistributionReport",
+    "synopsis": "Analysiert das Alter verwalteter Geraete.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Nutzt lastSyncDateTime als Hinweis auf Geraetealter und sortiert die Flotte in\n    Altersklassen. Das Skript bewertet kein Ersatzbedarf.",
+    "example": "./26_Lifecycle_Gaps/403_Get-IntuneDeviceAgeDistributionReport.ps1 -OutputPath './reports/device-age.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "26_Lifecycle_Gaps/403_Get-IntuneDeviceAgeDistributionReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "1051c2ce7d650a02eda66b5329f4ca3faf523d68b864197f84d5d471be0b618a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceAgeDistributionReport\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert das Alter verwalteter Geraete.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Nutzt lastSyncDateTime als Hinweis auf Geraetealter und sortiert die Flotte in\n    Altersklassen. Das Skript bewertet kein Ersatzbedarf.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./26_Lifecycle_Gaps/403_Get-IntuneDeviceAgeDistributionReport.ps1 -OutputPath './reports/device-age.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/26_Lifecycle_Gaps/403_Get-IntuneDeviceAgeDistributionReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-retirement-candidate-report",
+    "script_name": "404_Get-IntuneRetirementCandidateReport.ps1",
+    "source_path": "26_Lifecycle_Gaps/404_Get-IntuneRetirementCandidateReport.ps1",
+    "category": "26_Lifecycle_Gaps",
+    "title_de": "Get-IntuneRetirementCandidateReport",
+    "synopsis": "Findet Geraete, die fuer eine Stilllegung geprueft werden sollten.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Kombiniert Sync-Alter, Compliance-Zustand und Management-Zustand. Das Skript\n    loescht oder aendert keine Geraete.",
+    "example": "./26_Lifecycle_Gaps/404_Get-IntuneRetirementCandidateReport.ps1 -OutputPath './reports/retirement-candidates.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "26_Lifecycle_Gaps/404_Get-IntuneRetirementCandidateReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "e3dd83ab6d87dec222dfff35f9a88fdd8b4ae82b1f63a127ddeef56c231d9f73",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneRetirementCandidateReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Geraete, die fuer eine Stilllegung geprueft werden sollten.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Kombiniert Sync-Alter, Compliance-Zustand und Management-Zustand. Das Skript\n    loescht oder aendert keine Geraete.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./26_Lifecycle_Gaps/404_Get-IntuneRetirementCandidateReport.ps1 -OutputPath './reports/retirement-candidates.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/26_Lifecycle_Gaps/404_Get-IntuneRetirementCandidateReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-lifecycle-summary",
+    "script_name": "405_Get-IntuneLifecycleSummary.ps1",
+    "source_path": "26_Lifecycle_Gaps/405_Get-IntuneLifecycleSummary.ps1",
+    "category": "26_Lifecycle_Gaps",
+    "title_de": "Get-IntuneLifecycleSummary",
+    "synopsis": "Fasst Geraeteverteilung und Sync-Zustaende zusammen.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Betriebssystem, Management-Zustand und Sync-Aktualitaet. Das Skript\n    bewertet keine Hardwarequalitaet.",
+    "example": "./26_Lifecycle_Gaps/405_Get-IntuneLifecycleSummary.ps1 -OutputPath './reports/lifecycle-summary.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "26_Lifecycle_Gaps/405_Get-IntuneLifecycleSummary.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "5f252049a28dd77f04bc4d4a7c5a741bda53eabb19c023fe4d14e76885024629",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneLifecycleSummary\n\n**Prüfstatus: Ungeprüft**\n\nFasst Geraeteverteilung und Sync-Zustaende zusammen.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Betriebssystem, Management-Zustand und Sync-Aktualitaet. Das Skript\n    bewertet keine Hardwarequalitaet.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./26_Lifecycle_Gaps/405_Get-IntuneLifecycleSummary.ps1 -OutputPath './reports/lifecycle-summary.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/26_Lifecycle_Gaps/405_Get-IntuneLifecycleSummary.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-provisioning-state-report",
+    "script_name": "406_Get-IntuneProvisioningStateReport.ps1",
+    "source_path": "26_Lifecycle_Gaps/406_Get-IntuneProvisioningStateReport.ps1",
+    "category": "26_Lifecycle_Gaps",
+    "title_de": "Get-IntuneProvisioningStateReport",
+    "synopsis": "Analysiert Bereitstellungs- und Registrierungszustaende.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete mit Provisioning- und Registrierungszustand. Ziel ist die Erkennung\n    von unvollstaendigen oder fehlgeschlagenen Bereitstellungen.",
+    "example": "./26_Lifecycle_Gaps/406_Get-IntuneProvisioningStateReport.ps1 -OutputPath './reports/provisioning-states.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "26_Lifecycle_Gaps/406_Get-IntuneProvisioningStateReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "33703bf9e2452b903fde6eeeea1328bf80234c89698e560ac3a954e2e2358a55",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneProvisioningStateReport\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Bereitstellungs- und Registrierungszustaende.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete mit Provisioning- und Registrierungszustand. Ziel ist die Erkennung\n    von unvollstaendigen oder fehlgeschlagenen Bereitstellungen.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./26_Lifecycle_Gaps/406_Get-IntuneProvisioningStateReport.ps1 -OutputPath './reports/provisioning-states.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/26_Lifecycle_Gaps/406_Get-IntuneProvisioningStateReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-compliance-gap-report",
+    "script_name": "407_Get-IntuneComplianceGapReport.ps1",
+    "source_path": "27_Policy_Gaps/407_Get-IntuneComplianceGapReport.ps1",
+    "category": "27_Policy_Gaps",
+    "title_de": "Get-IntuneComplianceGapReport",
+    "synopsis": "Findet Geraete mit Compliance-Luecken.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete, deren Compliance-State nicht OK ist, mit Betriebssystem und Sync-Datum.\n    Das Skript bewertet nicht die Ursache der Nichtkonformitaet.",
+    "example": "./27_Policy_Gaps/407_Get-IntuneComplianceGapReport.ps1 -OutputPath './reports/compliance-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "27_Policy_Gaps/407_Get-IntuneComplianceGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "5b919618662fd76bebcc754bc10e5954a69eb7dc4adc49b21545a36751c90db8",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneComplianceGapReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Geraete mit Compliance-Luecken.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Geraete, deren Compliance-State nicht OK ist, mit Betriebssystem und Sync-Datum.\n    Das Skript bewertet nicht die Ursache der Nichtkonformitaet.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./27_Policy_Gaps/407_Get-IntuneComplianceGapReport.ps1 -OutputPath './reports/compliance-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/27_Policy_Gaps/407_Get-IntuneComplianceGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-security-baseline-gap-report",
+    "script_name": "408_Get-IntuneSecurityBaselineGapReport.ps1",
+    "source_path": "27_Policy_Gaps/408_Get-IntuneSecurityBaselineGapReport.ps1",
+    "category": "27_Policy_Gaps",
+    "title_de": "Get-IntuneSecurityBaselineGapReport",
+    "synopsis": "Findet Sicherheitsbaseline-Richtlinien ohne Zuweisung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Security-Baseline-Richtlinien und prueft, ob eine Zuweisung existiert. Das\n    Skript prueft keine Geraetekonformitaet.",
+    "example": "./27_Policy_Gaps/408_Get-IntuneSecurityBaselineGapReport.ps1 -OutputPath './reports/security-baseline-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "27_Policy_Gaps/408_Get-IntuneSecurityBaselineGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "b84a9ba979f9078e28447f1cc538b81a36be750483a2fd253351cc8751a4316c",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneSecurityBaselineGapReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Sicherheitsbaseline-Richtlinien ohne Zuweisung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Security-Baseline-Richtlinien und prueft, ob eine Zuweisung existiert. Das\n    Skript prueft keine Geraetekonformitaet.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./27_Policy_Gaps/408_Get-IntuneSecurityBaselineGapReport.ps1 -OutputPath './reports/security-baseline-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/27_Policy_Gaps/408_Get-IntuneSecurityBaselineGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-assignment-gap-report",
+    "script_name": "409_Get-IntunePolicyAssignmentGapReport.ps1",
+    "source_path": "27_Policy_Gaps/409_Get-IntunePolicyAssignmentGapReport.ps1",
+    "category": "27_Policy_Gaps",
+    "title_de": "Get-IntunePolicyAssignmentGapReport",
+    "synopsis": "Findet Richtlinien ohne Zuweisung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraete-, Compliance- und Konfigurationsrichtlinien auf fehlende Zuweisung.\n    Das Skript ist ein gezielter Lueckenreport und kein allgemeiner Snapshot.",
+    "example": "./27_Policy_Gaps/409_Get-IntunePolicyAssignmentGapReport.ps1 -OutputPath './reports/policy-assignment-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "27_Policy_Gaps/409_Get-IntunePolicyAssignmentGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "3b9f9780317df0c4f030e80902bd6044bb3ef6f39d709275e12258b63c23c375",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyAssignmentGapReport\n\n**Prüfstatus: Ungeprüft**\n\nFindet Richtlinien ohne Zuweisung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraete-, Compliance- und Konfigurationsrichtlinien auf fehlende Zuweisung.\n    Das Skript ist ein gezielter Lueckenreport und kein allgemeiner Snapshot.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./27_Policy_Gaps/409_Get-IntunePolicyAssignmentGapReport.ps1 -OutputPath './reports/policy-assignment-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/27_Policy_Gaps/409_Get-IntunePolicyAssignmentGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-update-compliance-gap-report",
+    "script_name": "410_Get-IntuneUpdateComplianceGapReport.ps1",
+    "source_path": "27_Policy_Gaps/410_Get-IntuneUpdateComplianceGapReport.ps1",
+    "category": "27_Policy_Gaps",
+    "title_de": "Get-IntuneUpdateComplianceGapReport",
+    "synopsis": "Analysiert Update-Richtlinien ohne Zuweisung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Update-Richtlinien aus den Konfigurationsobjekten und prueft deren\n    Zuweisung. Das Skript bewertet nicht, ob Geraete Updates installiert haben.",
+    "example": "./27_Policy_Gaps/410_Get-IntuneUpdateComplianceGapReport.ps1 -OutputPath './reports/update-policy-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "27_Policy_Gaps/410_Get-IntuneUpdateComplianceGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "9d9993b50f454d278e77ea35a45f339600d9342cbf1cb4982bcfd4e8776b0d0c",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneUpdateComplianceGapReport\n\n**Prüfstatus: Ungeprüft**\n\nAnalysiert Update-Richtlinien ohne Zuweisung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Update-Richtlinien aus den Konfigurationsobjekten und prueft deren\n    Zuweisung. Das Skript bewertet nicht, ob Geraete Updates installiert haben.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./27_Policy_Gaps/410_Get-IntuneUpdateComplianceGapReport.ps1 -OutputPath './reports/update-policy-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/27_Policy_Gaps/410_Get-IntuneUpdateComplianceGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-duplicate-device-audit",
+    "script_name": "411_Get-IntuneDuplicateDeviceAudit.ps1",
+    "source_path": "28_Intune_Data_Quality/411_Get-IntuneDuplicateDeviceAudit.ps1",
+    "category": "28_Intune_Data_Quality",
+    "title_de": "Get-IntuneDuplicateDeviceAudit",
+    "synopsis": "Findet doppelte Geraete-Identifikatoren.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraete auf doppelte Seriennummern, Geraetenamen oder AzureAD-IDs.\n    Doppelte IDs sind ein Hinweis auf Import- oder Registrierungsfehler.",
+    "example": "./28_Intune_Data_Quality/411_Get-IntuneDuplicateDeviceAudit.ps1 -OutputPath './reports/duplicate-devices.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "28_Intune_Data_Quality/411_Get-IntuneDuplicateDeviceAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "8e4bf8bbd7e185827753123353ed819147ac835bf503ebe41daed611e25e35c2",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDuplicateDeviceAudit\n\n**Prüfstatus: Ungeprüft**\n\nFindet doppelte Geraete-Identifikatoren.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Prueft Geraete auf doppelte Seriennummern, Geraetenamen oder AzureAD-IDs.\n    Doppelte IDs sind ein Hinweis auf Import- oder Registrierungsfehler.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./28_Intune_Data_Quality/411_Get-IntuneDuplicateDeviceAudit.ps1 -OutputPath './reports/duplicate-devices.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/28_Intune_Data_Quality/411_Get-IntuneDuplicateDeviceAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-field-completeness-audit",
+    "script_name": "412_Get-IntuneDeviceFieldCompletenessAudit.ps1",
+    "source_path": "28_Intune_Data_Quality/412_Get-IntuneDeviceFieldCompletenessAudit.ps1",
+    "category": "28_Intune_Data_Quality",
+    "title_de": "Get-IntuneDeviceFieldCompletenessAudit",
+    "synopsis": "Prueft Pflichtfelder in Geraetedaten.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Geraetedaten nach Pflichtfeldern wie Seriennummer, Modell, Hersteller, OS und Sync-Datum.\n    Lueckenhafte Objekte werden als Auffaellig markiert.",
+    "example": "./28_Intune_Data_Quality/412_Get-IntuneDeviceFieldCompletenessAudit.ps1 -OutputPath './reports/device-field-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "28_Intune_Data_Quality/412_Get-IntuneDeviceFieldCompletenessAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "88fe17d74d58dd4c0289d0f9d99adcd89f8893dd9fd4afc17f708dbc8a414a0c",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceFieldCompletenessAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Pflichtfelder in Geraetedaten.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Geraetedaten nach Pflichtfeldern wie Seriennummer, Modell, Hersteller, OS und Sync-Datum.\n    Lueckenhafte Objekte werden als Auffaellig markiert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./28_Intune_Data_Quality/412_Get-IntuneDeviceFieldCompletenessAudit.ps1 -OutputPath './reports/device-field-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/28_Intune_Data_Quality/412_Get-IntuneDeviceFieldCompletenessAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-field-completeness-audit",
+    "script_name": "413_Get-IntunePolicyFieldCompletenessAudit.ps1",
+    "source_path": "28_Intune_Data_Quality/413_Get-IntunePolicyFieldCompletenessAudit.ps1",
+    "category": "28_Intune_Data_Quality",
+    "title_de": "Get-IntunePolicyFieldCompletenessAudit",
+    "synopsis": "Prueft Pflichtfelder in Konfigurationsrichtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Konfigurationsobjekte nach Name, Typ und Aenderungsdatum. Fehlende Werte\n    werden als Datenqualitaetsluecke markiert.",
+    "example": "./28_Intune_Data_Quality/413_Get-IntunePolicyFieldCompletenessAudit.ps1 -OutputPath './reports/policy-field-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "28_Intune_Data_Quality/413_Get-IntunePolicyFieldCompletenessAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "fb4518f88fceabbe586e94b9b3432710b8d42d6b04b54909d44474e21a23876e",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyFieldCompletenessAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Pflichtfelder in Konfigurationsrichtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Konfigurationsobjekte nach Name, Typ und Aenderungsdatum. Fehlende Werte\n    werden als Datenqualitaetsluecke markiert.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./28_Intune_Data_Quality/413_Get-IntunePolicyFieldCompletenessAudit.ps1 -OutputPath './reports/policy-field-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/28_Intune_Data_Quality/413_Get-IntunePolicyFieldCompletenessAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-assignment-reference-audit",
+    "script_name": "414_Get-IntuneAssignmentReferenceAudit.ps1",
+    "source_path": "28_Intune_Data_Quality/414_Get-IntuneAssignmentReferenceAudit.ps1",
+    "category": "28_Intune_Data_Quality",
+    "title_de": "Get-IntuneAssignmentReferenceAudit",
+    "synopsis": "Prueft ob Zielgruppenobjekte noch existieren.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Zuweisungen, deren Ziel-Objekte nicht mehr gefunden werden koennen. Das Skript\n    identifiziert verwaiste Referenzen in Richtlinienzuweisungen.",
+    "example": "./28_Intune_Data_Quality/414_Get-IntuneAssignmentReferenceAudit.ps1 -OutputPath './reports/assignment-reference-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "28_Intune_Data_Quality/414_Get-IntuneAssignmentReferenceAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "d8f8edcfcc49416a16dcdbb58fb75b2291fee16f1afa06089d3ef921c965043c",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "Group.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAssignmentReferenceAudit\n\n**Prüfstatus: Ungeprüft**\n\nPrueft ob Zielgruppenobjekte noch existieren.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Zuweisungen, deren Ziel-Objekte nicht mehr gefunden werden koennen. Das Skript\n    identifiziert verwaiste Referenzen in Richtlinienzuweisungen.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, Group.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./28_Intune_Data_Quality/414_Get-IntuneAssignmentReferenceAudit.ps1 -OutputPath './reports/assignment-reference-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/28_Intune_Data_Quality/414_Get-IntuneAssignmentReferenceAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-audit-log-coverage-report",
+    "script_name": "415_Get-IntuneAuditLogCoverageReport.ps1",
+    "source_path": "29_Intune_Operational_Audit/415_Get-IntuneAuditLogCoverageReport.ps1",
+    "category": "29_Intune_Operational_Audit",
+    "title_de": "Get-IntuneAuditLogCoverageReport",
+    "synopsis": "Prueft die Abdeckung von Intune-Auditdaten.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht die Anzahl Konfigurationsobjekte mit den lesbaren letzten Aenderungen.\n    Ziel ist eine Aussage zur Auditabdeckung im Tenant.",
+    "example": "./29_Intune_Operational_Audit/415_Get-IntuneAuditLogCoverageReport.ps1 -OutputPath './reports/audit-log-coverage.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "29_Intune_Operational_Audit/415_Get-IntuneAuditLogCoverageReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "0b2ea61c22eb67efabf5aa809aa2700bc80cbc7d493413bbc488387efa65010e",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAuditLogCoverageReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft die Abdeckung von Intune-Auditdaten.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht die Anzahl Konfigurationsobjekte mit den lesbaren letzten Aenderungen.\n    Ziel ist eine Aussage zur Auditabdeckung im Tenant.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./29_Intune_Operational_Audit/415_Get-IntuneAuditLogCoverageReport.ps1 -OutputPath './reports/audit-log-coverage.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/29_Intune_Operational_Audit/415_Get-IntuneAuditLogCoverageReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-tenant-operation-audit",
+    "script_name": "416_Get-IntuneTenantOperationAudit.ps1",
+    "source_path": "29_Intune_Operational_Audit/416_Get-IntuneTenantOperationAudit.ps1",
+    "category": "29_Intune_Operational_Audit",
+    "title_de": "Get-IntuneTenantOperationAudit",
+    "synopsis": "Erstellt einen operativen Tenant-Audit.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Konfigurationsobjekte, Apps, Geraete und Scope-Tags zu einer operativen\n    Gesamtuebersicht.",
+    "example": "./29_Intune_Operational_Audit/416_Get-IntuneTenantOperationAudit.ps1 -OutputPath './reports/tenant-operation-audit.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "29_Intune_Operational_Audit/416_Get-IntuneTenantOperationAudit.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "10399fec7f75413976078e9be8e105525b3f329b55efbb27c9447ca365b01574",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementRBAC.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneTenantOperationAudit\n\n**Prüfstatus: Ungeprüft**\n\nErstellt einen operativen Tenant-Audit.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Konfigurationsobjekte, Apps, Geraete und Scope-Tags zu einer operativen\n    Gesamtuebersicht.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementApps.Read.All, DeviceManagementManagedDevices.Read.All, DeviceManagementRBAC.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./29_Intune_Operational_Audit/416_Get-IntuneTenantOperationAudit.ps1 -OutputPath './reports/tenant-operation-audit.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/29_Intune_Operational_Audit/416_Get-IntuneTenantOperationAudit.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-deployment-status-report",
+    "script_name": "417_Get-IntunePolicyDeploymentStatusReport.ps1",
+    "source_path": "29_Intune_Operational_Audit/417_Get-IntunePolicyDeploymentStatusReport.ps1",
+    "category": "29_Intune_Operational_Audit",
+    "title_de": "Get-IntunePolicyDeploymentStatusReport",
+    "synopsis": "Bewertet die Zuweisung von Konfigurationsrichtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Richtlinien mit Zuweisungsanzahl und bewertet, ob sie unzugeordnet sind.",
+    "example": "./29_Intune_Operational_Audit/417_Get-IntunePolicyDeploymentStatusReport.ps1 -OutputPath './reports/policy-deployment-status.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "29_Intune_Operational_Audit/417_Get-IntunePolicyDeploymentStatusReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "dc4a10e1e7a80d52abfdc610603672e6165be9270c5a2768de9965ab1177e75b",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyDeploymentStatusReport\n\n**Prüfstatus: Ungeprüft**\n\nBewertet die Zuweisung von Konfigurationsrichtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Richtlinien mit Zuweisungsanzahl und bewertet, ob sie unzugeordnet sind.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./29_Intune_Operational_Audit/417_Get-IntunePolicyDeploymentStatusReport.ps1 -OutputPath './reports/policy-deployment-status.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/29_Intune_Operational_Audit/417_Get-IntunePolicyDeploymentStatusReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-operational-baseline-report",
+    "script_name": "418_Get-IntuneOperationalBaselineReport.ps1",
+    "source_path": "29_Intune_Operational_Audit/418_Get-IntuneOperationalBaselineReport.ps1",
+    "category": "29_Intune_Operational_Audit",
+    "title_de": "Get-IntuneOperationalBaselineReport",
+    "synopsis": "Erzeugt einen operativen Baselinereport.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Geraete-, App-, Konfigurations- und Scope-Tag-Anzahlen zu einer Baseline.\n    Das Skript bewertet keine Compliance.",
+    "example": "./29_Intune_Operational_Audit/418_Get-IntuneOperationalBaselineReport.ps1 -OutputPath './reports/operational-baseline.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "29_Intune_Operational_Audit/418_Get-IntuneOperationalBaselineReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "3cd34c1bc2fc2056000731a1cd7b3847e9d685ded9a2746858edc82070e69624",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementConfiguration.Read.All",
+      "DeviceManagementRBAC.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneOperationalBaselineReport\n\n**Prüfstatus: Ungeprüft**\n\nErzeugt einen operativen Baselinereport.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Aggregiert Geraete-, App-, Konfigurations- und Scope-Tag-Anzahlen zu einer Baseline.\n    Das Skript bewertet keine Compliance.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementApps.Read.All, DeviceManagementConfiguration.Read.All, DeviceManagementRBAC.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./29_Intune_Operational_Audit/418_Get-IntuneOperationalBaselineReport.ps1 -OutputPath './reports/operational-baseline.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/29_Intune_Operational_Audit/418_Get-IntuneOperationalBaselineReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-device-adoption-metrics",
+    "script_name": "419_Get-IntuneDeviceAdoptionMetrics.ps1",
+    "source_path": "30_Intune_Adoption_Metrics/419_Get-IntuneDeviceAdoptionMetrics.ps1",
+    "category": "30_Intune_Adoption_Metrics",
+    "title_de": "Get-IntuneDeviceAdoptionMetrics",
+    "synopsis": "Misst Geraeteadoption im Tenant.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Berechnet Verteilung nach Betriebssystem, Management-State und Sync-Alter.",
+    "example": "./30_Intune_Adoption_Metrics/419_Get-IntuneDeviceAdoptionMetrics.ps1 -OutputPath './reports/device-adoption.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "30_Intune_Adoption_Metrics/419_Get-IntuneDeviceAdoptionMetrics.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "6d0e8a3e4edac780037f96b90cc31944515b440dc6ca30ace46b65538e7550ed",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeviceAdoptionMetrics\n\n**Prüfstatus: Ungeprüft**\n\nMisst Geraeteadoption im Tenant.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Berechnet Verteilung nach Betriebssystem, Management-State und Sync-Alter.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./30_Intune_Adoption_Metrics/419_Get-IntuneDeviceAdoptionMetrics.ps1 -OutputPath './reports/device-adoption.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/30_Intune_Adoption_Metrics/419_Get-IntuneDeviceAdoptionMetrics.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-adoption-metrics",
+    "script_name": "420_Get-IntunePolicyAdoptionMetrics.ps1",
+    "source_path": "30_Intune_Adoption_Metrics/420_Get-IntunePolicyAdoptionMetrics.ps1",
+    "category": "30_Intune_Adoption_Metrics",
+    "title_de": "Get-IntunePolicyAdoptionMetrics",
+    "synopsis": "Misst Adoptionsgrad von Richtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Berechnet Zuweisungs- und Filterabdeckung von Konfigurationsrichtlinien.",
+    "example": "./30_Intune_Adoption_Metrics/420_Get-IntunePolicyAdoptionMetrics.ps1 -OutputPath './reports/policy-adoption.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "30_Intune_Adoption_Metrics/420_Get-IntunePolicyAdoptionMetrics.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "044cdcba559070689748979d67e531825fc554b6c60c078ecf2f732e02e46b65",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyAdoptionMetrics\n\n**Prüfstatus: Ungeprüft**\n\nMisst Adoptionsgrad von Richtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Berechnet Zuweisungs- und Filterabdeckung von Konfigurationsrichtlinien.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./30_Intune_Adoption_Metrics/420_Get-IntunePolicyAdoptionMetrics.ps1 -OutputPath './reports/policy-adoption.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/30_Intune_Adoption_Metrics/420_Get-IntunePolicyAdoptionMetrics.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-app-adoption-metrics",
+    "script_name": "421_Get-IntuneAppAdoptionMetrics.ps1",
+    "source_path": "30_Intune_Adoption_Metrics/421_Get-IntuneAppAdoptionMetrics.ps1",
+    "category": "30_Intune_Adoption_Metrics",
+    "title_de": "Get-IntuneAppAdoptionMetrics",
+    "synopsis": "Misst App-Zuweisung und Verteilung.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit Zuweisungsanzahl und bewertet die Verteilung.",
+    "example": "./30_Intune_Adoption_Metrics/421_Get-IntuneAppAdoptionMetrics.ps1 -OutputPath './reports/app-adoption.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "30_Intune_Adoption_Metrics/421_Get-IntuneAppAdoptionMetrics.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "8cdc13b7d3d3222e74c54f543dede1dae90e4ccc28ca15e7cb0a7cb0b385dfd1",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementApps.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAppAdoptionMetrics\n\n**Prüfstatus: Ungeprüft**\n\nMisst App-Zuweisung und Verteilung.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Apps mit Zuweisungsanzahl und bewertet die Verteilung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./30_Intune_Adoption_Metrics/421_Get-IntuneAppAdoptionMetrics.ps1 -OutputPath './reports/app-adoption.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/30_Intune_Adoption_Metrics/421_Get-IntuneAppAdoptionMetrics.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-update-adoption-metrics",
+    "script_name": "422_Get-IntuneUpdateAdoptionMetrics.ps1",
+    "source_path": "30_Intune_Adoption_Metrics/422_Get-IntuneUpdateAdoptionMetrics.ps1",
+    "category": "30_Intune_Adoption_Metrics",
+    "title_de": "Get-IntuneUpdateAdoptionMetrics",
+    "synopsis": "Misst die Adaption von Update-Richtlinien.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Update-Richtlinien und deren Zuweisungen. Das Skript bewertet keine Geraete-Updates.",
+    "example": "./30_Intune_Adoption_Metrics/422_Get-IntuneUpdateAdoptionMetrics.ps1 -OutputPath './reports/update-adoption.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "30_Intune_Adoption_Metrics/422_Get-IntuneUpdateAdoptionMetrics.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "d9ddc687968d78fdbbfce39da44d3822da61f1dee5e1fc6fd2f9a74aa28e0893",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneUpdateAdoptionMetrics\n\n**Prüfstatus: Ungeprüft**\n\nMisst die Adaption von Update-Richtlinien.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Update-Richtlinien und deren Zuweisungen. Das Skript bewertet keine Geraete-Updates.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./30_Intune_Adoption_Metrics/422_Get-IntuneUpdateAdoptionMetrics.ps1 -OutputPath './reports/update-adoption.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/30_Intune_Adoption_Metrics/422_Get-IntuneUpdateAdoptionMetrics.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-firewall-compliance-gap-report",
+    "script_name": "423_Get-IntuneFirewallComplianceGapReport.ps1",
+    "source_path": "31_Intune_Security_Compliance_Gaps/423_Get-IntuneFirewallComplianceGapReport.ps1",
+    "category": "31_Intune_Security_Compliance_Gaps",
+    "title_de": "Get-IntuneFirewallComplianceGapReport",
+    "synopsis": "Prueft Firewall-Richtlinien auf Zuweisungsluecken.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Firewall-Richtlinien und markiert unzugeordnete Objekte. Das Skript testet\n    keine lokalen Firewall-Profile.",
+    "example": "./31_Intune_Security_Compliance_Gaps/423_Get-IntuneFirewallComplianceGapReport.ps1 -OutputPath './reports/firewall-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "31_Intune_Security_Compliance_Gaps/423_Get-IntuneFirewallComplianceGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "63710e8dec3103a0298ca8f7e52b2e72e56fbf40444bbbeff3cfae76bb05a826",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneFirewallComplianceGapReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Firewall-Richtlinien auf Zuweisungsluecken.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Firewall-Richtlinien und markiert unzugeordnete Objekte. Das Skript testet\n    keine lokalen Firewall-Profile.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./31_Intune_Security_Compliance_Gaps/423_Get-IntuneFirewallComplianceGapReport.ps1 -OutputPath './reports/firewall-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/31_Intune_Security_Compliance_Gaps/423_Get-IntuneFirewallComplianceGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-antivirus-compliance-gap-report",
+    "script_name": "424_Get-IntuneAntivirusComplianceGapReport.ps1",
+    "source_path": "31_Intune_Security_Compliance_Gaps/424_Get-IntuneAntivirusComplianceGapReport.ps1",
+    "category": "31_Intune_Security_Compliance_Gaps",
+    "title_de": "Get-IntuneAntivirusComplianceGapReport",
+    "synopsis": "Prueft Antivirus-Richtlinien auf Zuweisungsluecken.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Antivirus-Richtlinien und markiert unzugeordnete Objekte. Das Skript prueft\n    keine lokalen Virenscans.",
+    "example": "./31_Intune_Security_Compliance_Gaps/424_Get-IntuneAntivirusComplianceGapReport.ps1 -OutputPath './reports/antivirus-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "31_Intune_Security_Compliance_Gaps/424_Get-IntuneAntivirusComplianceGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "2b97a265c7c8f9ad75a3169b6f50ca267066702e8be7b1fe7a96b26efd091728",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAntivirusComplianceGapReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft Antivirus-Richtlinien auf Zuweisungsluecken.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert Antivirus-Richtlinien und markiert unzugeordnete Objekte. Das Skript prueft\n    keine lokalen Virenscans.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./31_Intune_Security_Compliance_Gaps/424_Get-IntuneAntivirusComplianceGapReport.ps1 -OutputPath './reports/antivirus-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/31_Intune_Security_Compliance_Gaps/424_Get-IntuneAntivirusComplianceGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-bit-locker-compliance-gap-report",
+    "script_name": "425_Get-IntuneBitLockerComplianceGapReport.ps1",
+    "source_path": "31_Intune_Security_Compliance_Gaps/425_Get-IntuneBitLockerComplianceGapReport.ps1",
+    "category": "31_Intune_Security_Compliance_Gaps",
+    "title_de": "Get-IntuneBitLockerComplianceGapReport",
+    "synopsis": "Prueft BitLocker-Richtlinien auf Zuweisungsluecken.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert BitLocker-Richtlinien und markiert unzugeordnete Objekte. Das Skript prueft\n    keine lokalen Verschluesselungszustaende.",
+    "example": "./31_Intune_Security_Compliance_Gaps/425_Get-IntuneBitLockerComplianceGapReport.ps1 -OutputPath './reports/bitlocker-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "31_Intune_Security_Compliance_Gaps/425_Get-IntuneBitLockerComplianceGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "52bb9add5dcecc430831ea43d01c934e7732de00f81e4b29286afd675d7ade1a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneBitLockerComplianceGapReport\n\n**Prüfstatus: Ungeprüft**\n\nPrueft BitLocker-Richtlinien auf Zuweisungsluecken.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Filtert BitLocker-Richtlinien und markiert unzugeordnete Objekte. Das Skript prueft\n    keine lokalen Verschluesselungszustaende.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./31_Intune_Security_Compliance_Gaps/425_Get-IntuneBitLockerComplianceGapReport.ps1 -OutputPath './reports/bitlocker-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/31_Intune_Security_Compliance_Gaps/425_Get-IntuneBitLockerComplianceGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-security-task-gap-report",
+    "script_name": "426_Get-IntuneSecurityTaskGapReport.ps1",
+    "source_path": "31_Intune_Security_Compliance_Gaps/426_Get-IntuneSecurityTaskGapReport.ps1",
+    "category": "31_Intune_Security_Compliance_Gaps",
+    "title_de": "Get-IntuneSecurityTaskGapReport",
+    "synopsis": "Listet offene Intune-Sicherheitsaufgaben.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest deviceManagement/securityTasks und bewertet Status und Verantwortlichkeit.",
+    "example": "./31_Intune_Security_Compliance_Gaps/426_Get-IntuneSecurityTaskGapReport.ps1 -OutputPath './reports/security-task-gaps.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "31_Intune_Security_Compliance_Gaps/426_Get-IntuneSecurityTaskGapReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "d9bed2b6960994f663f79143d1bee5bfef61b3c756db2b1bde352d5b7363423d",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneSecurityTaskGapReport\n\n**Prüfstatus: Ungeprüft**\n\nListet offene Intune-Sicherheitsaufgaben.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Liest deviceManagement/securityTasks und bewertet Status und Verantwortlichkeit.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./31_Intune_Security_Compliance_Gaps/426_Get-IntuneSecurityTaskGapReport.ps1 -OutputPath './reports/security-task-gaps.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/31_Intune_Security_Compliance_Gaps/426_Get-IntuneSecurityTaskGapReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-assignment-matrix-report",
+    "script_name": "427_Get-IntuneAssignmentMatrixReport.ps1",
+    "source_path": "32_Intune_Configuration_Matrix/427_Get-IntuneAssignmentMatrixReport.ps1",
+    "category": "32_Intune_Configuration_Matrix",
+    "title_de": "Get-IntuneAssignmentMatrixReport",
+    "synopsis": "Erstellt eine Richtlinien-Zuweisungsmatrix.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Richtlinien und ihre Zielgruppen als Matrix. Das Skript dient der Uebersicht,\n    nicht der Konformitaetsbewertung.",
+    "example": "./32_Intune_Configuration_Matrix/427_Get-IntuneAssignmentMatrixReport.ps1 -OutputPath './reports/assignment-matrix.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "32_Intune_Configuration_Matrix/427_Get-IntuneAssignmentMatrixReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "f606eada287b9e13b495f2f6ad81b2839d3a8e38de9ebbcc83bbbe5317def34d",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneAssignmentMatrixReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine Richtlinien-Zuweisungsmatrix.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Listet Richtlinien und ihre Zielgruppen als Matrix. Das Skript dient der Uebersicht,\n    nicht der Konformitaetsbewertung.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./32_Intune_Configuration_Matrix/427_Get-IntuneAssignmentMatrixReport.ps1 -OutputPath './reports/assignment-matrix.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/32_Intune_Configuration_Matrix/427_Get-IntuneAssignmentMatrixReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-compliance-status-matrix-report",
+    "script_name": "428_Get-IntuneComplianceStatusMatrixReport.ps1",
+    "source_path": "32_Intune_Configuration_Matrix/428_Get-IntuneComplianceStatusMatrixReport.ps1",
+    "category": "32_Intune_Configuration_Matrix",
+    "title_de": "Get-IntuneComplianceStatusMatrixReport",
+    "synopsis": "Erstellt eine Compliance-Statusmatrix.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht Compliance-State, Management-State und Sync-Status je Geraet. Das Skript\n    bewertet nicht die Ursache.",
+    "example": "./32_Intune_Configuration_Matrix/428_Get-IntuneComplianceStatusMatrixReport.ps1 -OutputPath './reports/compliance-status-matrix.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "32_Intune_Configuration_Matrix/428_Get-IntuneComplianceStatusMatrixReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "052732f13c440befbe6fbba7aac9c30b40e8d854ba6ec808443ccda317eccb5a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneComplianceStatusMatrixReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine Compliance-Statusmatrix.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Vergleicht Compliance-State, Management-State und Sync-Status je Geraet. Das Skript\n    bewertet nicht die Ursache.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./32_Intune_Configuration_Matrix/428_Get-IntuneComplianceStatusMatrixReport.ps1 -OutputPath './reports/compliance-status-matrix.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/32_Intune_Configuration_Matrix/428_Get-IntuneComplianceStatusMatrixReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-deployment-status-matrix-report",
+    "script_name": "429_Get-IntuneDeploymentStatusMatrixReport.ps1",
+    "source_path": "32_Intune_Configuration_Matrix/429_Get-IntuneDeploymentStatusMatrixReport.ps1",
+    "category": "32_Intune_Configuration_Matrix",
+    "title_de": "Get-IntuneDeploymentStatusMatrixReport",
+    "synopsis": "Erstellt eine Deployment-Statusmatrix.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Verknuepft Geraet, OS, Management-State und Sync-Datum zu einer Statusmatrix.",
+    "example": "./32_Intune_Configuration_Matrix/429_Get-IntuneDeploymentStatusMatrixReport.ps1 -OutputPath './reports/deployment-status-matrix.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "32_Intune_Configuration_Matrix/429_Get-IntuneDeploymentStatusMatrixReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "424b01e0560dff523fb0f9af368baff57d53c03ca32cda92b5cc597c82d73394",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementManagedDevices.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntuneDeploymentStatusMatrixReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine Deployment-Statusmatrix.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Verknuepft Geraet, OS, Management-State und Sync-Datum zu einer Statusmatrix.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./32_Intune_Configuration_Matrix/429_Get-IntuneDeploymentStatusMatrixReport.ps1 -OutputPath './reports/deployment-status-matrix.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/32_Intune_Configuration_Matrix/429_Get-IntuneDeploymentStatusMatrixReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
+  },
+  {
+    "slug": "get-intune-policy-coverage-matrix-report",
+    "script_name": "430_Get-IntunePolicyCoverageMatrixReport.ps1",
+    "source_path": "32_Intune_Configuration_Matrix/430_Get-IntunePolicyCoverageMatrixReport.ps1",
+    "category": "32_Intune_Configuration_Matrix",
+    "title_de": "Get-IntunePolicyCoverageMatrixReport",
+    "synopsis": "Erstellt eine Policy-Abdeckungsmatrix.",
+    "description": "<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Richtlinien nach Zuweisung und Filternutzung. Ziel ist eine schnelle Abdeckungsmatrix.",
+    "example": "./32_Intune_Configuration_Matrix/430_Get-IntunePolicyCoverageMatrixReport.ps1 -OutputPath './reports/policy-coverage-matrix.csv'",
+    "status": "unreviewed",
+    "status_label": "Ungeprüft",
+    "review_group": null,
+    "review_wave": 3,
+    "is_new": true,
+    "recommended": false,
+    "canonical_path": "32_Intune_Configuration_Matrix/430_Get-IntunePolicyCoverageMatrixReport.ps1",
+    "notes": [],
+    "evidence": [],
+    "verification_gaps": [
+      "static: aktueller erfolgreicher Nachweis fehlt",
+      "pester: aktueller erfolgreicher Nachweis fehlt",
+      "windows: aktueller erfolgreicher Nachweis fehlt",
+      "tenant: aktueller erfolgreicher Nachweis fehlt"
+    ],
+    "source_sha256": "c3f2f87af51092355590701c7aef5684b73686f11441051beea5601c755ee05a",
+    "modules": [
+      "Microsoft.Graph.Authentication"
+    ],
+    "graph_scopes": [
+      "DeviceManagementConfiguration.Read.All"
+    ],
+    "dependencies": [],
+    "risk_level": "elevated",
+    "content_de": "# Get-IntunePolicyCoverageMatrixReport\n\n**Prüfstatus: Ungeprüft**\n\nErstellt eine Policy-Abdeckungsmatrix.\n\n<!-- library-status:start -->\n    Prüfstatus: Ungeprüft\n    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.\n\n    <!-- library-status:end -->\n\n    Bewertet Richtlinien nach Zuweisung und Filternutzung. Ziel ist eine schnelle Abdeckungsmatrix.\n\n## Prüfung\n\nKeine fachliche Freigabe aus der Katalogerstellung ableiten.\n\n- static: aktueller erfolgreicher Nachweis fehlt\n- pester: aktueller erfolgreicher Nachweis fehlt\n- windows: aktueller erfolgreicher Nachweis fehlt\n- tenant: aktueller erfolgreicher Nachweis fehlt\n\n## Voraussetzungen\n\n- Module: Microsoft.Graph.Authentication\n- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All\n- Hilfsdateien: Keine lokale Hilfsdatei erkannt.\n\n## Verwendung\n\n```powershell\n./32_Intune_Configuration_Matrix/430_Get-IntunePolicyCoverageMatrixReport.ps1 -OutputPath './reports/policy-coverage-matrix.csv'\n```\n\n## Quelle\n\n[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/32_Intune_Configuration_Matrix/430_Get-IntunePolicyCoverageMatrixReport.ps1)\n\nPrüfungen gelten nur für den dokumentierten Quellstand und Testumfang.\n"
   }
 ]

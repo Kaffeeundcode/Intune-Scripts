@@ -1,6 +1,6 @@
 # KaffeeundCode Skriptbibliothek
 
-537 PowerShell-Skriptdateien für Intune, Teams-Telefonie, Entra ID, Azure und M365. Die 500 ursprünglichen Dateipfade bleiben erhalten; insgesamt 37 Dateien wurden später ergänzt, darunter 19 Intune-Workflows. GitHub ist die Quelle für die bestehende Skriptbibliothek auf [KaffeeundCode](https://www.kaffeeundcode.com/scripts/).
+597 PowerShell-Skriptdateien für Intune, Teams-Telefonie, Entra ID, Azure und M365. Die 500 ursprünglichen Dateipfade bleiben erhalten; insgesamt 97 Dateien wurden später ergänzt. Die neuen Bloecke decken Device Inventory, App Ecosystem, Policy Hygiene, Security Deep Dive, Governance, User Device Mapping, Network Readiness, Tenant Operational Health, Lifecycle Gaps, Policy Gaps, Datenqualität, operative Audits, Adoptionskennzahlen, Sicherheitslücken und Statusmatrizen ab. GitHub ist die Quelle für die bestehende Skriptbibliothek auf [KaffeeundCode](https://www.kaffeeundcode.com/scripts/).
 
 ## Einzeldateien verwenden
 
@@ -15,20 +15,20 @@ Speichere Skripte für Windows PowerShell 5.1 als UTF-8 mit BOM. Ändernde Skrip
 
 ## Bestand und Prüfstatus
 
-Der [Katalog](script_catalog/README.md) enthält 537 Einträge. Davon sind 519 ungeprüft, neun Beispiele und neun mit bekannten Fehlern markiert. Die erste Auswahl umfasst 100 bestehende Skripte, davon 70 mit direktem Intune-Bezug. Auswahl bedeutet keine Freigabe.
+Der [Katalog](script_catalog/README.md) enthält 597 Einträge. Davon sind 579 ungeprüft, neun Beispiele und neun mit bekannten Fehlern markiert. Die erste Auswahl umfasst 100 bestehende Skripte, davon 70 mit direktem Intune-Bezug. Auswahl bedeutet keine Freigabe.
 
 - **Ungeprüft:** vollständige fachliche Abnahme fehlt.
 - **Geprüft:** aktuelle, quellenbezogene Nachweise für alle erforderlichen Prüfungen vorhanden.
 - **Beispiel:** muss für die konkrete Umgebung ergänzt oder angepasst werden.
 - **Bekannte Fehler:** Einschränkungen sind konkret dokumentiert.
 
-Der letzte vollständige Windows-Nachweis vom 8. September 2026 umfasst die damaligen 528 Skripte und 25 Offline-Pester-Tests unter Windows PowerShell 5.1 und PowerShell 7.6.5. Für den aktuellen Stand sind 28 Pester-Tests definiert. Die neun neuen Reports und die zwei überarbeiteten Skripte benötigen noch Syntax-, Pester- und Tenant-Tests in einer PowerShell-Umgebung. Der lokale Katalogtest, der Bundle-Abgleich und der Katalog-Abgleich sind aktuell bestanden. Kein Testtenant ist verbunden; deshalb gibt es keine vollständige Cloud-Abnahme und keine pauschale Produktionsfreigabe. Der ältere statische Analysebericht liegt unter `validation/evidence/psscriptanalyzer.json` und ist für die neuen Dateien noch nicht erneuert.
+Der letzte vollständige Windows-Nachweis vom 8. September 2026 umfasst die damaligen 528 Skripte und 25 Offline-Pester-Tests unter Windows PowerShell 5.1 und PowerShell 7.6.5. Für den aktuellen Stand sind 28 Pester-Tests definiert. Die neuen Reports, Inventur-Skripte und die zwei überarbeiteten Skripte benötigen noch Syntax-, Pester- und Tenant-Tests in einer PowerShell-Umgebung. Der lokale Katalogtest, der Bundle-Abgleich und der Katalog-Abgleich sind aktuell bestanden. Kein Testtenant ist verbunden; deshalb gibt es keine vollständige Cloud-Abnahme und keine pauschale Produktionsfreigabe. Der ältere statische Analysebericht liegt unter `validation/evidence/psscriptanalyzer.json` und ist für die neuen Dateien noch nicht erneuert.
 
 ## Darstellung auf KaffeeundCode
 
 Der vorhandene Import verarbeitet die PowerShell-Dateien und deren SYNOPSIS/DESCRIPTION. Deshalb steht der Prüfstatus direkt in jeder Skripthilfe. Der zusätzliche JSON-/Markdown-Katalog ist ein Repository-Verzeichnis, keine neue Website und keine Voraussetzung für den bestehenden Import.
 
-Der öffentliche Bestandsabgleich ergab 535 Website-Einträge: 500 passende Bestandsskripte, eine Helper-Seite und 34 weitere Seiten ohne aktuellen gleichnamigen Skriptpfad. Diese bestehenden Seiten werden nicht gelöscht. Die 37 später ergänzten Dateien und fünf Paketbeschreibungen kommen beim Import hinzu. Die bisherige Website-Sortierung wird durch diese Repository-Änderung nicht automatisch auf Intune umgestellt.
+Der öffentliche Bestandsabgleich ergab 535 Website-Einträge: 500 passende Bestandsskripte, eine Helper-Seite und 34 weitere Seiten ohne aktuellen gleichnamigen Skriptpfad. Diese bestehenden Seiten werden nicht gelöscht. Die 97 später ergänzten Dateien und fünf Paketbeschreibungen kommen beim Import hinzu. Die bisherige Website-Sortierung wird durch diese Repository-Änderung nicht automatisch auf Intune umgestellt.
 
 ## PilotDeploy-App-Pakete
 
