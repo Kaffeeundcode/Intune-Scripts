@@ -1,11 +1,11 @@
 # Katalog- und Prüfbericht
 
-- Skripteinträge: 528
-- Unterschiedliche Implementierungen laut Manifest: 507
+- Skripteinträge: 537
+- Unterschiedliche Implementierungen laut Manifest: 516
 - Erste Auswahl: 100
 - Weitere Bestandskandidaten: 100
 - Geprüft: 0
-- Beispiele: 10
+- Beispiele: 9
 - Bekannte Fehler: 9
 
 Die Katalogprüfung validiert Pfade, Auswahlquoten, eindeutige Seiten und Nachweise. Sie beweist keine Windows- oder Tenant-Funktion.
@@ -17,7 +17,6 @@ Die Katalogprüfung validiert Pfade, Auswahlquoten, eindeutige Seiten und Nachwe
 - 03_Intune_Remediations/052_Remediate-UpdateApp.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
 - 05_Enrollment_Autopilot/42_Import-AutopilotCSV.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
 - 05_Enrollment_Autopilot/43_Assign-AutopilotProfile.ps1: Setzt Statusfelder statt einer gruppenbasierten Profilzuweisung; nicht ausfuehren.
-- 05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
 - 07_Security_BitLocker/68_Assign-SecurityBaseline.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
 - 07_Security_BitLocker/70_Check-DeviceSecurityScore.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
 - 14_EntraID_Security_CA/134_Create-Emergency-Account.ps1: Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.

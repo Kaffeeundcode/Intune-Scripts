@@ -1,21 +1,23 @@
 # Get-EnrollmentFailures
 
-**Prüfstatus: Beispiel**
+**Prüfstatus: Ungeprüft**
 
-Zeigt Fehlerberichte bei der Registrierung.
+Exportiert aktuelle Intune-Registrierungsfehler.
 
 <!-- library-status:start -->
-    Prüfstatus: Beispiel
-    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
 
     <!-- library-status:end -->
 
-    Liest Enrollment-Fehler aus dem Monitoring-Bereich.
-    Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
+    Liest den offiziellen Intune-Report DeviceEnrollmentFailures ueber die asynchrone
+    ExportJobs-Schnittstelle. Fehler werden nach Zeitraum gefiltert und mit Methode,
+    Betriebssystem, Benutzer und gemeldetem Grund ausgegeben. Ein unlesbarer Zeitstempel
+    wird als Nicht pruefbar ausgegeben und nicht stillschweigend verworfen.
 
 ## Prüfung
 
-- Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
 
 - static: aktueller erfolgreicher Nachweis fehlt
 - pester: aktueller erfolgreicher Nachweis fehlt
@@ -30,7 +32,9 @@ Zeigt Fehlerberichte bei der Registrierung.
 
 ## Verwendung
 
-Noch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1' -Full` lesen.
+```powershell
+./05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1 -Days 14 -OutputPath './reports/enrollment-failures.csv'
+```
 
 ## Quelle
 

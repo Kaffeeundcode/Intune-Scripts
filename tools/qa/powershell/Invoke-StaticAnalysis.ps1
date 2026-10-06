@@ -3,7 +3,7 @@ param([Parameter(Mandatory)][string]$AnalyzerModulePath,[string]$RepositoryRoot=
 $ErrorActionPreference='Stop'
 Import-Module $AnalyzerModulePath -Force
 $manifest=Get-Content (Join-Path $RepositoryRoot 'library.manifest.json') -Raw | ConvertFrom-Json
-$paths=@($manifest.scripts.path)+@('Common/IntuneLibrary.psm1','16_Teams_Telephony/000_TeamsTelephonyHelper.ps1')
+$paths=@($manifest.scripts.path)+@('Common/IntuneLibrary.psm1','Common/IntuneReportLibrary.psm1','16_Teams_Telephony/000_TeamsTelephonyHelper.ps1')
 $findings=@(foreach($relative in $paths){
     foreach($issue in Invoke-ScriptAnalyzer -Path (Join-Path $RepositoryRoot $relative) -Severity Error,Warning){
         [pscustomobject]@{Path=$relative;Line=$issue.Line;Rule=$issue.RuleName;Severity=[string]$issue.Severity;Message=$issue.Message}

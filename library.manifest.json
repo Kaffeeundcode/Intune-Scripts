@@ -5,7 +5,7 @@
     "existing_scripts": 500,
     "first_review_batch": 100,
     "expanded_review_batch": 200,
-    "new_tools": 10,
+    "new_tools": 19,
     "initial_packages": 5,
     "expanded_packages": 10
   },
@@ -1364,13 +1364,11 @@
     },
     {
       "path": "05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1",
-      "status": "example",
+      "status": "unreviewed",
       "review_group": "enrollment",
       "review_wave": 2,
       "canonical_path": "05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1",
-      "notes": [
-        "Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf."
-      ],
+      "notes": [],
       "evidence": []
     },
     {
@@ -4701,6 +4699,105 @@
       "is_new": true,
       "execution_context": "tenant",
       "canonical_path": "17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/363_Get-IntuneAppInstallFailureSummary.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/363_Get-IntuneAppInstallFailureSummary.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/365_Get-IntuneDeviceCertificateExpiryReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/365_Get-IntuneDeviceCertificateExpiryReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/367_Get-IntuneEpmElevationAudit.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/367_Get-IntuneEpmElevationAudit.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/368_Get-IntuneAppControlDeploymentReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/368_Get-IntuneAppControlDeploymentReport.ps1",
+      "notes": [],
+      "evidence": []
+    },
+    {
+      "path": "17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1",
+      "status": "unreviewed",
+      "review_group": null,
+      "review_wave": 3,
+      "is_new": true,
+      "execution_context": "tenant",
+      "canonical_path": "17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1",
       "notes": [],
       "evidence": []
     },

@@ -2,7 +2,7 @@
 
 **Prüfstatus: Ungeprüft**
 
-Checks the status and expiration of Enrollment Tokens (DEM, Apple VPP, DEP, Android).
+Prueft Apple- und Android-Onboardingdienste in Intune.
 
 <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -10,13 +10,11 @@ Checks the status and expiration of Enrollment Tokens (DEM, Apple VPP, DEP, Andr
 
     <!-- library-status:end -->
 
-    Consolidated report for all "expiring" infrastructure tokens in Intune.
-    - Device Enrollment Managers (Limit 1000)
-    - Apple Push Certificate (APNS)
-    - Apple VPP Tokens
-    - Android Managed Google Play
-
-    Returns "DaysRemaining" to allow for alerting.
+    Erstellt einen gemeinsamen Status fuer APNs-Zertifikat, Apple-VPP-Tokens,
+    Apple-ADE/DEP-Enrollment-Tokens und die Managed-Google-Play-Bindung.
+    Android Enterprise besitzt kein vergleichbares Ablaufdatum; dort werden Bindungs-
+    und Synchronisierungsstatus ausgewertet. Fehlgeschlagene Datenquellen erscheinen
+    als Nicht pruefbar.
 
 ## Prüfung
 
@@ -29,13 +27,15 @@ Keine fachliche Freigabe aus der Katalogerstellung ableiten.
 
 ## Voraussetzungen
 
-- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)
-- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All, DeviceManagementApps.Read.All
 - Hilfsdateien: Keine lokale Hilfsdatei erkannt.
 
 ## Verwendung
 
-Noch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1' -Full` lesen.
+```powershell
+./16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1 -WarningDays 45 -OutputPath './reports/enrollment-services.json'
+```
 
 ## Quelle
 

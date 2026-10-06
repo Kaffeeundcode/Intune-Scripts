@@ -6300,22 +6300,24 @@ Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
 ","05_Enrollment_Autopilot","05_Enrollment_Autopilot/48_Get-EnrollmentRestrictions.ps1","unreviewed","Ungeprüft","false","normal"
 "get-enrollment-failures","Get-EnrollmentFailures","# Get-EnrollmentFailures
 
-**Prüfstatus: Beispiel**
+**Prüfstatus: Ungeprüft**
 
-Zeigt Fehlerberichte bei der Registrierung.
+Exportiert aktuelle Intune-Registrierungsfehler.
 
 <!-- library-status:start -->
-    Prüfstatus: Beispiel
-    Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
 
     <!-- library-status:end -->
 
-    Liest Enrollment-Fehler aus dem Monitoring-Bereich.
-    Erfordert die Berechtigung 'DeviceManagementManagedDevices.Read.All'.
+    Liest den offiziellen Intune-Report DeviceEnrollmentFailures ueber die asynchrone
+    ExportJobs-Schnittstelle. Fehler werden nach Zeitraum gefiltert und mit Methode,
+    Betriebssystem, Benutzer und gemeldetem Grund ausgegeben. Ein unlesbarer Zeitstempel
+    wird als Nicht pruefbar ausgegeben und nicht stillschweigend verworfen.
 
 ## Prüfung
 
-- Enthaelt Beispiel-/Platzhalterlogik; kein abgeschlossener Betriebsablauf.
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
 
 - static: aktueller erfolgreicher Nachweis fehlt
 - pester: aktueller erfolgreicher Nachweis fehlt
@@ -6330,14 +6332,16 @@ Zeigt Fehlerberichte bei der Registrierung.
 
 ## Verwendung
 
-Noch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1' -Full` lesen.
+```powershell
+./05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1 -Days 14 -OutputPath './reports/enrollment-failures.csv'
+```
 
 ## Quelle
 
 [PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1)
 
 Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
-","05_Enrollment_Autopilot","05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1","example","Beispiel","false","normal"
+","05_Enrollment_Autopilot","05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1","unreviewed","Ungeprüft","false","elevated"
 "check-enrollment-status","Check-EnrollmentStatus","# Check-EnrollmentStatus
 
 **Prüfstatus: Ungeprüft**
@@ -10674,7 +10678,7 @@ Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
 
 **Prüfstatus: Ungeprüft**
 
-Checks the status and expiration of Enrollment Tokens (DEM, Apple VPP, DEP, Android).
+Prueft Apple- und Android-Onboardingdienste in Intune.
 
 <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -10682,13 +10686,11 @@ Checks the status and expiration of Enrollment Tokens (DEM, Apple VPP, DEP, Andr
 
     <!-- library-status:end -->
 
-    Consolidated report for all ""expiring"" infrastructure tokens in Intune.
-    - Device Enrollment Managers (Limit 1000)
-    - Apple Push Certificate (APNS)
-    - Apple VPP Tokens
-    - Android Managed Google Play
-
-    Returns ""DaysRemaining"" to allow for alerting.
+    Erstellt einen gemeinsamen Status fuer APNs-Zertifikat, Apple-VPP-Tokens,
+    Apple-ADE/DEP-Enrollment-Tokens und die Managed-Google-Play-Bindung.
+    Android Enterprise besitzt kein vergleichbares Ablaufdatum; dort werden Bindungs-
+    und Synchronisierungsstatus ausgewertet. Fehlgeschlagene Datenquellen erscheinen
+    als Nicht pruefbar.
 
 ## Prüfung
 
@@ -10701,20 +10703,22 @@ Keine fachliche Freigabe aus der Katalogerstellung ableiten.
 
 ## Voraussetzungen
 
-- Module: Microsoft.Graph.Authentication, Microsoft.Graph (passende SDK-Untermodule)
-- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementServiceConfig.Read.All, DeviceManagementApps.Read.All
 - Hilfsdateien: Keine lokale Hilfsdatei erkannt.
 
 ## Verwendung
 
-Noch kein geprüftes Aufrufbeispiel dokumentiert. Parameter mit `Get-Help './16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1' -Full` lesen.
+```powershell
+./16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1 -WarningDays 45 -OutputPath './reports/enrollment-services.json'
+```
 
 ## Quelle
 
 [PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1)
 
 Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
-","16_Mixed_New_Scripts","16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1","unreviewed","Ungeprüft","false","normal"
+","16_Mixed_New_Scripts","16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1","unreviewed","Ungeprüft","false","elevated"
 "get-intune-device-restore-points","Get-IntuneDeviceRestorePoints","# Get-IntuneDeviceRestorePoints
 
 **Prüfstatus: Ungeprüft**
@@ -20847,6 +20851,401 @@ Keine fachliche Freigabe aus der Katalogerstellung ableiten.
 
 Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
 ","17_Intune_Workflows","17_Intune_Workflows/360_Get-IntuneRemediationFailureReport.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-autopilot-deployment-failure-report","Get-IntuneAutopilotDeploymentFailureReport","# Get-IntuneAutopilotDeploymentFailureReport
+
+**Prüfstatus: Ungeprüft**
+
+Fasst fehlgeschlagene Windows-Autopilot-Bereitstellungen zusammen.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Verknuepft die offiziellen Autopilot-V1- und Autopilot-V2-Exportreports mit den
+    V2-Detailreports fuer Apps und Skripte. Es werden nur klar gemeldete Fehler- und
+    Abbruchzustaende ausgegeben. Ein leerer Report belegt keine generelle Autopilot-
+    Bereitschaft, sondern nur, dass die Exportreports keine Fehlerzeile geliefert haben.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementServiceConfig.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1 -OutputPath './reports/autopilot-failures.json'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-windows-update-failure-report","Get-IntuneWindowsUpdateFailureReport","# Get-IntuneWindowsUpdateFailureReport
+
+**Prüfstatus: Ungeprüft**
+
+Exportiert Fehler aus Feature-, Quality- und Treiberupdates.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Liest die offiziellen Intune-Statusreports fuer Feature Updates, beschleunigte
+    Quality Updates und Treiberupdates. Detailreports werden nur fuer Richtlinien mit
+    gemeldeten Fehlern gestartet. Treiber mit manuellem Pruefbedarf werden als auffaellig
+    ausgegeben. Klassische Update-Ringe sind weiterhin im separaten Rollout-Report enthalten.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementConfiguration.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1 -OutputPath './reports/windows-update-failures.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-app-install-failure-summary","Get-IntuneAppInstallFailureSummary","# Get-IntuneAppInstallFailureSummary
+
+**Prüfstatus: Ungeprüft**
+
+Zeigt Intune-Apps mit fehlgeschlagenen Installationen.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Nutzt AppInstallStatusAggregate fuer eine mandantenweite Fehleruebersicht. Mit
+    IncludeDeviceDetails werden fuer jede betroffene App zusaetzlich die Geraetezeilen
+    aus DeviceInstallStatusByApp geladen. Das kann in grossen Tenants viele Exportjobs
+    erzeugen und ist deshalb standardmaessig deaktiviert.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/363_Get-IntuneAppInstallFailureSummary.ps1 -MinimumFailedDevicePercentage 5 -OutputPath './reports/app-failures.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/363_Get-IntuneAppInstallFailureSummary.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/363_Get-IntuneAppInstallFailureSummary.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-laps-backup-coverage","Get-IntuneLapsBackupCoverage","# Get-IntuneLapsBackupCoverage
+
+**Prüfstatus: Ungeprüft**
+
+Prueft die Abdeckung und Aktualitaet von Windows-LAPS-Sicherungen.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Vergleicht verwaltete Windows-Geraete mit den Metadaten aus
+    directory/deviceLocalCredentials. Es werden keine lokalen Administratorkennwoerter
+    oder Kennwortfelder abgerufen. Ein fehlender Eintrag ist ein Pruefhinweis und kann
+    auch bedeuten, dass fuer das Geraet keine LAPS-Richtlinie vorgesehen ist.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceLocalCredential.ReadBasic.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1 -MaximumBackupAgeDays 30 -OutputPath './reports/laps-coverage.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-device-certificate-expiry-report","Get-IntuneDeviceCertificateExpiryReport","# Get-IntuneDeviceCertificateExpiryReport
+
+**Prüfstatus: Ungeprüft**
+
+Meldet abgelaufene und bald ablaufende Intune-Geraetezertifikate.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Verwendet den offiziellen Report AllDeviceCertificates und bewertet Ablaufdatum
+    sowie gemeldeten Zertifikatstatus. Die Ausgabe enthaelt Richtlinie, Geraet,
+    Benutzer, Aussteller und Thumbprint. Zertifikatinhalte oder private Schluessel
+    werden nicht abgerufen.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementManagedDevices.Read.All, DeviceManagementConfiguration.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/365_Get-IntuneDeviceCertificateExpiryReport.ps1 -WarningDays 45 -OutputPath './reports/certificate-expiry.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/365_Get-IntuneDeviceCertificateExpiryReport.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/365_Get-IntuneDeviceCertificateExpiryReport.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-rbac-role-assignment-audit","Get-IntuneRbacRoleAssignmentAudit","# Get-IntuneRbacRoleAssignmentAudit
+
+**Prüfstatus: Ungeprüft**
+
+Erstellt eine aufgeloeste Intune-RBAC-Zuweisungsmatrix.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Verknuepft Intune-Rollenzuweisungen mit Rollendefinition, Mitgliedergruppen,
+    Ressourcengruppen, Scope-Typ und Scope Tags. Gruppen, die nicht gelesen werden
+    koennen, bleiben mit ID als Nicht pruefbar sichtbar. Das Skript bewertet keine
+    organisatorische Notwendigkeit und aendert keine Berechtigungen.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementRBAC.Read.All, Group.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1 -OutputPath './reports/intune-rbac.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-epm-elevation-audit","Get-IntuneEpmElevationAudit","# Get-IntuneEpmElevationAudit
+
+**Prüfstatus: Ungeprüft**
+
+Exportiert Ereignisse aus Intune Endpoint Privilege Management.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Liest den offiziellen EPM-Elevation-Event-Report und begrenzt ihn lokal auf den
+    gewaehlten Zeitraum. Abgelehnte oder fehlgeschlagene Elevations werden als
+    Auffaellig markiert. EPM und die Reportberechtigung EpmPolicy.ViewReports muessen
+    im Tenant lizenziert und fuer die angemeldete Rolle freigegeben sein.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/367_Get-IntuneEpmElevationAudit.ps1 -Days 14 -OnlyFindings -OutputPath './reports/epm-events.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/367_Get-IntuneEpmElevationAudit.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/367_Get-IntuneEpmElevationAudit.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-app-control-deployment-report","Get-IntuneAppControlDeploymentReport","# Get-IntuneAppControlDeploymentReport
+
+**Prüfstatus: Ungeprüft**
+
+Meldet Bereitstellungsprobleme von Intune App Control for Business.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Verwendet DeviceAssignmentStatusByConfigurationPolicyForAC fuer den geraetebezogenen
+    App-Control-Zuweisungsstatus. Fehler und Konflikte sind Auffaellig, noch nicht
+    abgeschlossene oder unbekannte Zustaende bleiben Nicht pruefbar. Der Report bewertet
+    keine lokalen WDAC-Ereignisprotokolle und keine fachliche Eignung der Richtlinie.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementConfiguration.Read.All, DeviceManagementManagedDevices.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/368_Get-IntuneAppControlDeploymentReport.ps1 -OutputPath './reports/app-control.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/368_Get-IntuneAppControlDeploymentReport.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/368_Get-IntuneAppControlDeploymentReport.ps1","unreviewed","Ungeprüft","false","elevated"
+"get-intune-enterprise-app-catalog-update-report","Get-IntuneEnterpriseAppCatalogUpdateReport","# Get-IntuneEnterpriseAppCatalogUpdateReport
+
+**Prüfstatus: Ungeprüft**
+
+Listet verfuegbare Updates fuer Intune Enterprise App Catalog Apps.
+
+<!-- library-status:start -->
+    Prüfstatus: Ungeprüft
+    Windows- und Tenant-Abnahme ausstehend; keine pauschale Produktionsfreigabe.
+
+    <!-- library-status:end -->
+
+    Liest CatalogAppsUpdateList und zeigt aktuelle sowie neu verfuegbare Versionen,
+    Updateberechtigung und Supersedence-Status. Das Skript fuehrt keine Aktualisierung
+    aus. Enterprise App Management muss im Tenant lizenziert sein.
+
+## Prüfung
+
+Keine fachliche Freigabe aus der Katalogerstellung ableiten.
+
+- static: aktueller erfolgreicher Nachweis fehlt
+- pester: aktueller erfolgreicher Nachweis fehlt
+- windows: aktueller erfolgreicher Nachweis fehlt
+- tenant: aktueller erfolgreicher Nachweis fehlt
+
+## Voraussetzungen
+
+- Module: Microsoft.Graph.Authentication
+- Dokumentierte Graph-Scopes: DeviceManagementApps.Read.All
+- Hilfsdateien: Keine lokale Hilfsdatei erkannt.
+
+## Verwendung
+
+```powershell
+./17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1 -OutputPath './reports/eam-updates.csv'
+```
+
+## Quelle
+
+[PowerShell-Datei auf GitHub](https://github.com/Kaffeeundcode/Intune-Scripts/blob/main/17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1)
+
+Prüfungen gelten nur für den dokumentierten Quellstand und Testumfang.
+","17_Intune_Workflows","17_Intune_Workflows/369_Get-IntuneEnterpriseAppCatalogUpdateReport.ps1","unreviewed","Ungeprüft","false","elevated"
 "app-consistency-checker","APP-Consistency-Checker","# APP-Consistency-Checker
 
 **Prüfstatus: Ungeprüft**

@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    Prueft Apple- und Android-Onboardingdienste in Intune.
+    Prueft die Abdeckung und Aktualitaet von Windows-LAPS-Sicherungen.
 .DESCRIPTION
     <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -8,17 +8,17 @@
 
     <!-- library-status:end -->
 
-    Erstellt einen gemeinsamen Status fuer APNs-Zertifikat, Apple-VPP-Tokens,
-    Apple-ADE/DEP-Enrollment-Tokens und die Managed-Google-Play-Bindung.
-    Android Enterprise besitzt kein vergleichbares Ablaufdatum; dort werden Bindungs-
-    und Synchronisierungsstatus ausgewertet. Fehlgeschlagene Datenquellen erscheinen
-    als Nicht pruefbar.
+    Vergleicht verwaltete Windows-Geraete mit den Metadaten aus
+    directory/deviceLocalCredentials. Es werden keine lokalen Administratorkennwoerter
+    oder Kennwortfelder abgerufen. Ein fehlender Eintrag ist ein Pruefhinweis und kann
+    auch bedeuten, dass fuer das Geraet keine LAPS-Richtlinie vorgesehen ist.
 .EXAMPLE
-    ./16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1 -WarningDays 45 -OutputPath './reports/enrollment-services.json'
+    ./17_Intune_Workflows/364_Get-IntuneLapsBackupCoverage.ps1 -MaximumBackupAgeDays 30 -OutputPath './reports/laps-coverage.csv'
 #>
 [CmdletBinding()]
 param(
-    [ValidateRange(1,365)][int]$WarningDays = 30,
+    [ValidateRange(1,365)][int]$MaximumBackupAgeDays = 30,
+    [switch]$IncludeHealthy,
     [string]$TenantId,
     [switch]$SkipConnect,
     [string]$OutputPath
@@ -172,62 +172,60 @@ Export-ModuleMember -Function Connect-IlGraph,Invoke-IlGraph,Get-IlGraphCollecti
 
 } | Import-Module -Scope Local -Force
 # kc-bundle:graph:end
-function New-EnrollmentServiceRow {
-    param([string]$Type,[string]$Name,[object]$Expiration,[string]$Status,[string]$Detail,[object]$LastSync,[object]$Raw)
-    $daysRemaining = $null
-    if ($Expiration) {
-        $parsed = [datetimeoffset]::MinValue
-        if ([datetimeoffset]::TryParse([string]$Expiration,[ref]$parsed)) {
-            $daysRemaining = [math]::Floor(($parsed.ToUniversalTime() - [datetimeoffset]::UtcNow).TotalDays)
-            if ($daysRemaining -lt 0) { $Status='Auffaellig'; $Detail="Abgelaufen seit $(-$daysRemaining) Tagen." }
-            elseif ($daysRemaining -le $WarningDays) { $Status='Auffaellig'; $Detail="Laeuft in $daysRemaining Tagen ab." }
-        } else { $Status='Nicht pruefbar'; $Detail='Ablaufdatum ist nicht auswertbar.' }
-    }
-    [pscustomobject][ordered]@{Type=$Type;Name=$Name;Status=$Status;Expiration=$Expiration;DaysRemaining=$daysRemaining;LastSync=$LastSync;Detail=$Detail;Raw=$Raw}
+Connect-IlGraph -Scopes @('DeviceManagementManagedDevices.Read.All','DeviceLocalCredential.ReadBasic.All') -TenantId $TenantId -SkipConnect:$SkipConnect
+$devices = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$select=id,deviceName,azureADDeviceId,operatingSystem,lastSyncDateTime,managementState' | Where-Object { [string]$_.operatingSystem -eq 'Windows' })
+$credentials = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/directory/deviceLocalCredentials?$select=id,deviceName,lastBackupDateTime,refreshDateTime')
+$credentialByDevice = @{}
+foreach ($credential in $credentials) {
+    $key = ([string](Get-IlProperty $credential 'id')).ToLowerInvariant()
+    if ($key) { $credentialByDevice[$key] = $credential }
 }
 
-Connect-IlGraph -Scopes @('DeviceManagementServiceConfig.Read.All','DeviceManagementApps.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
+$cutoff = [datetimeoffset]::UtcNow.AddDays(-$MaximumBackupAgeDays)
 $result = New-Object 'System.Collections.Generic.List[object]'
+$issueCount = 0
+foreach ($device in $devices) {
+    $entraDeviceId = [string](Get-IlProperty $device 'azureADDeviceId')
+    $credential = $null
+    $status = 'OK'
+    $detail = 'LAPS-Sicherungsmetadaten sind aktuell.'
+    $lastBackup = $null
+    $refreshDate = $null
 
-try {
-    $apns = Invoke-IlGraph 'https://graph.microsoft.com/v1.0/deviceManagement/applePushNotificationCertificate'
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Name ([string](Get-IlProperty $apns 'appleIdentifier' (Get-IlProperty $apns 'topicIdentifier'))) -Expiration (Get-IlProperty $apns 'expirationDateTime') -Status OK -Detail 'APNs-Zertifikat gelesen.' -LastSync (Get-IlProperty $apns 'lastModifiedDateTime') -Raw $apns))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
-}
-
-try {
-    $vppTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceAppManagement/vppTokens')
-    if (-not $vppTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht anwendbar' -Detail 'Keine VPP-Tokens gemeldet.')) }
-    foreach ($token in $vppTokens) {
-        $state = [string](Get-IlProperty $token 'state')
-        $status = if ($state -and $state -notmatch 'valid|active') { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Name ([string](Get-IlProperty $token 'displayName')) -Expiration (Get-IlProperty $token 'expirationDateTime') -Status $status -Detail "Tokenstatus: $state" -LastSync (Get-IlProperty $token 'lastSyncDateTime') -Raw $token))
+    if (-not $entraDeviceId) {
+        $status = 'Nicht pruefbar'
+        $detail = 'Das Intune-Geraet besitzt keine Entra-Geraete-ID.'
+    } elseif (-not $credentialByDevice.ContainsKey($entraDeviceId.ToLowerInvariant())) {
+        $status = 'Auffaellig'
+        $detail = 'Keine LAPS-Sicherungsmetadaten gefunden; Richtlinienzuweisung und Anwendbarkeit pruefen.'
+    } else {
+        $credential = $credentialByDevice[$entraDeviceId.ToLowerInvariant()]
+        $lastBackup = Get-IlProperty $credential 'lastBackupDateTime'
+        $refreshDate = Get-IlProperty $credential 'refreshDateTime'
+        $parsed = [datetimeoffset]::MinValue
+        if (-not [datetimeoffset]::TryParse([string]$lastBackup,[ref]$parsed)) {
+            $status = 'Nicht pruefbar'
+            $detail = 'LastBackupDateTime ist nicht auswertbar.'
+        } elseif ($parsed.ToUniversalTime() -gt [datetimeoffset]::UtcNow.AddDays(1)) {
+            $status = 'Nicht pruefbar'
+            $detail = 'LastBackupDateTime liegt unerwartet in der Zukunft.'
+        } elseif ($parsed.ToUniversalTime() -lt $cutoff) {
+            $status = 'Auffaellig'
+            $detail = "Letzte LAPS-Sicherung ist aelter als $MaximumBackupAgeDays Tage."
+        }
     }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
-}
-
-try {
-    $adeTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/beta/deviceManagement/depOnboardingSettings')
-    if (-not $adeTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht anwendbar' -Detail 'Keine Enrollment-Program-Tokens gemeldet.')) }
-    foreach ($token in $adeTokens) {
-        $syncError = [int](Get-IlProperty $token 'lastSyncErrorCode' 0)
-        $status = if ($syncError) { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Name ([string](Get-IlProperty $token 'tokenName')) -Expiration (Get-IlProperty $token 'tokenExpirationDateTime') -Status $status -Detail "Letzter Sync-Fehlercode: $syncError; synchronisierte Geraete: $(Get-IlProperty $token 'syncedDeviceCount' 0)." -LastSync (Get-IlProperty $token 'lastSuccessfulSyncDateTime') -Raw $token))
+    if ($status -ne 'OK') { $issueCount++ }
+    if ($IncludeHealthy -or $status -ne 'OK') {
+        $result.Add([pscustomobject][ordered]@{
+            Status=$status;IntuneDeviceId=Get-IlProperty $device 'id';EntraDeviceId=$entraDeviceId;DeviceName=Get-IlProperty $device 'deviceName'
+            LastBackupDateTime=$lastBackup;RefreshDateTime=$refreshDate;LastIntuneSync=Get-IlProperty $device 'lastSyncDateTime';ManagementState=Get-IlProperty $device 'managementState';Detail=$detail
+        })
     }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
 }
 
-try {
-    $android = Invoke-IlGraph 'https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings'
-    $bindStatus = [string](Get-IlProperty $android 'bindStatus')
-    $syncStatus = [string](Get-IlProperty $android 'lastAppSyncStatus')
-    $status = if ($bindStatus -eq 'notBound') { 'Nicht anwendbar' } elseif ($bindStatus -notin @('bound','boundAndValidated') -or $syncStatus -match 'error|invalid') { 'Auffaellig' } else { 'OK' }
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Name ([string](Get-IlProperty $android 'ownerOrganizationName' (Get-IlProperty $android 'ownerUserPrincipalName'))) -Status $status -Detail "Bindung: $bindStatus; App-Sync: $syncStatus" -LastSync (Get-IlProperty $android 'lastAppSyncDateTime') -Raw $android))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
+if (-not $devices.Count) {
+    $result.Add((New-IlFinding -Check 'WindowsDevices' -Status 'Nicht anwendbar' -Detail 'Keine verwalteten Windows-Geraete gemeldet.'))
+} elseif (-not $issueCount -and -not $IncludeHealthy) {
+    $result.Add((New-IlFinding -Check 'LapsBackupCoverage' -Status OK -Detail "$($devices.Count) Windows-Geraete besitzen aktuelle LAPS-Sicherungsmetadaten."))
 }
-
 Export-IlResult -Data $result.ToArray() -OutputPath $OutputPath

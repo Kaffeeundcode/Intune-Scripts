@@ -1,12 +1,12 @@
 # PowerShell-Bibliothek
 
-528 Skripteinträge; 507 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
+537 Skripteinträge; 516 Implementierungen nach dokumentierter Varianten-Zuordnung. Hilfsdateien und App-Pakete werden getrennt gezählt.
 
 ## Prüfstatus
 
-- Ungeprüft: 509
+- Ungeprüft: 519
 - Geprüft: 0
-- Beispiel: 10
+- Beispiel: 9
 - Bekannte Fehler: 9
 
 100 vorhandene Skripte sind für die erste Abnahme ausgewählt. Auswahl bedeutet noch keine Empfehlung oder Freigabe.
@@ -65,7 +65,7 @@
 - [Delete-AutopilotDevice](pages/delete-autopilot-device.md) — Ungeprüft
 - [Sync-AutopilotDevices](pages/sync-autopilot-devices.md) — Ungeprüft
 - [Get-EnrollmentRestrictions](pages/get-enrollment-restrictions.md) — Ungeprüft
-- [Get-EnrollmentFailures](pages/get-enrollment-failures.md) — Beispiel
+- [Get-EnrollmentFailures](pages/get-enrollment-failures.md) — Ungeprüft
 - [Check-EnrollmentStatus](pages/check-enrollment-status.md) — Ungeprüft
 - [Get-DeviceComplianceReport](pages/get-device-compliance-report.md) — Ungeprüft
 - [Get-StaleDevices](pages/get-stale-devices.md) — Ungeprüft
@@ -264,7 +264,7 @@
 - [Delete-AutopilotDevice](pages/delete-autopilot-device.md) — Ungeprüft
 - [Sync-AutopilotDevices](pages/sync-autopilot-devices.md) — Ungeprüft
 - [Get-EnrollmentRestrictions](pages/get-enrollment-restrictions.md) — Ungeprüft
-- [Get-EnrollmentFailures](pages/get-enrollment-failures.md) — Beispiel
+- [Get-EnrollmentFailures](pages/get-enrollment-failures.md) — Ungeprüft
 - [Check-EnrollmentStatus](pages/check-enrollment-status.md) — Ungeprüft
 - [Get-IntuneAuditLogs](pages/get-intune-audit-logs.md) — Ungeprüft
 - [Get-DeviceComplianceReport](pages/get-device-compliance-report.md) — Ungeprüft
@@ -629,6 +629,15 @@
 - [Get-IntuneUpdateRolloutReport](pages/get-intune-update-rollout-report.md) — Ungeprüft
 - [Test-IntuneAutopilotReadiness](pages/test-intune-autopilot-readiness.md) — Ungeprüft
 - [Get-IntuneRemediationFailureReport](pages/get-intune-remediation-failure-report.md) — Ungeprüft
+- [Get-IntuneAutopilotDeploymentFailureReport](pages/get-intune-autopilot-deployment-failure-report.md) — Ungeprüft
+- [Get-IntuneWindowsUpdateFailureReport](pages/get-intune-windows-update-failure-report.md) — Ungeprüft
+- [Get-IntuneAppInstallFailureSummary](pages/get-intune-app-install-failure-summary.md) — Ungeprüft
+- [Get-IntuneLapsBackupCoverage](pages/get-intune-laps-backup-coverage.md) — Ungeprüft
+- [Get-IntuneDeviceCertificateExpiryReport](pages/get-intune-device-certificate-expiry-report.md) — Ungeprüft
+- [Get-IntuneRbacRoleAssignmentAudit](pages/get-intune-rbac-role-assignment-audit.md) — Ungeprüft
+- [Get-IntuneEpmElevationAudit](pages/get-intune-epm-elevation-audit.md) — Ungeprüft
+- [Get-IntuneAppControlDeploymentReport](pages/get-intune-app-control-deployment-report.md) — Ungeprüft
+- [Get-IntuneEnterpriseAppCatalogUpdateReport](pages/get-intune-enterprise-app-catalog-update-report.md) — Ungeprüft
 - [APP-Consistency-Checker](pages/app-consistency-checker.md) — Ungeprüft
 - [BitLocker-Recovery-Audit](pages/bit-locker-recovery-audit.md) — Ungeprüft
 - [CA-Policy-Auditor](pages/ca-policy-auditor.md) — Ungeprüft

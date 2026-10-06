@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    Prueft Apple- und Android-Onboardingdienste in Intune.
+    Fasst fehlgeschlagene Windows-Autopilot-Bereitstellungen zusammen.
 .DESCRIPTION
     <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -8,21 +8,15 @@
 
     <!-- library-status:end -->
 
-    Erstellt einen gemeinsamen Status fuer APNs-Zertifikat, Apple-VPP-Tokens,
-    Apple-ADE/DEP-Enrollment-Tokens und die Managed-Google-Play-Bindung.
-    Android Enterprise besitzt kein vergleichbares Ablaufdatum; dort werden Bindungs-
-    und Synchronisierungsstatus ausgewertet. Fehlgeschlagene Datenquellen erscheinen
-    als Nicht pruefbar.
+    Verknuepft die offiziellen Autopilot-V1- und Autopilot-V2-Exportreports mit den
+    V2-Detailreports fuer Apps und Skripte. Es werden nur klar gemeldete Fehler- und
+    Abbruchzustaende ausgegeben. Ein leerer Report belegt keine generelle Autopilot-
+    Bereitschaft, sondern nur, dass die Exportreports keine Fehlerzeile geliefert haben.
 .EXAMPLE
-    ./16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1 -WarningDays 45 -OutputPath './reports/enrollment-services.json'
+    ./17_Intune_Workflows/361_Get-IntuneAutopilotDeploymentFailureReport.ps1 -OutputPath './reports/autopilot-failures.json'
 #>
 [CmdletBinding()]
-param(
-    [ValidateRange(1,365)][int]$WarningDays = 30,
-    [string]$TenantId,
-    [switch]$SkipConnect,
-    [string]$OutputPath
-)
+param([string]$TenantId,[switch]$SkipConnect,[string]$OutputPath)
 
 # kc-bundle:graph:start sha256=168d7f232db5d14cf1be94255b5d535f3739213158e781a4214040a070571864
 # Eingebettete Hilfslogik aus Common/IntuneLibrary.psm1; durch tools/bundle-script-dependencies.mjs gepflegt.
@@ -172,62 +166,132 @@ Export-ModuleMember -Function Connect-IlGraph,Invoke-IlGraph,Get-IlGraphCollecti
 
 } | Import-Module -Scope Local -Force
 # kc-bundle:graph:end
-function New-EnrollmentServiceRow {
-    param([string]$Type,[string]$Name,[object]$Expiration,[string]$Status,[string]$Detail,[object]$LastSync,[object]$Raw)
-    $daysRemaining = $null
-    if ($Expiration) {
-        $parsed = [datetimeoffset]::MinValue
-        if ([datetimeoffset]::TryParse([string]$Expiration,[ref]$parsed)) {
-            $daysRemaining = [math]::Floor(($parsed.ToUniversalTime() - [datetimeoffset]::UtcNow).TotalDays)
-            if ($daysRemaining -lt 0) { $Status='Auffaellig'; $Detail="Abgelaufen seit $(-$daysRemaining) Tagen." }
-            elseif ($daysRemaining -le $WarningDays) { $Status='Auffaellig'; $Detail="Laeuft in $daysRemaining Tagen ab." }
-        } else { $Status='Nicht pruefbar'; $Detail='Ablaufdatum ist nicht auswertbar.' }
+# kc-bundle:report:start sha256=7528259aa984c181a8e114d1586c9b91eb8d521cfb6233b4b0144570c888f49a
+# Eingebettete Hilfslogik aus Common/IntuneReportLibrary.psm1; durch tools/bundle-script-dependencies.mjs gepflegt.
+New-Module -Name IntuneReportLibrary -ScriptBlock {
+#requires -Version 5.1
+Set-StrictMode -Version Latest
+
+function Assert-IlExportDownloadUri {
+    param([Parameter(Mandatory)][string]$Uri)
+    $parsed = [uri]$Uri
+    if (-not $parsed.IsAbsoluteUri) {
+        throw 'Ungueltige Export-Downloadadresse. Erwartet wird HTTPS auf Azure Blob Storage.'
     }
-    [pscustomobject][ordered]@{Type=$Type;Name=$Name;Status=$Status;Expiration=$Expiration;DaysRemaining=$daysRemaining;LastSync=$LastSync;Detail=$Detail;Raw=$Raw}
+    $hostName = $parsed.DnsSafeHost.ToLowerInvariant()
+    $allowedHost = $hostName.EndsWith('.blob.core.windows.net') -or $hostName.EndsWith('.blob.storage.azure.net')
+    if ($parsed.Scheme -ne 'https' -or $parsed.UserInfo -or $parsed.Port -ne 443 -or -not $allowedHost) {
+        throw 'Ungueltige Export-Downloadadresse. Erwartet wird HTTPS auf Azure Blob Storage.'
+    }
 }
 
-Connect-IlGraph -Scopes @('DeviceManagementServiceConfig.Read.All','DeviceManagementApps.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
+function Invoke-IlReportExport {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)][ValidatePattern('^[A-Za-z0-9]+$')][string]$ReportName,
+        [string]$Filter,
+        [string[]]$Select,
+        [ValidateSet('v1.0','beta')][string]$ApiVersion = 'beta',
+        [ValidateRange(10,1800)][int]$MaxWaitSeconds = 300,
+        [ValidateRange(1,30)][int]$PollIntervalSeconds = 3
+    )
+    $base = "https://graph.microsoft.com/$ApiVersion/deviceManagement/reports/exportJobs"
+    $body = [ordered]@{ reportName=$ReportName; format='csv' }
+    if ($Filter) { $body.filter = $Filter }
+    if ($Select -and $Select.Count) { $body.select = @($Select) }
+
+    $job = IntuneLibrary\Invoke-IlGraph -Uri $base -Method POST -Body $body
+    $jobId = [string](IntuneLibrary\Get-IlProperty $job 'id')
+    if (-not $jobId) { throw "Exportjob fuer $ReportName lieferte keine ID." }
+
+    $deadline = [datetime]::UtcNow.AddSeconds($MaxWaitSeconds)
+    $jobUri = "$base/$(IntuneLibrary\ConvertTo-IlSegment $jobId)"
+    do {
+        $state = IntuneLibrary\Invoke-IlGraph -Uri $jobUri
+        $status = [string](IntuneLibrary\Get-IlProperty $state 'status')
+        if ($status -eq 'completed') { break }
+        if ($status -in @('failed','unknown')) {
+            $reason = [string](IntuneLibrary\Get-IlProperty $state 'localizedFailureReason' (IntuneLibrary\Get-IlProperty $state 'error'))
+            if (-not $reason) { $reason = 'kein Fehlertext gemeldet' }
+            throw "Exportjob fuer $ReportName fehlgeschlagen: $reason"
+        }
+        if ([datetime]::UtcNow -ge $deadline) { throw "Zeitlimit fuer Exportjob $ReportName erreicht (Status: $status)." }
+        Start-Sleep -Seconds $PollIntervalSeconds
+    } while ($true)
+
+    $downloadUri = [string](IntuneLibrary\Get-IlProperty $state 'url')
+    if (-not $downloadUri) { throw "Abgeschlossener Exportjob fuer $ReportName lieferte keine Downloadadresse." }
+    Assert-IlExportDownloadUri -Uri $downloadUri
+
+    $temporaryRoot = Join-Path ([IO.Path]::GetTempPath()) ("kc-intune-export-" + [guid]::NewGuid().ToString('N'))
+    $archivePath = Join-Path $temporaryRoot 'report.zip'
+    $extractPath = Join-Path $temporaryRoot 'content'
+    try {
+        New-Item -ItemType Directory -Path $temporaryRoot -Force -ErrorAction Stop | Out-Null
+        Invoke-WebRequest -Uri $downloadUri -OutFile $archivePath -UseBasicParsing -ErrorAction Stop | Out-Null
+        Expand-Archive -LiteralPath $archivePath -DestinationPath $extractPath -Force -ErrorAction Stop
+        $csvFiles = @(Get-ChildItem -LiteralPath $extractPath -Filter '*.csv' -File -Recurse -ErrorAction Stop)
+        if (-not $csvFiles.Count) { throw "Exportarchiv fuer $ReportName enthaelt keine CSV-Datei." }
+        $rows = New-Object 'System.Collections.Generic.List[object]'
+        foreach ($csvFile in $csvFiles) {
+            foreach ($row in @(Import-Csv -LiteralPath $csvFile.FullName -ErrorAction Stop)) { $rows.Add($row) }
+        }
+        return $rows.ToArray()
+    } finally {
+        if (Test-Path -LiteralPath $temporaryRoot) { Remove-Item -LiteralPath $temporaryRoot -Recurse -Force -ErrorAction SilentlyContinue }
+    }
+}
+
+Export-ModuleMember -Function Invoke-IlReportExport
+
+} | Import-Module -Scope Local -Force
+# kc-bundle:report:end
+Connect-IlGraph -Scopes @('DeviceManagementManagedDevices.Read.All','DeviceManagementServiceConfig.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
 $result = New-Object 'System.Collections.Generic.List[object]'
 
-try {
-    $apns = Invoke-IlGraph 'https://graph.microsoft.com/v1.0/deviceManagement/applePushNotificationCertificate'
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Name ([string](Get-IlProperty $apns 'appleIdentifier' (Get-IlProperty $apns 'topicIdentifier'))) -Expiration (Get-IlProperty $apns 'expirationDateTime') -Status OK -Detail 'APNs-Zertifikat gelesen.' -LastSync (Get-IlProperty $apns 'lastModifiedDateTime') -Raw $apns))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
+$v1 = @(Invoke-IlReportExport -ReportName 'AutopilotV1DeploymentStatus')
+foreach ($row in $v1) {
+    $signals = @(
+        Get-IlProperty $row 'EnrollmentStatus'; Get-IlProperty $row 'DeploymentState'; Get-IlProperty $row 'DeviceSetupStatus'
+        Get-IlProperty $row 'UserSetupStatus'; Get-IlProperty $row 'FailureReason'; Get-IlProperty $row 'FailureDetails'
+        Get-IlProperty $row 'EspDeviceSetupFailureDetails'; Get-IlProperty $row 'EspUserSetupFailureDetails'
+    ) | Where-Object { $null -ne $_ -and [string]$_ -ne '' }
+    $detail = $signals -join '; '
+    if ($detail -notmatch '(?i)fail|error|timeout|timed.?out|block|cancel') { continue }
+    $result.Add([pscustomobject][ordered]@{
+        Status='Auffaellig'; Report='AutopilotV1'; DeviceId=Get-IlProperty $row 'DeviceId'; DeviceName=Get-IlProperty $row 'DeviceName'
+        SerialNumber=Get-IlProperty $row 'DeviceSerialNumber'; UPN=Get-IlProperty $row 'UPN'; Phase='Deployment'
+        Workload=Get-IlProperty $row 'AutopilotProfileName'; ResultCode=$null; Detail=$detail; Raw=$row
+    })
 }
 
-try {
-    $vppTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceAppManagement/vppTokens')
-    if (-not $vppTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht anwendbar' -Detail 'Keine VPP-Tokens gemeldet.')) }
-    foreach ($token in $vppTokens) {
-        $state = [string](Get-IlProperty $token 'state')
-        $status = if ($state -and $state -notmatch 'valid|active') { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Name ([string](Get-IlProperty $token 'displayName')) -Expiration (Get-IlProperty $token 'expirationDateTime') -Status $status -Detail "Tokenstatus: $state" -LastSync (Get-IlProperty $token 'lastSyncDateTime') -Raw $token))
+$v2 = @(Invoke-IlReportExport -ReportName 'AutopilotV2DeploymentStatus')
+foreach ($row in $v2) {
+    $detail = @((Get-IlProperty $row 'DeploymentStatus'),(Get-IlProperty $row 'Phase'),(Get-IlProperty $row 'ResultCode')) -join '; '
+    if ($detail -notmatch '(?i)fail|error|timeout|timed.?out|block|cancel') { continue }
+    $result.Add([pscustomobject][ordered]@{
+        Status='Auffaellig'; Report='AutopilotV2'; DeviceId=Get-IlProperty $row 'DeviceId'; DeviceName=Get-IlProperty $row 'DeviceName'
+        SerialNumber=Get-IlProperty $row 'SerialNumber'; UPN=Get-IlProperty $row 'UPN'; Phase=Get-IlProperty $row 'Phase'
+        Workload='Deployment'; ResultCode=Get-IlProperty $row 'ResultCode'; Detail=$detail; Raw=$row
+    })
+}
+
+foreach ($definition in @(
+    @{Report='AutopilotV2DeploymentStatusDetailedAppInfo';Kind='App';Name='ApplicationName'},
+    @{Report='AutopilotV2DeploymentStatusDetailedScriptInfo';Kind='Script';Name='DisplayName'}
+)) {
+    foreach ($row in @(Invoke-IlReportExport -ReportName $definition.Report)) {
+        $state = [string](Get-IlProperty $row 'PolicyInstallStatus')
+        if ($state -notmatch '(?i)fail|error|timeout|timed.?out|block|cancel') { continue }
+        $result.Add([pscustomobject][ordered]@{
+            Status='Auffaellig'; Report=$definition.Report; DeviceId=Get-IlProperty $row 'DeviceId'; DeviceName=$null
+            SerialNumber=$null; UPN=$null; Phase=$definition.Kind; Workload=Get-IlProperty $row $definition.Name
+            ResultCode=$state; Detail="$($definition.Kind)-Installation in Autopilot V2 fehlgeschlagen."; Raw=$row
+        })
     }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
 }
 
-try {
-    $adeTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/beta/deviceManagement/depOnboardingSettings')
-    if (-not $adeTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht anwendbar' -Detail 'Keine Enrollment-Program-Tokens gemeldet.')) }
-    foreach ($token in $adeTokens) {
-        $syncError = [int](Get-IlProperty $token 'lastSyncErrorCode' 0)
-        $status = if ($syncError) { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Name ([string](Get-IlProperty $token 'tokenName')) -Expiration (Get-IlProperty $token 'tokenExpirationDateTime') -Status $status -Detail "Letzter Sync-Fehlercode: $syncError; synchronisierte Geraete: $(Get-IlProperty $token 'syncedDeviceCount' 0)." -LastSync (Get-IlProperty $token 'lastSuccessfulSyncDateTime') -Raw $token))
-    }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
+if (-not $result.Count) {
+    $result.Add((New-IlFinding -Check 'AutopilotDeploymentReports' -Status OK -Detail 'Die exportierten Autopilot-Reports enthalten keine klar gemeldeten Fehlerzustaende.'))
 }
-
-try {
-    $android = Invoke-IlGraph 'https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings'
-    $bindStatus = [string](Get-IlProperty $android 'bindStatus')
-    $syncStatus = [string](Get-IlProperty $android 'lastAppSyncStatus')
-    $status = if ($bindStatus -eq 'notBound') { 'Nicht anwendbar' } elseif ($bindStatus -notin @('bound','boundAndValidated') -or $syncStatus -match 'error|invalid') { 'Auffaellig' } else { 'OK' }
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Name ([string](Get-IlProperty $android 'ownerOrganizationName' (Get-IlProperty $android 'ownerUserPrincipalName'))) -Status $status -Detail "Bindung: $bindStatus; App-Sync: $syncStatus" -LastSync (Get-IlProperty $android 'lastAppSyncDateTime') -Raw $android))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
-}
-
 Export-IlResult -Data $result.ToArray() -OutputPath $OutputPath

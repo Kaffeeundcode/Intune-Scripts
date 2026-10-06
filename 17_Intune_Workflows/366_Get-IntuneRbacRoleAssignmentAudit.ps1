@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    Prueft Apple- und Android-Onboardingdienste in Intune.
+    Erstellt eine aufgeloeste Intune-RBAC-Zuweisungsmatrix.
 .DESCRIPTION
     <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -8,21 +8,15 @@
 
     <!-- library-status:end -->
 
-    Erstellt einen gemeinsamen Status fuer APNs-Zertifikat, Apple-VPP-Tokens,
-    Apple-ADE/DEP-Enrollment-Tokens und die Managed-Google-Play-Bindung.
-    Android Enterprise besitzt kein vergleichbares Ablaufdatum; dort werden Bindungs-
-    und Synchronisierungsstatus ausgewertet. Fehlgeschlagene Datenquellen erscheinen
-    als Nicht pruefbar.
+    Verknuepft Intune-Rollenzuweisungen mit Rollendefinition, Mitgliedergruppen,
+    Ressourcengruppen, Scope-Typ und Scope Tags. Gruppen, die nicht gelesen werden
+    koennen, bleiben mit ID als Nicht pruefbar sichtbar. Das Skript bewertet keine
+    organisatorische Notwendigkeit und aendert keine Berechtigungen.
 .EXAMPLE
-    ./16_Mixed_New_Scripts/108_Get-IntuneEnrollmentTokenStatus.ps1 -WarningDays 45 -OutputPath './reports/enrollment-services.json'
+    ./17_Intune_Workflows/366_Get-IntuneRbacRoleAssignmentAudit.ps1 -OutputPath './reports/intune-rbac.csv'
 #>
 [CmdletBinding()]
-param(
-    [ValidateRange(1,365)][int]$WarningDays = 30,
-    [string]$TenantId,
-    [switch]$SkipConnect,
-    [string]$OutputPath
-)
+param([string]$TenantId,[switch]$SkipConnect,[string]$OutputPath)
 
 # kc-bundle:graph:start sha256=168d7f232db5d14cf1be94255b5d535f3739213158e781a4214040a070571864
 # Eingebettete Hilfslogik aus Common/IntuneLibrary.psm1; durch tools/bundle-script-dependencies.mjs gepflegt.
@@ -172,62 +166,58 @@ Export-ModuleMember -Function Connect-IlGraph,Invoke-IlGraph,Get-IlGraphCollecti
 
 } | Import-Module -Scope Local -Force
 # kc-bundle:graph:end
-function New-EnrollmentServiceRow {
-    param([string]$Type,[string]$Name,[object]$Expiration,[string]$Status,[string]$Detail,[object]$LastSync,[object]$Raw)
-    $daysRemaining = $null
-    if ($Expiration) {
-        $parsed = [datetimeoffset]::MinValue
-        if ([datetimeoffset]::TryParse([string]$Expiration,[ref]$parsed)) {
-            $daysRemaining = [math]::Floor(($parsed.ToUniversalTime() - [datetimeoffset]::UtcNow).TotalDays)
-            if ($daysRemaining -lt 0) { $Status='Auffaellig'; $Detail="Abgelaufen seit $(-$daysRemaining) Tagen." }
-            elseif ($daysRemaining -le $WarningDays) { $Status='Auffaellig'; $Detail="Laeuft in $daysRemaining Tagen ab." }
-        } else { $Status='Nicht pruefbar'; $Detail='Ablaufdatum ist nicht auswertbar.' }
+Connect-IlGraph -Scopes @('DeviceManagementRBAC.Read.All','Group.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
+$assignments = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceManagement/roleAssignments')
+$scopeTags = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceManagement/roleScopeTags')
+$tagNames = @{'0'='Default'}
+foreach ($tag in $scopeTags) { $tagNames[[string](Get-IlProperty $tag 'id')] = [string](Get-IlProperty $tag 'displayName') }
+$groupNames = @{}
+
+function Resolve-IntuneRbacGroupName {
+    param([Parameter(Mandatory)][string]$GroupId)
+    if ($groupNames.ContainsKey($GroupId)) { return $groupNames[$GroupId] }
+    try {
+        $group = Invoke-IlGraph "https://graph.microsoft.com/v1.0/groups/$(ConvertTo-IlSegment $GroupId)?`$select=id,displayName"
+        $groupNames[$GroupId] = [string](Get-IlProperty $group 'displayName' $GroupId)
+    } catch {
+        $script:rbacResolutionFailed = $true
+        $groupNames[$GroupId] = "[nicht aufloesbar: $GroupId]"
     }
-    [pscustomobject][ordered]@{Type=$Type;Name=$Name;Status=$Status;Expiration=$Expiration;DaysRemaining=$daysRemaining;LastSync=$LastSync;Detail=$Detail;Raw=$Raw}
+    return $groupNames[$GroupId]
 }
 
-Connect-IlGraph -Scopes @('DeviceManagementServiceConfig.Read.All','DeviceManagementApps.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
 $result = New-Object 'System.Collections.Generic.List[object]'
+foreach ($assignment in $assignments) {
+    $script:rbacResolutionFailed = $false
+    $assignmentId = [string](Get-IlProperty $assignment 'id')
+    $definition = $null
+    try {
+        $definition = Invoke-IlGraph "https://graph.microsoft.com/v1.0/deviceManagement/roleAssignments/$(ConvertTo-IlSegment $assignmentId)/roleDefinition"
+    } catch { $script:rbacResolutionFailed = $true }
 
-try {
-    $apns = Invoke-IlGraph 'https://graph.microsoft.com/v1.0/deviceManagement/applePushNotificationCertificate'
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Name ([string](Get-IlProperty $apns 'appleIdentifier' (Get-IlProperty $apns 'topicIdentifier'))) -Expiration (Get-IlProperty $apns 'expirationDateTime') -Status OK -Detail 'APNs-Zertifikat gelesen.' -LastSync (Get-IlProperty $apns 'lastModifiedDateTime') -Raw $apns))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple APNs' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
-}
-
-try {
-    $vppTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/v1.0/deviceAppManagement/vppTokens')
-    if (-not $vppTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht anwendbar' -Detail 'Keine VPP-Tokens gemeldet.')) }
-    foreach ($token in $vppTokens) {
-        $state = [string](Get-IlProperty $token 'state')
-        $status = if ($state -and $state -notmatch 'valid|active') { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Name ([string](Get-IlProperty $token 'displayName')) -Expiration (Get-IlProperty $token 'expirationDateTime') -Status $status -Detail "Tokenstatus: $state" -LastSync (Get-IlProperty $token 'lastSyncDateTime') -Raw $token))
+    $memberNames = @()
+    foreach ($groupId in @(Get-IlProperty $assignment 'members' @())) { if ($groupId) { $memberNames += Resolve-IntuneRbacGroupName ([string]$groupId) } }
+    $resourceNames = @()
+    foreach ($groupId in @(Get-IlProperty $assignment 'resourceScopes' @())) { if ($groupId) { $resourceNames += Resolve-IntuneRbacGroupName ([string]$groupId) } }
+    $tagIds = @(Get-IlProperty $assignment 'roleScopeTagIds' @())
+    if (-not $tagIds.Count) { $tagIds = @('0') }
+    $resolvedTags = foreach ($tagId in $tagIds) { if ($tagNames.ContainsKey([string]$tagId)) { $tagNames[[string]$tagId] } else { "[nicht aufloesbar: $tagId]"; $script:rbacResolutionFailed=$true } }
+    $allowedActions = foreach ($permission in @(Get-IlProperty $definition 'rolePermissions' @())) {
+        foreach ($resourceAction in @(Get-IlProperty $permission 'resourceActions' @())) {
+            foreach ($action in @(Get-IlProperty $resourceAction 'allowedResourceActions' @())) { [string]$action }
+        }
     }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple VPP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
+
+    $result.Add([pscustomobject][ordered]@{
+        Status=if($script:rbacResolutionFailed){'Nicht pruefbar'}else{'OK'};AssignmentId=$assignmentId;AssignmentName=Get-IlProperty $assignment 'displayName'
+        RoleDefinitionId=Get-IlProperty $definition 'id';RoleName=Get-IlProperty $definition 'displayName';BuiltIn=Get-IlProperty $definition 'isBuiltIn'
+        ScopeType=Get-IlProperty $assignment 'scopeType';MemberGroups=$memberNames -join '; ';ResourceScopeGroups=$resourceNames -join '; '
+        ScopeTags=@($resolvedTags) -join '; ';AllowedActionCount=@($allowedActions).Count;AllowedActions=@($allowedActions) -join '; '
+        Detail=if($script:rbacResolutionFailed){'Mindestens eine Beziehung konnte nicht aufgeloest werden.'}else{'Rollenzuweisung vollstaendig aufgeloest.'}
+    })
 }
 
-try {
-    $adeTokens = @(Get-IlGraphCollection 'https://graph.microsoft.com/beta/deviceManagement/depOnboardingSettings')
-    if (-not $adeTokens.Count) { $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht anwendbar' -Detail 'Keine Enrollment-Program-Tokens gemeldet.')) }
-    foreach ($token in $adeTokens) {
-        $syncError = [int](Get-IlProperty $token 'lastSyncErrorCode' 0)
-        $status = if ($syncError) { 'Auffaellig' } else { 'OK' }
-        $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Name ([string](Get-IlProperty $token 'tokenName')) -Expiration (Get-IlProperty $token 'tokenExpirationDateTime') -Status $status -Detail "Letzter Sync-Fehlercode: $syncError; synchronisierte Geraete: $(Get-IlProperty $token 'syncedDeviceCount' 0)." -LastSync (Get-IlProperty $token 'lastSuccessfulSyncDateTime') -Raw $token))
-    }
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Apple ADE/DEP' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
+if (-not $assignments.Count) {
+    $result.Add((New-IlFinding -Check 'IntuneRbacAssignments' -Status 'Nicht anwendbar' -Detail 'Keine Intune-Rollenzuweisungen gemeldet.'))
 }
-
-try {
-    $android = Invoke-IlGraph 'https://graph.microsoft.com/beta/deviceManagement/androidManagedStoreAccountEnterpriseSettings'
-    $bindStatus = [string](Get-IlProperty $android 'bindStatus')
-    $syncStatus = [string](Get-IlProperty $android 'lastAppSyncStatus')
-    $status = if ($bindStatus -eq 'notBound') { 'Nicht anwendbar' } elseif ($bindStatus -notin @('bound','boundAndValidated') -or $syncStatus -match 'error|invalid') { 'Auffaellig' } else { 'OK' }
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Name ([string](Get-IlProperty $android 'ownerOrganizationName' (Get-IlProperty $android 'ownerUserPrincipalName'))) -Status $status -Detail "Bindung: $bindStatus; App-Sync: $syncStatus" -LastSync (Get-IlProperty $android 'lastAppSyncDateTime') -Raw $android))
-} catch {
-    $result.Add((New-EnrollmentServiceRow -Type 'Android Enterprise' -Status 'Nicht pruefbar' -Detail $_.Exception.Message))
-}
-
 Export-IlResult -Data $result.ToArray() -OutputPath $OutputPath

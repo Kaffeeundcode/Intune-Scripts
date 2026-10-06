@@ -4,6 +4,7 @@ BeforeAll {
     function global:Get-MgContext { [CmdletBinding()]param() $null }
     function global:Connect-MgGraph { [CmdletBinding()]param($Scopes,$TenantId,$ContextScope,[switch]$NoWelcome) throw 'No tenant login in unit tests' }
     Import-Module "$script:repo/Common/IntuneLibrary.psm1" -Force
+    Import-Module "$script:repo/Common/IntuneReportLibrary.psm1" -Force
     function global:Get-CsCallQueue { [CmdletBinding()]param($First,$Skip) throw 'Unmocked Teams request' }
     function global:Get-CsAutoAttendant { [CmdletBinding()]param($First,$Skip) throw 'Unmocked Teams request' }
     function global:Connect-MicrosoftTeams { [CmdletBinding()]param() throw 'No Teams login in unit tests' }
@@ -48,6 +49,47 @@ Describe 'Graph collection completeness' {
         Mock Invoke-MgGraphRequest -ModuleName IntuneLibrary { throw 'Lost connection after submission' }
         { Invoke-IlGraph -Uri 'https://graph.microsoft.com/v1.0/users' -Method POST -Body @{} } | Should -Throw
         Should -Invoke Invoke-MgGraphRequest -ModuleName IntuneLibrary -Times 1 -Exactly
+    }
+}
+Describe 'Intune report export' {
+    It 'polls a job and imports the exported CSV' {
+        $global:IlReportPoll = 0
+        Mock Invoke-MgGraphRequest -ModuleName IntuneLibrary {
+            if ($Method -eq 'POST') { return [pscustomobject]@{id='job-1'} }
+            $global:IlReportPoll++
+            if ($global:IlReportPoll -eq 1) { return [pscustomobject]@{status='inProgress'} }
+            [pscustomobject]@{status='completed';url='https://tenant.blob.core.windows.net/reports/job-1.zip'}
+        }
+        Mock Start-Sleep -ModuleName IntuneReportLibrary {}
+        Mock Invoke-WebRequest -ModuleName IntuneReportLibrary { Set-Content -LiteralPath $OutFile -Value 'archive' }
+        Mock Expand-Archive -ModuleName IntuneReportLibrary {
+            New-Item -ItemType Directory -Path $DestinationPath -Force | Out-Null
+            "Name,State`nTEST-PC,failed" | Set-Content -LiteralPath (Join-Path $DestinationPath 'report.csv')
+        }
+        $rows=@(Invoke-IlReportExport -ReportName DeviceEnrollmentFailures -PollIntervalSeconds 1)
+        $rows.Count | Should -Be 1
+        $rows[0].Name | Should -Be 'TEST-PC'
+        Should -Invoke Invoke-MgGraphRequest -ModuleName IntuneLibrary -Times 3 -Exactly
+        Should -Invoke Invoke-WebRequest -ModuleName IntuneReportLibrary -Times 1 -Exactly
+        Remove-Variable IlReportPoll -Scope Global -ErrorAction SilentlyContinue
+    }
+    It 'rejects a foreign export download host' {
+        Mock Invoke-MgGraphRequest -ModuleName IntuneLibrary {
+            if ($Method -eq 'POST') { return [pscustomobject]@{id='job-2'} }
+            [pscustomobject]@{status='completed';url='https://example.com/report.zip'}
+        }
+        Mock Invoke-WebRequest -ModuleName IntuneReportLibrary { throw 'Download must not run' }
+        { Invoke-IlReportExport -ReportName Devices } | Should -Throw '*Azure Blob Storage*'
+        Should -Invoke Invoke-WebRequest -ModuleName IntuneReportLibrary -Times 0 -Exactly
+    }
+    It 'surfaces a failed report job without downloading' {
+        Mock Invoke-MgGraphRequest -ModuleName IntuneLibrary {
+            if ($Method -eq 'POST') { return [pscustomobject]@{id='job-3'} }
+            [pscustomobject]@{status='failed';localizedFailureReason='Denied'}
+        }
+        Mock Invoke-WebRequest -ModuleName IntuneReportLibrary { throw 'Download must not run' }
+        { Invoke-IlReportExport -ReportName Devices } | Should -Throw '*Denied*'
+        Should -Invoke Invoke-WebRequest -ModuleName IntuneReportLibrary -Times 0 -Exactly
     }
 }
 Describe 'Identity and session checks' {

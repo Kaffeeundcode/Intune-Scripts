@@ -62,7 +62,7 @@ export function buildCatalog() {
     if (/Get-EXO|Connect-ExchangeOnline|Get-Mailbox/.test(text)) modules.push('ExchangeOnlineManagement');
     if (text.includes('000_TeamsTelephonyHelper.ps1')&&!text.includes('# kc-bundle:teams:start')) dependencies.push('16_Teams_Telephony/000_TeamsTelephonyHelper.ps1');
     if (text.includes('IntuneLibrary.psm1')&&!text.includes('# kc-bundle:graph:start')) dependencies.push('Common/IntuneLibrary.psm1');
-    const scopes=[...text.matchAll(/["']([A-Z][A-Za-z.]+\.(?:Read|ReadWrite|PrivilegedOperations)\.All)["']/g)].map(m=>m[1]);
+    const scopes=[...text.matchAll(/["']([A-Z][A-Za-z.]+\.(?:Read|ReadWrite|PrivilegedOperations)\.All|DeviceLocalCredential\.ReadBasic\.All)["']/g)].map(m=>m[1]);
     const e={slug,script_name:path.basename(p),source_path:p,category:p.split('/')[0],title_de:path.basename(p).replace(/^\d+_|\.ps1$/g,''),
       synopsis:help.synopsis||path.basename(p),description:help.description||'Beschreibung ausstehend.',example:help.example||'',
       status:meta.status,status_label:labels[meta.status],review_group:meta.review_group,review_wave:meta.review_wave,is_new:meta.is_new||false,

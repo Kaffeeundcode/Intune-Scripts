@@ -6,11 +6,11 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {buildCatalog,parseHelp,sourceHash,verificationProblems} from '../script_catalog/tools/catalog.mjs';
 
-test('all 500 original paths and 28 added scripts remain individually visible; helpers excluded',()=>{
+test('all 500 original paths and 37 added scripts remain individually visible; helpers excluded',()=>{
   const {entries}=buildCatalog();
-  assert.equal(entries.length,528);
-  assert.equal(entries.filter(e=>e.is_new).length,28);
-  assert.equal(new Set(entries.map(e=>e.slug)).size,528);
+  assert.equal(entries.length,537);
+  assert.equal(entries.filter(e=>e.is_new).length,37);
+  assert.equal(new Set(entries.map(e=>e.slug)).size,537);
   assert.ok(entries.every(e=>!e.script_name.startsWith('000_')));
 });
 test('first batch is exactly 100 with requested category quotas and 30 wave-one items',()=>{
@@ -31,6 +31,7 @@ test('published single-file scripts carry their local helpers and visible review
     assert.ok(text.startsWith('\uFEFF'),e.source_path);
     assert.ok(text.includes('Prüfstatus:'),e.source_path);
     assert.ok(!/^Import-Module "\$PSScriptRoot\/\.\.\/Common/m.test(text),e.source_path);
+    assert.ok(!/^Import-Module ".*IntuneReportLibrary\.psm1"/m.test(text),e.source_path);
     assert.ok(!/^\. "\$PSScriptRoot\/000_/m.test(text),e.source_path);
   }
 });

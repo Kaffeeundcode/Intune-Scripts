@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    Exportiert aktuelle Intune-Registrierungsfehler.
+    Exportiert Fehler aus Feature-, Quality- und Treiberupdates.
 .DESCRIPTION
     <!-- library-status:start -->
     Prüfstatus: Ungeprüft
@@ -8,22 +8,15 @@
 
     <!-- library-status:end -->
 
-    Liest den offiziellen Intune-Report DeviceEnrollmentFailures ueber die asynchrone
-    ExportJobs-Schnittstelle. Fehler werden nach Zeitraum gefiltert und mit Methode,
-    Betriebssystem, Benutzer und gemeldetem Grund ausgegeben. Ein unlesbarer Zeitstempel
-    wird als Nicht pruefbar ausgegeben und nicht stillschweigend verworfen.
-.PARAMETER Days
-    Zeitraum in Tagen. Standard: 30.
+    Liest die offiziellen Intune-Statusreports fuer Feature Updates, beschleunigte
+    Quality Updates und Treiberupdates. Detailreports werden nur fuer Richtlinien mit
+    gemeldeten Fehlern gestartet. Treiber mit manuellem Pruefbedarf werden als auffaellig
+    ausgegeben. Klassische Update-Ringe sind weiterhin im separaten Rollout-Report enthalten.
 .EXAMPLE
-    ./05_Enrollment_Autopilot/49_Get-EnrollmentFailures.ps1 -Days 14 -OutputPath './reports/enrollment-failures.csv'
+    ./17_Intune_Workflows/362_Get-IntuneWindowsUpdateFailureReport.ps1 -OutputPath './reports/windows-update-failures.csv'
 #>
 [CmdletBinding()]
-param(
-    [ValidateRange(1,365)][int]$Days = 30,
-    [string]$TenantId,
-    [switch]$SkipConnect,
-    [string]$OutputPath
-)
+param([string]$TenantId,[switch]$SkipConnect,[string]$OutputPath)
 
 # kc-bundle:graph:start sha256=168d7f232db5d14cf1be94255b5d535f3739213158e781a4214040a070571864
 # Eingebettete Hilfslogik aus Common/IntuneLibrary.psm1; durch tools/bundle-script-dependencies.mjs gepflegt.
@@ -253,33 +246,74 @@ Export-ModuleMember -Function Invoke-IlReportExport
 
 } | Import-Module -Scope Local -Force
 # kc-bundle:report:end
-Connect-IlGraph -Scopes @('DeviceManagementManagedDevices.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
-$rows = @(Invoke-IlReportExport -ReportName 'DeviceEnrollmentFailures')
-$cutoff = [datetimeoffset]::UtcNow.AddDays(-$Days)
+function ConvertTo-ReportInt {
+    param([object]$Value)
+    $number = 0
+    [void][int]::TryParse([string]$Value,[ref]$number)
+    return $number
+}
+function New-PolicyFilter {
+    param([Parameter(Mandatory)][string]$PolicyId)
+    $escapedPolicyId = $PolicyId.Replace("'","''")
+    return "(PolicyId eq '" + $escapedPolicyId + "')"
+}
+
+Connect-IlGraph -Scopes @('DeviceManagementManagedDevices.Read.All','DeviceManagementConfiguration.Read.All') -TenantId $TenantId -SkipConnect:$SkipConnect
 $result = New-Object 'System.Collections.Generic.List[object]'
 
-foreach ($row in $rows) {
-    $rawDate = [string](Get-IlProperty $row 'EnrollmentFailureDateTime')
-    $eventDate = [datetimeoffset]::MinValue
-    if (-not [datetimeoffset]::TryParse($rawDate,[ref]$eventDate)) {
-        $result.Add([pscustomobject][ordered]@{
-            Status='Nicht pruefbar'; EnrollmentFailureDateTime=$rawDate; EnrollmentMethod=Get-IlProperty $row 'EnrollmentMethod'
-            FailureReason=Get-IlProperty $row 'FailureReason'; OS=Get-IlProperty $row 'OS'; OSVersion=Get-IlProperty $row 'OSVersion'
-            UPN=Get-IlProperty $row 'UPN'; UserId=Get-IlProperty $row 'UserId'; FailureGuid=Get-IlProperty $row 'FailureGuid'
-            Detail='Zeitstempel des Exportreports ist nicht auswertbar.'
-        })
+foreach ($policy in @(Invoke-IlReportExport -ReportName 'FeatureUpdatePolicyFailuresAggregate')) {
+    $errorCount = ConvertTo-ReportInt (Get-IlProperty $policy 'NumberOfDevicesWithErrors')
+    if ($errorCount -le 0) { continue }
+    $policyId = [string](Get-IlProperty $policy 'PolicyId')
+    if (-not $policyId) {
+        $result.Add((New-IlFinding -Check 'FeatureUpdatePolicy' -Status 'Nicht pruefbar' -Detail 'Fehlerzahl ohne PolicyId gemeldet.' -Data $policy))
         continue
     }
-    if ($eventDate.ToUniversalTime() -lt $cutoff) { continue }
+    $details = @(Invoke-IlReportExport -ReportName 'DeviceFailuresByFeatureUpdatePolicy' -Filter (New-PolicyFilter $policyId))
+    if (-not $details.Count) {
+        $result.Add([pscustomobject][ordered]@{Status='Auffaellig';UpdateType='Feature';PolicyId=$policyId;PolicyName=Get-IlProperty $policy 'PolicyName';DeviceId=$null;DeviceName=$null;ErrorCode=$null;Message="$errorCount Geraete mit Fehlern, aber keine Detailzeilen exportiert.";RecommendedAction=$null;Raw=$policy})
+    }
+    foreach ($row in $details) {
+        $result.Add([pscustomobject][ordered]@{
+            Status='Auffaellig';UpdateType='Feature';PolicyId=$policyId;PolicyName=Get-IlProperty $row 'PolicyName';DeviceId=Get-IlProperty $row 'DeviceId';DeviceName=Get-IlProperty $row 'DeviceName'
+            ErrorCode=Get-IlProperty $row 'Win32ErrorCode';Message=Get-IlProperty $row 'AlertMessageDescription' (Get-IlProperty $row 'AlertMessage')
+            RecommendedAction=Get-IlProperty $row 'ExtendedRecommendedAction' (Get-IlProperty $row 'RecommendedAction');Raw=$row
+        })
+    }
+}
+
+foreach ($policy in @(Invoke-IlReportExport -ReportName 'QualityUpdatePolicyStatusSummary')) {
+    $errorCount = ConvertTo-ReportInt (Get-IlProperty $policy 'CountDevicesErrorStatus')
+    if ($errorCount -le 0) { continue }
+    $policyId = [string](Get-IlProperty $policy 'PolicyId')
+    if (-not $policyId) {
+        $result.Add((New-IlFinding -Check 'QualityUpdatePolicy' -Status 'Nicht pruefbar' -Detail 'Fehlerzahl ohne PolicyId gemeldet.' -Data $policy))
+        continue
+    }
+    $details = @(Invoke-IlReportExport -ReportName 'QualityUpdateDeviceErrorsByPolicy' -Filter (New-PolicyFilter $policyId))
+    if (-not $details.Count) {
+        $result.Add([pscustomobject][ordered]@{Status='Auffaellig';UpdateType='Quality';PolicyId=$policyId;PolicyName=Get-IlProperty $policy 'PolicyName';DeviceId=$null;DeviceName=$null;ErrorCode=$null;Message="$errorCount Geraete mit Fehlern, aber keine Detailzeilen exportiert.";RecommendedAction=$null;Raw=$policy})
+    }
+    foreach ($row in $details) {
+        $result.Add([pscustomobject][ordered]@{
+            Status='Auffaellig';UpdateType='Quality';PolicyId=$policyId;PolicyName=Get-IlProperty $policy 'PolicyName';DeviceId=Get-IlProperty $row 'DeviceId';DeviceName=Get-IlProperty $row 'DeviceName'
+            ErrorCode=Get-IlProperty $row 'Win32ErrorCode';Message=Get-IlProperty $row 'AlertMessage_loc' (Get-IlProperty $row 'AlertMessage');RecommendedAction=$null;Raw=$row
+        })
+    }
+}
+
+foreach ($policy in @(Invoke-IlReportExport -ReportName 'DriverUpdatePolicyStatusSummary')) {
+    $errors = ConvertTo-ReportInt (Get-IlProperty $policy 'CountDevicesErrorStatus')
+    $cancelled = ConvertTo-ReportInt (Get-IlProperty $policy 'CountDevicesCancelledStatus')
+    $needsReview = ConvertTo-ReportInt (Get-IlProperty $policy 'CountOfNeedsReviewDrivers')
+    if (($errors + $cancelled + $needsReview) -le 0) { continue }
     $result.Add([pscustomobject][ordered]@{
-        Status='Auffaellig'; EnrollmentFailureDateTime=$eventDate.ToString('o'); EnrollmentMethod=Get-IlProperty $row 'EnrollmentMethod'
-        FailureReason=Get-IlProperty $row 'FailureReason'; OS=Get-IlProperty $row 'OS'; OSVersion=Get-IlProperty $row 'OSVersion'
-        UPN=Get-IlProperty $row 'UPN'; UserId=Get-IlProperty $row 'UserId'; FailureGuid=Get-IlProperty $row 'FailureGuid'
-        Detail="Registrierungsfehler innerhalb der letzten $Days Tage."
+        Status='Auffaellig';UpdateType='Driver';PolicyId=Get-IlProperty $policy 'PolicyId';PolicyName=Get-IlProperty $policy 'PolicyName';DeviceId=$null;DeviceName=$null;ErrorCode=$null
+        Message="Geraetefehler: $errors; abgebrochen: $cancelled; Treiber mit Pruefbedarf: $needsReview.";RecommendedAction='Treiberfreigaben und betroffene Geraete im Intune-Report pruefen.';Raw=$policy
     })
 }
 
 if (-not $result.Count) {
-    $result.Add((New-IlFinding -Check 'DeviceEnrollmentFailures' -Status OK -Detail "Keine Registrierungsfehler innerhalb der letzten $Days Tage gemeldet."))
+    $result.Add((New-IlFinding -Check 'WindowsUpdateReports' -Status OK -Detail 'Feature-, beschleunigte Quality- und Treiberupdate-Reports melden keine Fehler oder offenen Treiberpruefungen.'))
 }
 Export-IlResult -Data $result.ToArray() -OutputPath $OutputPath
